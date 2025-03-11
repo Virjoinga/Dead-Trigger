@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: ulicky_06
+  m_Shader: {fileID: 4800000, guid: ef53899b7562d1648ad7d714c4932191, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 69b85672b8a895d479df0729b70ee630, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _Shininess
+      second: 1
+    - first:
+        name: _SpecularStrength
+      second: 2
+    - first:
+        name: _SpecRange
+      second: 50
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 0.588, g: 0.588, b: 0.588, a: 1}
+    - first:
+        name: _SpecColor
+      second: {r: 0.29850745, g: 0.29850745, b: 0.29850745, a: 1}
+    - first:
+        name: _ScrollingSpeed
+      second: {r: 0, g: 0, b: 0, a: 0}
+    - first:
+        name: _SpecOffset
+      second: {r: 0, g: 0, b: 0, a: 0}

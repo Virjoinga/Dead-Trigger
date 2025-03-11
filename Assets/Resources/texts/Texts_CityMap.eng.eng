@@ -1,0 +1,1218 @@
+# ----------------------------------------------------------------------------
+#
+#	Dead Land
+#
+# ----------------------------------------------------------------------------	
+#
+# System for text ID's is following:	
+#
+#   0XXY ZZZZ	
+#	
+#   - 0 is reserve for the future 	
+#   - XX means logical text category (menu, city map, shop, etc.)
+#   - Y allows finer resolution for each text category (e.g. city map - general, city map - mission descriptions, city map - dialogs )	
+#   - ZZZZ are text indices for specified category. NOTE: Each following index should be higher by 10 than previous (we need some reserves for future)
+#
+#   Every new item put into proper place - keep it together with other texts for category!		
+#	
+#   Defined categories (XXXY):
+#
+#   030x - Ingame
+#     0300 - general
+#     0301 - objectives
+#     0302 - weapons
+#     0303 - items
+#     0304 - upgrades
+#     0305 - money
+#     0306 - packages
+#     0307 - loading hints
+#     0308 - tutorial
+#
+#   020x - menu
+#     0200 - general
+#     0201 - options
+#     0202 - gamepad
+#     0203 - shop
+#     0204 - New Hope
+#     0205 - equip
+#
+#   010x - city map: 
+#     0100 - general
+#     0101 - dialogs	
+#     0103 - story information texts
+#     0104 - story mission texts		
+#     0105y- generated mission texts
+#	01051 - kill all infected	
+#	01052 - time defence
+#	01053 - protect objects	
+#	01054 - resources
+#
+#     0106y- generated chopper mission texts
+#	01061 - kill all infected	
+#	01062 - time defence
+#	01063 - protect objects	
+#	01064 - resources
+#
+#
+# ----------------------------------------------------------------------------
+
+# -----------------------------
+# 0200xxxx MENU
+# -----------------------------
+02000001	RESUME
+02000002	EXIT
+02000003	OPTIONS
+02000004	GAME PAUSED
+02000005	HELP
+02000006	WEAPON SELECTOR
+02000007	PAUSE / INGAME MENU
+02000008	HEALTH BAR
+02000009	RELOAD
+02000010	ITEMS 1 - 4
+02000011	ACTIVE OBJECTIVE
+02000012	MISSION INCOME
+02000013	ENEMIES
+02000014	OBJECTIVE
+02000015	MOVE AREA
+02000016	AIM AREA
+02000017	DRAG LEFT SIDE OF THE SCREEN TO MOVE
+02000018	DRAG RIGHT SIDE OF THE SCREEN TO AIM
+02000019	MOVE
+02000020	CARRIED OBJECT
+02000021	SHOOT
+02000022	COUNTER
+02000023	PROTECT
+02000024	BACK TO MENU
+02000025	DROP AREA
+02000026	PROTECTED OBJECT
+
+02000027	QUIT APPLICATION?
+
+02000028	CANCEL
+
+02000029 	YES
+
+02000030 	NO
+
+02000031 	POST
+02000032 	Do you want to send an e-mail to MADFINGER Games? \n Please no spam, no empty e-mails.
+
+02000040	AIM
+02000041	PRESS
+02000042	TO AIM THROUGHT IRONSIGHT
+02000043	IRONSIGHT
+02000044 	INGAME ACTION
+02000045 	(Contest, Arena Buy)
+02000050	PAUSE / OPTIONS
+02000100	BEGIN MISSION
+
+02000110	MOGA GAMEPAD CONNECTED
+
+02000111	MOGA GAMEPAD DISCONNECTED
+
+02000112 	MOGA BATTERY LOW!  PLEASE RECHARGE..
+
+02000113 SHOW AGAIN ON MOGA CONNECT
+
+02000114 MOGA CONTROLS
+
+02000115 MOVE
+
+02000116 LOOK AROUND
+
+02000117 R - FIRE 
+
+02000118 L - AIM / ACTION 
+
+02000119 PAUSE  
+
+02000121 X - SELECT WEAPON   
+
+02000122 A - USE ITEM 
+
+02000123 B - SELECT ITEM 
+
+02000124 Y - RELOAD  
+
+02000125 R2 - FIRE 
+
+02000126 L2 - AIM
+
+02000127 R1 - RELOAD
+
+02000128 L1 - ACTION
+
+02000129 MOGA PRO CONTROLS
+
+02000130 USE TOUCH SCREEN TO CONTROL MENU
+
+02000133 LEFT - PREV WEAPON
+
+02000134 RIGHT - NEXT WEAPON
+02000135 UP - PREV ITEM
+
+02000136 DOWN - NEXT ITEM
+
+
+
+02000137	GET FREE GOLD!
+02000138	BUY FUNDS!
+02000139	SHOW FRIENDS STATS
+02000140	SELECT FRIEND TO COMPARE
+02000141	SHOW BEST FRIENDS
+
+#shield
+02000200	NVIDIA SHIELD CONTROLS
+02000201 LOOK
+02000202 Y - ITEM 1
+02000203 B - ITEM 2
+02000204 A - ITEM 3
+02000205 X - ITEM 4
+02000210 PRESS 'A' TO CLOSE
+02000211 'A' TO CLOSE
+
+
+
+# -----------------------------
+# 0201xxxx OPTIONS
+# -----------------------------
+02010000	SETUP
+02010001	SETUP / CONTROLS
+02010002	CONTROL SCHEME
+02010003	FREE MOVE PAD
+02010004	STATIC MOVE PAD
+02010005	AIM SENSITIVITY
+02010006	INVERT VERTICAL LOOK
+02010007	LEFT HAND AIM
+02010008	ON
+02010009	OFF
+02010010	NEXT
+02010011	PREV
+02010012	RESET
+02010013	SETUP / OTHERS
+02010014	MUSIC VOLUME
+02010015	INGAME SUBTITLES
+02010016	CUSTOMIZE LAYOUT
+02010017	BACK
+02010018 	CUSTOMIZE GAMEPAD
+02010019	New gamepad detected.\n Please go to Setup/Controls menu and press CUSTOMIZE GAMEPAD button to configure it.
+02010020 	GRAPHIC DETAILS
+02010021	AUTODETECT
+02010022	LOW
+02010023	MEDIUM
+02010024	HIGH
+02010025	ENABLE MUSIC
+02010026	CUSTOMIZE CONTROLS LAYOUT
+02010027	DRAG CONTROLS TO DESIRED POSITIONS
+02010028	ULTRA HIGH
+02010029	OK
+
+
+# -----------------------------
+# 0202xxxx Gamepad config
+# -----------------------------
+02020000 	GAMEPAD CONFIGURATION
+02020001 	Action
+02020002 	Button
+02020003 	Reset to defaults
+02020004 	Save and exit
+02020005 	Fire / Use
+02020006 	Reload
+02020007 	Pause
+02020008 	Previous Weapon
+02020009 	Next Weapon
+02020010 	Menu Select
+02020011 	Menu Back
+02020012 	Aim
+
+02020013 	Item 1
+02020014 	Item 2
+02020015 	Item 3
+02020016 	Item 4
+02020017 	Ingame Action
+
+02020018 Move Right 
+02020019 Move Up
+02020020 View Right
+02020021 View Up
+
+
+# -----------------------------
+# 0203xxxx Shop
+# -----------------------------
+02030001 	GUNS
+02030002 	ITEMS
+02030003 	UPGRADES
+02030004 	FUNDS
+02030020 	BUY
+02030021 	UPGRADE
+02030022 	COST
+02030023 	EQUIP
+02030024 	ACCEPT
+02030025 	BUY/
+02030026 	UPGRADE
+02030027 	ADD FUNDS/
+02030028 	CONVERT FUNDS/
+02030029 	OF
+
+02030030 	DAMAGE
+02030031 	ACCURACY
+
+02030032 	CLIP
+02030033 	RANGE
+02030034 	REQUIRES HIGHER RANK
+02030035	SHOP
+02030036 	ADD FUNDS
+02030037 	NOT ENOUGH FUNDS
+02030038 	YOU NEED
+02030039 	YOU HAVE
+02030040 	CONVERT
+02030041	OK
+
+02030042	PURCHASE FAILED.
+02030043 	OWNED:
+02030044 	BUY FUNDS
+02030045 	TRANSACTION IN PROGRESS...
+02030046 	IN APP PURCHASE 
+02030047 	SERVICE NOT AVAILABLE
+02030048 	SUCCESS
+02030049 	FAILED
+02030050 	CANCELED
+02030051	CHARACTER
+02030052	MAXED
+02030053	LOCKED
+02030054	OWNED
+02030055 	INFINITE USE
+02030056 	Achievement unlocked!
+02030057	FREE GOLD
+02030058 	EARN
+
+02030059 	EQUIPPED
+02030060 	NEW
+02030061 	OWNED
+02030062 	SALE
+02030063 	UNLOCKED
+02030064 	+%d1% BONUS
+02030065 SALE %d1% OFF
+02030066 %d1% OFF
+02030067 	UPGRADE
+02030068 BUY MORE
+02030069 UPGRADE
+
+02030070 	Recovered Purchase
+02030071 	Old unprocessed purchase received.
+
+
+02030080 	Buy bandages
+
+02030085 	Here you can equip for the mission. \n For now, just tap Back button.
+
+
+
+# -----------------------------
+# 0205xxxx Equip
+# -----------------------------
+02050001 	EQUIP
+02050002 	UNEQUIP
+
+02050003 	CLOSE
+02050004 	WEAPONS
+02050005 	ITEMS
+
+02050006 	DMG:\nACC:\nCLP:\nRNG:
+02050007 	0\n0\n0\n0
+
+02050008 	- EMPTY -
+
+02050010 	WEAPON STATISTICS
+02050011 	FIRE
+
+02050012 	HITS
+
+02050013 	KILLS
+02050020	ITEM STATISTICS
+02050021	USED
+
+02050022 	KILLS
+02050023 	EQUIP HERO
+02050024	HEALTH\nLVL
+02050025	AMMO\nLVL
+02050026	RADAR\nLVL
+02050027	+25
+02050028	%
+02050029	yrd
+02050030	8
+02050031	100
+02050032	ON
+02050033	OFF
+02050034	AUTOHEAL
+02050035 	BUY
+
+
+# -----------------------------
+# 0100xxxx City map - General
+# -----------------------------
+01000010	Shop
+01000020	Hideout
+01000100	Enter the Shop
+01000110	Enter the New Hope
+01000120	Enter the Equip screen
+
+# -----------------------------
+# 0101xxxx City map - Dialogs
+# -----------------------------
+01010010	Difficulty:
+01010012	EASY
+01010014	NORMAL
+01010016	HARD
+01010020	Accept
+01010021	PLAY
+01010030	Buy
+01010040	Equip
+01010050	Recommended weapon:
+01010055	None
+01010060	Objective:
+01010065	Carry out tasks in the city
+01010070	Owned
+01010080	Equipped
+01010090	Extra Reward
+01010095	DAILY REWARD	
+01010096	SIGN IN	
+01010097	Come tomorrow and earn more!
+01010098	Sign into your account and earn daily bonuses:
+01010099	PLAY DAILY MISSION
+01010100	and earn GOLD
+01010101	Arena Entries
+01010103	Casino Chips
+01010105	SPECIAL REWARD!
+01010107	YOU WIN!
+01010110	MISSION SUCCESS
+01010112	MISSION FAILED
+01010120	RESULTS
+01010130	Mission reward
+01010135	Money spent
+01010140	Money
+01010145	GOLD
+01010150	Money found
+01010151	Money not found
+01010160	Mission Time
+01010170	Killed infected
+01010180	Fire Accuracy
+01010190	Health Lost
+01010200	Headshots
+01010210	Removed Limbs
+01010220	Disintegrations
+01010225	Used Money
+01010226	Experience
+01010227	Favourite weapon
+01010228	Favourite item
+01012000	WIN JACKPOT
+01012010	Out of chips!
+01012020	Come back tomorrow
+01012030	You bought "Dead Trigger".
+01012031	Enjoy your reward!
+01012032	Gold
+01012033	Happy Halloween!
+01012034	New Arena
+01012035	New weapon
+01012036	Discount -30%
+01012038	Happy Christmas!
+01012040	Discount -20%
+01012050	Limited Time TAPJOY Offer 
+01012060	DOUBLE GOLD FOR EVERY TAPJOY ITEM! 
+01012061	Sorry for the inconveniences with our last update
+01012062	please accept this reward as an apology
+01013010	%d% OFF!
+01013020	FREE GOLD
+01013030	BUY GOLD
+
+
+	
+
+# ------
+01010240	LEVEL UP!
+01010250	YOU HAVE REACHED RANK 
+01010251	(+1 GOLD)
+01010252	NEW GOODS IN SHOP AVAILABLE! 
+01010260	Ok
+01010270	PAGE %d1/%d2
+01010280	OBJECTIVE  COMPLETED !
+01010290	Day 
+01010300	New location unlocked - New Hope. You can enter it anytime and view game stats here.
+01010310	New location unlocked - Equip. You can check & customize your loadout here.
+01010320	New location unlocked - Rockstocks Gunshop. You can buy new weapons & equipment here.
+01010330	New location unlocked - Bank. You can get bonus rewards here.
+01010340	New location unlocked - Post. You can send feedback, contact support, request feature...
+01010350	New location unlocked - Arena. Only hardened fighters can survive here. 
+01010360	New location unlocked - Casino. Play and pick your daily prizes!
+01010331	HINT
+01010332	- congratulations -
+01010400	Supply chopper is flying!
+01010500	The infected surrounded you! Your gun got jammed at the worst time and you had to bash the nearest infected with it. When the infected are about to kill you, the Gun Shop door behind you open and you jump inside...
+01010501	HINT FROM JULIAN
+
+
+# ------
+# Arenas
+01010600	Bloody\nSubway
+01010602	Haunted\nGraveyard
+01010604	Stadium\nof Dead
+01010606	Bloody\nXMAS
+01010610	Locked
+01010700	High Scores:
+01010710	Money:
+01010720	Played:
+01010730	HiScore:
+01010735	Waves:
+01010740	Test your skills !
+01010750	Come back tomorrow and get free Arena Entries !
+
+
+# -----------------------------
+# 0101xxxx Bank
+# -----------------------------
+
+01011000	IS YOUR BANK ZOMBIFIED?  TAKE THE FREE GOLD & RUN
+01011001	Is your bank zombified? 
+01011002	Join our community!\n Help us make better games!\nSupport DEAD TRIGGER through Ads!
+01011003    	GET GOLDS FOR FREE 
+
+
+01011050	Video Advert: (1 Free Gold)
+01011060	Earn Unlimited \nFree Gold on TapJoy!
+01011061	WATCH VIDEO \nand earn Free Gold!
+01011070	Follow us on Twitter (5 Free Gold)
+01011071	Visit us on Twitter
+01011080	Like Shadowgun on Facebook (5 Free Gold)
+01011081	Visit Shadowgun on Facebook 
+01011090	Like MADFINGER on Facebook (5 Free Gold)
+01011091	Visit MADFINGER on Facebook
+01011100	Like Dead Trigger on Facebook (5 Free Gold)
+01011101	Visit Dead Trigger on Facebook
+01011102	More Apps
+01011110	Reward...
+01011111	You were rewarded by %d pieces of gold!
+01011120	Checking status...
+01011121	Don't pay for Gold! Earn it for free!
+01011122	Like Dead Trigger \n and get 10 Gold!
+01011123	Like MADFINGER \n and get 10 Gold!
+01011124	Like Shadowgun \n and get 10 Gold!
+01011125	Get More Apps!
+01011126	Visit \n Dead Trigger!
+01011127	Visit \n MADFINGER!
+01011128	Visit \n Shadowgun!
+
+# -----------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------
+# 0103/4xxxx STORY MISSION TEXTS
+# -----------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------
+
+
+# -----------------------------
+# CHAPTER 1 MAIN TEXT
+# -----------------------------
+01030010	The world we know is gone. \nBillions of people have died from an unknown plague. Many who survived have changed. They hunger for the living. Those who still cling to their humanity are scattered throughout the world, fighting for their life. \nYou are one of them, and your fight has just begun...
+01030018	Beginning of the end	
+01030019	Survive
+
+# -----------------------------
+# MISSION 1.1 - Kill all zombies
+# -----------------------------
+01040100	Accidents happen 
+01040102	SURVIVE!
+01040104	An unknown plague has killed billions. Many turned into creatures hungering for flesh and blood. Those who retain their humanity are fighting for survival. \n You found a group of survivors led by Julian Lassagne. You must earn their trust by killing all infected blocking a path to their hideout...
+01040106	You lead the survivors to their hideout. You earn their trust and now you are one of them...
+01040108	The infected ate your brain. Try again with a new one!
+
+
+
+# -----------------------------
+# CHAPTER 2 MAIN TEXT
+# -----------------------------
+01030020	You have returned to New Hope, finally you can have a proper look around. Among the supply boxes and equipment you see the armed citizens of this place: men, women, and even children. \nTheir leader, a tall, middle-aged man, introduces himself. \nJulian: "Welcome to New Hope. My name is Julian Lassagne, and I want to thank you..." (continue)
+01030021 (continued) "...for taking care of those people. These are the last remnants of humanity. But we have an emergency right now. We need to move all of the supplies to the second floor and destroy the staircase, just for prevention. \nCan I ask you to guard the rear entrance of the building?"
+01030028	New Hope
+01030029	GUARD REAR ENTRANCE!
+
+# -----------------------------
+# MISSION 2.1 - Time defence
+# -----------------------------
+01040200	Rear guard
+01040202	GUARD THE REAR ENTRANCE!
+01040204	You're in a dark corridor leading to the back door. The infected roar outside the boarded windows. They punch and claw at the planks...the wood splinters... \nIt’s KILLING TIME!
+01040206	
+01040208	Mission failed! You let everyone down! What the hell is wrong with you?
+
+
+
+# -----------------------------
+# CHAPTER 3 MAIN TEXT
+# -----------------------------
+01030030 
+01030031 
+01030038	New Hope
+01030039	Get to the Gunshop
+
+# -----------------------------
+# MISSION 3.1 - Kill all Zombies
+# -----------------------------
+01040300	Tools of DEATH!
+01040302	Get to Rockstock’s!
+01040304	Using Julian’s map, you stay in the shadows and successfully avoid the infected. Finally, you arrive; graffiti on the side of a building reads “ROCKSTOCK’S GUNS N’ STUFF”. You search the streets for an entry until several infected notice you. \nSo much for stealth...
+01040306	You managed to shoot your way through to the shop gate, and it opens! You quickly dash inside.
+01040308	Mission failed. Try again!
+
+
+
+# -----------------------------
+# CHAPTER 4 MAIN TEXT
+# -----------------------------
+01030040 	
+01030048	Shop
+01030049	Buy any weapon in Gunstore
+
+
+
+# -----------------------------
+# CHAPTER 5 MAIN TEXT
+# -----------------------------
+01030050	A big man with a cigar stands in the room, holding a sidearm. “I’m Rockstock. Yer one of the New Hope folk?  \nHow would you like to get a side job? I got a few old hideouts. Marked 'em on yer map. My stuff got left behind and you look capable enough to retrieve it.
+01030051	
+01030055	You return everything to its rightful owner. Rockstock: “Yer unbelievable. I thought I’d never see these things again.” With tears in his eyes, he shows you photos of his family, all of them now dead. Rockstock kills half the bottle with you. Next stop: New Hope. 
+01030058	Shop
+01030059	Moonlight for Rockstock %f1 / %f2
+
+
+# -----------------------------
+# MISSION 5.1 - Resources
+# -----------------------------
+01040500	Moonlight for Rockstock
+01040502	Find the case with Rockstock's tools.
+01040504	The old Rockstock hideout shows signs of a fierce battle. Riddled walls and doors, blood stains, bits of charred clothing - all signs point to an infected massacre. Find Rockstock’s tools quickly, before the dead arrive to settle the score.
+01040506	You were successful. Barely.
+01040508	Mission failed. What gives? Practice, grasshopper!
+
+# -----------------------------
+# MISSION 5.2 - Resources
+# -----------------------------
+01040510	Moonlight for Rockstock
+01040512	Find the box with Rockstock's photos.
+01040514	Rockstock left a box filled with family photos. Find them and the reward will be yours.
+01040516	The photos are safe! Ah, memories!
+01040518	Mission failed. Rockstock will weep.
+
+# -----------------------------
+# MISSION 5.3 - Resources
+# -----------------------------
+01040520	Moonlight for Rockstock
+01040522	Find the bottle of 20-year scotch.
+01040524	A bottle of GLENFREY, Rockstock's 20-year scotch, is missing. Return it safely and he’s promised to pour you a glass. Or two. Maybe even three. 
+01040526	You did it! Prepare for a well-earned hangover. 
+01040528	Mission failed. Too bad - that scotch would’ve gone down smooth as Vaseline on a pregnant pig’s ass.
+
+
+# -----------------------------
+# CHAPTER 6 MAIN TEXT
+# -----------------------------
+01030060	Julian: “Glad you're alive! We just lost several members on a supply run -- and we're running low on almost everything! There's a place with supplies I want you to hit. \nWe repaired the van. It ain't a tank, but it can move cargo.
+01030065	You arrive back in New Hope, alive and relatively unharmed. The supplies are unloaded as you and Julian share a beer. \nJulian: “These supplies should keep us going for a while. We have sick people to heal and hungry mouths to feed. We are forever indebted to you.” 
+01030068	Hunt for Supplies
+01030069	Find supplies %f1 / %f2
+
+
+# -----------------------------
+# MISSION 6.1 - Resources
+# -----------------------------
+01040600	CHOPPING MALL!
+01040602	Gather goods and bring them to the van.
+01040604	While scouting, you discover the gruesome remains of Julian’s tribe. Gnawed bones rest among torn clothes and spent shells. The supplies they were carrying are scattered all around. \nTry to gather them so that their sacrifice wasn't in vain.
+01040606	You have successfully gathered the supplies. Nice work!
+01040608	Alas, you join the ranks of the fallen. *chomp* *smack* *gulp* 
+
+# -----------------------------
+# MISSION 6.2 - Time Defence
+# -----------------------------
+01040610	Hunt for Supplies
+01040612	Defend the van from infected!
+01040614	infected are closing in from all sides and the damned thing won’t start! How cliched! How annoying! \nYou jump out and defend the van while Julian repairs it.
+01040616	That was tighter than a Speedo on a Sumo fighter, but in the end you managed to escape.
+01040618	Damn. Damn. Damn. Try again!
+
+# -----------------------------
+# MISSION 6.3 - Kill all infected
+# -----------------------------
+01040620	Hunt for Supplies
+01040622	Die zombie, die!
+01040624	You’ve secured several first aid kits and experimental drugs (how convenient!), but the infected have located you. \nFight them off!
+01040626	You got the medications for New Hope and have also "cured" a bunch of infected. Good job. Seriously. That wasn’t easy. 
+01040628	 Well, you blew it. The developers are disappointed in you. Maybe you should go back to Q-Bert.
+
+
+
+# -----------------------------
+# CHAPTER 7 MAIN TEXT
+# -----------------------------
+01030070	Julian: “We found an government-run underground bunker. We’d heard rumors of their existence even before the outbreak, and now we have a chance to live somewhere truly safe. We’ve managed to hack the database and gain entry codes. \nNow all we need to do it secure the area. Easier said than done, but it’s our best chance for survival.” 
+01030075	Julian: “We’re setting ourselves up nicely, but we can't get into the lower levels. Hopefully we'll manage to hack the terminals soon.”
+01030078	The Bunker
+01030079	Explore Bunker
+
+
+# -----------------------------
+# MISSION 7.1 - Kill all Zombies
+# -----------------------------
+01040700	Explore Bunker
+01040702	Check bunker computers for information
+01040704	You enter the bunker through its reinforced doors. The air is humid and reeks of old decay. \nWith finger on the trigger, you step into the darkness... 
+01040706	The upper floor of the bunker is clean. Now it's up to Julian and the others to decorate. 
+01040708	You can’t fail. You mustn’t fail. You failed. 
+01040709	BUNKER TERMINAL
+01040710	DAY PLANNER
+01040720	DIARY
+
+
+# -----------------------------
+# CHAPTER 8 MAIN TEXT
+# -----------------------------
+01030080	Julian: “The infected destroyed most of our food, but the news isn’t all bad. We found a radio transmitter that could be repaired. We need you to find the right parts. \nI marked the most likely areas on your map. Good luck."
+01030085	With all the transmitter parts secured, you take a much-deserved break back at New Hope. Julian assembles his team of techies and mechanics as they attempt a crucial repair...
+01030088	Transmitter
+01030089	Find all transmitter parts %f1 / %f2
+
+
+# -----------------------------
+# MISSION 8.1 - Kill all Zombies
+# -----------------------------
+01040800	Find transmitter parts
+01040802	Kill all infected
+01040804	Guess what? You found almost everything on the list. Guess what again? \nHere comes a horde of trouble!
+01040806	Excellent work! We’re impressed!
+01040808	Not-so-excellent work! We’re disappointed!
+
+
+# -----------------------------
+# MISSION 8.2 - Time defense
+# -----------------------------
+01040810	Find transmitter parts
+01040812	Survive until help arrives!
+01040814	You've found an antenna for the transmitter, now you just need to wait for the van. Don’t die you sonofabitch! \nKeep shooting! 
+01040816	You held on and the cavalry has arrived! Another important part of the transmitter is yours. 
+01040818	Doesn’t anyone listen around here? Sheesh. Try again.
+
+
+# -----------------------------
+# MISSION 8.3 - Protect Objects
+# -----------------------------
+01040820	Find transmitter parts
+01040822	Defend the van from infected!
+01040824	A small electronics shop had the parts you need. On the way back to the bunker, the van is blocked by a pileup of abandoned cars. \nInfected advance from all sides...
+01040826	The infected are dead and the road is open. Nice work. 
+01040828	Ugh. You died. Again.
+
+
+
+# -----------------------------
+# CHAPTER 9 MAIN TEXT
+# -----------------------------
+01030090	Julian repaired the transmitter: “It's working! The strength of the signal allows to transmit and receive all over the city. There's a woman stranded in a hotel 12 miles away - and you're a capable savior. \nI already marked the location on the map. Good luck! 
+01030098	Damsel in distress
+01030099	Damsel in distress part %f1 / %f2
+
+
+# -----------------------------
+# MISSION 9.1 - Kill all infected
+# -----------------------------
+01040900	Damsel in distress!
+01040902	Find the woman, storm the hotel.
+01040904	The hotel is a ruin. Shattered windows look like dead eyes. \nOn the top floor, a makeshift sign flutters from a balcony: HELP! UNLESS YOU’RE INFECTED.
+01040906	You fought through the infected and reached the front door. A swift kick and you’re in.
+01040908	Well, there’s always other heroes waiting their turn.
+
+
+
+# -----------------------------
+# CHAPTER 10 MAIN TEXT
+# -----------------------------
+01030100	You dive for cover as a shotgun blast hits the door behind you. A woman stands in front of you, sawed-off shotgun held waist-high. Grace: “Sorry! I thought you were one of them. I'm Grace Kelly. Are you here to rescue me and my lab equipment?"
+01030105	The inhabitants of New Hope are thrilled to have Grace join them, especially when they discover she’s a scientist. \nYou visit her for a drink in the evening (she says she prepared something special), but she pulls out a new weapon prototype.
+01030108	Homeward Bound
+01030109	Take Grace to New Hope %f1 / %f2
+
+
+# -----------------------------
+# MISSION 10.1 - Resources
+# -----------------------------
+01041000	Homeward Bound
+01041002	Get the equipment into the van
+01041004	You've hidden Grace in the van while you load her equipment. This being an apocalypse and all, nothing ever goes as planned. Groans fill the night air, shadows move, here they come!
+01041006	You have loaded everything into the van. Burn rubber!
+01041008	Mission failed. Try it harder.
+
+
+# -----------------------------
+# MISSION 10.2 - Kill all Zombies
+# -----------------------------
+01041010	Homeward Bound
+01041012	Clear a path!
+01041014	Hordes of infected are coming from all sides and you're afraid that the sheer amount of shambling undead could block your escape. The solution is obvious: reduce them all to twitching sacks of blood and bones.
+01041016	Great job!
+01041018	Give it another shot. (Pun intended.)
+
+
+
+# -----------------------------
+# CHAPTER 11 MAIN TEXT
+# -----------------------------
+01030110	After returning to New Hope, Grace calls you to the lab. \nGrace: “The virus causes irreversible change in the frontal lobe. We won't find a cure. Ever. Let's focus on improving the lab, so we can find a way how to dispose the infected."
+01030115	Grace's new lab is complete. After a few hours, she finishes a weapon prototype that might make things easier. \nKilling-wise, at least.
+01030118	Lab Rat
+01030119	Obtain laboratory equipment for Grace.
+
+
+# -----------------------------
+# MISSION 11.1 - Protect
+# -----------------------------
+01041100	Lab Rat
+01041102	Defend the entrance to the library!
+01041104	You take Grace to the public Library. You need to guard the entrance to prevent infected from entering while she looks for the books she needs.
+01041106	Grace has all the books she needs! You quickly head back to New Hope.
+01041108	Library privileges revoked! Try again!
+
+
+# -----------------------------
+# MISSION 11.2 - Resources
+# -----------------------------
+01041110	Lab Rat
+01041112	Obtain laboratory equipment
+01041114	Grace wants a few technical toys from the institute she worked in before the outbreak. They owe her salary anyway. The only obstacle seems to be her former colleagues...
+01041116	You've got the equipment for Grace! And you didn't even need to apply for a grant.
+01041118	Yes, even nerds can turn into infected and chew your face off. 
+
+
+# -----------------------------
+# MISSION 11.3 - Protect
+# -----------------------------
+01041120	Lab Rat
+01041122	Activate and guard the generator
+01041124	Grace's new laboratory needs a better power source. Starting the old generator behind New Hope and clearing the area seems to be the best option.
+01041126	The generator is up and running! Nice work, cowboy.
+01041128	Epic fail. Try again.
+
+
+# -----------------------------
+# CHAPTER 12 MAIN TEXT
+# -----------------------------
+01030120	Julian: “We cracked the code for the bunker elevator. Our people decided to head down there, but no one returned. We called the elevator back, found it empty…repainted with blood. Now, I know what you're thinking; yes, I need you to find out what happened. Please."
+01030125	Julian: “I'm glad you made it. The second floor contains a large server room with access to an emergency network connecting other bunkers. Let's obtain the data and see if we can contact the other facilities - maybe there are survivors."
+01030128	Bunker 2nd floor
+01030129	Explore Bunker
+
+
+# -----------------------------
+# MISSION 12.1 - Kill all Zombies
+# -----------------------------
+01041200	The bunker 2nd floor
+01041202	Explore the 2nd floor of the bunker
+01041204	You enter the bunker elevator. There's blood and meat everywhere. Julian’s code works. The elevator begins its slow descent...
+01041206	You cleared the 2nd floor of the bunker
+01041208	You failed. Miserably.
+
+
+
+# -----------------------------
+# CHAPTER 13 MAIN TEXT
+# -----------------------------
+01030130	You return to New Hope. Most people lie on makeshift gurneys in the hallways, sick. \n Julian: “There’s been an outbreak. It's not the plague, but it's serious. We need antibiotics. Help us get them from the hospital."
+01030131	
+01030135	The entrance closes. A crowd of people in lab coats greets you. A stout, elderly man approaches you. He has a prosthetic hand. Doctor Fisher: “You need antibiotics, correct? We have a limited supply. We don't hand them out. But I am willing to make a trade."
+01030138	Infection
+01030139	Find medicine
+
+# -----------------------------
+# MISSION 13.1 - Kill all zombies
+# -----------------------------
+01041300	Pathfinder
+01041302	Find the entrance to the hospital.
+01041304	You’re standing in the maintenance shaft. Pipes and wires are everywhere. Corpses litter the floor. At least, you think they’re corpses.
+01041306	You made it. Who needs G.P.S?
+01041308	You didn’t find the exit. Services these days are a real murder.
+
+# -----------------------------
+# MISSION 13.2 - Kill all zombies
+# -----------------------------
+01041310	Tunnel Vision!
+01041312	Make your way through the passage.
+01041314	You’re in an underground passage that leads to the hospital - these must be the old steam tunnels that were converted for supply runs. Ceiling lamps flicker on and off. You can’t see much, but you can hear them; the horrible groans of the undead.
+01041316	You survived. You don’t look like one of the bridge-and-tunnel crowd.
+01041318	You just got bitten by the singer of the death metal group “Cannibal Tunnel Zombies.” You‘ve probably never heard of them. They’re pretty underground.
+
+
+
+# -----------------------------
+# CHAPTER 14 MAIN TEXT
+# -----------------------------
+01030140	Doctor Fisher leads you to a hospital break room. A map of the medical center is laid on the table, showing the two medical center towers, joined by a bridge on the sixth floor. Doctor Fisher: "The West Tower has been overrun by the infected. We've barricaded the bridge and set up an explosive device, but the detonator got lost. Find it and we'll give you the medicine." 
+01030141	
+01030145	The bridge between the towers explodes just in time to take the infected with it. Doctor Fisher: “Splendid work! There’s an ambulance with antibiotics waiting for you in the garage. Please take this radio. If you ever need anything, contact us."
+01030148	Infection
+01030149	Get medicine
+
+# -----------------------------
+# MISSION 14.1 - Carry resources
+# -----------------------------
+01041400	Batteries NOT included. 
+01041402	Find Doctor Gordon’s detonator.
+01041404	You make your way across the high tower bridge. The entrance to the emergency staircase is locked. You have to crawl through the vents. After a few tight minutes you're on the top floor. The detonator could still be in the Operating Room.
+01041406	You found it! Consider donating your brain. You know...for science.
+01041408	You’re now hospital food and NOBODY likes hospital food.
+
+
+
+# -----------------------------
+# CHAPTER 15 MAIN TEXT
+# -----------------------------
+01030150	The residents of New Hope are recovering, but the epidemic has drastically depleted the colony’s supplies and more first aid kits are needed. You tell Julian about Dr. Fisher, and he agrees to contact him. \nDoctor Fisher: First aid kits? Sure. In exchange for finding our lost colleague, Dr. McGuffin."
+01030151	
+01030155	You have found McGuffin’s lab. Unfortunately, you only found dried blood, torn meat and a handwritten letter from the Doctor himself.
+01030158	Dr. Fisher's colleague
+01030159	Find McGuffin’s lab
+
+# -----------------------------
+# MISSION 15.1 - Kill Zombies
+# -----------------------------
+01041500	Old College Try!
+01041502	Get in to Doctor McGuffin's laboratory.
+01041504	You must cross the University commons and make it up to the lower levels of the research center to find Doctor McGuffin’s office. Grab his day planner to determine his last known whereabouts.
+01041506	You made it through the quad alive!
+01041508	You died. How about taking infected 101 next fall?
+
+
+# -----------------------------
+# CHAPTER 16 MAIN TEXT
+# -----------------------------
+01030160	After delivering the letter to a saddened Dr. Fisher, you return to New Hope with the medical supplies. \nJulian: “We’ve downloaded plans from the server and discovered auxiliary bunkers that run throughout the city, including one right underneath us. We need someone competent to check out sub-level 1. Yes, you."
+01030161	
+01030165	Julian is relieved when the elevator door opens and you emerge. A medical crew rushes to your aid, but you brush them off. Julian: “This is much more difficult than we hoped. I’m sending the techs to seal off sub-level 1. Oh - and Grace wants to see you."
+01030168	Bunker
+01030169	Clear bunker sub-level 1
+
+# -----------------------------
+# MISSION 16.1 - Kill Zombies
+# -----------------------------
+01041600	Up and at ‘em!
+01041602	Clear sub-level 1 of all infected.
+01041604	The elevator slows to a stop at sub-level 1. As the door slides open, you sniff the air - decaying flesh. Your boots echo in the darkened room. The noise attracts attention. Good; bring it on, suckers.
+01041606	Excellent work. It wasn’t easy.  
+01041608	Yet another casualty of the apocalypse. Sigh.
+
+
+
+# -----------------------------
+# CHAPTER 17 MAIN TEXT
+# -----------------------------
+01030170	Grace is bent over a microscope. \nGrace: “You look terrible! I mean tired. But I need your help! Dr. Fisher left some chemicals in the hospital and we require them. I have the tracking device. Oh, and semiconductors! I need those."
+01030171	
+01030175	You give Grace the packages, but she won’t talk to you until after you shower. After a quick rinse, you take a much-deserved nap.
+01030178	Other dirty job
+01030179	Find components for Grace
+
+# -----------------------------
+# MISSION 17.1 - Carry Resources
+# -----------------------------
+01041700	The Meat Party! 
+01041702	Find the chemicals for Grace.
+01041704	The hospital is as hellish as before - undead patients scurry about, piles of bodies lie slumped in the cafeteria, the remains of whatever resistance humans attempted are scattered in ruin. The tracking device beeps insistently. You’re getting close.
+01041706	Nice work. You recovered the tracking device.
+01041708	Try again. Bards shall sing tales of your demise.
+
+# -----------------------------
+# MISSION 17.2 - Carry Resources
+# -----------------------------
+01041710	The Semiconductors. 
+01041712	Find the spare parts for Grace.
+01041714	Despite your infected-killing skills, this new horde of gibbering undead is too big even for you. The tunnels are teeming with the infected. The night is coming. Let's find those parts and get out of here.
+01041716	Good job, now go hit the showers...
+01041718	This is how it ends: you, facedown, in a puddle of raw sewage.
+
+
+
+# -----------------------------
+# CHAPTER 18 MAIN TEXT
+# -----------------------------
+01030180	It's morning. Julian stands by your bed, a cup of coffee in hand. He smiles, kind of.  \nJulian: “Remember that team I sent to seal off sub-level 1? They didn’t make it. I want you to spearhead the extraction."
+01030185	With the doors sealed, you collapse from exhaustion. You made it. \n Grace invites you to her room so you can discuss the packages she received from Dr. Fisher. There’s much work to be done...
+01030186 	
+01030188	Bunker
+01030189	Protect New Hope
+
+# -----------------------------
+# MISSION 18.1 - Protect Objects
+# -----------------------------
+01041800	Stand your ground!
+01041802	Pick off the infected while others seal the doors! 
+01041804	Time to harness your inner sniper - Julian and his team are barricading the door, but they need you to take out any infected that might try to enter.
+01041806	Nice shooting, Tex!
+01041808	Your trigger finger let you down. The infected have broken in.
+
+
+# -----------------------------
+# CHAPTER 19 MAIN TEXT
+# -----------------------------
+
+01030190	Julian appears at the door, smiling. \nJulian: "We got it! I knew we would! \n "McGuffin's diary contains data on development of a bioagent that might have created all of this mess. The bunker servers have more data and we need to recover it. Please."
+01030191	
+01030195	Julian: "The data…it shows the plague was planned -- building the bunker and developing Lucy took years. The wealthy group behind it decided to kill most of the population after the blackout; people realized they didn't need money anymore. So the group let Lucy loose. And you know what? I think they are still alive; at least some of them. And if they are…they have the antivirus. Let's go after them."
+01030196	
+01030198	Operation Grim Peace
+01030199	Investigate Operation Grim Peace
+
+
+# -----------------------------
+# MISSION 19.1 - Kill Zombies (Bunker)
+# -----------------------------
+
+01041910	Healthy Piracy
+01041912	Download data from Level 4 servers
+01041914	Julian: "You need to get to Level 4, this level did not appear in any of the building plans we examined. The elevator has been programmed to take you directly there. Download the data and get the hell out!"
+01041916	Download complete. You were good. Bloody good.
+01041918	And just think that all this shit was financed with our tax dollars - get in there and kick some ass!
+
+
+# -----------------------------
+# MISSION 19.2 - Kill Zombies (Graveyard)
+# -----------------------------
+
+01041930	The Revelation
+01041932	Unveil the buried secrets
+01041934	Julian: "If we have properly understood one of the e-mails downloaded from the bunker, we should be able to access another part of the underground complex via the old cemetery. There is no one more capable of checking it out - it has to be you."
+01041936	Great job! Now you have an important piece of the puzzle.
+01041938	Scared of ghosts? Lock and load!
+
+
+
+
+# -----------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------
+# 0105xxxx GENERATED MISSION TEXTS
+# -----------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# 01051xxx generated: KILL ALL ZOMBIES
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# --------
+01051000	Regular check 
+01051002	Kill all walkers 
+01051004	The main access routes must remain free so that we can safely move around. Unfortunately the infected will return after some time. We have no choice but to regularly check areas and keep them clear. 
+01051006	Cleaning successful. 
+01051008	Access routes are occupied by infected. 
+
+01051010	Kill them all 
+01051012	Kill all infected 
+01051014	During the search we encountered a small group of infected. They look relatively isolated. An ideal chance to perfect our shooting skills! 
+01051016	Great! 
+01051018	You failed... 
+
+01051020	Find food 
+01051022	Fight through the undead horde. 
+01051024	We were just looking for provisions when a bunch of infected ambushed us. They are blocking the way back. We must fight through them. 
+01051026	Good I'm still alive. 
+01051028	A really bad day... 
+
+01051030	Hideout protection 
+01051032	Remove all infected from the area 
+01051034	We found several infected when patrolling in the neighbourhood. They must be disposed of before they get too close. 
+01051036	The area is clear! 
+01051038	Infected are still wandering around! 
+
+
+
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# 01052xxx generated: TIME DEFENCE
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# --------
+
+01052000	Attackers 
+01052002	Clean the area of infected 
+01052004	The walkers are increasingly active. They have attacked our remote outpost. We sent a distress call and made quick preparation for our defence. 
+01052006	The outpost surroundings are now safe. 
+01052008	Infected are still too close! 
+
+01052010	Ambush 
+01052012	Survive. 
+01052014	Infected have attacked us while checking the residential block %f. Try and hold out until help arrives. 
+01052016	Your friends have finally arrived to help you get out. 
+01052018	You were out of luck today... 
+
+01052020	Surprise encounter 
+01052022	Stay alive 
+01052024	We still hope we can find other survivors. But today, our search was suddenly interrupted by groans, growling and approaching footsteps ... 
+01052026	Good fight! 
+01052028	One lost fight doesn't mean this war is lost. 
+
+01052030	Resource party 
+01052032	Fight for your life 
+01052034	We went outside to take as much food and supplies as we can. The infected can smell us, and we encounter a large group of walkers. I will try to hold back the horde while the others try to get to safety. 
+01052036	Excellent, we don’t have any casualties! 
+01052038	If we want to survive, I have to be better! 
+
+01052040	Hideout protection 
+01052042	Survive attack of infected. 
+01052044	Infected have invaded our hideout. We must stop them at all costs! 
+01052046	The area is clear! 
+01052048	Infected are still nearby! 
+
+
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# 01053xxx generated: PROTECT OBJECTS
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# --------
+01053000	Surprise 
+01053002	Protect the entrance(s) 
+01053004	A group of survivors was attacked by hungry infected. They had enough time to make an improvised barricade but need urgent help before the walkers break through. 
+01053006	Excellent, the threat has been eliminated! 
+01053008	People are still in grave danger, help them! 
+
+01053010	Food fight 
+01053012	Prevent supply destruction 
+01053014	Ferocious infected are trying to reach our supply squad. If they break in, people will be killed and our food will be infected and devalued. 
+01053016	Good work, the survivors owe you a lot! 
+01053018	Try again, we can't afford to lose this supply. 
+
+01053020	Patrol Guard  
+01053022	Protect the patrol  
+01053024	Our hideout patrol was interrupted by a crowd of infected and is currently trapped. You must save them at all cost! 
+01053026	Great, no infected broke in! 
+01053028	Fight better next time! 
+
+01053030	Distress call 
+01053032	Protect the barricaded door! 
+01053034	We received a distress call. Our friends are under attack and out of ammunition. Their last help is a barricaded door and you. Hurry! 
+01053036	Your help arrived at the last minute. 
+01053038	No, the infected are almost inside! 
+
+01053040	Search for food 
+01053042	Protect your friends
+01053044	Hungry infected surrounded our supply unit. They are hidden for now - but they can't break through because they are low on ammunition. Kill infected and free your friends!
+01053046	You've saved bunch of our people.
+01053048	We've suffered heavy losses today.
+
+
+
+
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# 01054xxx generated: RESOURCES
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# --------
+01054000	Find food 
+01054002	Find resource crates.
+01054004	People need food. I should search the nearby buildings and look for anything we can use to feed them. 
+01054006	Food was successfully secured 
+01054008	People are starving because you failed to find food 
+
+01054010	Medical supplies 
+01054012	Search and get medical supplies 
+01054014	People are sick and medical supplies are alarmingly low. It is necessary to find more. 
+01054016	Medication has been safely transported to the shelter. 
+01054018	Unfortunately, medical supplies are still minimal. 
+
+01054020	Fuel 
+01054022	Find and get fuel. 
+01054024	The regular inspection of generators revealed low fuel. We must fill the canisters to prevent a power outage. 
+01054026	Fuel will ensure the generator works for a few more days. 
+01054028	No fuel, no power. You should try again! 
+
+01054030	Exploration 
+01054032	Sweep the area and secure any useful items 
+01054034	We need to do reconnaissance of the abandoned areas and find any equipment that will help us survive. 
+01054036	I got supplies for people in the area. 
+01054038	Things still remain in the area. I should revisit the area again. 
+
+01054040	Exploration 
+01054042	Sweep the area and secure any useful items 
+01054044	We are looking for all useful supplies, mainly food and drink. Today we will explore residential block %f. 
+01054046	You have found food and water. Good work! 
+01054048	It is a shame you were forced to leave the food and water there. 
+
+01054250	Search for food 
+01054252	Carry food boxes
+01054254	One of our scout bumped into food rations, although he wasn't able to secure them because of some other assignment. Your objective is to find & gather these food rations.
+01054256	Great job. Thanks!
+01054258	Unfortunately, we had to leave the food rations to rot.
+
+
+
+
+# -----------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------
+# 0106xxxx GENERATED CHOPPER MISSION TEXTS
+# -----------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# 01061xxx generated: KILL ALL ZOMBIES
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# --------
+01061000	Help from heaven
+01061002	Kill all walkers 
+01061004	Area with dropped supplies is full of infected. Kill them and secure access path! 
+01061006	Well done, supply drop is safe. 
+01061008	Work harder next time! 
+
+
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# 01062xxx generated: TIME DEFENCE
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# --------
+
+01062000	Help from heaven
+01062002	Survive attack of infected
+01062004	You were surprised by infected when searching for dropped crates. Defend your position!
+01062006	Well done, supplies are safe. 
+01062008	Work harder next time! 
+
+
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# 01063xxx generated: PROTECT OBJECTS
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# --------
+01063000	Help from heaven
+01063002	Protect cargo
+01063004	All dropped crates were succesfully collected in one place. But noise you made attracted groups of hungry infected. Protect supplies by hook or crook!
+01063006	Well done, supply drop is safe. 
+01063008	Work harder next time! 
+
+
+
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# 01064xxx generated: RESOURCES
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# --------
+01064000	Help from heaven
+01064002	Collect cargo
+01064004	Helicopter dropped crates on different places. Find them all and prepare them for pickup. Be careful - area is crawling with infected.
+01064006	Well done, supplies are safe. 
+01064008	Work harder next time! 

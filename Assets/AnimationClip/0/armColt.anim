@@ -1,0 +1,187 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: armColt
+  m_AnimationType: 1
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.4298388, y: 0.56203175, z: -0.4246176, w: 0.5648529}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      - time: 0.7666667
+        value: {x: -0.4298388, y: 0.56203175, z: -0.4246176, w: 0.5648529}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: colt1911/mag
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.008986462, y: 0.7075034, z: -0.0031064982, w: 0.706646}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      - time: 0.7666667
+        value: {x: -0.008986462, y: 0.7075034, z: -0.0031064982, w: 0.706646}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: colt1911/zaver
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.0049459706, y: 0.0053007016, z: -0.6166988, w: 0.7871658}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      - time: 0.7666667
+        value: {x: -0.0049459706, y: 0.0053007016, z: -0.6166988, w: 0.7871658}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: colt1911/gunbody/kohout
+  m_CompressedRotationCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0.00069613726, y: -0.057460718, z: -0.017662644}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.76666665
+        value: {x: 0.00069613726, y: -0.057460718, z: -0.017662644}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: colt1911/mag
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.0002872023, y: 0.065770194, z: 0.012643482}
+        inSlope: {x: -4.3368083E-18, y: 5.5511146E-16, z: 1.3877786E-16}
+        outSlope: {x: -4.3368083E-18, y: 5.5511146E-16, z: 1.3877786E-16}
+        tangentMode: 0
+      - time: 0.26666668
+        value: {x: -0.0002872023, y: 0.065770194, z: 0.012643482}
+        inSlope: {x: -1.8586316E-18, y: 2.3790485E-16, z: 5.947621E-17}
+        outSlope: {x: 2.1027355E-09, y: 5.726126E-07, z: 9.3025335E-07}
+        tangentMode: 0
+      - time: 0.3
+        value: {x: -0.00029412078, y: 0.065666504, z: 0.00081596733}
+        inSlope: {x: -0.00033208093, y: -0.004976245, z: -0.31483123}
+        outSlope: {x: -0.00033208838, y: -0.0049768644, z: -0.3148333}
+        tangentMode: 0
+      - time: 0.33333334
+        value: {x: -0.00030934135, y: 0.065438375, z: -0.008345434}
+        inSlope: {x: -0.0004566195, y: -0.006844023, z: -0.262885}
+        outSlope: {x: -0.00045662472, y: -0.006844023, z: -0.26288572}
+        tangentMode: 0
+      - time: 0.36666667
+        value: {x: -0.00032456196, y: 0.065210246, z: -0.016709782}
+        inSlope: {x: -0.0003320936, y: -0.0049768644, z: -0.26700917}
+        outSlope: {x: -0.00033208358, y: -0.004976245, z: -0.2670098}
+        tangentMode: 0
+      - time: 0.4
+        value: {x: -0.00033148043, y: 0.065106556, z: -0.026146134}
+        inSlope: {x: 4.7636575E-09, y: 5.726126E-07, z: 1.3096875E-06}
+        outSlope: {x: -4.7636575E-09, y: -5.726126E-07, z: -9.444165E-07}
+        tangentMode: 0
+      - time: 0.43333334
+        value: {x: -0.00032456196, y: 0.065210246, z: -0.0164422}
+        inSlope: {x: 0.00033208358, y: 0.004976245, z: 0.28592202}
+        outSlope: {x: 0.0003320936, y: 0.0049768644, z: 0.2859228}
+        tangentMode: 0
+      - time: 0.46666667
+        value: {x: -0.00030934135, y: 0.065438375, z: -0.0070845685}
+        inSlope: {x: 0.00045662472, y: 0.006844023, z: 0.2832272}
+        outSlope: {x: 0.00045661753, y: 0.006844023, z: 0.28322744}
+        tangentMode: 0
+      - time: 0.5
+        value: {x: -0.00029412078, y: 0.065666504, z: 0.002439682}
+        inSlope: {x: 0.00033208373, y: 0.0049768644, z: 0.29591984}
+        outSlope: {x: 0.00033208064, y: 0.0049762405, z: 0.2959182}
+        tangentMode: 0
+      - time: 0.53333336
+        value: {x: -0.0002872023, y: 0.065770194, z: 0.012643482}
+        inSlope: {x: -2.1027338E-09, y: -5.7261207E-07, z: -3.2730813E-06}
+        outSlope: {x: -4.336813E-18, y: 5.5511204E-16, z: 1.3877801E-16}
+        tangentMode: 0
+      - time: 0.76666665
+        value: {x: -0.0002872023, y: 0.065770194, z: 0.012643482}
+        inSlope: {x: -1.858634E-18, y: 2.3790516E-16, z: 5.947629E-17}
+        outSlope: {x: -1.858634E-18, y: 2.3790516E-16, z: 5.947629E-17}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: colt1911/zaver
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.054816663, y: 0.022747068, z: -0.00016536239}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.76666665
+        value: {x: -0.054816663, y: 0.022747068, z: -0.00016536239}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: colt1911/gunbody/kohout
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 30
+  m_WrapMode: 1
+  m_Bounds:
+    m_Center: {x: 0.5538342, y: -0.13957569, z: -0.11299364}
+    m_Extent: {x: 0.0154134035, y: 0.07587524, z: 0.19496696}
+  m_ClipBindingConstant:
+    genericBindings: []
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_StartTime: 0
+    m_StopTime: 1
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_Events: []

@@ -1,0 +1,2813 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1017228041514912}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1017228041514912
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4054585890056595}
+  m_Layer: 0
+  m_Name: _WeaponSettings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4054585890056595
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1017228041514912}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4568416441579184}
+  - {fileID: 4760548609731930}
+  - {fileID: 4989272659391431}
+  - {fileID: 4820523799673116}
+  - {fileID: 4688392070456739}
+  - {fileID: 4855393021344053}
+  - {fileID: 4991711627501154}
+  - {fileID: 4072304827713423}
+  - {fileID: 4468589577754392}
+  - {fileID: 4496642650844894}
+  - {fileID: 4897247201268696}
+  - {fileID: 4921671755553720}
+  - {fileID: 4432001360148112}
+  - {fileID: 4406577635562198}
+  - {fileID: 4894597900346528}
+  - {fileID: 4193757815537513}
+  - {fileID: 4688798004583165}
+  - {fileID: 4620952438971117}
+  - {fileID: 4172949352523147}
+  - {fileID: 4830347837644783}
+  - {fileID: 4930231299467897}
+  - {fileID: 4039843141919792}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!1 &1213406835762642
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4568416441579184}
+  - 114: {fileID: 114978413930666485}
+  m_Layer: 0
+  m_Name: AK47
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4568416441579184
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1213406835762642}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 0
+--- !u!114 &114978413930666485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1213406835762642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 167377070
+  ID: 13
+  Name: 3029130
+  Description: 3029135
+  Rank: 8
+  ShopWidgetPrefab: {fileID: 4621457042093571, guid: a91a89dde7f5bba409a34da79d8366eb, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4631704510878065, guid: ca58cc0177d47824ebef48b136022264, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 3
+  ProjectileType: 3
+  FireType: 1
+  AimCross: 0
+  CanAim: 1
+  AimFov: 35
+  Upgrades:
+  - MoneyCost: 7000
+    GoldCost: 0
+    MaxAmmoInClip: 30
+    MaxAmmoInWeapon: 150
+    CriticalAmmo: 5
+    FireTime: 0.1
+    Damage: 13
+    BodyPartDamageModif: 0.5
+    MaxRangeDamage: 10
+    EffectiveRange: 45
+    MaxRange: 65
+    Speed: 200
+    Impuls: 1500
+    Dispersion: 2
+    DispersionAddMove: 6
+    DispersionAddShoot: 2
+    UpgradeRank: 8
+  - MoneyCost: 10000
+    GoldCost: 0
+    MaxAmmoInClip: 30
+    MaxAmmoInWeapon: 150
+    CriticalAmmo: 5
+    FireTime: 0.1
+    Damage: 22
+    BodyPartDamageModif: 0.5
+    MaxRangeDamage: 20
+    EffectiveRange: 45
+    MaxRange: 65
+    Speed: 200
+    Impuls: 1500
+    Dispersion: 2
+    DispersionAddMove: 6
+    DispersionAddShoot: 2
+    UpgradeRank: 12
+  - MoneyCost: 25000
+    GoldCost: 0
+    MaxAmmoInClip: 30
+    MaxAmmoInWeapon: 150
+    CriticalAmmo: 5
+    FireTime: 0.1
+    Damage: 40
+    BodyPartDamageModif: 0.5
+    MaxRangeDamage: 30
+    EffectiveRange: 45
+    MaxRange: 65
+    Speed: 200
+    Impuls: 1500
+    Dispersion: 1
+    DispersionAddMove: 6
+    DispersionAddShoot: 2
+    UpgradeRank: 17
+  - MoneyCost: 75000
+    GoldCost: 0
+    MaxAmmoInClip: 30
+    MaxAmmoInWeapon: 150
+    CriticalAmmo: 5
+    FireTime: 0.1
+    Damage: 60
+    BodyPartDamageModif: 0.5
+    MaxRangeDamage: 50
+    EffectiveRange: 45
+    MaxRange: 65
+    Speed: 200
+    Impuls: 1500
+    Dispersion: 1
+    DispersionAddMove: 6
+    DispersionAddShoot: 1
+    UpgradeRank: 28
+--- !u!1 &1522811506206372
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4760548609731930}
+  - 114: {fileID: 114610615939214317}
+  m_Layer: 0
+  m_Name: AlienGun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4760548609731930
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1522811506206372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 1
+--- !u!114 &114610615939214317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1522811506206372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1811326008
+  ID: 22
+  Name: 3029200
+  Description: 3029205
+  Rank: 5
+  ShopWidgetPrefab: {fileID: 4119293914860820, guid: 20bc420517d97584897abbc3458a1265, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4545390792286291, guid: ab1590a42fd0e384793c51aa441d564b, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 1
+  ProjectileType: 11
+  FireType: 1
+  AimCross: 0
+  CanAim: 1
+  AimFov: 25
+  Upgrades:
+  - MoneyCost: 0
+    GoldCost: 120
+    MaxAmmoInClip: 3
+    MaxAmmoInWeapon: 21
+    CriticalAmmo: 2
+    FireTime: 1
+    Damage: 110
+    BodyPartDamageModif: 0
+    MaxRangeDamage: 20
+    EffectiveRange: 10
+    MaxRange: 15
+    Speed: 200
+    Impuls: 1300
+    Dispersion: 0
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 5
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 4
+    MaxAmmoInWeapon: 21
+    CriticalAmmo: 2
+    FireTime: 1
+    Damage: 200
+    BodyPartDamageModif: 0.1
+    MaxRangeDamage: 50
+    EffectiveRange: 10
+    MaxRange: 15
+    Speed: 200
+    Impuls: 1300
+    Dispersion: 0
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 12
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 5
+    MaxAmmoInWeapon: 21
+    CriticalAmmo: 2
+    FireTime: 1
+    Damage: 300
+    BodyPartDamageModif: 0.1
+    MaxRangeDamage: 70
+    EffectiveRange: 10
+    MaxRange: 15
+    Speed: 200
+    Impuls: 1300
+    Dispersion: 0
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 22
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 7
+    MaxAmmoInWeapon: 21
+    CriticalAmmo: 2
+    FireTime: 1
+    Damage: 400
+    BodyPartDamageModif: 0.1
+    MaxRangeDamage: 100
+    EffectiveRange: 10
+    MaxRange: 15
+    Speed: 200
+    Impuls: 1300
+    Dispersion: 0
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 33
+--- !u!1 &1420413048020618
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4989272659391431}
+  - 114: {fileID: 114461872150223865}
+  m_Layer: 0
+  m_Name: GrenadeLauncher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4989272659391431
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1420413048020618}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 2
+--- !u!114 &114461872150223865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1420413048020618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1692363557
+  ID: 24
+  Name: 3029220
+  Description: 3029225
+  Rank: 4
+  ShopWidgetPrefab: {fileID: 4934783731112378, guid: 7710242353d42e74aaa4151ac579691f, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4413447676819327, guid: b8b9dde583089ab48a2db9e3b417721b, type: 2}
+  SaleInPercent: 0
+  NewInShop: 1
+  WeaponType: 3
+  ProjectileType: 13
+  FireType: 1
+  AimCross: 0
+  CanAim: 1
+  AimFov: 35
+  Upgrades:
+  - MoneyCost: 0
+    GoldCost: 240
+    MaxAmmoInClip: 5
+    MaxAmmoInWeapon: 25
+    CriticalAmmo: 2
+    FireTime: 0.7
+    Damage: 90
+    BodyPartDamageModif: 2
+    MaxRangeDamage: 90
+    EffectiveRange: 50
+    MaxRange: 50
+    Speed: 15
+    Impuls: 1800
+    Dispersion: 0
+    DispersionAddMove: 0
+    DispersionAddShoot: 0
+    UpgradeRank: 4
+  - MoneyCost: 40000
+    GoldCost: 0
+    MaxAmmoInClip: 6
+    MaxAmmoInWeapon: 25
+    CriticalAmmo: 2
+    FireTime: 0.7
+    Damage: 180
+    BodyPartDamageModif: 2
+    MaxRangeDamage: 180
+    EffectiveRange: 50
+    MaxRange: 50
+    Speed: 15
+    Impuls: 1800
+    Dispersion: 0
+    DispersionAddMove: 0
+    DispersionAddShoot: 0
+    UpgradeRank: 14
+  - MoneyCost: 85000
+    GoldCost: 0
+    MaxAmmoInClip: 7
+    MaxAmmoInWeapon: 25
+    CriticalAmmo: 2
+    FireTime: 0.7
+    Damage: 310
+    BodyPartDamageModif: 2
+    MaxRangeDamage: 310
+    EffectiveRange: 50
+    MaxRange: 50
+    Speed: 15
+    Impuls: 1800
+    Dispersion: 0
+    DispersionAddMove: 0
+    DispersionAddShoot: 0
+    UpgradeRank: 23
+  - MoneyCost: 160000
+    GoldCost: 0
+    MaxAmmoInClip: 8
+    MaxAmmoInWeapon: 25
+    CriticalAmmo: 2
+    FireTime: 0.7
+    Damage: 550
+    BodyPartDamageModif: 2
+    MaxRangeDamage: 550
+    EffectiveRange: 50
+    MaxRange: 50
+    Speed: 15
+    Impuls: 1800
+    Dispersion: 0
+    DispersionAddMove: 0
+    DispersionAddShoot: 0
+    UpgradeRank: 32
+--- !u!1 &1362924143061894
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4820523799673116}
+  - 114: {fileID: 114215371621437779}
+  m_Layer: 0
+  m_Name: Propeller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4820523799673116
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1362924143061894}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 3
+--- !u!114 &114215371621437779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1362924143061894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 469678289
+  ID: 19
+  Name: 3029170
+  Description: 3029175
+  Rank: 4
+  ShopWidgetPrefab: {fileID: 4647282059754366, guid: d78f72aabc3eb164e84f98a1b5ca5e11, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4691612836478178, guid: b2cc616a87cfbd848b927161bca53d2b, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 6
+  ProjectileType: 10
+  FireType: 1
+  AimCross: 0
+  CanAim: 0
+  AimFov: 55
+  Upgrades:
+  - MoneyCost: 0
+    GoldCost: 110
+    MaxAmmoInClip: 220
+    MaxAmmoInWeapon: 0
+    CriticalAmmo: 20
+    FireTime: 0.12
+    Damage: 19
+    BodyPartDamageModif: 10
+    MaxRangeDamage: 0
+    EffectiveRange: 1.55
+    MaxRange: 1.55
+    Speed: 200
+    Impuls: 1500
+    Dispersion: 0
+    DispersionAddMove: 0
+    DispersionAddShoot: 0
+    UpgradeRank: 4
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 220
+    MaxAmmoInWeapon: 0
+    CriticalAmmo: 20
+    FireTime: 0.12
+    Damage: 39
+    BodyPartDamageModif: 10
+    MaxRangeDamage: 0
+    EffectiveRange: 1.55
+    MaxRange: 1.55
+    Speed: 200
+    Impuls: 1500
+    Dispersion: 0
+    DispersionAddMove: 0
+    DispersionAddShoot: 0
+    UpgradeRank: 12
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 220
+    MaxAmmoInWeapon: 0
+    CriticalAmmo: 20
+    FireTime: 0.12
+    Damage: 60
+    BodyPartDamageModif: 10
+    MaxRangeDamage: 0
+    EffectiveRange: 1.55
+    MaxRange: 1.55
+    Speed: 200
+    Impuls: 1500
+    Dispersion: 0
+    DispersionAddMove: 0
+    DispersionAddShoot: 0
+    UpgradeRank: 23
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 220
+    MaxAmmoInWeapon: 0
+    CriticalAmmo: 20
+    FireTime: 0.12
+    Damage: 96
+    BodyPartDamageModif: 10
+    MaxRangeDamage: 0
+    EffectiveRange: 1.55
+    MaxRange: 1.55
+    Speed: 200
+    Impuls: 1500
+    Dispersion: 0
+    DispersionAddMove: 0
+    DispersionAddShoot: 0
+    UpgradeRank: 32
+--- !u!1 &1979688313314151
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4688392070456739}
+  - 114: {fileID: 114439432089043656}
+  m_Layer: 0
+  m_Name: Lewis
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4688392070456739
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1979688313314151}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 4
+--- !u!114 &114439432089043656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1979688313314151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1231180873
+  ID: 21
+  Name: 3029190
+  Description: 3029195
+  Rank: 12
+  ShopWidgetPrefab: {fileID: 4845430105172289, guid: de7cac7f0e8fee049a54a2e25c75603b, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4456656667862981, guid: 8397ebb6295d4b64cb36883996d2bc98, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 5
+  ProjectileType: 4
+  FireType: 1
+  AimCross: 0
+  CanAim: 1
+  AimFov: 35
+  Upgrades:
+  - MoneyCost: 0
+    GoldCost: 110
+    MaxAmmoInClip: 35
+    MaxAmmoInWeapon: 150
+    CriticalAmmo: 5
+    FireTime: 0.1
+    Damage: 26
+    BodyPartDamageModif: 0.75
+    MaxRangeDamage: 12
+    EffectiveRange: 25
+    MaxRange: 30
+    Speed: 200
+    Impuls: 1700
+    Dispersion: 2
+    DispersionAddMove: 4
+    DispersionAddShoot: 3
+    UpgradeRank: 12
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 35
+    MaxAmmoInWeapon: 150
+    CriticalAmmo: 5
+    FireTime: 0.1
+    Damage: 45
+    BodyPartDamageModif: 0.75
+    MaxRangeDamage: 22
+    EffectiveRange: 25
+    MaxRange: 30
+    Speed: 200
+    Impuls: 1700
+    Dispersion: 2
+    DispersionAddMove: 4
+    DispersionAddShoot: 3
+    UpgradeRank: 18
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 35
+    MaxAmmoInWeapon: 150
+    CriticalAmmo: 5
+    FireTime: 0.1
+    Damage: 70
+    BodyPartDamageModif: 0.75
+    MaxRangeDamage: 35
+    EffectiveRange: 25
+    MaxRange: 30
+    Speed: 200
+    Impuls: 1700
+    Dispersion: 2
+    DispersionAddMove: 4
+    DispersionAddShoot: 2
+    UpgradeRank: 30
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 40
+    MaxAmmoInWeapon: 150
+    CriticalAmmo: 5
+    FireTime: 0.1
+    Damage: 100
+    BodyPartDamageModif: 0.75
+    MaxRangeDamage: 50
+    EffectiveRange: 25
+    MaxRange: 30
+    Speed: 200
+    Impuls: 1700
+    Dispersion: 1
+    DispersionAddMove: 4
+    DispersionAddShoot: 2
+    UpgradeRank: 43
+--- !u!1 &1510907697101383
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4855393021344053}
+  - 114: {fileID: 114594228847312884}
+  m_Layer: 0
+  m_Name: Chainsaw
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4855393021344053
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510907697101383}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 5
+--- !u!114 &114594228847312884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510907697101383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1988186700
+  ID: 18
+  Name: 3029160
+  Description: 3029165
+  Rank: 3
+  ShopWidgetPrefab: {fileID: 4139733396599787, guid: 0158d5bde4b84774984b42db245faf0b, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4643622196856387, guid: ffc87e1edb87fbf42b3951c56bf87b26, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 6
+  ProjectileType: 10
+  FireType: 1
+  AimCross: 0
+  CanAim: 0
+  AimFov: 55
+  Upgrades:
+  - MoneyCost: 5000
+    GoldCost: 0
+    MaxAmmoInClip: 240
+    MaxAmmoInWeapon: 0
+    CriticalAmmo: 20
+    FireTime: 0.12
+    Damage: 7.44
+    BodyPartDamageModif: 7
+    MaxRangeDamage: 0
+    EffectiveRange: 1.7
+    MaxRange: 1.7
+    Speed: 200
+    Impuls: 1500
+    Dispersion: 0
+    DispersionAddMove: 0
+    DispersionAddShoot: 0
+    UpgradeRank: 3
+  - MoneyCost: 9000
+    GoldCost: 0
+    MaxAmmoInClip: 240
+    MaxAmmoInWeapon: 0
+    CriticalAmmo: 20
+    FireTime: 0.12
+    Damage: 13.8
+    BodyPartDamageModif: 7
+    MaxRangeDamage: 0
+    EffectiveRange: 1.7
+    MaxRange: 1.7
+    Speed: 200
+    Impuls: 1500
+    Dispersion: 0
+    DispersionAddMove: 0
+    DispersionAddShoot: 0
+    UpgradeRank: 12
+  - MoneyCost: 20000
+    GoldCost: 0
+    MaxAmmoInClip: 240
+    MaxAmmoInWeapon: 0
+    CriticalAmmo: 20
+    FireTime: 0.12
+    Damage: 24
+    BodyPartDamageModif: 7
+    MaxRangeDamage: 0
+    EffectiveRange: 1.7
+    MaxRange: 1.7
+    Speed: 200
+    Impuls: 1500
+    Dispersion: 0
+    DispersionAddMove: 0
+    DispersionAddShoot: 0
+    UpgradeRank: 17
+  - MoneyCost: 45000
+    GoldCost: 0
+    MaxAmmoInClip: 240
+    MaxAmmoInWeapon: 0
+    CriticalAmmo: 20
+    FireTime: 0.12
+    Damage: 54
+    BodyPartDamageModif: 7
+    MaxRangeDamage: 0
+    EffectiveRange: 1.7
+    MaxRange: 1.7
+    Speed: 200
+    Impuls: 1500
+    Dispersion: 0
+    DispersionAddMove: 0
+    DispersionAddShoot: 0
+    UpgradeRank: 28
+--- !u!1 &1907184371444711
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4991711627501154}
+  - 114: {fileID: 114416962444270710}
+  m_Layer: 0
+  m_Name: Bren
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4991711627501154
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1907184371444711}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 6
+--- !u!114 &114416962444270710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1907184371444711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 2021025180
+  ID: 12
+  Name: 3029120
+  Description: 3029125
+  Rank: 13
+  ShopWidgetPrefab: {fileID: 4160404501267005, guid: ba0d1fad303cadc43abdccdd6575b519, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4478703504931709, guid: 01b21430843dcc74aaa0e242ebaf6302, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 5
+  ProjectileType: 4
+  FireType: 1
+  AimCross: 1
+  CanAim: 1
+  AimFov: 40
+  Upgrades:
+  - MoneyCost: 12000
+    GoldCost: 0
+    MaxAmmoInClip: 25
+    MaxAmmoInWeapon: 130
+    CriticalAmmo: 5
+    FireTime: 0.125
+    Damage: 28.75
+    BodyPartDamageModif: 0.75
+    MaxRangeDamage: 15
+    EffectiveRange: 60
+    MaxRange: 80
+    Speed: 200
+    Impuls: 1700
+    Dispersion: 1.5
+    DispersionAddMove: 7
+    DispersionAddShoot: 1.5
+    UpgradeRank: 13
+  - MoneyCost: 30000
+    GoldCost: 0
+    MaxAmmoInClip: 25
+    MaxAmmoInWeapon: 130
+    CriticalAmmo: 5
+    FireTime: 0.125
+    Damage: 50
+    BodyPartDamageModif: 0.75
+    MaxRangeDamage: 25
+    EffectiveRange: 60
+    MaxRange: 80
+    Speed: 200
+    Impuls: 1700
+    Dispersion: 1
+    DispersionAddMove: 6
+    DispersionAddShoot: 1.5
+    UpgradeRank: 20
+  - MoneyCost: 90000
+    GoldCost: 0
+    MaxAmmoInClip: 28
+    MaxAmmoInWeapon: 130
+    CriticalAmmo: 5
+    FireTime: 0.125
+    Damage: 80
+    BodyPartDamageModif: 0.75
+    MaxRangeDamage: 40
+    EffectiveRange: 60
+    MaxRange: 80
+    Speed: 200
+    Impuls: 1700
+    Dispersion: 1
+    DispersionAddMove: 6
+    DispersionAddShoot: 1.5
+    UpgradeRank: 29
+  - MoneyCost: 100000
+    GoldCost: 0
+    MaxAmmoInClip: 30
+    MaxAmmoInWeapon: 130
+    CriticalAmmo: 5
+    FireTime: 0.125
+    Damage: 110
+    BodyPartDamageModif: 0.75
+    MaxRangeDamage: 60
+    EffectiveRange: 60
+    MaxRange: 80
+    Speed: 200
+    Impuls: 1700
+    Dispersion: 1
+    DispersionAddMove: 6
+    DispersionAddShoot: 1.5
+    UpgradeRank: 36
+--- !u!1 &1511352424822189
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4072304827713423}
+  - 114: {fileID: 114821048092310226}
+  m_Layer: 0
+  m_Name: Winchester
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4072304827713423
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1511352424822189}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 7
+--- !u!114 &114821048092310226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1511352424822189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1692363556
+  ID: 20
+  Name: 3029180
+  Description: 3029185
+  Rank: 3
+  ShopWidgetPrefab: {fileID: 4404602112669934, guid: aadb80181a0c7e54f8b63633b3499805, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4605063565104356, guid: a356fcf444061154f8a022604a7b3ad6, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 3
+  ProjectileType: 3
+  FireType: 1
+  AimCross: 0
+  CanAim: 1
+  AimFov: 30
+  Upgrades:
+  - MoneyCost: 0
+    GoldCost: 100
+    MaxAmmoInClip: 10
+    MaxAmmoInWeapon: 60
+    CriticalAmmo: 2
+    FireTime: 0.45
+    Damage: 34
+    BodyPartDamageModif: 0.25
+    MaxRangeDamage: 12
+    EffectiveRange: 20
+    MaxRange: 25
+    Speed: 200
+    Impuls: 1800
+    Dispersion: 1
+    DispersionAddMove: 3
+    DispersionAddShoot: 1
+    UpgradeRank: 3
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 11
+    MaxAmmoInWeapon: 60
+    CriticalAmmo: 2
+    FireTime: 0.45
+    Damage: 60
+    BodyPartDamageModif: 0.25
+    MaxRangeDamage: 25
+    EffectiveRange: 20
+    MaxRange: 25
+    Speed: 200
+    Impuls: 1800
+    Dispersion: 1
+    DispersionAddMove: 3
+    DispersionAddShoot: 1
+    UpgradeRank: 10
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 12
+    MaxAmmoInWeapon: 60
+    CriticalAmmo: 2
+    FireTime: 0.45
+    Damage: 120
+    BodyPartDamageModif: 0.25
+    MaxRangeDamage: 60
+    EffectiveRange: 20
+    MaxRange: 25
+    Speed: 200
+    Impuls: 1800
+    Dispersion: 1
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 18
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 12
+    MaxAmmoInWeapon: 60
+    CriticalAmmo: 2
+    FireTime: 0.45
+    Damage: 279
+    BodyPartDamageModif: 0.25
+    MaxRangeDamage: 100
+    EffectiveRange: 20
+    MaxRange: 25
+    Speed: 200
+    Impuls: 1800
+    Dispersion: 1
+    DispersionAddMove: 2
+    DispersionAddShoot: 0
+    UpgradeRank: 33
+--- !u!1 &1495468773489911
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4468589577754392}
+  - 114: {fileID: 114024273236702362}
+  m_Layer: 0
+  m_Name: M4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4468589577754392
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1495468773489911}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 8
+--- !u!114 &114024273236702362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1495468773489911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1739138940
+  ID: 3
+  Name: 3029010
+  Description: 3029015
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4522490757267319, guid: 965fe06bd37843b4f8f75e391111b22f, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4702773292314413, guid: 4a5a5cff35df1af4ba8663682c84f0c0, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 3
+  ProjectileType: 3
+  FireType: 1
+  AimCross: 0
+  CanAim: 1
+  AimFov: 30
+  Upgrades:
+  - MoneyCost: 0
+    GoldCost: 100
+    MaxAmmoInClip: 30
+    MaxAmmoInWeapon: 160
+    CriticalAmmo: 5
+    FireTime: 0.1
+    Damage: 11.5
+    BodyPartDamageModif: 1
+    MaxRangeDamage: 8
+    EffectiveRange: 35
+    MaxRange: 45
+    Speed: 200
+    Impuls: 1400
+    Dispersion: 2
+    DispersionAddMove: 4
+    DispersionAddShoot: 1
+    UpgradeRank: 0
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 35
+    MaxAmmoInWeapon: 160
+    CriticalAmmo: 5
+    FireTime: 0.1
+    Damage: 20
+    BodyPartDamageModif: 0.3333
+    MaxRangeDamage: 12
+    EffectiveRange: 35
+    MaxRange: 45
+    Speed: 200
+    Impuls: 1400
+    Dispersion: 2
+    DispersionAddMove: 4
+    DispersionAddShoot: 1
+    UpgradeRank: 8
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 40
+    MaxAmmoInWeapon: 160
+    CriticalAmmo: 5
+    FireTime: 0.1
+    Damage: 33
+    BodyPartDamageModif: 0.3333
+    MaxRangeDamage: 20
+    EffectiveRange: 35
+    MaxRange: 45
+    Speed: 200
+    Impuls: 1400
+    Dispersion: 2
+    DispersionAddMove: 4
+    DispersionAddShoot: 1
+    UpgradeRank: 15
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 50
+    MaxAmmoInWeapon: 160
+    CriticalAmmo: 5
+    FireTime: 0.1
+    Damage: 57
+    BodyPartDamageModif: 0.3333
+    MaxRangeDamage: 35
+    EffectiveRange: 35
+    MaxRange: 45
+    Speed: 200
+    Impuls: 1400
+    Dispersion: 0
+    DispersionAddMove: 4
+    DispersionAddShoot: 1
+    UpgradeRank: 22
+--- !u!1 &1274983151041266
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4496642650844894}
+  - 114: {fileID: 114772076412828952}
+  m_Layer: 0
+  m_Name: Striker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4496642650844894
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1274983151041266}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 9
+--- !u!114 &114772076412828952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1274983151041266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 27679246
+  ID: 4
+  Name: 3029020
+  Description: 3029025
+  Rank: 15
+  ShopWidgetPrefab: {fileID: 4005315081675501, guid: 8d57b320831ecfb459179b712b9adf17, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4245765161551032, guid: 8a45fdb3bb18036479e38dfbaad0b872, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 4
+  ProjectileType: 5
+  FireType: 1
+  AimCross: 0
+  CanAim: 1
+  AimFov: 35
+  Upgrades:
+  - MoneyCost: 20000
+    GoldCost: 0
+    MaxAmmoInClip: 12
+    MaxAmmoInWeapon: 24
+    CriticalAmmo: 2
+    FireTime: 0.6
+    Damage: 198
+    BodyPartDamageModif: 1
+    MaxRangeDamage: 60
+    EffectiveRange: 6
+    MaxRange: 8.5
+    Speed: 200
+    Impuls: 2500
+    Dispersion: 6
+    DispersionAddMove: 7
+    DispersionAddShoot: 5
+    UpgradeRank: 15
+  - MoneyCost: 45000
+    GoldCost: 0
+    MaxAmmoInClip: 12
+    MaxAmmoInWeapon: 24
+    CriticalAmmo: 2
+    FireTime: 0.6
+    Damage: 360
+    BodyPartDamageModif: 1
+    MaxRangeDamage: 120
+    EffectiveRange: 6
+    MaxRange: 8.5
+    Speed: 200
+    Impuls: 2500
+    Dispersion: 6
+    DispersionAddMove: 7
+    DispersionAddShoot: 5
+    UpgradeRank: 22
+  - MoneyCost: 90000
+    GoldCost: 0
+    MaxAmmoInClip: 12
+    MaxAmmoInWeapon: 24
+    CriticalAmmo: 2
+    FireTime: 0.6
+    Damage: 500
+    BodyPartDamageModif: 1
+    MaxRangeDamage: 160
+    EffectiveRange: 7
+    MaxRange: 9
+    Speed: 200
+    Impuls: 2500
+    Dispersion: 5
+    DispersionAddMove: 7
+    DispersionAddShoot: 5
+    UpgradeRank: 33
+  - MoneyCost: 150000
+    GoldCost: 0
+    MaxAmmoInClip: 12
+    MaxAmmoInWeapon: 24
+    CriticalAmmo: 2
+    FireTime: 0.6
+    Damage: 690
+    BodyPartDamageModif: 1
+    MaxRangeDamage: 190
+    EffectiveRange: 7
+    MaxRange: 9
+    Speed: 200
+    Impuls: 2500
+    Dispersion: 5
+    DispersionAddMove: 7
+    DispersionAddShoot: 5
+    UpgradeRank: 43
+--- !u!1 &1778629734443667
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4897247201268696}
+  - 114: {fileID: 114447694648516929}
+  m_Layer: 0
+  m_Name: Uzi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4897247201268696
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1778629734443667}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 10
+--- !u!114 &114447694648516929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1778629734443667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 628968054
+  ID: 2
+  Name: 3029070
+  Description: 3029075
+  Rank: 9
+  ShopWidgetPrefab: {fileID: 4241312698883487, guid: 26ab1f64db6a12f4292ca503c82a5c61, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4989499265228971, guid: ada1491f1efa85b4abceecaeffd94be4, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 2
+  ProjectileType: 2
+  FireType: 1
+  AimCross: 0
+  CanAim: 1
+  AimFov: 40
+  Upgrades:
+  - MoneyCost: 6000
+    GoldCost: 0
+    MaxAmmoInClip: 25
+    MaxAmmoInWeapon: 150
+    CriticalAmmo: 6
+    FireTime: 0.08
+    Damage: 12
+    BodyPartDamageModif: 0
+    MaxRangeDamage: 4
+    EffectiveRange: 8
+    MaxRange: 11
+    Speed: 200
+    Impuls: 1300
+    Dispersion: 3
+    DispersionAddMove: 2
+    DispersionAddShoot: 4
+    UpgradeRank: 9
+  - MoneyCost: 12000
+    GoldCost: 0
+    MaxAmmoInClip: 30
+    MaxAmmoInWeapon: 150
+    CriticalAmmo: 6
+    FireTime: 0.08
+    Damage: 20
+    BodyPartDamageModif: 0.1
+    MaxRangeDamage: 7
+    EffectiveRange: 8
+    MaxRange: 11
+    Speed: 200
+    Impuls: 1300
+    Dispersion: 3
+    DispersionAddMove: 2
+    DispersionAddShoot: 4
+    UpgradeRank: 13
+  - MoneyCost: 50000
+    GoldCost: 0
+    MaxAmmoInClip: 35
+    MaxAmmoInWeapon: 160
+    CriticalAmmo: 6
+    FireTime: 0.08
+    Damage: 40
+    BodyPartDamageModif: 0.2
+    MaxRangeDamage: 12
+    EffectiveRange: 8
+    MaxRange: 11
+    Speed: 200
+    Impuls: 1300
+    Dispersion: 3
+    DispersionAddMove: 2
+    DispersionAddShoot: 3
+    UpgradeRank: 21
+  - MoneyCost: 100000
+    GoldCost: 0
+    MaxAmmoInClip: 40
+    MaxAmmoInWeapon: 160
+    CriticalAmmo: 6
+    FireTime: 0.08
+    Damage: 64
+    BodyPartDamageModif: 0.2
+    MaxRangeDamage: 15
+    EffectiveRange: 8
+    MaxRange: 11
+    Speed: 200
+    Impuls: 1300
+    Dispersion: 3
+    DispersionAddMove: 2
+    DispersionAddShoot: 3
+    UpgradeRank: 39
+--- !u!1 &1776994218152585
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4921671755553720}
+  - 114: {fileID: 114460487748703935}
+  m_Layer: 0
+  m_Name: P90
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4921671755553720
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776994218152585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 11
+--- !u!114 &114460487748703935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776994218152585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1183037361
+  ID: 11
+  Name: 3029110
+  Description: 3029115
+  Rank: 8
+  ShopWidgetPrefab: {fileID: 4816860938026323, guid: 623839f26c1d4634991f61aa4f399801, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4880274487622082, guid: c58bba20cca8cd64a8d32ee489fbbaa6, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 2
+  ProjectileType: 2
+  FireType: 1
+  AimCross: 0
+  CanAim: 1
+  AimFov: 30
+  Upgrades:
+  - MoneyCost: 0
+    GoldCost: 120
+    MaxAmmoInClip: 40
+    MaxAmmoInWeapon: 200
+    CriticalAmmo: 7
+    FireTime: 0.07
+    Damage: 14
+    BodyPartDamageModif: 0.3
+    MaxRangeDamage: 5
+    EffectiveRange: 9
+    MaxRange: 12
+    Speed: 200
+    Impuls: 1200
+    Dispersion: 3
+    DispersionAddMove: 2
+    DispersionAddShoot: 3
+    UpgradeRank: 8
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 40
+    MaxAmmoInWeapon: 200
+    CriticalAmmo: 7
+    FireTime: 0.07
+    Damage: 28
+    BodyPartDamageModif: 0.4
+    MaxRangeDamage: 8
+    EffectiveRange: 9
+    MaxRange: 12
+    Speed: 200
+    Impuls: 1200
+    Dispersion: 3
+    DispersionAddMove: 2
+    DispersionAddShoot: 3
+    UpgradeRank: 16
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 50
+    MaxAmmoInWeapon: 200
+    CriticalAmmo: 7
+    FireTime: 0.07
+    Damage: 42
+    BodyPartDamageModif: 0.5
+    MaxRangeDamage: 12
+    EffectiveRange: 10
+    MaxRange: 13
+    Speed: 200
+    Impuls: 1200
+    Dispersion: 3
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 26
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 50
+    MaxAmmoInWeapon: 200
+    CriticalAmmo: 7
+    FireTime: 0.07
+    Damage: 56
+    BodyPartDamageModif: 0.5
+    MaxRangeDamage: 14
+    EffectiveRange: 10
+    MaxRange: 13
+    Speed: 200
+    Impuls: 1200
+    Dispersion: 3
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 42
+--- !u!1 &1729178148855716
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4432001360148112}
+  - 114: {fileID: 114705987662686989}
+  m_Layer: 0
+  m_Name: WaltherP99
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4432001360148112
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1729178148855716}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 12
+--- !u!114 &114705987662686989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1729178148855716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1400331835
+  ID: 9
+  Name: 3029090
+  Description: 3029095
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4166831118584536, guid: 94df1714604240b42bd263b2ba03165c, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4582110362734094, guid: 29e39296462b06e479cb2a6d25bd2c80, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 1
+  ProjectileType: 1
+  FireType: 1
+  AimCross: 0
+  CanAim: 1
+  AimFov: 35
+  Upgrades:
+  - MoneyCost: 0
+    GoldCost: 50
+    MaxAmmoInClip: 12
+    MaxAmmoInWeapon: 60
+    CriticalAmmo: 2
+    FireTime: 0.3
+    Damage: 20
+    BodyPartDamageModif: 0.1
+    MaxRangeDamage: 7
+    EffectiveRange: 11
+    MaxRange: 14
+    Speed: 200
+    Impuls: 1200
+    Dispersion: 1
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 0
+  - MoneyCost: 0
+    GoldCost: 15
+    MaxAmmoInClip: 14
+    MaxAmmoInWeapon: 60
+    CriticalAmmo: 2
+    FireTime: 0.3
+    Damage: 30
+    BodyPartDamageModif: 0.15
+    MaxRangeDamage: 14
+    EffectiveRange: 11
+    MaxRange: 14
+    Speed: 200
+    Impuls: 1200
+    Dispersion: 1
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 4
+  - MoneyCost: 0
+    GoldCost: 20
+    MaxAmmoInClip: 14
+    MaxAmmoInWeapon: 60
+    CriticalAmmo: 2
+    FireTime: 0.3
+    Damage: 60
+    BodyPartDamageModif: 0.2
+    MaxRangeDamage: 28
+    EffectiveRange: 11
+    MaxRange: 14
+    Speed: 200
+    Impuls: 1200
+    Dispersion: 0
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 7
+  - MoneyCost: 0
+    GoldCost: 20
+    MaxAmmoInClip: 14
+    MaxAmmoInWeapon: 60
+    CriticalAmmo: 2
+    FireTime: 0.3
+    Damage: 110
+    BodyPartDamageModif: 0.2
+    MaxRangeDamage: 56
+    EffectiveRange: 12
+    MaxRange: 15
+    Speed: 200
+    Impuls: 1200
+    Dispersion: 0
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 14
+--- !u!1 &1966458183543260
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4406577635562198}
+  - 114: {fileID: 114685796056427061}
+  m_Layer: 0
+  m_Name: Scorpion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4406577635562198
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1966458183543260}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 13
+--- !u!114 &114685796056427061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1966458183543260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 791718014
+  ID: 10
+  Name: 3029100
+  Description: 3029105
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4810086472464507, guid: 13a8d92bc26e03d42ace17c94b3b45ce, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4177287058880823, guid: 6af204c539d90a943819a32e9be7cd85, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 2
+  ProjectileType: 2
+  FireType: 1
+  AimCross: 0
+  CanAim: 1
+  AimFov: 40
+  Upgrades:
+  - MoneyCost: 2500
+    GoldCost: 0
+    MaxAmmoInClip: 20
+    MaxAmmoInWeapon: 160
+    CriticalAmmo: 7
+    FireTime: 0.07
+    Damage: 6.5
+    BodyPartDamageModif: 0
+    MaxRangeDamage: 2
+    EffectiveRange: 8
+    MaxRange: 11
+    Speed: 200
+    Impuls: 1900
+    Dispersion: 3
+    DispersionAddMove: 1
+    DispersionAddShoot: 5
+    UpgradeRank: 2
+  - MoneyCost: 7000
+    GoldCost: 0
+    MaxAmmoInClip: 25
+    MaxAmmoInWeapon: 160
+    CriticalAmmo: 7
+    FireTime: 0.07
+    Damage: 13.3
+    BodyPartDamageModif: 0.1
+    MaxRangeDamage: 4
+    EffectiveRange: 8
+    MaxRange: 11
+    Speed: 200
+    Impuls: 1900
+    Dispersion: 3
+    DispersionAddMove: 1
+    DispersionAddShoot: 4
+    UpgradeRank: 7
+  - MoneyCost: 18000
+    GoldCost: 0
+    MaxAmmoInClip: 30
+    MaxAmmoInWeapon: 160
+    CriticalAmmo: 7
+    FireTime: 0.07
+    Damage: 23.1
+    BodyPartDamageModif: 0.15
+    MaxRangeDamage: 8
+    EffectiveRange: 8
+    MaxRange: 11
+    Speed: 200
+    Impuls: 1900
+    Dispersion: 3
+    DispersionAddMove: 1
+    DispersionAddShoot: 4
+    UpgradeRank: 16
+  - MoneyCost: 55000
+    GoldCost: 0
+    MaxAmmoInClip: 33
+    MaxAmmoInWeapon: 160
+    CriticalAmmo: 7
+    FireTime: 0.07
+    Damage: 39.9
+    BodyPartDamageModif: 0.2
+    MaxRangeDamage: 12
+    EffectiveRange: 9
+    MaxRange: 12
+    Speed: 200
+    Impuls: 1900
+    Dispersion: 3
+    DispersionAddMove: 1
+    DispersionAddShoot: 4
+    UpgradeRank: 24
+--- !u!1 &1104285764846702
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4894597900346528}
+  - 114: {fileID: 114722728010546032}
+  m_Layer: 0
+  m_Name: Remington870
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4894597900346528
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1104285764846702}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 14
+--- !u!114 &114722728010546032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1104285764846702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 31470016
+  ID: 6
+  Name: 3029050
+  Description: 3029055
+  Rank: 5
+  ShopWidgetPrefab: {fileID: 4066459418980517, guid: 427ce4cb27eefef448de4befdab22777, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4785135174476628, guid: 640effabb2c17a54b8cfcea3328d80ec, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 4
+  ProjectileType: 5
+  FireType: 1
+  AimCross: 1
+  CanAim: 1
+  AimFov: 45
+  Upgrades:
+  - MoneyCost: 5000
+    GoldCost: 0
+    MaxAmmoInClip: 4
+    MaxAmmoInWeapon: 24
+    CriticalAmmo: 2
+    FireTime: 0.8
+    Damage: 80
+    BodyPartDamageModif: 1
+    MaxRangeDamage: 20
+    EffectiveRange: 5
+    MaxRange: 8
+    Speed: 200
+    Impuls: 2500
+    Dispersion: 7
+    DispersionAddMove: 9
+    DispersionAddShoot: 5
+    UpgradeRank: 5
+  - MoneyCost: 8000
+    GoldCost: 0
+    MaxAmmoInClip: 5
+    MaxAmmoInWeapon: 24
+    CriticalAmmo: 2
+    FireTime: 0.8
+    Damage: 140
+    BodyPartDamageModif: 1
+    MaxRangeDamage: 40
+    EffectiveRange: 5
+    MaxRange: 8
+    Speed: 200
+    Impuls: 2500
+    Dispersion: 7
+    DispersionAddMove: 8
+    DispersionAddShoot: 5
+    UpgradeRank: 9
+  - MoneyCost: 16000
+    GoldCost: 0
+    MaxAmmoInClip: 6
+    MaxAmmoInWeapon: 24
+    CriticalAmmo: 2
+    FireTime: 0.8
+    Damage: 260
+    BodyPartDamageModif: 1
+    MaxRangeDamage: 80
+    EffectiveRange: 5
+    MaxRange: 8
+    Speed: 200
+    Impuls: 2500
+    Dispersion: 6
+    DispersionAddMove: 8
+    DispersionAddShoot: 5
+    UpgradeRank: 15
+  - MoneyCost: 45000
+    GoldCost: 0
+    MaxAmmoInClip: 6
+    MaxAmmoInWeapon: 24
+    CriticalAmmo: 2
+    FireTime: 0.8
+    Damage: 360
+    BodyPartDamageModif: 1
+    MaxRangeDamage: 120
+    EffectiveRange: 6
+    MaxRange: 8.5
+    Speed: 200
+    Impuls: 2500
+    Dispersion: 6
+    DispersionAddMove: 7
+    DispersionAddShoot: 5
+    UpgradeRank: 25
+--- !u!1 &1725522531825878
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4193757815537513}
+  - 114: {fileID: 114470984277614579}
+  m_Layer: 0
+  m_Name: LeeEnfield303
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4193757815537513
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1725522531825878}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 15
+--- !u!114 &114470984277614579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1725522531825878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1368884524
+  ID: 14
+  Name: 3029140
+  Description: 3029145
+  Rank: 7
+  ShopWidgetPrefab: {fileID: 4330071142132565, guid: 934097e4bcbd59f4b87cacceb02c790d, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4960499518110843, guid: 8eb3c3b5ac982134fa01bfb831cd2035, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 3
+  ProjectileType: 3
+  FireType: 1
+  AimCross: 0
+  CanAim: 1
+  AimFov: 30
+  Upgrades:
+  - MoneyCost: 0
+    GoldCost: 120
+    MaxAmmoInClip: 5
+    MaxAmmoInWeapon: 40
+    CriticalAmmo: 2
+    FireTime: 1.2
+    Damage: 120
+    BodyPartDamageModif: 0.2
+    MaxRangeDamage: 80
+    EffectiveRange: 70
+    MaxRange: 100
+    Speed: 200
+    Impuls: 1800
+    Dispersion: 0
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 7
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 6
+    MaxAmmoInWeapon: 40
+    CriticalAmmo: 2
+    FireTime: 1.2
+    Damage: 230
+    BodyPartDamageModif: 0.25
+    MaxRangeDamage: 140
+    EffectiveRange: 70
+    MaxRange: 100
+    Speed: 200
+    Impuls: 1800
+    Dispersion: 0
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 15
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 6
+    MaxAmmoInWeapon: 40
+    CriticalAmmo: 2
+    FireTime: 1.2
+    Damage: 360
+    BodyPartDamageModif: 0.3
+    MaxRangeDamage: 300
+    EffectiveRange: 70
+    MaxRange: 100
+    Speed: 200
+    Impuls: 1800
+    Dispersion: 0
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 28
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 7
+    MaxAmmoInWeapon: 40
+    CriticalAmmo: 2
+    FireTime: 1.2
+    Damage: 500
+    BodyPartDamageModif: 0.3
+    MaxRangeDamage: 300
+    EffectiveRange: 70
+    MaxRange: 100
+    Speed: 200
+    Impuls: 1800
+    Dispersion: 0
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 40
+--- !u!1 &1847460627179720
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4688798004583165}
+  - 114: {fileID: 114222152101756793}
+  m_Layer: 0
+  m_Name: RemingtonTactics
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4688798004583165
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847460627179720}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 16
+--- !u!114 &114222152101756793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847460627179720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 121399190
+  ID: 7
+  Name: 3029060
+  Description: 3029065
+  Rank: 17
+  ShopWidgetPrefab: {fileID: 4998442785473182, guid: 645e7fac7824231478d1a3839fe55486, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4885365626863217, guid: c1987006b85c6cf4d82df89129e3fbde, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 4
+  ProjectileType: 5
+  FireType: 1
+  AimCross: 0
+  CanAim: 1
+  AimFov: 35
+  Upgrades:
+  - MoneyCost: 20000
+    GoldCost: 0
+    MaxAmmoInClip: 6
+    MaxAmmoInWeapon: 32
+    CriticalAmmo: 2
+    FireTime: 0.8
+    Damage: 280
+    BodyPartDamageModif: 1.25
+    MaxRangeDamage: 70
+    EffectiveRange: 6.5
+    MaxRange: 9
+    Speed: 200
+    Impuls: 2500
+    Dispersion: 6
+    DispersionAddMove: 5
+    DispersionAddShoot: 4
+    UpgradeRank: 17
+  - MoneyCost: 50000
+    GoldCost: 0
+    MaxAmmoInClip: 7
+    MaxAmmoInWeapon: 32
+    CriticalAmmo: 2
+    FireTime: 0.8
+    Damage: 400
+    BodyPartDamageModif: 1.25
+    MaxRangeDamage: 100
+    EffectiveRange: 7
+    MaxRange: 10
+    Speed: 200
+    Impuls: 2500
+    Dispersion: 6
+    DispersionAddMove: 5
+    DispersionAddShoot: 4
+    UpgradeRank: 28
+  - MoneyCost: 65000
+    GoldCost: 0
+    MaxAmmoInClip: 8
+    MaxAmmoInWeapon: 32
+    CriticalAmmo: 2
+    FireTime: 0.8
+    Damage: 520
+    BodyPartDamageModif: 1.25
+    MaxRangeDamage: 140
+    EffectiveRange: 7
+    MaxRange: 10
+    Speed: 200
+    Impuls: 2500
+    Dispersion: 5
+    DispersionAddMove: 5
+    DispersionAddShoot: 4
+    UpgradeRank: 35
+  - MoneyCost: 100000
+    GoldCost: 0
+    MaxAmmoInClip: 10
+    MaxAmmoInWeapon: 32
+    CriticalAmmo: 2
+    FireTime: 0.8
+    Damage: 600
+    BodyPartDamageModif: 1.25
+    MaxRangeDamage: 180
+    EffectiveRange: 7
+    MaxRange: 10
+    Speed: 200
+    Impuls: 2500
+    Dispersion: 5
+    DispersionAddMove: 4
+    DispersionAddShoot: 3
+    UpgradeRank: 46
+--- !u!1 &1207669778006190
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4620952438971117}
+  - 114: {fileID: 114100318875045005}
+  m_Layer: 0
+  m_Name: Lupara
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4620952438971117
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1207669778006190}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 17
+--- !u!114 &114100318875045005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1207669778006190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1697533092
+  ID: 15
+  Name: 3029150
+  Description: 3029155
+  Rank: 6
+  ShopWidgetPrefab: {fileID: 4422691133885788, guid: 399ff470095665142b4c08d94d6d7b9f, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4917001281548472, guid: 8fffacb2dd643b94480a930b8522401a, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 4
+  ProjectileType: 5
+  FireType: 1
+  AimCross: 1
+  CanAim: 1
+  AimFov: 43
+  Upgrades:
+  - MoneyCost: 0
+    GoldCost: 120
+    MaxAmmoInClip: 2
+    MaxAmmoInWeapon: 24
+    CriticalAmmo: 1
+    FireTime: 0.2
+    Damage: 400
+    BodyPartDamageModif: 10
+    MaxRangeDamage: 100
+    EffectiveRange: 4
+    MaxRange: 10
+    Speed: 200
+    Impuls: 2800
+    Dispersion: 20
+    DispersionAddMove: 5
+    DispersionAddShoot: 5
+    UpgradeRank: 6
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 2
+    MaxAmmoInWeapon: 24
+    CriticalAmmo: 1
+    FireTime: 0.2
+    Damage: 700
+    BodyPartDamageModif: 10
+    MaxRangeDamage: 150
+    EffectiveRange: 5
+    MaxRange: 11
+    Speed: 200
+    Impuls: 2800
+    Dispersion: 20
+    DispersionAddMove: 5
+    DispersionAddShoot: 5
+    UpgradeRank: 18
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 2
+    MaxAmmoInWeapon: 24
+    CriticalAmmo: 1
+    FireTime: 0.2
+    Damage: 1000
+    BodyPartDamageModif: 10
+    MaxRangeDamage: 200
+    EffectiveRange: 6
+    MaxRange: 11
+    Speed: 200
+    Impuls: 2800
+    Dispersion: 20
+    DispersionAddMove: 5
+    DispersionAddShoot: 5
+    UpgradeRank: 30
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 2
+    MaxAmmoInWeapon: 24
+    CriticalAmmo: 1
+    FireTime: 0.2
+    Damage: 1500
+    BodyPartDamageModif: 10
+    MaxRangeDamage: 250
+    EffectiveRange: 7
+    MaxRange: 12
+    Speed: 200
+    Impuls: 2800
+    Dispersion: 20
+    DispersionAddMove: 5
+    DispersionAddShoot: 5
+    UpgradeRank: 44
+--- !u!1 &1771432428060067
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4172949352523147}
+  - 114: {fileID: 114429257226808084}
+  m_Layer: 0
+  m_Name: Colt1911
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4172949352523147
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1771432428060067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 18
+--- !u!114 &114429257226808084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1771432428060067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1325168641
+  ID: 1
+  Name: 3029030
+  Description: 3029035
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4649747092431275, guid: b0aecca42eee7a64fad8f923e22b2f16, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4131048382950408, guid: d7db2c1fcb76d3a449afaf0be3aad801, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 1
+  ProjectileType: 1
+  FireType: 1
+  AimCross: 0
+  CanAim: 1
+  AimFov: 40
+  Upgrades:
+  - MoneyCost: 500
+    GoldCost: 0
+    MaxAmmoInClip: 7
+    MaxAmmoInWeapon: 40
+    CriticalAmmo: 2
+    FireTime: 0.35
+    Damage: 10
+    BodyPartDamageModif: 0
+    MaxRangeDamage: 5
+    EffectiveRange: 9
+    MaxRange: 12
+    Speed: 200
+    Impuls: 1300
+    Dispersion: 2
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 0
+  - MoneyCost: 3000
+    GoldCost: 0
+    MaxAmmoInClip: 8
+    MaxAmmoInWeapon: 40
+    CriticalAmmo: 2
+    FireTime: 0.35
+    Damage: 20
+    BodyPartDamageModif: 0
+    MaxRangeDamage: 10
+    EffectiveRange: 9
+    MaxRange: 12
+    Speed: 200
+    Impuls: 1300
+    Dispersion: 1
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 3
+  - MoneyCost: 8000
+    GoldCost: 0
+    MaxAmmoInClip: 9
+    MaxAmmoInWeapon: 40
+    CriticalAmmo: 2
+    FireTime: 0.35
+    Damage: 40
+    BodyPartDamageModif: 0
+    MaxRangeDamage: 20
+    EffectiveRange: 9
+    MaxRange: 12
+    Speed: 200
+    Impuls: 1300
+    Dispersion: 1
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 7
+  - MoneyCost: 25000
+    GoldCost: 0
+    MaxAmmoInClip: 10
+    MaxAmmoInWeapon: 40
+    CriticalAmmo: 2
+    FireTime: 0.35
+    Damage: 80
+    BodyPartDamageModif: 0
+    MaxRangeDamage: 40
+    EffectiveRange: 9
+    MaxRange: 12
+    Speed: 200
+    Impuls: 1300
+    Dispersion: 0
+    DispersionAddMove: 2
+    DispersionAddShoot: 1
+    UpgradeRank: 14
+--- !u!1 &1436752373084053
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4830347837644783}
+  - 114: {fileID: 114589530957774526}
+  m_Layer: 0
+  m_Name: KSG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4830347837644783
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1436752373084053}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 19
+--- !u!114 &114589530957774526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1436752373084053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 937766794
+  ID: 5
+  Name: 3029040
+  Description: 3029045
+  Rank: 11
+  ShopWidgetPrefab: {fileID: 4356555300348075, guid: a58fa1effd374f54caf4a94a715a05b0, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4908732149940185, guid: d606e74c5ffe73b4dbbf5f84d9b3efdf, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 4
+  ProjectileType: 5
+  FireType: 1
+  AimCross: 0
+  CanAim: 1
+  AimFov: 35
+  Upgrades:
+  - MoneyCost: 10000
+    GoldCost: 0
+    MaxAmmoInClip: 5
+    MaxAmmoInWeapon: 25
+    CriticalAmmo: 2
+    FireTime: 0.7
+    Damage: 140
+    BodyPartDamageModif: 1
+    MaxRangeDamage: 40
+    EffectiveRange: 5.5
+    MaxRange: 8.5
+    Speed: 200
+    Impuls: 2500
+    Dispersion: 7
+    DispersionAddMove: 8
+    DispersionAddShoot: 4
+    UpgradeRank: 11
+  - MoneyCost: 20000
+    GoldCost: 0
+    MaxAmmoInClip: 6
+    MaxAmmoInWeapon: 25
+    CriticalAmmo: 2
+    FireTime: 0.7
+    Damage: 259
+    BodyPartDamageModif: 1
+    MaxRangeDamage: 80
+    EffectiveRange: 5.5
+    MaxRange: 8.5
+    Speed: 200
+    Impuls: 2500
+    Dispersion: 6
+    DispersionAddMove: 7
+    DispersionAddShoot: 4
+    UpgradeRank: 20
+  - MoneyCost: 65000
+    GoldCost: 0
+    MaxAmmoInClip: 6
+    MaxAmmoInWeapon: 25
+    CriticalAmmo: 2
+    FireTime: 0.7
+    Damage: 400
+    BodyPartDamageModif: 1
+    MaxRangeDamage: 120
+    EffectiveRange: 6
+    MaxRange: 9
+    Speed: 200
+    Impuls: 2500
+    Dispersion: 6
+    DispersionAddMove: 7
+    DispersionAddShoot: 4
+    UpgradeRank: 28
+  - MoneyCost: 110000
+    GoldCost: 0
+    MaxAmmoInClip: 6
+    MaxAmmoInWeapon: 25
+    CriticalAmmo: 2
+    FireTime: 0.7
+    Damage: 560
+    BodyPartDamageModif: 1
+    MaxRangeDamage: 160
+    EffectiveRange: 6
+    MaxRange: 9
+    Speed: 200
+    Impuls: 2500
+    Dispersion: 6
+    DispersionAddMove: 7
+    DispersionAddShoot: 4
+    UpgradeRank: 40
+--- !u!1 &1735141810754691
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4930231299467897}
+  - 114: {fileID: 114435217167825852}
+  m_Layer: 0
+  m_Name: Minigun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4930231299467897
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1735141810754691}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 20
+--- !u!114 &114435217167825852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1735141810754691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1438563056
+  ID: 8
+  Name: 3029080
+  Description: 3029085
+  Rank: 10
+  ShopWidgetPrefab: {fileID: 4913692392586344, guid: 08986cb6c79a2704dacce7ee639f01e9, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4666744157067313, guid: 9c9f56d9e6dfe094cbf25aa9333644f9, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 5
+  ProjectileType: 4
+  FireType: 1
+  AimCross: 1
+  CanAim: 1
+  AimFov: 47
+  Upgrades:
+  - MoneyCost: 0
+    GoldCost: 260
+    MaxAmmoInClip: 90
+    MaxAmmoInWeapon: 180
+    CriticalAmmo: 20
+    FireTime: 0.075
+    Damage: 21
+    BodyPartDamageModif: 2
+    MaxRangeDamage: 15
+    EffectiveRange: 100
+    MaxRange: 120
+    Speed: 200
+    Impuls: 1900
+    Dispersion: 0
+    DispersionAddMove: 2
+    DispersionAddShoot: 2
+    UpgradeRank: 10
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 100
+    MaxAmmoInWeapon: 180
+    CriticalAmmo: 20
+    FireTime: 0.075
+    Damage: 42
+    BodyPartDamageModif: 2
+    MaxRangeDamage: 25
+    EffectiveRange: 100
+    MaxRange: 120
+    Speed: 200
+    Impuls: 1900
+    Dispersion: 0
+    DispersionAddMove: 2
+    DispersionAddShoot: 2
+    UpgradeRank: 20
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 110
+    MaxAmmoInWeapon: 180
+    CriticalAmmo: 20
+    FireTime: 0.075
+    Damage: 63
+    BodyPartDamageModif: 2
+    MaxRangeDamage: 35
+    EffectiveRange: 100
+    MaxRange: 120
+    Speed: 200
+    Impuls: 1900
+    Dispersion: 0
+    DispersionAddMove: 2
+    DispersionAddShoot: 2
+    UpgradeRank: 30
+  - MoneyCost: 0
+    GoldCost: 40
+    MaxAmmoInClip: 120
+    MaxAmmoInWeapon: 180
+    CriticalAmmo: 20
+    FireTime: 0.075
+    Damage: 75
+    BodyPartDamageModif: 2
+    MaxRangeDamage: 45
+    EffectiveRange: 100
+    MaxRange: 120
+    Speed: 200
+    Impuls: 1900
+    Dispersion: 0
+    DispersionAddMove: 2
+    DispersionAddShoot: 2
+    UpgradeRank: 40
+--- !u!1 &1905074567157769
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4039843141919792}
+  - 114: {fileID: 114468786319247152}
+  m_Layer: 0
+  m_Name: Crossbow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4039843141919792
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905074567157769}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4054585890056595}
+  m_RootOrder: 21
+--- !u!114 &114468786319247152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905074567157769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa97c5f1812392c0f35213965ff3671a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1692363557
+  ID: 23
+  Name: 3029210
+  Description: 3029215
+  Rank: 4
+  ShopWidgetPrefab: {fileID: 4696677584089776, guid: 3e3a44ca638fa1143a510ee262afca61, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4762879824433470, guid: 6561b557cd4636542bf2c46fccb70ea6, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  WeaponType: 3
+  ProjectileType: 12
+  FireType: 1
+  AimCross: 0
+  CanAim: 1
+  AimFov: 35
+  Upgrades:
+  - MoneyCost: 0
+    GoldCost: 210
+    MaxAmmoInClip: 5
+    MaxAmmoInWeapon: 30
+    CriticalAmmo: 2
+    FireTime: 0.8
+    Damage: 90
+    BodyPartDamageModif: 0.666
+    MaxRangeDamage: 90
+    EffectiveRange: 100
+    MaxRange: 100
+    Speed: 35
+    Impuls: 1800
+    Dispersion: 0
+    DispersionAddMove: 0
+    DispersionAddShoot: 0
+    UpgradeRank: 4
+  - MoneyCost: 35000
+    GoldCost: 0
+    MaxAmmoInClip: 6
+    MaxAmmoInWeapon: 30
+    CriticalAmmo: 2
+    FireTime: 0.8
+    Damage: 180
+    BodyPartDamageModif: 0.666
+    MaxRangeDamage: 180
+    EffectiveRange: 100
+    MaxRange: 100
+    Speed: 35
+    Impuls: 1800
+    Dispersion: 0
+    DispersionAddMove: 0
+    DispersionAddShoot: 0
+    UpgradeRank: 13
+  - MoneyCost: 75000
+    GoldCost: 0
+    MaxAmmoInClip: 7
+    MaxAmmoInWeapon: 30
+    CriticalAmmo: 2
+    FireTime: 0.8
+    Damage: 310
+    BodyPartDamageModif: 0.666
+    MaxRangeDamage: 310
+    EffectiveRange: 100
+    MaxRange: 100
+    Speed: 35
+    Impuls: 1800
+    Dispersion: 0
+    DispersionAddMove: 0
+    DispersionAddShoot: 0
+    UpgradeRank: 22
+  - MoneyCost: 150000
+    GoldCost: 0
+    MaxAmmoInClip: 8
+    MaxAmmoInWeapon: 30
+    CriticalAmmo: 2
+    FireTime: 0.8
+    Damage: 550
+    BodyPartDamageModif: 0.666
+    MaxRangeDamage: 550
+    EffectiveRange: 100
+    MaxRange: 100
+    Speed: 35
+    Impuls: 1800
+    Dispersion: 0
+    DispersionAddMove: 0
+    DispersionAddShoot: 0
+    UpgradeRank: 34

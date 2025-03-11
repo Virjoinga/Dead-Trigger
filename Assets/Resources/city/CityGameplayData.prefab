@@ -1,0 +1,2168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1870516328864630}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1870516328864630
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4958560935148629}
+  - 114: {fileID: 114781410229013005}
+  - 114: {fileID: 114954744055935415}
+  - 114: {fileID: 114202250795512967}
+  m_Layer: 0
+  m_Name: CityGameplayData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4958560935148629
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1870516328864630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114781410229013005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1870516328864630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45901c61e539720c1b4d8c8ad8ec9128, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Data:
+  - storyId: 0
+    missionType: 0
+    missionSubtype: GamePlayHeli1
+    storyBound: 3
+    unique: 0
+    levels:
+    - ulicka_01
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 3
+    specialZombies: []
+    m_UID: 73
+  - storyId: 0
+    missionType: 1
+    missionSubtype: GamePlayHeli2
+    storyBound: 3
+    unique: 0
+    levels:
+    - ulicka_01
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 3
+    specialZombies: []
+    m_UID: 72
+  - storyId: 0
+    missionType: 2
+    missionSubtype: GamePlayHeli3
+    storyBound: 3
+    unique: 0
+    levels:
+    - ulicka_night
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 3
+    specialZombies: []
+    m_UID: 71
+  - storyId: 0
+    missionType: 3
+    missionSubtype: GamePlayHeli4
+    storyBound: 3
+    unique: 0
+    levels:
+    - ulicka_night
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 3
+    specialZombies: []
+    m_UID: 70
+  - storyId: 0
+    missionType: 0
+    missionSubtype:
+    storyBound: 4
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 7
+    specialZombies: []
+    m_UID: 105
+  - storyId: 0
+    missionType: 1
+    missionSubtype:
+    storyBound: 4
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 7
+    specialZombies: []
+    m_UID: 104
+  - storyId: 0
+    missionType: 2
+    missionSubtype:
+    storyBound: 4
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 7
+    specialZombies: []
+    m_UID: 103
+  - storyId: 0
+    missionType: 3
+    missionSubtype:
+    storyBound: 4
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 7
+    specialZombies: []
+    m_UID: 102
+  - storyId: 1
+    missionType: 0
+    missionSubtype: GamePlayStory1-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - ulicka_night
+    specialIcon:
+    texts:
+    - m_Caption: 1040100
+      m_Objective: 1040102
+      m_Description: 1040104
+      m_Success: 1040106
+      m_Fail: 1040108
+    difficulty: 1
+    specialSlot: Slot_1.1
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 0
+  - storyId: 2
+    missionType: 1
+    missionSubtype: GamePlayStory2-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - ulicka_night
+    specialIcon: intro
+    texts:
+    - m_Caption: 1040200
+      m_Objective: 1040202
+      m_Description: 1040204
+      m_Success: 1040206
+      m_Fail: 1040208
+    difficulty: 1
+    specialSlot: Slot_2.1
+    specialBonus: 8
+    specialZombies: []
+    m_UID: 1
+  - storyId: 3
+    missionType: 0
+    missionSubtype: GamePlayStory3-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - ulicka_01
+    specialIcon:
+    texts:
+    - m_Caption: 1040300
+      m_Objective: 1040302
+      m_Description: 1040304
+      m_Success: 1040306
+      m_Fail: 1040308
+    difficulty: 1
+    specialSlot: Slot_3.1
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 6
+  - storyId: 5
+    missionType: 3
+    missionSubtype: GamePlayStory4-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - underpass
+    specialIcon:
+    texts:
+    - m_Caption: 1040500
+      m_Objective: 1040502
+      m_Description: 1040504
+      m_Success: 1040506
+      m_Fail: 1040508
+    difficulty: 1
+    specialSlot: Slot_5.1
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 15
+  - storyId: 5
+    missionType: 3
+    missionSubtype: GamePlayStory4-2
+    storyBound: 0
+    unique: 1
+    levels:
+    - ulicka_night
+    specialIcon:
+    texts:
+    - m_Caption: 1040510
+      m_Objective: 1040512
+      m_Description: 1040514
+      m_Success: 1040516
+      m_Fail: 1040518
+    difficulty: 1
+    specialSlot: Slot_5.2
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 17
+  - storyId: 5
+    missionType: 3
+    missionSubtype: GamePlayStory4-3
+    storyBound: 0
+    unique: 1
+    levels:
+    - mall
+    specialIcon:
+    texts:
+    - m_Caption: 1040520
+      m_Objective: 1040522
+      m_Description: 1040524
+      m_Success: 1040526
+      m_Fail: 1040528
+    difficulty: 1
+    specialSlot: Slot_5.3
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 16
+  - storyId: 5
+    missionType: 1
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 34
+  - storyId: 5
+    missionType: 0
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 35
+  - storyId: 5
+    missionType: 3
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 32
+  - storyId: 5
+    missionType: 2
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 33
+  - storyId: 5
+    missionType: 0
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 77
+  - storyId: 5
+    missionType: 1
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 76
+  - storyId: 5
+    missionType: 2
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 75
+  - storyId: 5
+    missionType: 3
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 74
+  - storyId: 6
+    missionType: 3
+    missionSubtype: GamePlayStory5-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - mall
+    specialIcon:
+    texts:
+    - m_Caption: 1040600
+      m_Objective: 1040602
+      m_Description: 1040604
+      m_Success: 1040606
+      m_Fail: 1040608
+    difficulty: 1
+    specialSlot: Slot_6.3
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 18
+  - storyId: 6
+    missionType: 2
+    missionSubtype: GamePlayStory5-2
+    storyBound: 0
+    unique: 1
+    levels:
+    - ulicka_01
+    specialIcon:
+    texts:
+    - m_Caption: 1040610
+      m_Objective: 1040612
+      m_Description: 1040614
+      m_Success: 1040616
+      m_Fail: 1040618
+    difficulty: 1
+    specialSlot: Slot_6.2
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 37
+  - storyId: 6
+    missionType: 0
+    missionSubtype: GamePlayStory5-3
+    storyBound: 0
+    unique: 1
+    levels:
+    - underpass
+    specialIcon:
+    texts:
+    - m_Caption: 1040620
+      m_Objective: 1040622
+      m_Description: 1040624
+      m_Success: 1040626
+      m_Fail: 1040628
+    difficulty: 1
+    specialSlot: Slot_6.1
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 36
+  - storyId: 6
+    missionType: 3
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 27
+  - storyId: 6
+    missionType: 2
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 28
+  - storyId: 6
+    missionType: 1
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 29
+  - storyId: 6
+    missionType: 0
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 30
+  - storyId: 6
+    missionType: 0
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 81
+  - storyId: 6
+    missionType: 1
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 80
+  - storyId: 6
+    missionType: 2
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 79
+  - storyId: 6
+    missionType: 3
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 78
+  - storyId: 7
+    missionType: 0
+    missionSubtype: GamePlayStory7-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - bunkr_2
+    specialIcon:
+    texts:
+    - m_Caption: 1040700
+      m_Objective: 1040702
+      m_Description: 1040704
+      m_Success: 1040706
+      m_Fail: 1040708
+    difficulty: 1
+    specialSlot: bunker
+    specialBonus: 5
+    specialZombies: []
+    m_UID: 39
+  - storyId: 7
+    missionType: 2
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 19
+  - storyId: 7
+    missionType: 3
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 38
+  - storyId: 7
+    missionType: 1
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 20
+  - storyId: 7
+    missionType: 0
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 21
+  - storyId: 8
+    missionType: 0
+    missionSubtype: GamePlayStory7-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - mall
+    specialIcon:
+    texts:
+    - m_Caption: 1040800
+      m_Objective: 1040802
+      m_Description: 1040804
+      m_Success: 1040806
+      m_Fail: 1040808
+    difficulty: 1
+    specialSlot: Slot_8.3
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 41
+  - storyId: 8
+    missionType: 0
+    missionSubtype: GamePlayStory7-2
+    storyBound: 0
+    unique: 1
+    levels:
+    - ulicka_01
+    specialIcon:
+    texts:
+    - m_Caption: 1040810
+      m_Objective: 1040812
+      m_Description: 1040814
+      m_Success: 1040816
+      m_Fail: 1040818
+    difficulty: 1
+    specialSlot: Slot_8.2
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 40
+  - storyId: 8
+    missionType: 2
+    missionSubtype: GamePlayStory7-3
+    storyBound: 0
+    unique: 1
+    levels:
+    - ulicka_night
+    specialIcon:
+    texts:
+    - m_Caption: 1040820
+      m_Objective: 1040822
+      m_Description: 1040824
+      m_Success: 1040826
+      m_Fail: 1040828
+    difficulty: 1
+    specialSlot: Slot_8.1
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 42
+  - storyId: 8
+    missionType: 3
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 0
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 11
+  - storyId: 8
+    missionType: 2
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 0
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 12
+  - storyId: 8
+    missionType: 1
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 0
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 13
+  - storyId: 8
+    missionType: 0
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 0
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 14
+  - storyId: 8
+    missionType: 0
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 85
+  - storyId: 8
+    missionType: 1
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 84
+  - storyId: 8
+    missionType: 2
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 83
+  - storyId: 8
+    missionType: 3
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 82
+  - storyId: 9
+    missionType: 0
+    missionSubtype: GamePlayStory8-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - mall
+    specialIcon:
+    texts:
+    - m_Caption: 1040900
+      m_Objective: 1040902
+      m_Description: 1040904
+      m_Success: 1040906
+      m_Fail: 1040908
+    difficulty: 1
+    specialSlot: Slot_9.1
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 44
+  - storyId: 9
+    missionType: 0
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 88
+  - storyId: 9
+    missionType: 1
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 89
+  - storyId: 9
+    missionType: 2
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 87
+  - storyId: 9
+    missionType: 3
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 86
+  - storyId: 10
+    missionType: 3
+    missionSubtype: GamePlayStory9-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - ulicka_night
+    specialIcon:
+    texts:
+    - m_Caption: 1041000
+      m_Objective: 1041002
+      m_Description: 1041004
+      m_Success: 1041006
+      m_Fail: 1041008
+    difficulty: 1
+    specialSlot: Slot_10.1
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 50
+  - storyId: 10
+    missionType: 0
+    missionSubtype: GamePlayStory9-2
+    storyBound: 0
+    unique: 1
+    levels:
+    - ulicka_night
+    specialIcon:
+    texts:
+    - m_Caption: 1041010
+      m_Objective: 1041012
+      m_Description: 1041014
+      m_Success: 1041016
+      m_Fail: 1041018
+    difficulty: 1
+    specialSlot: Slot_10.2
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 49
+  - storyId: 10
+    missionType: 0
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 48
+  - storyId: 10
+    missionType: 1
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 47
+  - storyId: 10
+    missionType: 2
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 46
+  - storyId: 10
+    missionType: 3
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 45
+  - storyId: 10
+    missionType: 0
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 93
+  - storyId: 10
+    missionType: 1
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 92
+  - storyId: 10
+    missionType: 2
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 91
+  - storyId: 10
+    missionType: 3
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 90
+  - storyId: 11
+    missionType: 2
+    missionSubtype: GamePlayStory11-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - ulicka_01
+    specialIcon:
+    texts:
+    - m_Caption: 1041100
+      m_Objective: 1041102
+      m_Description: 1041104
+      m_Success: 1041106
+      m_Fail: 1041108
+    difficulty: 1
+    specialSlot: Slot_11.1
+    specialBonus: 4
+    specialZombies: []
+    m_UID: 55
+  - storyId: 11
+    missionType: 3
+    missionSubtype: GamePlayStory11-2
+    storyBound: 0
+    unique: 1
+    levels:
+    - bunkr_2b
+    specialIcon:
+    texts:
+    - m_Caption: 1041110
+      m_Objective: 1041112
+      m_Description: 1041114
+      m_Success: 1041116
+      m_Fail: 1041118
+    difficulty: 1
+    specialSlot: Slot_11.2
+    specialBonus: 4
+    specialZombies: []
+    m_UID: 67
+  - storyId: 11
+    missionType: 2
+    missionSubtype: GamePlayStory11-3
+    storyBound: 0
+    unique: 1
+    levels:
+    - ulicka_01
+    specialIcon:
+    texts:
+    - m_Caption: 1041120
+      m_Objective: 1041122
+      m_Description: 1041124
+      m_Success: 1041126
+      m_Fail: 1041128
+    difficulty: 1
+    specialSlot: Slot_11.3
+    specialBonus: 4
+    specialZombies: []
+    m_UID: 68
+  - storyId: 11
+    missionType: 0
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 54
+  - storyId: 11
+    missionType: 1
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 53
+  - storyId: 11
+    missionType: 2
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 52
+  - storyId: 11
+    missionType: 3
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 51
+  - storyId: 11
+    missionType: 0
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 97
+  - storyId: 11
+    missionType: 1
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 96
+  - storyId: 11
+    missionType: 2
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 95
+  - storyId: 11
+    missionType: 3
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 94
+  - storyId: 12
+    missionType: 0
+    missionSubtype: GamePlayStory12-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - bunkr_2b
+    specialIcon:
+    texts:
+    - m_Caption: 1041200
+      m_Objective: 1041202
+      m_Description: 1041204
+      m_Success: 1041206
+      m_Fail: 1041208
+    difficulty: 1
+    specialSlot: bunker
+    specialBonus: 6
+    specialZombies: []
+    m_UID: 60
+  - storyId: 12
+    missionType: 0
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 59
+  - storyId: 12
+    missionType: 1
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 58
+  - storyId: 12
+    missionType: 2
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 57
+  - storyId: 12
+    missionType: 3
+    missionSubtype:
+    storyBound: 1
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 56
+  - storyId: 12
+    missionType: 0
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 101
+  - storyId: 12
+    missionType: 1
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 100
+  - storyId: 12
+    missionType: 2
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 99
+  - storyId: 12
+    missionType: 3
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 98
+  - storyId: 13
+    missionType: 0
+    missionSubtype: GamePlayStoryA-1-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - blue_corridors
+    specialIcon:
+    texts:
+    - m_Caption: 1041300
+      m_Objective: 1041302
+      m_Description: 1041304
+      m_Success: 1041306
+      m_Fail: 1041308
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 109
+  - storyId: 13
+    missionType: 0
+    missionSubtype: GamePlayStoryA-1-2
+    storyBound: 0
+    unique: 1
+    levels:
+    - arealights
+    specialIcon:
+    texts:
+    - m_Caption: 1041310
+      m_Objective: 1041312
+      m_Description: 1041314
+      m_Success: 1041316
+      m_Fail: 1041318
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 122
+  - storyId: 13
+    missionType: 0
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 110
+  - storyId: 13
+    missionType: 1
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 108
+  - storyId: 13
+    missionType: 2
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 107
+  - storyId: 13
+    missionType: 3
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 106
+  - storyId: 14
+    missionType: 3
+    missionSubtype: GamePlayStoryA-2-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - strecha
+    specialIcon:
+    texts:
+    - m_Caption: 1041400
+      m_Objective: 1041402
+      m_Description: 1041404
+      m_Success: 1041406
+      m_Fail: 1041408
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 115
+  - storyId: 14
+    missionType: 0
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 114
+  - storyId: 14
+    missionType: 1
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 113
+  - storyId: 14
+    missionType: 2
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 112
+  - storyId: 14
+    missionType: 3
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 111
+  - storyId: 15
+    missionType: 0
+    missionSubtype: GamePlayStoryA-3-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - bunkr_2b
+    specialIcon:
+    texts:
+    - m_Caption: 1041500
+      m_Objective: 1041502
+      m_Description: 1041504
+      m_Success: 1041506
+      m_Fail: 1041508
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 120
+  - storyId: 15
+    missionType: 0
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 119
+  - storyId: 15
+    missionType: 1
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 118
+  - storyId: 15
+    missionType: 2
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 117
+  - storyId: 15
+    missionType: 3
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 116
+  - storyId: 16
+    missionType: 0
+    missionSubtype: GamePlayStoryA-4-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - bunkr_2b
+    specialIcon:
+    texts:
+    - m_Caption: 1041600
+      m_Objective: 1041602
+      m_Description: 1041604
+      m_Success: 1041606
+      m_Fail: 1041608
+    difficulty: 1
+    specialSlot: Slot_2.1
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 127
+  - storyId: 16
+    missionType: 0
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 126
+  - storyId: 16
+    missionType: 1
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 125
+  - storyId: 16
+    missionType: 2
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 124
+  - storyId: 16
+    missionType: 3
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 123
+  - storyId: 17
+    missionType: 3
+    missionSubtype: GamePlayStoryA-5-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - strecha
+    specialIcon:
+    texts:
+    - m_Caption: 1041700
+      m_Objective: 1041702
+      m_Description: 1041704
+      m_Success: 1041706
+      m_Fail: 1041708
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 132
+  - storyId: 17
+    missionType: 3
+    missionSubtype: GamePlayStoryA-5-2
+    storyBound: 0
+    unique: 1
+    levels:
+    - blue_corridors
+    specialIcon:
+    texts:
+    - m_Caption: 1041710
+      m_Objective: 1041712
+      m_Description: 1041714
+      m_Success: 1041716
+      m_Fail: 1041718
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 133
+  - storyId: 17
+    missionType: 0
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 131
+  - storyId: 17
+    missionType: 1
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 130
+  - storyId: 17
+    missionType: 2
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 129
+  - storyId: 17
+    missionType: 3
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 128
+  - storyId: 18
+    missionType: 2
+    missionSubtype: GamePlayStoryA-6-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - bunkr_2b
+    specialIcon:
+    texts:
+    - m_Caption: 1041800
+      m_Objective: 1041802
+      m_Description: 1041804
+      m_Success: 1041806
+      m_Fail: 1041808
+    difficulty: 1
+    specialSlot: Slot_2.1
+    specialBonus: 5
+    specialZombies: []
+    m_UID: 138
+  - storyId: 18
+    missionType: 0
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 137
+  - storyId: 18
+    missionType: 1
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 136
+  - storyId: 18
+    missionType: 2
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 135
+  - storyId: 18
+    missionType: 3
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 134
+  - storyId: 19
+    missionType: 0
+    missionSubtype: GamePlayStoryA-19-1
+    storyBound: 0
+    unique: 1
+    levels:
+    - bunkr_2b
+    specialIcon:
+    texts:
+    - m_Caption: 1041910
+      m_Objective: 1041912
+      m_Description: 1041914
+      m_Success: 1041916
+      m_Fail: 1041918
+    difficulty: 1
+    specialSlot: Slot_2.1
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 66
+  - storyId: 19
+    missionType: 0
+    missionSubtype: GamePlayStoryA-19-2
+    storyBound: 0
+    unique: 1
+    levels:
+    - graveyard_final
+    specialIcon:
+    texts:
+    - m_Caption: 1041930
+      m_Objective: 1041932
+      m_Description: 1041934
+      m_Success: 1041936
+      m_Fail: 1041938
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 144
+  - storyId: 19
+    missionType: 0
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 143
+  - storyId: 19
+    missionType: 1
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 65
+  - storyId: 19
+    missionType: 2
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 64
+  - storyId: 19
+    missionType: 3
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 63
+  - storyId: 20
+    missionType: 0
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 142
+  - storyId: 20
+    missionType: 1
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 141
+  - storyId: 20
+    missionType: 2
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 140
+  - storyId: 20
+    missionType: 3
+    missionSubtype:
+    storyBound: 2
+    unique: 0
+    levels: []
+    specialIcon:
+    texts: []
+    difficulty: 1
+    specialSlot:
+    specialBonus: 0
+    specialZombies: []
+    m_UID: 139
+  m_UIDGenerator: 145
+--- !u!114 &114954744055935415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1870516328864630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820afbf0c4247fa303455d1492328f4b, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Data:
+  - id: 1
+    storyCaption: 0
+    storyPages:
+    storyPicture: Zombie
+    storyText: 1030010
+    debriefPages:
+    debriefPicture:
+    objectiveText: 0
+    missionsRequired: 1
+    rankToProgress: 0
+    m_UID: 2
+  - id: 2
+    storyCaption: 0
+    storyPages:
+    storyPicture: Lasagne
+    storyText: 1030020
+    debriefPages:
+    debriefPicture:
+    objectiveText: 0
+    missionsRequired: 1
+    rankToProgress: 0
+    m_UID: 0
+  - id: 3
+    storyCaption: 0
+    storyPages:
+    storyPicture: Lasagne
+    storyText: 1030030
+    debriefPages:
+    debriefPicture:
+    objectiveText: 0
+    missionsRequired: 1
+    rankToProgress: 0
+    m_UID: 3
+  - id: 4
+    storyCaption: 1030048
+    storyPages: 98b70f00
+    storyPicture: Rockstock
+    storyText: 1030040
+    debriefPages:
+    debriefPicture:
+    objectiveText: 1030049
+    missionsRequired: 0
+    rankToProgress: 0
+    m_UID: 4
+  - id: 5
+    storyCaption: 1030058
+    storyPages: a2b70f00a3b70f00
+    storyPicture: Rockstock
+    storyText: 1030050
+    debriefPages: a7b70f00
+    debriefPicture: Rockstock
+    objectiveText: 1030059
+    missionsRequired: 3
+    rankToProgress: 5
+    m_UID: 5
+  - id: 6
+    storyCaption: 1030068
+    storyPages: acb70f00
+    storyPicture: Lasagne
+    storyText: 1030060
+    debriefPages: b1b70f00
+    debriefPicture: Lasagne
+    objectiveText: 1030069
+    missionsRequired: 3
+    rankToProgress: 6
+    m_UID: 6
+  - id: 7
+    storyCaption: 1030078
+    storyPages: b6b70f00
+    storyPicture: Lasagne
+    storyText: 1030070
+    debriefPages: bbb70f00
+    debriefPicture: Lasagne
+    objectiveText: 1030079
+    missionsRequired: 1
+    rankToProgress: 0
+    m_UID: 7
+  - id: 8
+    storyCaption: 1030088
+    storyPages: c0b70f00
+    storyPicture: Lasagne
+    storyText: 0
+    debriefPages: c5b70f00
+    debriefPicture: Lasagne
+    objectiveText: 1030089
+    missionsRequired: 3
+    rankToProgress: 8
+    m_UID: 8
+  - id: 9
+    storyCaption: 1030098
+    storyPages: cab70f00
+    storyPicture: Lasagne
+    storyText: 0
+    debriefPages:
+    debriefPicture:
+    objectiveText: 1030099
+    missionsRequired: 1
+    rankToProgress: 0
+    m_UID: 9
+  - id: 10
+    storyCaption: 1030108
+    storyPages: d4b70f00
+    storyPicture: Scientist
+    storyText: 0
+    debriefPages: d9b70f00
+    debriefPicture: Scientist
+    objectiveText: 1030109
+    missionsRequired: 2
+    rankToProgress: 10
+    m_UID: 10
+  - id: 11
+    storyCaption: 1030118
+    storyPages: deb70f00
+    storyPicture: Scientist
+    storyText: 0
+    debriefPages: e3b70f00
+    debriefPicture: Scientist
+    objectiveText: 1030119
+    missionsRequired: 3
+    rankToProgress: 12
+    m_UID: 11
+  - id: 12
+    storyCaption: 1030128
+    storyPages: e8b70f00
+    storyPicture: Lasagne
+    storyText: 0
+    debriefPages: edb70f00
+    debriefPicture: Lasagne
+    objectiveText: 1030129
+    missionsRequired: 1
+    rankToProgress: 13
+    m_UID: 12
+  - id: 13
+    storyCaption: 1030138
+    storyPages: f2b70f00f3b70f00
+    storyPicture: Lasagne
+    storyText: 0
+    debriefPages: f7b70f00
+    debriefPicture: Fisher
+    objectiveText: 1030139
+    missionsRequired: 2
+    rankToProgress: 0
+    m_UID: 21
+  - id: 14
+    storyCaption: 1030148
+    storyPages: fcb70f00fdb70f00
+    storyPicture: Fisher
+    storyText: 0
+    debriefPages: 01b80f00
+    debriefPicture: Fisher
+    objectiveText: 1030149
+    missionsRequired: 1
+    rankToProgress: 0
+    m_UID: 22
+  - id: 15
+    storyCaption: 1030158
+    storyPages: 06b80f0007b80f00
+    storyPicture: Fisher
+    storyText: 0
+    debriefPages: 0bb80f00
+    debriefPicture: Fisher
+    objectiveText: 1030159
+    missionsRequired: 1
+    rankToProgress: 0
+    m_UID: 23
+  - id: 16
+    storyCaption: 1030168
+    storyPages: 10b80f0011b80f00
+    storyPicture: Lasagne
+    storyText: 0
+    debriefPages: 15b80f00
+    debriefPicture: Lasagne
+    objectiveText: 1030169
+    missionsRequired: 1
+    rankToProgress: 0
+    m_UID: 24
+  - id: 17
+    storyCaption: 1030178
+    storyPages: 1ab80f001bb80f00
+    storyPicture: Scientist
+    storyText: 0
+    debriefPages: 1fb80f00
+    debriefPicture: Scientist
+    objectiveText: 1030179
+    missionsRequired: 2
+    rankToProgress: 0
+    m_UID: 25
+  - id: 18
+    storyCaption: 1030188
+    storyPages: 24b80f00
+    storyPicture: Lasagne
+    storyText: 0
+    debriefPages: 29b80f002ab80f00
+    debriefPicture: Scientist
+    objectiveText: 1030189
+    missionsRequired: 1
+    rankToProgress: 0
+    m_UID: 16
+  - id: 19
+    storyCaption: 1030198
+    storyPages: 2eb80f002fb80f00
+    storyPicture: Lasagne
+    storyText: 0
+    debriefPages: 33b80f0034b80f00
+    debriefPicture: Lasagne
+    objectiveText: 1030199
+    missionsRequired: 2
+    rankToProgress: 1000
+    m_UID: 15
+  - id: 20
+    storyCaption: 0
+    storyPages:
+    storyPicture:
+    storyText: 0
+    debriefPages:
+    debriefPicture:
+    objectiveText: 0
+    missionsRequired: 0
+    rankToProgress: 0
+    m_UID: 26
+  m_UIDGenerator: 27
+--- !u!114 &114202250795512967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1870516328864630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73460e55a2b83879a2f16864f3ddda39, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Data:
+  - level: ulicka_night
+    sinceStoryId: 0
+    preview:
+    - Ulicka_night_1
+    - Ulicka_night_2
+  - level: ulicka_01
+    sinceStoryId: 0
+    preview:
+    - Ulicka_01_1
+    - Ulicka_01_2
+  - level: mall
+    sinceStoryId: 0
+    preview:
+    - Mall_1
+    - Mall_2
+  - level: underpass
+    sinceStoryId: 0
+    preview:
+    - Underpass_1
+    - Underpass_2
+  - level: arealights
+    sinceStoryId: 7
+    preview:
+    - Arealights_1
+  - level: blue_corridors
+    sinceStoryId: 10
+    preview:
+    - Blue_corridors_1
+  - level: bunkr_2
+    sinceStoryId: 1000
+    preview:
+    - Bunker_1
+  - level: bunkr_2b
+    sinceStoryId: 1000
+    preview:
+    - Bunker_2
+  - level: strecha
+    sinceStoryId: 5
+    preview:
+    - Strecha
+  - level: graveyard_final
+    sinceStoryId: 1000
+    preview:
+    - Graveyard

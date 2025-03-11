@@ -1,0 +1,605 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1017947730189622}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1017947730189622
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4006649308324835}
+  - 114: {fileID: 114579056658763992}
+  - 114: {fileID: 114141591590669897}
+  m_Layer: 0
+  m_Name: GameplayData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4006649308324835
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1017947730189622}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114579056658763992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1017947730189622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f805d342bb0ed126cf2b6cd70d993a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Data:
+  - playerLevel: 1
+    playerXp: 0
+    recommendedWeapon: 0
+    xpPerZombie: 2
+    xpMissionBonus: 300
+    moneyPerZombie: 30
+    moneyMissionBonus: 200
+    enemyHealth: 15
+    enemyAttack: 4
+  - playerLevel: 2
+    playerXp: 400
+    recommendedWeapon: 3
+    xpPerZombie: 3
+    xpMissionBonus: 300
+    moneyPerZombie: 30
+    moneyMissionBonus: 225
+    enemyHealth: 17
+    enemyAttack: 6
+  - playerLevel: 3
+    playerXp: 1000
+    recommendedWeapon: 20
+    xpPerZombie: 4
+    xpMissionBonus: 400
+    moneyPerZombie: 30
+    moneyMissionBonus: 250
+    enemyHealth: 22
+    enemyAttack: 8
+  - playerLevel: 4
+    playerXp: 2500
+    recommendedWeapon: 24
+    xpPerZombie: 5
+    xpMissionBonus: 500
+    moneyPerZombie: 30
+    moneyMissionBonus: 275
+    enemyHealth: 28
+    enemyAttack: 10
+  - playerLevel: 5
+    playerXp: 5000
+    recommendedWeapon: 6
+    xpPerZombie: 6
+    xpMissionBonus: 600
+    moneyPerZombie: 30
+    moneyMissionBonus: 300
+    enemyHealth: 35
+    enemyAttack: 10
+  - playerLevel: 6
+    playerXp: 8500
+    recommendedWeapon: 15
+    xpPerZombie: 7
+    xpMissionBonus: 700
+    moneyPerZombie: 40
+    moneyMissionBonus: 325
+    enemyHealth: 40
+    enemyAttack: 15
+  - playerLevel: 7
+    playerXp: 13000
+    recommendedWeapon: 14
+    xpPerZombie: 8
+    xpMissionBonus: 800
+    moneyPerZombie: 40
+    moneyMissionBonus: 350
+    enemyHealth: 45
+    enemyAttack: 15
+  - playerLevel: 8
+    playerXp: 18500
+    recommendedWeapon: 11
+    xpPerZombie: 9
+    xpMissionBonus: 900
+    moneyPerZombie: 40
+    moneyMissionBonus: 375
+    enemyHealth: 50
+    enemyAttack: 15
+  - playerLevel: 9
+    playerXp: 25000
+    recommendedWeapon: 2
+    xpPerZombie: 10
+    xpMissionBonus: 1000
+    moneyPerZombie: 40
+    moneyMissionBonus: 400
+    enemyHealth: 55
+    enemyAttack: 15
+  - playerLevel: 10
+    playerXp: 32500
+    recommendedWeapon: 8
+    xpPerZombie: 11
+    xpMissionBonus: 1100
+    moneyPerZombie: 40
+    moneyMissionBonus: 425
+    enemyHealth: 60
+    enemyAttack: 15
+  - playerLevel: 11
+    playerXp: 41500
+    recommendedWeapon: 5
+    xpPerZombie: 12
+    xpMissionBonus: 1200
+    moneyPerZombie: 50
+    moneyMissionBonus: 450
+    enemyHealth: 65
+    enemyAttack: 20
+  - playerLevel: 12
+    playerXp: 52500
+    recommendedWeapon: 21
+    xpPerZombie: 13
+    xpMissionBonus: 1300
+    moneyPerZombie: 50
+    moneyMissionBonus: 475
+    enemyHealth: 70
+    enemyAttack: 20
+  - playerLevel: 13
+    playerXp: 65500
+    recommendedWeapon: 12
+    xpPerZombie: 14
+    xpMissionBonus: 1400
+    moneyPerZombie: 50
+    moneyMissionBonus: 500
+    enemyHealth: 80
+    enemyAttack: 20
+  - playerLevel: 14
+    playerXp: 80500
+    recommendedWeapon: 12
+    xpPerZombie: 15
+    xpMissionBonus: 1500
+    moneyPerZombie: 50
+    moneyMissionBonus: 525
+    enemyHealth: 90
+    enemyAttack: 20
+  - playerLevel: 15
+    playerXp: 97500
+    recommendedWeapon: 4
+    xpPerZombie: 16
+    xpMissionBonus: 1600
+    moneyPerZombie: 50
+    moneyMissionBonus: 550
+    enemyHealth: 100
+    enemyAttack: 20
+  - playerLevel: 16
+    playerXp: 116500
+    recommendedWeapon: 4
+    xpPerZombie: 17
+    xpMissionBonus: 1700
+    moneyPerZombie: 60
+    moneyMissionBonus: 575
+    enemyHealth: 110
+    enemyAttack: 20
+  - playerLevel: 17
+    playerXp: 138500
+    recommendedWeapon: 7
+    xpPerZombie: 18
+    xpMissionBonus: 1800
+    moneyPerZombie: 60
+    moneyMissionBonus: 600
+    enemyHealth: 120
+    enemyAttack: 20
+  - playerLevel: 18
+    playerXp: 163500
+    recommendedWeapon: 7
+    xpPerZombie: 19
+    xpMissionBonus: 1900
+    moneyPerZombie: 60
+    moneyMissionBonus: 625
+    enemyHealth: 130
+    enemyAttack: 20
+  - playerLevel: 19
+    playerXp: 191500
+    recommendedWeapon: 0
+    xpPerZombie: 20
+    xpMissionBonus: 2000
+    moneyPerZombie: 60
+    moneyMissionBonus: 650
+    enemyHealth: 140
+    enemyAttack: 20
+  - playerLevel: 20
+    playerXp: 222500
+    recommendedWeapon: 0
+    xpPerZombie: 21
+    xpMissionBonus: 2100
+    moneyPerZombie: 60
+    moneyMissionBonus: 675
+    enemyHealth: 150
+    enemyAttack: 20
+  - playerLevel: 21
+    playerXp: 256500
+    recommendedWeapon: 0
+    xpPerZombie: 22
+    xpMissionBonus: 2200
+    moneyPerZombie: 70
+    moneyMissionBonus: 700
+    enemyHealth: 160
+    enemyAttack: 20
+  - playerLevel: 22
+    playerXp: 294500
+    recommendedWeapon: 0
+    xpPerZombie: 23
+    xpMissionBonus: 2300
+    moneyPerZombie: 70
+    moneyMissionBonus: 725
+    enemyHealth: 170
+    enemyAttack: 20
+  - playerLevel: 23
+    playerXp: 336500
+    recommendedWeapon: 0
+    xpPerZombie: 24
+    xpMissionBonus: 2400
+    moneyPerZombie: 70
+    moneyMissionBonus: 750
+    enemyHealth: 180
+    enemyAttack: 20
+  - playerLevel: 24
+    playerXp: 382500
+    recommendedWeapon: 0
+    xpPerZombie: 25
+    xpMissionBonus: 2500
+    moneyPerZombie: 70
+    moneyMissionBonus: 775
+    enemyHealth: 190
+    enemyAttack: 20
+  - playerLevel: 25
+    playerXp: 432500
+    recommendedWeapon: 0
+    xpPerZombie: 26
+    xpMissionBonus: 2600
+    moneyPerZombie: 70
+    moneyMissionBonus: 800
+    enemyHealth: 200
+    enemyAttack: 20
+  - playerLevel: 26
+    playerXp: 486500
+    recommendedWeapon: 0
+    xpPerZombie: 27
+    xpMissionBonus: 2700
+    moneyPerZombie: 80
+    moneyMissionBonus: 825
+    enemyHealth: 210
+    enemyAttack: 20
+  - playerLevel: 27
+    playerXp: 545500
+    recommendedWeapon: 0
+    xpPerZombie: 28
+    xpMissionBonus: 2800
+    moneyPerZombie: 80
+    moneyMissionBonus: 850
+    enemyHealth: 220
+    enemyAttack: 20
+  - playerLevel: 28
+    playerXp: 609500
+    recommendedWeapon: 0
+    xpPerZombie: 29
+    xpMissionBonus: 2900
+    moneyPerZombie: 80
+    moneyMissionBonus: 875
+    enemyHealth: 230
+    enemyAttack: 20
+  - playerLevel: 29
+    playerXp: 752500
+    recommendedWeapon: 0
+    xpPerZombie: 30
+    xpMissionBonus: 3000
+    moneyPerZombie: 80
+    moneyMissionBonus: 900
+    enemyHealth: 240
+    enemyAttack: 20
+  - playerLevel: 30
+    playerXp: 831500
+    recommendedWeapon: 0
+    xpPerZombie: 31
+    xpMissionBonus: 3100
+    moneyPerZombie: 80
+    moneyMissionBonus: 925
+    enemyHealth: 250
+    enemyAttack: 20
+  - playerLevel: 31
+    playerXp: 918500
+    recommendedWeapon: 0
+    xpPerZombie: 32
+    xpMissionBonus: 3200
+    moneyPerZombie: 90
+    moneyMissionBonus: 950
+    enemyHealth: 260
+    enemyAttack: 20
+  - playerLevel: 32
+    playerXp: 1013500
+    recommendedWeapon: 0
+    xpPerZombie: 33
+    xpMissionBonus: 3300
+    moneyPerZombie: 90
+    moneyMissionBonus: 975
+    enemyHealth: 270
+    enemyAttack: 20
+  - playerLevel: 33
+    playerXp: 1116500
+    recommendedWeapon: 0
+    xpPerZombie: 34
+    xpMissionBonus: 3400
+    moneyPerZombie: 90
+    moneyMissionBonus: 1000
+    enemyHealth: 280
+    enemyAttack: 20
+  - playerLevel: 34
+    playerXp: 1227500
+    recommendedWeapon: 0
+    xpPerZombie: 35
+    xpMissionBonus: 3500
+    moneyPerZombie: 90
+    moneyMissionBonus: 1025
+    enemyHealth: 290
+    enemyAttack: 20
+  - playerLevel: 35
+    playerXp: 1346500
+    recommendedWeapon: 0
+    xpPerZombie: 36
+    xpMissionBonus: 3600
+    moneyPerZombie: 90
+    moneyMissionBonus: 1050
+    enemyHealth: 300
+    enemyAttack: 25
+  - playerLevel: 36
+    playerXp: 1475500
+    recommendedWeapon: 0
+    xpPerZombie: 37
+    xpMissionBonus: 3700
+    moneyPerZombie: 100
+    moneyMissionBonus: 1075
+    enemyHealth: 310
+    enemyAttack: 25
+  - playerLevel: 37
+    playerXp: 1614500
+    recommendedWeapon: 0
+    xpPerZombie: 38
+    xpMissionBonus: 3800
+    moneyPerZombie: 100
+    moneyMissionBonus: 1100
+    enemyHealth: 320
+    enemyAttack: 25
+  - playerLevel: 38
+    playerXp: 1763500
+    recommendedWeapon: 0
+    xpPerZombie: 39
+    xpMissionBonus: 3900
+    moneyPerZombie: 100
+    moneyMissionBonus: 1125
+    enemyHealth: 330
+    enemyAttack: 25
+  - playerLevel: 39
+    playerXp: 1922500
+    recommendedWeapon: 0
+    xpPerZombie: 40
+    xpMissionBonus: 4000
+    moneyPerZombie: 100
+    moneyMissionBonus: 1150
+    enemyHealth: 340
+    enemyAttack: 25
+  - playerLevel: 40
+    playerXp: 2091500
+    recommendedWeapon: 0
+    xpPerZombie: 41
+    xpMissionBonus: 4100
+    moneyPerZombie: 110
+    moneyMissionBonus: 1200
+    enemyHealth: 350
+    enemyAttack: 30
+  - playerLevel: 41
+    playerXp: 2270500
+    recommendedWeapon: 0
+    xpPerZombie: 42
+    xpMissionBonus: 4200
+    moneyPerZombie: 110
+    moneyMissionBonus: 1225
+    enemyHealth: 365
+    enemyAttack: 30
+  - playerLevel: 42
+    playerXp: 2459500
+    recommendedWeapon: 0
+    xpPerZombie: 43
+    xpMissionBonus: 4300
+    moneyPerZombie: 110
+    moneyMissionBonus: 1250
+    enemyHealth: 380
+    enemyAttack: 30
+  - playerLevel: 43
+    playerXp: 2658500
+    recommendedWeapon: 0
+    xpPerZombie: 44
+    xpMissionBonus: 4400
+    moneyPerZombie: 110
+    moneyMissionBonus: 1275
+    enemyHealth: 395
+    enemyAttack: 35
+  - playerLevel: 44
+    playerXp: 2867500
+    recommendedWeapon: 0
+    xpPerZombie: 45
+    xpMissionBonus: 4500
+    moneyPerZombie: 120
+    moneyMissionBonus: 1300
+    enemyHealth: 410
+    enemyAttack: 35
+  - playerLevel: 45
+    playerXp: 3086500
+    recommendedWeapon: 0
+    xpPerZombie: 46
+    xpMissionBonus: 4600
+    moneyPerZombie: 120
+    moneyMissionBonus: 1325
+    enemyHealth: 425
+    enemyAttack: 35
+  - playerLevel: 46
+    playerXp: 3315500
+    recommendedWeapon: 0
+    xpPerZombie: 47
+    xpMissionBonus: 4700
+    moneyPerZombie: 120
+    moneyMissionBonus: 1350
+    enemyHealth: 440
+    enemyAttack: 35
+  - playerLevel: 47
+    playerXp: 3554500
+    recommendedWeapon: 0
+    xpPerZombie: 48
+    xpMissionBonus: 4800
+    moneyPerZombie: 120
+    moneyMissionBonus: 1375
+    enemyHealth: 455
+    enemyAttack: 40
+  - playerLevel: 48
+    playerXp: 3803500
+    recommendedWeapon: 0
+    xpPerZombie: 49
+    xpMissionBonus: 4900
+    moneyPerZombie: 120
+    moneyMissionBonus: 1400
+    enemyHealth: 470
+    enemyAttack: 40
+  - playerLevel: 49
+    playerXp: 4062500
+    recommendedWeapon: 0
+    xpPerZombie: 50
+    xpMissionBonus: 5000
+    moneyPerZombie: 120
+    moneyMissionBonus: 1425
+    enemyHealth: 485
+    enemyAttack: 40
+  - playerLevel: 50
+    playerXp: 4331500
+    recommendedWeapon: 0
+    xpPerZombie: 0
+    xpMissionBonus: 0
+    moneyPerZombie: 120
+    moneyMissionBonus: 1450
+    enemyHealth: 490
+    enemyAttack: 40
+--- !u!114 &114141591590669897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1017947730189622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d56c9d63a54dc75c7d3c0b4c98d03ee, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Data:
+  - agentType: 4
+    sincePlayerRank: 1
+    healthModif: 1
+    attackModif: 1
+    prefabs:
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie01
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie03
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie04
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie07
+  - agentType: 1
+    sincePlayerRank: 3
+    healthModif: 1
+    attackModif: 1
+    prefabs:
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie01
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie03
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie04
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie07
+  - agentType: 2
+    sincePlayerRank: 6
+    healthModif: 1
+    attackModif: 0.5
+    prefabs:
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie01
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie03
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie04
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie07
+  - agentType: 3
+    sincePlayerRank: 8
+    healthModif: 1.2
+    attackModif: 1.4
+    prefabs:
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie02
+  - agentType: 5
+    sincePlayerRank: 5
+    healthModif: 1.25
+    attackModif: 1
+    prefabs:
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie05
+  - agentType: 6
+    sincePlayerRank: 1
+    healthModif: 10
+    attackModif: 2
+    prefabs:
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie06
+  - agentType: 7
+    sincePlayerRank: 10
+    healthModif: 1.25
+    attackModif: 1.25
+    prefabs:
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie08
+  - agentType: 8
+    sincePlayerRank: 12
+    healthModif: 5
+    attackModif: 2
+    prefabs:
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie06small
+  - agentType: 9
+    sincePlayerRank: 1
+    healthModif: 0.7
+    attackModif: 1
+    prefabs:
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombie09
+  - agentType: 10
+    sincePlayerRank: 1
+    healthModif: 7
+    attackModif: 1.5
+    prefabs:
+    - playerLevel: 1
+      prefab: Enemies/EnemyZombieSanta

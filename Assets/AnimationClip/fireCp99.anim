@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: fireCp99
+  m_AnimationType: 1
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.4298387, y: 0.5620317, z: -0.42461777, w: 0.5648531}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      - time: 0.3666667
+        value: {x: -0.4298387, y: 0.5620317, z: -0.42461777, w: 0.5648531}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: cp99/magazine
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.0089841075, y: 0.70750344, z: -0.0031089447, w: 0.706646}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      - time: 0.3666667
+        value: {x: -0.0089841075, y: 0.70750344, z: -0.0031089447, w: 0.706646}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: cp99/zaver001
+  m_CompressedRotationCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0.00069613726, y: -0.05746072, z: -0.017662644}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.36666667
+        value: {x: 0.00069613726, y: -0.05746072, z: -0.017662644}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: cp99/magazine
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.00028720233, y: 0.0657702, z: 0.01264348}
+        inSlope: {x: -1.3867647E-09, y: 3.5427665E-09, z: -6.912553E-07}
+        outSlope: {x: -1.3867647E-09, y: 3.5427665E-09, z: -6.912553E-07}
+        tangentMode: 0
+      - time: 0.033333335
+        value: {x: -0.00033127, y: 0.06510978, z: -0.025957488}
+        inSlope: {x: -4.047686E-09, y: 3.5427663E-09, z: 4.1568796E-07}
+        outSlope: {x: 6.3675416E-09, y: -6.8267224E-07, z: 1.18078894E-07}
+        tangentMode: 0
+      - time: 0.06666666
+        value: {x: -0.00030923617, y: 0.06543999, z: -0.0066570044}
+        inSlope: {x: 0.0006610193, y: 0.00990527, z: 0.579014}
+        outSlope: {x: 0.0006610169, y: 0.009905264, z: 0.5790154}
+        tangentMode: 0
+      - time: 0.10000001
+        value: {x: -0.00028720233, y: 0.0657702, z: 0.01264348}
+        inSlope: {x: 1.7109272E-09, y: -6.826719E-07, z: 2.3915075E-07}
+        outSlope: {x: -4.3368087E-18, y: 5.551115E-16, z: 2.7755576E-16}
+        tangentMode: 0
+      - time: 0.36666667
+        value: {x: -0.00028720233, y: 0.0657702, z: 0.01264348}
+        inSlope: {x: -1.8586324E-18, y: 2.3790495E-16, z: 1.1895248E-16}
+        outSlope: {x: -1.8586324E-18, y: 2.3790495E-16, z: 1.1895248E-16}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: cp99/zaver001
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 30
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: -0.0001611337, y: -0.062378913, z: 0.043552123}
+    m_Extent: {x: 0.027337734, y: 0.15266088, z: 0.11428336}
+  m_ClipBindingConstant:
+    genericBindings: []
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_StartTime: 0
+    m_StopTime: 1
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_Events: []

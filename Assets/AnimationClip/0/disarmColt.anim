@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: disarmColt
+  m_AnimationType: 1
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.4298388, y: 0.56203175, z: -0.4246176, w: 0.5648529}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      - time: 0.43333337
+        value: {x: -0.4298388, y: 0.56203175, z: -0.4246176, w: 0.5648529}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: colt1911/mag
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.008986462, y: 0.7075034, z: -0.0031064982, w: 0.706646}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      - time: 0.43333337
+        value: {x: -0.008986462, y: 0.7075034, z: -0.0031064982, w: 0.706646}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: colt1911/zaver
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.0049459706, y: 0.0053007016, z: -0.6166988, w: 0.7871658}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      - time: 0.10000001
+        value: {x: -0.0049459706, y: 0.0053007016, z: -0.6166988, w: 0.7871658}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      - time: 0.16666667
+        value: {x: -0.0050415886, y: 0.0051850374, z: -0.6328113, w: 0.77427226}
+        inSlope: {x: -0.0043656295, y: -0.004703937, z: -0.6797342, w: -0.5656438}
+        outSlope: {x: -0.0043656295, y: -0.004703937, z: -0.6797342, w: -0.5656438}
+        tangentMode: 0
+      - time: 0.20000002
+        value: {x: -0.0052370126, y: 0.0049871057, z: -0.6620144, w: 0.7494562}
+        inSlope: {x: -0.0046478063, y: -0.004425106, z: -0.66791546, w: -0.5795528}
+        outSlope: {x: -0.0046478063, y: -0.004425106, z: -0.66791546, w: -0.5795528}
+        tangentMode: 0
+      - time: 0.23333335
+        value: {x: -0.0053514424, y: 0.0048900302, z: -0.677339, w: 0.7356354}
+        inSlope: {x: 0.015974198, y: -0.0017909195, z: 1.4786805, w: 1.1501822}
+        outSlope: {x: 0.015974198, y: -0.0017909195, z: 1.4786805, w: 1.1501822}
+        tangentMode: 0
+      - time: 0.26666668
+        value: {x: -0.004172066, y: 0.004867711, z: -0.56343573, w: 0.82613504}
+        inSlope: {x: 0.04365121, y: 0.015562584, z: 5.3259206, w: 3.1648216}
+        outSlope: {x: 0.04365121, y: 0.015562584, z: 5.3259206, w: 3.1648216}
+        tangentMode: 0
+      - time: 0.3
+        value: {x: -0.002441362, y: 0.0059275357, z: -0.32227767, w: 0.9466235}
+        inSlope: {x: 0.03370311, y: 0.03180655, z: 5.7286754, w: 2.3583717}
+        outSlope: {x: 0.03370311, y: 0.03180655, z: 5.7286754, w: 2.3583717}
+        tangentMode: 0
+      - time: 0.33333334
+        value: {x: -0.0019251923, y: 0.0069881477, z: -0.18152407, w: 0.9833598}
+        inSlope: {x: 0.007742546, y: 0.015909182, z: 2.111304, w: 0.5510447}
+        outSlope: {x: 0.007742546, y: 0.015909182, z: 2.111304, w: 0.5510447}
+        tangentMode: 0
+      - time: 0.36666667
+        value: {x: -0.0019251923, y: 0.0069881477, z: -0.18152407, w: 0.9833598}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      - time: 0.43333337
+        value: {x: -0.0019251923, y: 0.0069881477, z: -0.18152407, w: 0.9833598}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: colt1911/gunbody/kohout
+  m_CompressedRotationCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0.00069613726, y: -0.057460718, z: -0.017662644}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.43333334
+        value: {x: 0.00069613726, y: -0.057460718, z: -0.017662644}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: colt1911/mag
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.0002872023, y: 0.065770194, z: 0.012643482}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.43333334
+        value: {x: -0.0002872023, y: 0.065770194, z: 0.012643482}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: colt1911/zaver
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.054816663, y: 0.022747068, z: -0.00016536239}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.43333334
+        value: {x: -0.054816663, y: 0.022747068, z: -0.00016536239}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: colt1911/gunbody/kohout
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 30
+  m_WrapMode: 1
+  m_Bounds:
+    m_Center: {x: 0.5538342, y: -0.13924387, z: -0.07795222}
+    m_Extent: {x: 0.0154134035, y: 0.07554342, z: 0.19218482}
+  m_ClipBindingConstant:
+    genericBindings: []
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_StartTime: 0
+    m_StopTime: 1
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_Events: []

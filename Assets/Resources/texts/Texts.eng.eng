@@ -1,0 +1,665 @@
+# ----------------------------------------------------------------------------
+#
+#	Dead Land
+#
+# ----------------------------------------------------------------------------
+#
+# System for text ID's is following:
+#
+#	0XXY ZZZZ
+#
+#	- 0 is reserve for the future
+#	- XX means logical text category (menu, city map, shop, etc.)
+#	- Y allows finer resolution for each text category (e.g. city map - general, city map - mission descriptions, city map - dialogs )
+#	- ZZZZ are text indices for specified category. NOTE: Each following index should be higher by 10 than previous (we need some reserves for future)
+#
+#	Every new item put into proper place - keep it together with other texts for category!
+#
+#	Defined categories (XXXY):
+#
+#	030x - Ingame
+#	  0300 - general
+#	  0301 - objectives
+#	  0302 - weapons
+#	  0303 - items
+#	  0304 - upgrades
+#	  0305 - money
+#	  0306 - packages
+#	  0307 - loading hints
+#	  0308 - tutorial
+#
+#	020x - menu
+#	  0200 - general
+#	  0201 - options
+#	  0202 - gamepad
+#	  0203 - shop
+#	  0204 - New Hope
+#	  0205 - equip
+#
+#	010x - city map:
+#	  0100 - general
+#	  0101 - dialogs
+#	  0103 - story information texts
+#	  0104 - story mission texts
+#	  0105y- generated mission texts
+#	01051 - kill all zombies
+#	01052 - time defence
+#	01053 - protect objects
+#	01054 - resources
+#	  0106y- generated chopper mission texts
+#	01061 - kill all zombies
+#	01062 - time defence
+#	01063 - protect objects
+#	01064 - resources
+#
+#     980xxxx - Tutorial MainMenu
+# ----------------------------------------------------------------------------
+
+
+# ----
+# Test
+# ----
+00000001	Test - caption
+00000003	Test - objective
+00000005	Test - description
+00000007	Test - success
+00000009	Test - fail
+
+
+# -----------------------------
+# 0204xxxx New Hope menu
+# -----------------------------
+# 020400-xx - New Hope - common, dialogs (or temporary strings)
+02040001	Here will be NEW HOPE logo texture
+02040002	PREV
+02040003	NEXT
+02040004	BEST
+02040005	SELECT FRIEND
+02040006	ENTER ACCOUNT NAME
+02040007	OK
+02040008	ACCOUNT NAME
+02040009	CANCEL
+02040010	Guest
+			# Authentication dialog and retrieving player data from cloud.
+02040011	Authentication in progress...
+02040012	Retrieving player data...
+02040013	Authentication failed
+02040014	Authentication successful
+			# forgot password dialog.
+02040020	Forgot password
+02040021	Password recovery instructions were sent\nto your email.
+			# logout info message box
+02040030	You are attempting to logout.\nAre you sure?
+			# hints shown on main new hope screen...
+02040031	SIGN IN, SAVE YOUR GAME ONLINE \n PROTECT YOUR GAME PROGRESS
+02040032	DONT FORGET TO BACKUP.\n YOUR GAME WILL BE SAVED ONLINE.
+02040033	STATISTICS
+02040034	ACHIEVEMENTS
+02040035	FRIENDS
+02040036	BACKUP
+02040037	SIGN IN
+02040038	PLAYER:
+02040039	SIGN OUT
+02040040	SAVE / LOAD
+
+# 020401-xx - Main screen
+02040101	FRIENDS
+02040102	ACHIEVEMENTS
+02040103	STATISTICS
+02040104	ACCOUNT SETTINGS
+02040105	LOGIN
+02040106	TWITTER
+02040107	FACEBOOK
+02040108	OFFLINE
+02040109	ONLINE
+02040110	AUTHENTICATED
+02040111	NEW HOPE
+02040112	BACKUP
+02040113	LOGOUT
+02040114	NEW HOPE / STATISTICS
+02040115	NEW HOPE / FRIENDS
+02040116	NEW HOPE / SAVE AND LOAD
+02040117	NEW HOPE / CREATE NEW ACCOUNT
+02040118	CLOSE
+
+# 020402-xx - Friends screen
+02040201	FRIENDS
+02040202	ACTIVE
+02040203	PENDING
+02040204	ADD FRIEND
+02040205	----
+02040206	Yes		# accept friend
+02040207	No		# reject friend
+02040208	----
+02040209	----
+02040210	----
+02040211	NAME
+02040212	RANK
+02040213	MISSIONS
+02040214	LAST ONLINE
+02040215	STATUS
+02040216	----
+02040217	----
+02040218	do you want to add user as a friend?
+02040219	friendship approval pending
+02040220	----
+02040221	UNKNOWN
+02040222	BEFORE %d MINUTES
+02040223	BEFORE %d HOURS
+02040224	YESTERDAY
+02040225	%d DAYS AGO
+02040226	----
+02040227	----
+02040228	----
+02040229	----
+02040230	----
+02040231	ACTIVE FRIENDS
+
+
+# 020403-xx - Statistics
+02040301	STATISTICS
+02040302	----
+02040303	PLAYER VALUE
+02040304	FRIEND VALUE
+02040305	BEST FRIEND NAME
+02040306	----
+02040307	----
+02040308	----
+02040309	----
+02040310	----
+02040311	Experience
+02040312	Total money
+02040313	Kills
+02040314	Deaths
+02040315	Missions played
+02040316	Successful missions
+02040317	Carnage
+02040318	Total gold
+02040319	Headshots
+02040320	Limbs
+02040321	Game time
+02040322	<ARENA_1_NAME> high score
+02040323	<ARENA_1_NAME> game time
+02040324	<ARENA_1_NAME> played
+02040325	<ARENA_2_NAME> high score
+02040326	<ARENA_2_NAME> game time
+02040327	<ARENA_2_NAME> played
+02040328	<ARENA_3_NAME> high score
+02040329	<ARENA_3_NAME> game time
+02040330	<ARENA_3_NAME> played
+02040331	<ARENA_4_NAME> high score
+02040332	<ARENA_4_NAME> game time
+02040333	<ARENA_4_NAME> played
+
+02040391	Bloody Subway
+02040392	Haunted Graveyard
+02040393	Stadium of Dead
+02040394	Bloody XMAS
+
+
+
+# 020404-xx - Login screen
+02040401	USER LOGIN
+02040402	USERNAME
+02040403	PASSWORD
+02040404	Remember Login
+02040405	LOGIN
+02040406	CREATE
+02040407	REGISTER NOW
+02040408	1/ ----
+02040409	2/ ----
+02040410	3/ ----
+02040411	FORGOT PASSWORD?
+02040412	NEW USER?
+02040413	& GET BONUS
+02040414	+friends stats\n+cloud backup\n+extra item
+02040415	Autologin on start
+
+# 020405-xx - Register screen
+02040501	CREATE NEW ACCOUNT
+02040502	*
+02040503	USERNAME (from {0} to {1} chars)
+02040504	PASSWORD (at least {0} chars)
+02040505	CONFIRM PASSWORD
+02040506	EMAIL ADDRESS
+02040507	----
+02040508	----
+02040509	----
+02040510	BY CREATING ACCOUNT YOU AGREE TO TERMS AND CONDITIONS ON WWW.MADFINGERGAMES.COM/EULA
+02040511	I WANT RECEIVE NEWS
+02040512	FIELDS MARKED WITH * ARE REQUIRED
+02040513	CREATE ACCOUNT
+02040514	EVERY NEW USER WILL RECEIVE BONUS
+02040515	----
+02040516	----
+02040517	Can't connect to New Hope server!
+02040518	This account name is already in use!
+02040519	Too short account name!
+02040520	Passwords do not match!
+02040521	Email address is not in a valid format!
+02040522	Too short password!
+02040523	Invalid account name. Please use alphanumeric characters only!
+
+# 020406-xx - Backup screen
+02040601	Restore progress from Cloud
+02040602	Backup progress to Cloud
+02040603	This operation will overwrite your local data. \n Continue?
+02040604	This operation will overwrite your cloud data. \n Continue?
+02040605	----
+02040606	BACKUP
+02040607	RESTORE
+02040608	----
+02040609	LOCAL
+02040610	CLOUD
+02040611	----
+02040612	sync...
+02040613	none
+
+
+
+# -----------------------------
+# 0300xxxx Ingame - General
+# -----------------------------
+03000010	Mission Success
+03000020	Mission Failed
+03000024	Protected object destroyed
+03000025	You Died
+03000026	WAVE: %d   SCORE: %f
+03000030	Game Loaded
+03001030	Ammo Box Picked
+03001040	LIFE
+03001050	You have found %d $
+03001060	You got %d $
+03008000	Select Weapon
+03009000	You have reached
+03009001	Rank
+03000100	10 m
+03000110	15 m
+03000200	Achievement Unlocked	
+
+03000300	ARENA  RANK  %d
+03000305	Prepare for fight !
+03000310	DEFEAT  WAVE  %d
+03000315	enemies are stronger now !
+03000320	Wave %d complete ! 
+03000325	You got reward %d $
+03000326	You got SPECIAL reward %d $
+03000327	You got SPECIAL reward  %d  CASINO CHIPS!
+03000330	Next wave in %d second(s)
+03000340	Arena Score
+
+03000400	Restore Health
+03000410	Refill Ammo
+03000415	%s
+03000420	Unlock Area
+03000430	You have:  %d $
+03000440	Not enough money
+03000450	Health full	
+03000460	Ammo full	
+
+03000500	Added Powerup:  
+03000505	Powerup:
+03000510	expired!  
+
+# -----------------------------
+# 0301xxxx Ingame - Objectives
+# -----------------------------
+03010005	Objective: Shot the barrel
+03010006	 
+03010010	Objective: Defend your position and kill %d Zombies
+03010020	Objective: Defend your position for %f seconds until door opens
+03010024	Objective: Defend your position for %f seconds
+03010026	Objective: Survive %f seconds
+03010030	Objective: Exit the area
+03010040	Objective: Kill the rest of Zombies
+03010045	Objective: Kill Zombies
+03010050	Objective: Kill %d Zombies
+03010060	Objective: Find supply box
+03010070	Objective: Carry box to collection point
+03010072	Objective: Carry box upstairs
+03010080	Objective: Find and carry other %d boxes
+03010090	Objective: Protect entrances for %f seconds
+03010100	Doors are open - area expanded !
+03010110	Objective: Protect cars for %f seconds
+03010120	Objective: Protect car & entrance for %f seconds
+03010130	Objective: Defend yourself !
+03010140	Someone opened garage doors to save you, get in !
+03010150	Objective: Find Rockstocks' toolbox
+03010160	Objective: Find Rockstocks' crate with photos
+03010170	Objective: Find Rockstocks' crate with whiskey
+03010180	Objective: Protect power generator
+03010190	Objective: Protect rear entrance to New Hope!
+03010200	Objective: Get to the Gunshop
+03010210	Objective: Clear the area before entering Gunshop
+03010220	Area safe! Enter the Gunshop
+03010230	Objective: Defend the van from zombies!
+03010240	Objective: Gather goods and bring them to the van
+03010250	Objective: Drop box next to the van
+03010260	Objective: Survive until help arrives!
+03010270	Hold on! Julian is on the way!
+03010280	Julian is here, you are saved!
+03010290	Objective: Defend the van from zombies!
+03010300	Objective: Find the scientists' hideout
+03010310	Objective: Clear the area before entering hideout
+03010320	Area safe! Knock on the door gently...
+03010330	Objective: Load the equipment to the van
+03010340	Objective: Drop box near the van
+03010350	Objective: Clear the way for the van
+03010360	Objective: Defend the entrance to the library!
+03010370	Objective: Obtain laboratory equipment
+03010380	LAB SECURITY MALFUNCTION! Do not get killed!
+03010390	Objective: Carry equipment back to the elevator
+03010400	Objective: Kill zombies to secure the Drop Zone
+03010410	Objective: Defend the Drop Zone!
+03010420	Objective: Protect the door with supplies
+03010430	Objective: Search the Drop Zone for supplies
+03010440	Objective: Protect entrance & power generator
+03010450	Objective: Find the underground entrance to the hospital
+03010460	Objective: Make your way through the underground passage
+03010470	Objective: Find Doctor Gordon's detonator
+03010480	Objective: Take the detonator back to insertion point!
+03010490	Objective: Find the Doctor's office & read his day planner
+03010500	Objective: Retrieve Doctor's ID card from GENETIC LAB 1
+03010510	Objective: Investigate Doctor McGuffin's laboratory
+03010520	Objective: Clear sub-level 1 of all zombies
+03010530	Objective: Make your way back to the elevator
+03010540	Objective: Find the chemicals for Grace
+03010550	Objective: Take the package back!
+03010560	Objective: Find the semiconductors for Grace
+03010570	Objective: Find another way back to New Hope
+03010580	Objective: Pick off zombies while others seal the doors!
+03010590	You've opened the gate
+03010600	HINT: Find a way to open the gates
+03010610	Room has been sealed! Defend yourself!
+03010620	Barriers are down! Run for the exit!
+03010630	HINT: Find a way to bypass security doors
+03010640	Gates malfunctioning! Defend yourself!
+03010650	Gates are opened! Find the main power switch on the roof
+03010660	Security doors to operating room are now OPEN!
+03010670	Objective: Return to the elevator
+03010680	Office has been unlocked!
+03010690	HINT: Find the switch to unlock the office door
+03010700	Objective: Get to the Doctor's office & read his day planner
+03010710
+
+# Mission 19.1 (Bunkr)
+03010712	Find how to open Dr. Path's office
+03010715	Retrieve Doctor's ID card
+03010720	Open the Server Room
+03010724	Opening Server Room...
+03010725	Go to the Server Room
+03010730	Find servers and download data
+03010735	Downloaded: 25%
+03010736	Downloaded: 52%
+03010737	Downloaded: 84%
+03010738	Downloaded: 100%
+03010739	Intruder detected! 
+03010740	Activate elevator
+03010750	Get out!
+03010760	Hold on! Survive!
+
+# Mission 19.2 (Graveyard)
+03010800	Clear the area
+03010810	Explore the underground
+03010820	Find out how to open the underground door
+03010825	Did you see the Cathedral? :)
+03010830	Note down the message!
+03010840	Hold on! Julian is on the way!
+03010850	Kill the Bosses
+
+
+
+# -----------------------------
+# 0302xxxx Weapons
+# -----------------------------
+03029010	COLT M4
+03029020	STRIKER
+03029030	COLT 1911
+03029040	KSG
+03029050	RMGT 870
+03029060	RMGT Tactics
+03029070	UZI
+03029080	MINIGUN
+03029090	WALTHER P99
+03029100	SCORPION
+03029110	PROJECT 90
+03029120	BREN
+03029130	AK 47
+03029140	ENFIELD 303
+03029150	LUPARA
+03029160	CHAINSAW T-800
+03029170	BRAIN-MILL
+03029180	WINCHESTER
+03029190	LEWIS
+03029200	ALIEN GUN
+03029210	CROSSBOW
+03029220	GRND. LAUNCHER
+
+03029015	The M4 is the bread and butter of the Western arms industry. Designed as the answer to the AK-47, it has less recoil and a sleeker profile.
+03029025	The STRIKER is a Singapore- style shotgun. What does that mean? Not sure, but it's ideal for blowing off heads. Just sayin'.
+03029035	The COLT 1911 was the choice of gunfighters, U.S. Marshalls, and bandits back in the Old West. Reliable, deadly, and beautifully designed.
+03029045	The KSG is a second-gen shotgun. Dual tube magazines and minimal kick ensure tons of fun. Unload both barrels into a single zombie and count the pieces. If you can count that high.
+03029055	The REMINGTON 870 is a shotgun. Nothing fancy. Nothing computerized. Nothing left standing. Better and stronger version of this weapon is Remington Tactics.
+03029065	Weapons can also be tuned. For instance, this is a better and stronger version of the 870.
+03029075	The UZI was good enough for Chuck Norris, so it should be good enough for you. This little terror keeps the party going. Just watch your ammo!
+03029085	The MINIGUN: When you absolutely, positively, must kill every single sonofabitch in sight.
+03029095	The WALTHER P99 is a small but effective gun. 9 mm parabellum rounds make it a wonderful conversation starter with any zombie.
+03029105	The SCORPION is perfect for wholesale slaughter. A high rate of fire coupled with low accuracy makes it ideal for ,ahem, crowd control.
+03029115	The PROJECT 90 is made from light alloys, equipped with a high-capacity magazine and no-recoil comfort system. Flashy, hi-tech killing.
+03029125	The BREN is an infantry machine-gun. If you shoot a single 7.62 mm round into a zombie, a 20-ounce sirloin comes out the other side. The Bren serves up 100 sirloins per minute...
+03029135	The AK-47 needs no introduction. It remains the most popular rifle in the world. Highly efficient and durable, with a large ammo capacity.
+03029145	The ENFIELD 303 is a throwback rifle, originally designed for piercing armor, elephant skulls, and concrete- block walls. It works pretty well on zombies, too. 
+03029155	The LUPARA is a no-nonsense firearm. Tune-ups improve power and accuracy. Good for skirmishes.
+03029165	When killing zombies with a chainsaw, you are bound to run out of gas. But hey, who gives a rat's ass about that? Vrooom, vrooom, vroom!
+03029175	This little baby features a 30 kW outboard motor rigged with turbine blades that have been grinded to razor sharp perfection...
+03029185	A classic that has withered the test of time. Load 'er up on Monday and shoot the whole week through! For those who prefer to kill with vintage style...
+03029195	A WWI era machine gun, straight from the blood-soaked mud of the trenches. Dont ask for whom the bells toll, get hold of one of these and start ringing some zombie bells yourself!
+03029205	This highly effective weapon of unknown technology allows you to disintegrate the body of an adult human, or better yet, zombie, with one magnificent shot.
+03029215	This weapon kills enemies with medieval brutality even in the third millenium! 
+03029225	Whos a survivors best friend in a world full of zombies? A dog? A woman? A book? Nope, not even close... Instead, rely on decent firepower!
+
+# -----------------------------
+# 0303xxxx Items
+# -----------------------------
+03030010	BAIT
+03030020	Damage Booster
+03030030	MONEY BOOSTER
+03030040	SPEED BOOSTER
+03030050	LASER CUTTER
+03030060	BLADE CUTTER
+03030070	BAIT GRENADE
+03030080	FRAG GRENADE
+03030090	STICKY GRENADE
+03030100	BANDAGE
+03030110	MEDKIT
+03030120	MINE
+03030130	REVIVE KIT
+03030140	SLOW TIME
+03030150	TURRET
+03030160	HEAD-FLATOR X1
+03030170	MINI-MORTAR
+03030180	LASER TURRET
+
+
+03030015	There are various ways of baiting zombies. You can spill blood on your mother-in-law or use this electric buzzer designed to attract the undeads undying attention.
+03030025	Multiplies your damage when equipped. 'Nuff said.
+03030035	If you have ever destroyed a slot machine in Vegas with a sledgehammer and watched the money pour out, you already know how the money booster works.
+03030045	Running fast in dead world is better than a suit of armor or bulletproof vest. In and out, nobody gets hurt: the motto of Special Forces and porn stars.
+03030055	The history of humankind is filled with examples of the best intentions leading to the worst weapons. This, for instance, is a waist-high stone and metal cutter.
+03030065	A brutal pedicure. Sharp blades connected to an outboard engine. Vroom!
+03030075	As the name indicates, combining two popular items multiplies the fun. Zombies gather around the bait and... Ka-boom!
+03030085	A traditional grenade filled with metal shrapnel. Nasty!
+03030095	A classic for guerilla tactics, a grenade hidden in a sock soaked with mazut. No, you cant wash it off. 
+03030105	Never swim in the sea with sharks while your nose is bleeding. Zombies sense blood even from far away. Bandages will heal your wounds. A little.
+03030115	Fills your health to full.
+03030125	Mines are ideal against zombies. You don't need to mask or bury them, just activate, toss, and watch the limbs fly.
+03030135	Like a snack-filled thunderbolt from Zeus. Fills health to full and kills everything close to you.
+03030145	Everything moves in slow-motion, except for you. Remember The Matrix? It's kinda' like that. Okay, it's exactly like that.
+03030155	Tripod with a mounted machine gun. Using motion sensors and auto-tracking, this device seeks and destroys. Consider it your best friend in the field.
+03030165	The Head-Flator X1 enables you to inflate the heads of zombies to XXXXL size...Headshot!
+03030175	Another great idea from Grace! This device is a holding pack of frag grenades that can be thrown on anything that moves around.
+03030185	An upgraded variation of the classic turret. There is an experimental laser rifle instead of a machine gun.
+# -----------------------------
+# 0304xxxx Upgrades
+# -----------------------------
+03040010	Weapon Slot
+03040020	Weapon Slot
+03040030	Weapon Slot
+03040040	Item Slot
+03040050	Item Slot
+03040060	Item Slot
+03040070	Additional Health
+03040080	Additional Health
+03040090	Additional Health
+03040100	Ammo Supply
+03040110	Ammo Supply
+03040120	Autoheal Kit
+03040130	Improved Radar
+
+
+03040015	A few hours in the gym, a carrying strap, and you can take another weapon with you.
+03040025	A few hours in the gym, a carrying strap, and you can take another weapon with you.
+03040035	A few hours in the gym, a carrying strap, and you can take another weapon with you.
+03040045	You've added a few pockets to your combat vest. You can carry an extra item now.
+03040055	You've added a few pockets to your combat vest. You can carry an extra item now.
+03040065	You've added a few pockets to your combat vest. You can carry an extra item now.
+03040075	Increases your maximum health by 20 units.
+03040085	Increases your maximum health by 20 units.
+03040095	Increases your maximum health by 20 units.
+03040105	Your ammo supply is increased by 25 percent.
+03040115	Your ammo supply is increased by 25 percent.
+03040125	Continuously regenerates health during the mission.
+03040135	An improved motion detector with a range of 15 yards and detector of enemies right behind you.
+
+
+# -----------------------------
+# 0305xxxx Money
+# -----------------------------
+03050010	+200 Gold
+03050020	+660 Gold
+03050030	+1 250 Gold
+03050040	+3 000 Gold
+03050050	+5 200 Gold
+03050060	+40 000 Money
+03050070	+150 000 Money
+03050080	+300 000 Money
+03050090	+800 000 Money
+03050100	Money To Gold
+03050110	Gold to Money
+03050120	Register at TapJoy \n and earn Free Gold!
+03050130	Free Gold Offers
+
+03050015	Gold is the most valuable commodity in the world of Dead Trigger. (Gold is available through I.A.P. or you can get some through Free Gold menu)
+
+03050025	Money still has some value. It can be found in missions and you can buy useful things with it. (If you want more, you can get it through I.A.P.)
+
+03050105	If necessary, you can exchange gold for money. The exchange rate is 400 units of gold for 200 000 units of money...
+03050115	If necessary, you can exchange money for gold. The exchange rate is 200 000 units of money for 400 units of gold...
+
+03050125	Register at Tapjoy.com and follow the instructions as per the offer to earn FREE GOLD in DEAD TRIGGER!
+03050135	Engage in any of the activities presented on the offerwall to earn FREE GOLD in DEAD TRIGGER!
+
+# -----------------------------
+# 0306xxxx Packages
+# -----------------------------
+03060010	Health Pack
+03060020	Explosive Pack
+03060030	Booster Pack
+03060040	Toolkit
+03060050	Weapons Upgrade Pack
+03060060	All Enhancements
+03060070	All Weapons
+03060080	All Items
+03060090	All In One
+
+# -----------------------------
+# 0307xxxx loading hints
+# -----------------------------
+
+03070001	The best way to kill ZOMBIES is with a headshot.
+03070002	Don't forget to return to game\n every day to collect rewards.
+03070003	Shoot zombies in the legs...\n They will crawl much slower.
+03070004	Guns are essential but there are many useful Items\n that will be of great help in a fight.
+03070005	You can upgrade your character health.\n Its useful for later stages of the game.
+03070006	Guns can be upgraded in order to do greater damage.\n Go to the Shop to upgrade your guns.
+03070007	Increase your precision by using zoom\n to shoot your enemies.
+03070008	When you complete a mission without being hit,\n you'll get an extra reward.
+03070009	You can find suitcases packed with cash on some missions.\n Explore missions to find extras.
+03070010	Red barrels are filled with gasoline,\n shooting them will damage any nearby zombies.
+03070011	Use the Radar to watch out for zombies coming from behind\n or to guide you to mission objectives.
+
+
+03070012	You can upgrade your character's health.\nYou'll find this very useful in later stages ofthe game.
+
+03070101	Is the game too difficult?\n Increase your damage or speed with special booster items.
+03070102	Set game controls according to your needs in the options menu \n you can set the sensitivity of aim and other parameters.
+03070103	Get hit a lot? Buy a Revive kit or an Autoheal pack.
+
+03070104	Do you want to last longer in the Arena?\n Get more Item slots and stock them up.
+03070105	The longer you last in the Arena,\n the larger financial reward you'll receive for each round played.
+03070106	Hard missions (indicated with 3 skulls on the icon) pose a greater challenge\n but will reward you with more cash when you complete them.
+03070107	Achieving a higher rank when playing missions\n will unlock new environments and enemies!
+
+03070108	Improve your Radar and you'll be able to see zombies from far away!
+
+03070109	Create an account in New Hope\n and compare your skills and success with your friends!
+03070110	You can save and store your game progress onto the cloud\n (requires an account at New Hope)
+
+
+03070111	From time to time, a helicopter will appear and will drop you new Items for free!\n Look for the missions highlighted with a blue circle
+03070112	Don't forget to come back game every day to collect rewards.
+
+
+# -----------------------------
+# 0308xxxx tutorial
+# -----------------------------
+
+03080000	You can customize screen position of main controls here.
+03080010	You can also change sensitivity of Aim Area (how fast you turn).
+03080020	HEAL
+03080030	You are injured
+03080040	Use bandages to patch yourself
+03080050	Protect Objects
+03080060	Defend object(s) at all cost! Check status indicator with health percents. When object is destroyed, missions fails!
+03080070	Fix Objects
+03080080	You can repair protected object(s) by standing close to it. However, zombies must not be in vicinity.
+
+
+# -----------------------------
+# 0309xxxx BUNKER
+# -----------------------------
+03090010	Welcome message: This Bunker was created for exceptional situations by Government provision 5667 of May 28th, 2012. It is equipped with an air filter, an underground water source, an electricity generator and enough supplies of food and medicine for one year. The recommended capacity of the bunker is 150 people. The bunker has underground floors, which are only accessible with the appropriate authorization and code via the main elevator. If you are authorized, please use the terminals on the lower floors for further instructions. The Ministry of Defense, Office for exceptional situations and emergencies wishes you a pleasant stay.
+
+03090020	Interlink: 01.30.2013 We have occupied the bunker and reinforced it against attack from the outside. We have a lot of wounded here. The dead will be taken to the lower floors with laboratories and a crematory furnace. For your safety, please follow the instructions of authorized offices. Cpl. A. Mc Intaire, second in command.
+
+03090030	NAME: Dr. Merek McGuffin\n6:00   Brush teeth, get my pants on\n8:00   Eat some junk food from the vending machine\n8:30   Proceed with examination of the infected brain\n12:00   LUNCH TIME !!!\n13:20   Discussion with Prof. McKenna & Dr. Leary\n16:00   Buy flowers for Lucy\n16:50   Contact MADFINGER support with some SHADOWGUN ideas\n17:10   Continue the infection research\n18:40   Leave ID card to my lab in GENETIC LAB 1\n20:00   Beer with Prof. Alexowicz & Prof. Smeeleck
+
+03090040	To my esteemed colleagues,\nI regret to inform you that today the outbreak has reached the hallowed halls of our University Research Facility, but I must tell you of the even greater loss we've suffered...\nMen with guns stormed into my laboratory and took poor Lucy away. I'm afraid all our progress is for naught. I attempted to chase after them but I was attacked by one of the infected. Let the history books note: we tried. We really did try.\n-Dr. Merek McGuffin
+
+
+# -----------------------------
+# 030910xx BUNKER Chapter 19
+# -----------------------------
+
+03091000	Lucy has proved her power!
+03091001	--- TOP SECRET GP30 ---\nDate: 6/6/2012, 00:11:06\nFrom: Dr. Will C. Path\nTo: Lt. Gen. James R. Bell\nSubject: Lucy has proved her power!\n[ ]\nDear James, \nWe have completed the final tests. Everything is prepared. The incubation period of our naughty child is set at 8 weeks - according to our estimates, this should be enough to let it travel around the entire Earth. Did you already receive the Serum?
+
+# -----------------------------
+# 030911xx GRAVEYARD, Mission 19.2
+# -----------------------------
+
+03091100	For those who can understand
+03091101	--- TOP SECRET GP33 ---\nDate: 6/6/2012, 07:06:00\nFrom: Lt. Gen. James R. Bell\nTo: Gen. Jonathan Allen, Mr. Ho, Al Saudi, Rasputin\nSubject: Please fwd to those who can understand\n[ ]\n02201010121021210121111011020201012110221021210202010121022210202111111102101012110101021001012021121020210121110221021201012101211100210201010121101010210010120220010121102011020211021012010101202112101211111101012021120101202021010120121201210012110121201211012120121201211
+
+# -----------------------------
+#     980xxxx - Tutorial MainMenu
+# -----------------------------
+
+09800000	You did good my friend - but to survive you'll need more than skill.\n Take this money and buy some bandages in the Shop...
+09800001	Got them? Great.\n Now take a look at the Equip menu to make sure you're properly equipped for the next mission.
+09800002	Another fight with the infected awaits you. Tap the mission icon on the map. Good luck! 
+09800003	Okay, you survived longer than most. Go check-out New Hope, view your results and Backup your progress online- just in case the infected eat your phone.
+09800005	You're going to love this. Go fight in the arena every day and send some infected straight to hell. And most importantly, make some nice cash!
+
+
+

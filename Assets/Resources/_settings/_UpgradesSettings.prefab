@@ -1,0 +1,797 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1439212714202014}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1439212714202014
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4238274192454928}
+  m_Layer: 0
+  m_Name: _UpgradesSettings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4238274192454928
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439212714202014}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1110.5714, y: 814.6666, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4668024914462256}
+  - {fileID: 4711094611661318}
+  - {fileID: 4687075974330162}
+  - {fileID: 4592401174333679}
+  - {fileID: 4250106646469844}
+  - {fileID: 4466786375138282}
+  - {fileID: 4419410000800915}
+  - {fileID: 4296874813526844}
+  - {fileID: 4152293284327189}
+  - {fileID: 4181943131841589}
+  - {fileID: 4288669412435185}
+  - {fileID: 4028858041283061}
+  - {fileID: 4311965878421853}
+  - {fileID: 4021569846677224}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!1 &1294290952901177
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4668024914462256}
+  - 114: {fileID: 114679321312632200}
+  m_Layer: 0
+  m_Name: Ammo1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4668024914462256
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1294290952901177}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4238274192454928}
+  m_RootOrder: 0
+--- !u!114 &114679321312632200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1294290952901177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884642434247eb7a2639455cbce9a946, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1417812041
+  ID: 9
+  Name: 3040100
+  Description: 3040105
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4177394608111707, guid: 1ed43cea7b6b9864ab965b94f76220a2, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 30000
+  GoldCost: 0
+  UpgradeType: 2
+--- !u!1 &1328499154678816
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4711094611661318}
+  - 114: {fileID: 114364840474071969}
+  m_Layer: 0
+  m_Name: UnlockAllWeapons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4711094611661318
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1328499154678816}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4238274192454928}
+  m_RootOrder: 1
+--- !u!114 &114364840474071969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1328499154678816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884642434247eb7a2639455cbce9a946, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 1
+  GUID: 52073626
+  ID: 13
+  Name: 3040100
+  Description: 3040105
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4024432623197320, guid: 5c8056846b09e9c47b7fc292f1443d46, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 750
+  UpgradeType: 6
+--- !u!1 &1691768570393285
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4687075974330162}
+  - 114: {fileID: 114476782648657953}
+  m_Layer: 0
+  m_Name: AmmoEx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4687075974330162
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691768570393285}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4238274192454928}
+  m_RootOrder: 2
+--- !u!114 &114476782648657953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691768570393285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884642434247eb7a2639455cbce9a946, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 155552636
+  ID: 10
+  Name: 3040110
+  Description: 3040115
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4177394608111707, guid: 1ed43cea7b6b9864ab965b94f76220a2, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 49
+  UpgradeType: 2
+--- !u!1 &1946096423659973
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4592401174333679}
+  - 114: {fileID: 114208310985548901}
+  m_Layer: 0
+  m_Name: Autoheal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4592401174333679
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1946096423659973}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4238274192454928}
+  m_RootOrder: 3
+--- !u!114 &114208310985548901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1946096423659973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884642434247eb7a2639455cbce9a946, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1063937318
+  ID: 11
+  Name: 3040120
+  Description: 3040125
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4142614009224391, guid: b08a71eb083da5449a331ca590c11521, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 299
+  UpgradeType: 3
+--- !u!1 &1268812170588109
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4250106646469844}
+  - 114: {fileID: 114823513398466784}
+  m_Layer: 0
+  m_Name: Radar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4250106646469844
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1268812170588109}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4238274192454928}
+  m_RootOrder: 4
+--- !u!114 &114823513398466784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1268812170588109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884642434247eb7a2639455cbce9a946, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1032430569
+  ID: 12
+  Name: 3040130
+  Description: 3040135
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4931949392589420, guid: bf9a33eeffdac424b810e8c34485eae9, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 39
+  UpgradeType: 4
+--- !u!1 &1903814827954423
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4466786375138282}
+  - 114: {fileID: 114161412224217304}
+  m_Layer: 0
+  m_Name: Health2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4466786375138282
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1903814827954423}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4238274192454928}
+  m_RootOrder: 5
+--- !u!114 &114161412224217304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1903814827954423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884642434247eb7a2639455cbce9a946, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1506314012
+  ID: 7
+  Name: 3040080
+  Description: 3040085
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4827196774825900, guid: 365ea7c2973e58347af94b8ef52f706d, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 30000
+  GoldCost: 0
+  UpgradeType: 5
+--- !u!1 &1988470867743915
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4419410000800915}
+  - 114: {fileID: 114540174838416677}
+  m_Layer: 0
+  m_Name: HealthEx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4419410000800915
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1988470867743915}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4238274192454928}
+  m_RootOrder: 6
+--- !u!114 &114540174838416677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1988470867743915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884642434247eb7a2639455cbce9a946, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 2079593116
+  ID: 8
+  Name: 3040090
+  Description: 3040095
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4827196774825900, guid: 365ea7c2973e58347af94b8ef52f706d, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 99
+  UpgradeType: 5
+--- !u!1 &1955915794637854
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4296874813526844}
+  - 114: {fileID: 114585363059348077}
+  m_Layer: 0
+  m_Name: ItemSlot1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4296874813526844
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955915794637854}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4238274192454928}
+  m_RootOrder: 7
+--- !u!114 &114585363059348077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955915794637854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884642434247eb7a2639455cbce9a946, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 703115557
+  ID: 3
+  Name: 3040040
+  Description: 3040045
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4110960447764150, guid: 426aaa31ff469624b836d2ac1671f101, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 0
+  UpgradeType: 1
+--- !u!1 &1107227000156150
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4152293284327189}
+  - 114: {fileID: 114347825955441444}
+  m_Layer: 0
+  m_Name: ItemSlot2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4152293284327189
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1107227000156150}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4238274192454928}
+  m_RootOrder: 8
+--- !u!114 &114347825955441444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1107227000156150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884642434247eb7a2639455cbce9a946, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1045374509
+  ID: 4
+  Name: 3040050
+  Description: 3040055
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4110960447764150, guid: 426aaa31ff469624b836d2ac1671f101, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 49
+  UpgradeType: 1
+--- !u!1 &1756574638646206
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4181943131841589}
+  - 114: {fileID: 114477100726068394}
+  m_Layer: 0
+  m_Name: Health1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4181943131841589
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1756574638646206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4238274192454928}
+  m_RootOrder: 9
+--- !u!114 &114477100726068394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1756574638646206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884642434247eb7a2639455cbce9a946, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 7165979
+  ID: 6
+  Name: 3040070
+  Description: 3040075
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4827196774825900, guid: 365ea7c2973e58347af94b8ef52f706d, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 5000
+  GoldCost: 0
+  UpgradeType: 5
+--- !u!1 &1492945908867671
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4288669412435185}
+  - 114: {fileID: 114745306663409967}
+  m_Layer: 0
+  m_Name: WeaponSlot1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4288669412435185
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1492945908867671}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4238274192454928}
+  m_RootOrder: 10
+--- !u!114 &114745306663409967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1492945908867671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884642434247eb7a2639455cbce9a946, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 236908753
+  ID: 0
+  Name: 3040010
+  Description: 3040015
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4794009726456709, guid: 0e64547ea8ab094498be8b200655cf4b, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 0
+  UpgradeType: 0
+--- !u!1 &1074274929059728
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4028858041283061}
+  - 114: {fileID: 114440367340984419}
+  m_Layer: 0
+  m_Name: WeaponSlot2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4028858041283061
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1074274929059728}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4238274192454928}
+  m_RootOrder: 11
+--- !u!114 &114440367340984419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1074274929059728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884642434247eb7a2639455cbce9a946, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1219082345
+  ID: 1
+  Name: 3040020
+  Description: 3040025
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4794009726456709, guid: 0e64547ea8ab094498be8b200655cf4b, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 49
+  UpgradeType: 0
+--- !u!1 &1243178667768082
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4311965878421853}
+  - 114: {fileID: 114381043198592216}
+  m_Layer: 0
+  m_Name: WeaponSlotEx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4311965878421853
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1243178667768082}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4238274192454928}
+  m_RootOrder: 12
+--- !u!114 &114381043198592216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1243178667768082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884642434247eb7a2639455cbce9a946, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1911420955
+  ID: 2
+  Name: 3040030
+  Description: 3040035
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4794009726456709, guid: 0e64547ea8ab094498be8b200655cf4b, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 49
+  UpgradeType: 0
+--- !u!1 &1893907799587721
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4021569846677224}
+  - 114: {fileID: 114593687527387727}
+  m_Layer: 0
+  m_Name: ItemSlotEx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4021569846677224
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893907799587721}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4238274192454928}
+  m_RootOrder: 13
+--- !u!114 &114593687527387727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893907799587721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884642434247eb7a2639455cbce9a946, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 42234364
+  ID: 5
+  Name: 3040060
+  Description: 3040065
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4110960447764150, guid: 426aaa31ff469624b836d2ac1671f101, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 49
+  UpgradeType: 1

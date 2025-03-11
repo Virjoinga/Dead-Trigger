@@ -1,0 +1,1211 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1370442928444804}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1370442928444804
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4787991128169665}
+  m_Layer: 0
+  m_Name: _ItemSettings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4787991128169665
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1370442928444804}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.056056, y: 1.2160476, z: 24.550915}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4095988539269276}
+  - {fileID: 4407911814721994}
+  - {fileID: 4274201981017732}
+  - {fileID: 4495402722100630}
+  - {fileID: 4387908536950816}
+  - {fileID: 4248741700491920}
+  - {fileID: 4764664883955522}
+  - {fileID: 4243548196376120}
+  - {fileID: 4337235529338103}
+  - {fileID: 4004293161121522}
+  - {fileID: 4325824862907477}
+  - {fileID: 4245498953340513}
+  - {fileID: 4947501156450245}
+  - {fileID: 4163706109668714}
+  - {fileID: 4817147269102109}
+  - {fileID: 4559531570129558}
+  - {fileID: 4288211018410965}
+  - {fileID: 4921426097945921}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!1 &1637242683179950
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4095988539269276}
+  - 114: {fileID: 114203888816353544}
+  m_Layer: 0
+  m_Name: BoosterDamage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4095988539269276
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1637242683179950}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 0
+--- !u!114 &114203888816353544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1637242683179950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 57054572
+  ID: 15
+  Name: 3030020
+  Description: 3030025
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4221744670617146, guid: 6c322d47e24f65048801e498b1b82bea, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4906754050410462, guid: aa27c17d90517324fa1cf55fc6d8508d, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 399
+  ItemType: 2
+  ItemUse: 0
+  ItemBehaviour: 9
+  UseSound: {fileID: 8300000, guid: 046dd931280904b41b7d5a2657245247, type: 3}
+  SpawnObject: {fileID: 0}
+  Count: 1
+  MaxCountInMisson: 1
+  InfiniteUse: 1
+  Timer: 0
+  RechargeModificator: 0
+  PowerUpModifier: 1.5
+  HealHP: 0
+--- !u!1 &1550796245356920
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4407911814721994}
+  - 114: {fileID: 114168946432777234}
+  m_Layer: 0
+  m_Name: BigHeads
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4407911814721994
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1550796245356920}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 1
+--- !u!114 &114168946432777234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1550796245356920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 873261499
+  ID: 17
+  Name: 3030160
+  Description: 3030165
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4200334479356598, guid: 808565029a0b11d459a70bbaa8dc10e9, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4943581792720255, guid: e059a373918f9e74ca1b389173556422, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 199
+  ItemType: 2
+  ItemUse: 0
+  ItemBehaviour: 10
+  UseSound: {fileID: 8300000, guid: f8bb0c9def77a0247ba8b430fd3c0034, type: 3}
+  SpawnObject: {fileID: 0}
+  Count: 1
+  MaxCountInMisson: 1
+  InfiniteUse: 1
+  Timer: 0
+  RechargeModificator: 0
+  PowerUpModifier: 1
+  HealHP: 0
+--- !u!1 &1102547968302409
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4274201981017732}
+  - 114: {fileID: 114860533319991428}
+  m_Layer: 0
+  m_Name: MiniMortar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4274201981017732
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1102547968302409}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 2
+--- !u!114 &114860533319991428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1102547968302409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1583102100
+  ID: 18
+  Name: 3030170
+  Description: 3030175
+  Rank: 2
+  ShopWidgetPrefab: {fileID: 4233400138514014, guid: b7b6bbb9e3db8f74997c09a01ddf34d8, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4027162215045322, guid: c916de2475e857f498b954ad95bcc433, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 9
+  ItemType: 1
+  ItemUse: 1
+  ItemBehaviour: 2
+  UseSound: {fileID: 8300000, guid: 8786205b51bd70f4cb3f69ece2cc5d88, type: 3}
+  SpawnObject: {fileID: 1090314427940949, guid: 1a71ff4f3fba2294bb53ee5df3dd65b6, type: 2}
+  Count: 9
+  MaxCountInMisson: 3
+  InfiniteUse: 0
+  Timer: 0.5
+  RechargeModificator: 1
+  PowerUpModifier: 1
+  HealHP: 0
+--- !u!1 &1304442088367472
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4495402722100630}
+  - 114: {fileID: 114909615065539055}
+  m_Layer: 0
+  m_Name: Turret
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4495402722100630
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304442088367472}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 3
+--- !u!114 &114909615065539055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304442088367472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 794417565
+  ID: 11
+  Name: 3030150
+  Description: 3030155
+  Rank: 8
+  ShopWidgetPrefab: {fileID: 4681591241888845, guid: 9424973af07e0a14c94140d8b9c4613a, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4833001928315194, guid: e6ddc2cbab7f62a48b1f92968208b3a0, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 1200
+  GoldCost: 0
+  ItemType: 1
+  ItemUse: 1
+  ItemBehaviour: 2
+  UseSound: {fileID: 8300000, guid: 8786205b51bd70f4cb3f69ece2cc5d88, type: 3}
+  SpawnObject: {fileID: 1719351500948160, guid: a9ff552e345fc764ea75b075e5c8c72a, type: 2}
+  Count: 2
+  MaxCountInMisson: 2
+  InfiniteUse: 0
+  Timer: 5
+  RechargeModificator: 1
+  PowerUpModifier: 1
+  HealHP: 0
+--- !u!1 &1212143360636458
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4387908536950816}
+  - 114: {fileID: 114085359183189862}
+  m_Layer: 0
+  m_Name: SloMotion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4387908536950816
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1212143360636458}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 4
+--- !u!114 &114085359183189862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1212143360636458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1525186800
+  ID: 16
+  Name: 3030140
+  Description: 3030145
+  Rank: 5
+  ShopWidgetPrefab: {fileID: 4355482418953535, guid: c3b49742fb1a8ac4db3d6ec6364bcf60, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4976974555237527, guid: 1e9d55b16df05004e81c8581329c7478, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 700
+  GoldCost: 0
+  ItemType: 0
+  ItemUse: 1
+  ItemBehaviour: 5
+  UseSound: {fileID: 0}
+  SpawnObject: {fileID: 0}
+  Count: 6
+  MaxCountInMisson: 3
+  InfiniteUse: 0
+  Timer: 60
+  RechargeModificator: 1
+  PowerUpModifier: 1
+  HealHP: 0
+--- !u!1 &1424954165565243
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4248741700491920}
+  - 114: {fileID: 114775268814683874}
+  m_Layer: 0
+  m_Name: ReviveKit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4248741700491920
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1424954165565243}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 5
+--- !u!114 &114775268814683874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1424954165565243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 399366708
+  ID: 3
+  Name: 3030130
+  Description: 3030135
+  Rank: 11
+  ShopWidgetPrefab: {fileID: 4526071320270557, guid: 5e3f60d9277947845967ef0cd2608be6, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4436357821870949, guid: 57fa7dc3aa755024c8cd2c184e5e751b, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 10
+  ItemType: 0
+  ItemUse: 0
+  ItemBehaviour: 4
+  UseSound: {fileID: 8300000, guid: c164a85962c276048901807bb5b44b94, type: 3}
+  SpawnObject: {fileID: 0}
+  Count: 2
+  MaxCountInMisson: 2
+  InfiniteUse: 0
+  Timer: 60
+  RechargeModificator: 1
+  PowerUpModifier: 1
+  HealHP: 10000
+--- !u!1 &1353218223514587
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4764664883955522}
+  - 114: {fileID: 114765428234664254}
+  m_Layer: 0
+  m_Name: HealMedKit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4764664883955522
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1353218223514587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 6
+--- !u!114 &114765428234664254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1353218223514587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1197003546
+  ID: 2
+  Name: 3030110
+  Description: 3030115
+  Rank: 9
+  ShopWidgetPrefab: {fileID: 4064813979666652, guid: bbca1390c74c8984b826918e843ba4dc, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4628058488437250, guid: f5e1e717ffa639946869b036edb90057, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 5
+  ItemType: 0
+  ItemUse: 1
+  ItemBehaviour: 3
+  UseSound: {fileID: 8300000, guid: f8bb0c9def77a0247ba8b430fd3c0034, type: 3}
+  SpawnObject: {fileID: 0}
+  Count: 2
+  MaxCountInMisson: 2
+  InfiniteUse: 0
+  Timer: 10
+  RechargeModificator: 1
+  PowerUpModifier: 1
+  HealHP: 200
+--- !u!1 &1908669873192648
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4243548196376120}
+  - 114: {fileID: 114169377298874363}
+  m_Layer: 0
+  m_Name: Bait
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4243548196376120
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1908669873192648}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 7
+--- !u!114 &114169377298874363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1908669873192648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1491780509
+  ID: 4
+  Name: 3030010
+  Description: 3030015
+  Rank: 4
+  ShopWidgetPrefab: {fileID: 4203863118108416, guid: 0cb87bb1249abb049b7770c10ec8dd9c, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4959679890291311, guid: 2a2870611f511a940aae81b79ba45553, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 500
+  GoldCost: 0
+  ItemType: 1
+  ItemUse: 1
+  ItemBehaviour: 1
+  UseSound: {fileID: 0}
+  SpawnObject: {fileID: 1667021207978405, guid: 6292d79da59ec444f9e88e9f5fb672bd, type: 2}
+  Count: 4
+  MaxCountInMisson: 2
+  InfiniteUse: 0
+  Timer: 0.5
+  RechargeModificator: 1
+  PowerUpModifier: 1
+  HealHP: 0
+--- !u!1 &1354474061338630
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4337235529338103}
+  - 114: {fileID: 114062935195909632}
+  m_Layer: 0
+  m_Name: GrenadeBait
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4337235529338103
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354474061338630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 8
+--- !u!114 &114062935195909632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354474061338630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 255591838
+  ID: 5
+  Name: 3030070
+  Description: 3030075
+  Rank: 14
+  ShopWidgetPrefab: {fileID: 4285134329805173, guid: c737f5cc723555d42b9f3942c967528f, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4718384234270739, guid: 9cef320a70827684f9ba523a5e509aa7, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 400
+  GoldCost: 0
+  ItemType: 1
+  ItemUse: 1
+  ItemBehaviour: 1
+  UseSound: {fileID: 0}
+  SpawnObject: {fileID: 1903486252005201, guid: c13ef44a2a7bd714086b900867b2fe98, type: 2}
+  Count: 2
+  MaxCountInMisson: 2
+  InfiniteUse: 0
+  Timer: 0.5
+  RechargeModificator: 1
+  PowerUpModifier: 1
+  HealHP: 0
+--- !u!1 &1612036874425278
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4004293161121522}
+  - 114: {fileID: 114174215562590505}
+  m_Layer: 0
+  m_Name: GrenadeSticky
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4004293161121522
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1612036874425278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 9
+--- !u!114 &114174215562590505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1612036874425278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 1
+  GUID: 319295343
+  ID: 7
+  Name: 3030090
+  Description: 3030095
+  Rank: 40
+  ShopWidgetPrefab: {fileID: 4834958856464024, guid: 05279080d0c47fc40ae5906339a8ef38, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4289356780682475, guid: fab1d2740385092469da3509e9749907, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 250
+  GoldCost: 0
+  ItemType: 1
+  ItemUse: 1
+  ItemBehaviour: 1
+  UseSound: {fileID: 0}
+  SpawnObject: {fileID: 1531656969843596, guid: 5ed26023822a5e9419ec4fd9976b31d9, type: 2}
+  Count: 2
+  MaxCountInMisson: 2
+  InfiniteUse: 0
+  Timer: 0.5
+  RechargeModificator: 1
+  PowerUpModifier: 1
+  HealHP: 0
+--- !u!1 &1185047988761671
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4325824862907477}
+  - 114: {fileID: 114675410147168586}
+  m_Layer: 0
+  m_Name: Mine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4325824862907477
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1185047988761671}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 10
+--- !u!114 &114675410147168586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1185047988761671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 452187238
+  ID: 8
+  Name: 3030120
+  Description: 3030125
+  Rank: 10
+  ShopWidgetPrefab: {fileID: 4829909109532162, guid: 637ad129c5cd83042b7bd2e1253b4ad0, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4804892352401031, guid: 285fd994ecc4eb34cb2c25bce291b443, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 800
+  GoldCost: 0
+  ItemType: 1
+  ItemUse: 1
+  ItemBehaviour: 2
+  UseSound: {fileID: 8300000, guid: 8786205b51bd70f4cb3f69ece2cc5d88, type: 3}
+  SpawnObject: {fileID: 1879605020560673, guid: 84ba4888363e8fd44831f3fd8e3f1cf5, type: 2}
+  Count: 8
+  MaxCountInMisson: 4
+  InfiniteUse: 0
+  Timer: 0.5
+  RechargeModificator: 1
+  PowerUpModifier: 1
+  HealHP: 0
+--- !u!1 &1945973086893630
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4245498953340513}
+  - 114: {fileID: 114841888761645141}
+  m_Layer: 0
+  m_Name: HealBandage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4245498953340513
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1945973086893630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 11
+--- !u!114 &114841888761645141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1945973086893630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 96137660
+  ID: 1
+  Name: 3030100
+  Description: 3030105
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4818839567871066, guid: 47ff57a05c3bd9b40b1b24b4d4448128, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4315740536121287, guid: 5153412ddfc293d458f7690981beca86, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 400
+  GoldCost: 0
+  ItemType: 0
+  ItemUse: 1
+  ItemBehaviour: 3
+  UseSound: {fileID: 8300000, guid: f8bb0c9def77a0247ba8b430fd3c0034, type: 3}
+  SpawnObject: {fileID: 0}
+  Count: 5
+  MaxCountInMisson: 5
+  InfiniteUse: 0
+  Timer: 2
+  RechargeModificator: 1
+  PowerUpModifier: 1
+  HealHP: 40
+--- !u!1 &1940542430282613
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4947501156450245}
+  - 114: {fileID: 114896683461198575}
+  m_Layer: 0
+  m_Name: CutterMechanical
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4947501156450245
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1940542430282613}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 12
+--- !u!114 &114896683461198575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1940542430282613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1815085562
+  ID: 9
+  Name: 3030060
+  Description: 3030065
+  Rank: 7
+  ShopWidgetPrefab: {fileID: 4595897832837046, guid: 340f7706cc0a0bb4a8f191397cb7073e, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4987342446938915, guid: cdc72a70b47ab05428ba2eec6edd7e62, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 1000
+  GoldCost: 0
+  ItemType: 1
+  ItemUse: 1
+  ItemBehaviour: 2
+  UseSound: {fileID: 8300000, guid: 8786205b51bd70f4cb3f69ece2cc5d88, type: 3}
+  SpawnObject: {fileID: 1624667880885732, guid: e5041e660949fae458f43c35833c525f, type: 2}
+  Count: 2
+  MaxCountInMisson: 2
+  InfiniteUse: 0
+  Timer: 5
+  RechargeModificator: 1
+  PowerUpModifier: 1
+  HealHP: 0
+--- !u!1 &1662908949244191
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4163706109668714}
+  - 114: {fileID: 114594916733835544}
+  m_Layer: 0
+  m_Name: BoosterMoney
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4163706109668714
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1662908949244191}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 13
+--- !u!114 &114594916733835544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1662908949244191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1114115159
+  ID: 13
+  Name: 3030030
+  Description: 3030035
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4495360359979654, guid: f1a7bef94ca83a242a4e80580c79249f, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4884294694457689, guid: 99e5ab22701a94141881dfe532b527d6, type: 2}
+  SaleInPercent: 25
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 399
+  ItemType: 2
+  ItemUse: 0
+  ItemBehaviour: 6
+  UseSound: {fileID: 8300000, guid: 43d68422660ef2547b387f2405f97781, type: 3}
+  SpawnObject: {fileID: 0}
+  Count: 1
+  MaxCountInMisson: 1
+  InfiniteUse: 1
+  Timer: 0
+  RechargeModificator: 0
+  PowerUpModifier: 2
+  HealHP: 0
+--- !u!1 &1123368307638979
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4817147269102109}
+  - 114: {fileID: 114248905660330738}
+  m_Layer: 0
+  m_Name: BoosterSpeed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4817147269102109
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1123368307638979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 14
+--- !u!114 &114248905660330738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1123368307638979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1423587597
+  ID: 14
+  Name: 3030040
+  Description: 3030045
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4333278156118951, guid: 2f13dd4dca5977248b47a95a5624d038, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4277703745847446, guid: f7736d7744f48404e9f1d337f27115b0, type: 2}
+  SaleInPercent: 25
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 399
+  ItemType: 2
+  ItemUse: 0
+  ItemBehaviour: 8
+  UseSound: {fileID: 8300000, guid: 046dd931280904b41b7d5a2657245247, type: 3}
+  SpawnObject: {fileID: 0}
+  Count: 1
+  MaxCountInMisson: 1
+  InfiniteUse: 1
+  Timer: 0
+  RechargeModificator: 0
+  PowerUpModifier: 1.66
+  HealHP: 0
+--- !u!1 &1803114951355300
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4559531570129558}
+  - 114: {fileID: 114796771943667612}
+  m_Layer: 0
+  m_Name: GrenadeFrag
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4559531570129558
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1803114951355300}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 15
+--- !u!114 &114796771943667612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1803114951355300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 525602602
+  ID: 6
+  Name: 3030080
+  Description: 3030085
+  Rank: 6
+  ShopWidgetPrefab: {fileID: 4333125326698188, guid: 2da085f4ecceefc439010d7cdbd058cf, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4156300662900267, guid: 707b7ce93dc182f4f8eaaa8c0c0a420f, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 600
+  GoldCost: 0
+  ItemType: 1
+  ItemUse: 1
+  ItemBehaviour: 1
+  UseSound: {fileID: 0}
+  SpawnObject: {fileID: 1917749022002420, guid: 58245eb5052587146a1f996b6de3f8d4, type: 2}
+  Count: 6
+  MaxCountInMisson: 3
+  InfiniteUse: 0
+  Timer: 0.5
+  RechargeModificator: 1
+  PowerUpModifier: 1
+  HealHP: 0
+--- !u!1 &1681774515504269
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4288211018410965}
+  - 114: {fileID: 114866344986222218}
+  m_Layer: 0
+  m_Name: CutterLaser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4288211018410965
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1681774515504269}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 16
+--- !u!114 &114866344986222218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1681774515504269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1494397010
+  ID: 10
+  Name: 3030050
+  Description: 3030055
+  Rank: 12
+  ShopWidgetPrefab: {fileID: 4866255438501737, guid: cb0c2ba17da186d4f85cf30a25b0ccc4, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4978031637485363, guid: 89e000afc9251b24eb46b6c1732794a6, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 1100
+  GoldCost: 0
+  ItemType: 1
+  ItemUse: 1
+  ItemBehaviour: 2
+  UseSound: {fileID: 8300000, guid: 8786205b51bd70f4cb3f69ece2cc5d88, type: 3}
+  SpawnObject: {fileID: 1070770922885898, guid: 5cd61bee67fc9ef41a547e6ea384dbb1, type: 2}
+  Count: 2
+  MaxCountInMisson: 2
+  InfiniteUse: 0
+  Timer: 5
+  RechargeModificator: 1
+  PowerUpModifier: 1
+  HealHP: 0
+--- !u!1 &1581577734423403
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4921426097945921}
+  - 114: {fileID: 114519285095025307}
+  m_Layer: 0
+  m_Name: TurretLaser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4921426097945921
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1581577734423403}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787991128169665}
+  m_RootOrder: 17
+--- !u!114 &114519285095025307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1581577734423403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ec84380b5eb466ac6267a12632956, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 318368656
+  ID: 19
+  Name: 3030180
+  Description: 3030185
+  Rank: 3
+  ShopWidgetPrefab: {fileID: 4800864706408835, guid: 746d8006164217445b989eaa081e2afc, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 4783709677611959, guid: ccd8b03babc1f9949978e3b3202d701d, type: 2}
+  SaleInPercent: 0
+  NewInShop: 0
+  MoneyCost: 0
+  GoldCost: 9
+  ItemType: 1
+  ItemUse: 1
+  ItemBehaviour: 2
+  UseSound: {fileID: 8300000, guid: 8786205b51bd70f4cb3f69ece2cc5d88, type: 3}
+  SpawnObject: {fileID: 1551451879536747, guid: 2826b0261ba09a84da2eec795d142ac3, type: 2}
+  Count: 3
+  MaxCountInMisson: 2
+  InfiniteUse: 0
+  Timer: 5
+  RechargeModificator: 1
+  PowerUpModifier: 1
+  HealHP: 0

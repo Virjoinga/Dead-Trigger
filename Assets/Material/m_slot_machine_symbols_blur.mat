@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: m_slot_machine_symbols_blur
+  m_Shader: {fileID: 4800000, guid: 2b7f24b66e79e7c43954210143d3f1f8, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: c0035884da9fd0247ab8cb4ddd9f9d6c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _DetailTex
+      second:
+        m_Texture: {fileID: 2800000, guid: c0035884da9fd0247ab8cb4ddd9f9d6c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _Cutoff
+      second: 0.36956522
+    - first:
+        name: _Shininess
+      second: 0.027438952
+    - first:
+        name: _ScrollX
+      second: 0
+    - first:
+        name: _ScrollY
+      second: 10
+    - first:
+        name: _Scroll2X
+      second: 0
+    - first:
+        name: _Scroll2Y
+      second: 5
+    - first:
+        name: _MMultiplier
+      second: 0.5
+    - first:
+        name: _SineAmplX
+      second: 0
+    - first:
+        name: _SineAmplY
+      second: 0
+    - first:
+        name: _SineFreqX
+      second: 0
+    - first:
+        name: _SineFreqY
+      second: 0
+    - first:
+        name: _SineAmplX2
+      second: 0
+    - first:
+        name: _SineAmplY2
+      second: 0
+    - first:
+        name: _SineFreqX2
+      second: 0
+    - first:
+        name: _SineFreqY2
+      second: 0
+    - first:
+        name: _SpecularStrength
+      second: 1
+    - first:
+        name: _Spread
+      second: 0.1
+    - first:
+        name: _EmissionLM
+      second: 0
+    - first:
+        name: _SHLightingScale
+      second: 1
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 0.9477612, g: 0.9336155, b: 0.9336155, a: 1}
+    - first:
+        name: _Emission
+      second: {r: 0.49253732, g: 0.49253732, b: 0.49253732, a: 0}
+    - first:
+        name: _SpecColor
+      second: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - first:
+        name: _SpecularStrength
+      second: {r: 0, g: 0, b: 2, a: 0}
+    - first:
+        name: _ScrollingSpeed
+      second: {r: 0, g: 0, b: 0, a: 0}
+    - first:
+        name: _Params
+      second: {r: 0.3, g: 0, b: 0, a: 0}
+    - first:
+        name: _EnvStrength
+      second: {r: 0, g: 1, b: 1, a: 0}

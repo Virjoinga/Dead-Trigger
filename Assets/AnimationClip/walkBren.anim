@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: walkBren
+  m_AnimationType: 1
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 1.080059E-06, y: 0.7071068, z: -1.080059E-06, w: 0.7071068}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      - time: 0.033333335
+        value: {x: 1.080059E-06, y: 0.7071068, z: -1.080059E-06, w: 0.7071068}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: bren/magazine
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.014364681, y: 0.70696044, z: -0.014406478, w: 0.70696044}
+        inSlope: {x: 0.12808824, y: 0.002219081, z: 0.12808813, w: 0.002219081}
+        outSlope: {x: 0.12808824, y: 0.002219081, z: 0.12808813, w: 0.002219081}
+        tangentMode: 0
+      - time: 0.6333334
+        value: {x: 0.035087258, y: 0.7062368, z: 0.03504513, w: 0.70623684}
+        inSlope: {x: -0.091948316, y: 0.0045284634, z: -0.091941506, w: 0.004524887}
+        outSlope: {x: -0.091948316, y: 0.0045284634, z: -0.091941506, w: 0.004524887}
+        tangentMode: 0
+      - time: 1.3000001
+        value: {x: -0.024364693, y: 0.70668715, z: -0.024397345, w: 0.7066855}
+        inSlope: {x: 0.073048495, y: 0.0024640583, z: 0.07288885, w: 0.0024998211}
+        outSlope: {x: 0.073048495, y: 0.0024640583, z: 0.07288885, w: 0.0024998211}
+        tangentMode: 0
+      - time: 1.4000001
+        value: {x: -0.014364681, y: 0.70696044, z: -0.014406478, w: 0.70696044}
+        inSlope: {x: 0.115851454, y: 0.0026714827, z: 0.11581739, w: 0.002675059}
+        outSlope: {x: 0.115851454, y: 0.0026714827, z: 0.11581739, w: 0.002675059}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: bren/nohy
+  m_CompressedRotationCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.00030001934, y: 0.2128, z: 0.1472}
+        inSlope: {x: -2.1684041E-18, y: 4.4408917E-15, z: 2.2204458E-15}
+        outSlope: {x: -2.1684041E-18, y: 4.4408917E-15, z: 2.2204458E-15}
+        tangentMode: 0
+      - time: 0.033333335
+        value: {x: -0.00030001934, y: 0.2128, z: 0.1472}
+        inSlope: {x: -9.293161E-19, y: 1.9032394E-15, z: 9.516197E-16}
+        outSlope: {x: -9.293161E-19, y: 1.9032394E-15, z: 9.516197E-16}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: bren/magazine
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.00028714596, y: 0.043803424, z: 0.56281704}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 1.4
+        value: {x: -0.00028714596, y: 0.043803424, z: 0.56281704}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: bren/nohy
+  m_ScaleCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0.9999997, y: 1.0000012, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 1.4000001
+        value: {x: 0.9999997, y: 1.0000012, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: bren/nohy
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 30
+  m_WrapMode: 2
+  m_Bounds:
+    m_Center: {x: -0.00026734173, y: -0.17624366, z: -0.16031149}
+    m_Extent: {x: 0.096092045, y: 0.609424, z: 0.33349663}
+  m_ClipBindingConstant:
+    genericBindings: []
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_StartTime: 0
+    m_StopTime: 1
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_Events: []

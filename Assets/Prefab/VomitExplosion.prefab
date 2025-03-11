@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1267272156982540}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1267272156982540
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4657438492146251}
+  - 82: {fileID: 82108384313070377}
+  - 114: {fileID: 114068326025310600}
+  m_Layer: 0
+  m_Name: VomitExplosion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4657438492146251
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1267272156982540}
+  m_LocalRotation: {x: -0.5, y: -0.500001, z: -0.499998, w: 0.500001}
+  m_LocalPosition: {x: -9.405519, y: 0.2675559, z: 10.772922}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!82 &82108384313070377
+AudioSource:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1267272156982540}
+  m_Enabled: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 1
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 5
+  MaxDistance: 45
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0.11111111
+      value: 1
+      inSlope: -9.0036125
+      outSlope: -9.0036125
+      tangentMode: 0
+    - time: 0.22222222
+      value: 0.5
+      inSlope: -2.2509031
+      outSlope: -2.2509031
+      tangentMode: 0
+    - time: 0.99421966
+      value: 0
+      inSlope: -1.1089745
+      outSlope: -1.1089745
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &114068326025310600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1267272156982540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a27ce7a6757b66d711a6ac6b10005466, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_DamageRadius: 2
+  m_MaxDamageRadius: 0
+  m_MaxDamage: 25
+  m_WeaponType: 7
+  m_GenerateWaveFX: 0
+  m_WaveFXDelay: 0
+  m_WaveFXAmplitudeMin: 1
+  m_WaveFXAmplitudeMax: 1
+  m_WaveFXFreq: 20
+  m_WaveFXDuration: 1.5
+  m_WaveFXRadiusMin: 0.1
+  m_WaveFXRadiusMax: 1
+  m_WaveFXSpeed: 1.3
+  m_WaveFXMaxWrldDist: 30
+  m_ParticleCriticalDistance: 5

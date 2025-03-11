@@ -1,0 +1,769 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1458663319664652}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1458663319664652
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4135767695741845}
+  m_Layer: 0
+  m_Name: _FundSettings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4135767695741845
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1458663319664652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.056056, y: 1.2160476, z: 24.550915}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4384868951438317}
+  - {fileID: 4998970554433191}
+  - {fileID: 4370082737794410}
+  - {fileID: 4174311206081580}
+  - {fileID: 4197484617481630}
+  - {fileID: 4171185645559861}
+  - {fileID: 4542809847395548}
+  - {fileID: 4128667611536701}
+  - {fileID: 4144072489394701}
+  - {fileID: 4294084311434259}
+  - {fileID: 4831641940004700}
+  - {fileID: 4268876993815469}
+  - {fileID: 4744869986925853}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!1 &1328378488322681
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4384868951438317}
+  - 114: {fileID: 114095744574375390}
+  m_Layer: 0
+  m_Name: ConvertMoney
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4384868951438317
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1328378488322681}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4135767695741845}
+  m_RootOrder: 0
+--- !u!114 &114095744574375390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1328378488322681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77115f6043715502a36d78103dd3f80, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 1
+  GUID: 1577511800
+  ID: 11
+  Name: 3050110
+  Description: 3050115
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4170337942545807, guid: 6855d7f990922b0438e0b5c7565f14af, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  GoldCost: 0
+  MoneyCost: 200000
+  ConvertGold: 0
+  AddGold: 400
+  AddMoney: 0
+--- !u!1 &1150450415998915
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4998970554433191}
+  - 114: {fileID: 114426646011370598}
+  m_Layer: 0
+  m_Name: FreeGoldWeb
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4998970554433191
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1150450415998915}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4135767695741845}
+  m_RootOrder: 1
+--- !u!114 &114426646011370598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1150450415998915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77115f6043715502a36d78103dd3f80, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 617618831
+  ID: 12
+  Name: 3050120
+  Description: 3050125
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4429547722001110, guid: cb38485f2f6dbb1418b301d103d4a87a, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  GoldCost: 0
+  MoneyCost: 0
+  ConvertGold: 0
+  AddGold: 0
+  AddMoney: 0
+--- !u!1 &1885208092182028
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4370082737794410}
+  - 114: {fileID: 114367254430029663}
+  m_Layer: 0
+  m_Name: Gold99
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4370082737794410
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1885208092182028}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4135767695741845}
+  m_RootOrder: 2
+--- !u!114 &114367254430029663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1885208092182028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77115f6043715502a36d78103dd3f80, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 792157778
+  ID: 1
+  Name: 3050010
+  Description: 3050015
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4123120629709993, guid: 23b3fa421c4a8a2469f540d1a19f4e27, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  GoldCost: 0
+  MoneyCost: 0
+  ConvertGold: 0
+  AddGold: 200
+  AddMoney: 0
+--- !u!1 &1099810817226292
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4174311206081580}
+  - 114: {fileID: 114608920360551428}
+  m_Layer: 0
+  m_Name: Gold299
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4174311206081580
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1099810817226292}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4135767695741845}
+  m_RootOrder: 3
+--- !u!114 &114608920360551428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1099810817226292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77115f6043715502a36d78103dd3f80, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1757547516
+  ID: 2
+  Name: 3050020
+  Description: 3050015
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4781496631330597, guid: 81cac03f9f267a14499b9a0a2c423f9e, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 10
+  NewInShop: 0
+  GoldCost: 0
+  MoneyCost: 0
+  ConvertGold: 0
+  AddGold: 660
+  AddMoney: 0
+--- !u!1 &1109127945949904
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4197484617481630}
+  - 114: {fileID: 114941705024286808}
+  m_Layer: 0
+  m_Name: Gold499
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4197484617481630
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1109127945949904}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4135767695741845}
+  m_RootOrder: 4
+--- !u!114 &114941705024286808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1109127945949904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77115f6043715502a36d78103dd3f80, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 488642918
+  ID: 3
+  Name: 3050030
+  Description: 3050015
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4781496631330597, guid: 81cac03f9f267a14499b9a0a2c423f9e, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 25
+  NewInShop: 0
+  GoldCost: 0
+  MoneyCost: 0
+  ConvertGold: 0
+  AddGold: 1250
+  AddMoney: 0
+--- !u!1 &1362566782188882
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4171185645559861}
+  - 114: {fileID: 114995343471900322}
+  m_Layer: 0
+  m_Name: Gold999
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4171185645559861
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1362566782188882}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4135767695741845}
+  m_RootOrder: 5
+--- !u!114 &114995343471900322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1362566782188882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77115f6043715502a36d78103dd3f80, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1211803099
+  ID: 4
+  Name: 3050040
+  Description: 3050015
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4781496631330597, guid: 81cac03f9f267a14499b9a0a2c423f9e, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 50
+  NewInShop: 0
+  GoldCost: 0
+  MoneyCost: 0
+  ConvertGold: 0
+  AddGold: 3000
+  AddMoney: 0
+--- !u!1 &1120158066493278
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4542809847395548}
+  - 114: {fileID: 114938777437184344}
+  m_Layer: 0
+  m_Name: Gold1299
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4542809847395548
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1120158066493278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4135767695741845}
+  m_RootOrder: 6
+--- !u!114 &114938777437184344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1120158066493278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77115f6043715502a36d78103dd3f80, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1816880048
+  ID: 5
+  Name: 3050050
+  Description: 3050015
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4781496631330597, guid: 81cac03f9f267a14499b9a0a2c423f9e, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 100
+  NewInShop: 0
+  GoldCost: 0
+  MoneyCost: 0
+  ConvertGold: 0
+  AddGold: 5200
+  AddMoney: 0
+--- !u!1 &1462122897542234
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4128667611536701}
+  - 114: {fileID: 114176522756020428}
+  m_Layer: 0
+  m_Name: Money99
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4128667611536701
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1462122897542234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4135767695741845}
+  m_RootOrder: 7
+--- !u!114 &114176522756020428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1462122897542234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77115f6043715502a36d78103dd3f80, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 822424458
+  ID: 6
+  Name: 3050060
+  Description: 3050025
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4941337728479461, guid: 3471e1300cf1b124ca0f4b839863f3b4, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  GoldCost: 0
+  MoneyCost: 0
+  ConvertGold: 0
+  AddGold: 0
+  AddMoney: 40000
+--- !u!1 &1303992364071711
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4144072489394701}
+  - 114: {fileID: 114106930794087321}
+  m_Layer: 0
+  m_Name: ConvertGold
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4144072489394701
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1303992364071711}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4135767695741845}
+  m_RootOrder: 8
+--- !u!114 &114106930794087321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1303992364071711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77115f6043715502a36d78103dd3f80, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 1
+  GUID: 246524090
+  ID: 10
+  Name: 3050100
+  Description: 3050105
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4295807507130945, guid: 0566f2ea5d2e7e74f90f6381cea5f176, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  GoldCost: 400
+  MoneyCost: 0
+  ConvertGold: 0
+  AddGold: 0
+  AddMoney: 200000
+--- !u!1 &1687752350188291
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4294084311434259}
+  - 114: {fileID: 114569307256760344}
+  m_Layer: 0
+  m_Name: Money299
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4294084311434259
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1687752350188291}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4135767695741845}
+  m_RootOrder: 9
+--- !u!114 &114569307256760344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1687752350188291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77115f6043715502a36d78103dd3f80, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 635666773
+  ID: 7
+  Name: 3050070
+  Description: 3050025
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4818517001484508, guid: 22481d74817ec2a4b8beb1e63acaf1ca, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 25
+  NewInShop: 0
+  GoldCost: 0
+  MoneyCost: 0
+  ConvertGold: 0
+  AddGold: 0
+  AddMoney: 150000
+--- !u!1 &1988343541275976
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4831641940004700}
+  - 114: {fileID: 114459612968466740}
+  m_Layer: 0
+  m_Name: Money499
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4831641940004700
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1988343541275976}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4135767695741845}
+  m_RootOrder: 10
+--- !u!114 &114459612968466740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1988343541275976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77115f6043715502a36d78103dd3f80, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1250627365
+  ID: 8
+  Name: 3050080
+  Description: 3050025
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4818517001484508, guid: 22481d74817ec2a4b8beb1e63acaf1ca, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 50
+  NewInShop: 0
+  GoldCost: 0
+  MoneyCost: 0
+  ConvertGold: 0
+  AddGold: 0
+  AddMoney: 300000
+--- !u!1 &1574479329406994
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4268876993815469}
+  - 114: {fileID: 114933858673699216}
+  m_Layer: 0
+  m_Name: Money999
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4268876993815469
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574479329406994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4135767695741845}
+  m_RootOrder: 11
+--- !u!114 &114933858673699216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574479329406994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77115f6043715502a36d78103dd3f80, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 236700710
+  ID: 9
+  Name: 3050090
+  Description: 3050025
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4818517001484508, guid: 22481d74817ec2a4b8beb1e63acaf1ca, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 100
+  NewInShop: 0
+  GoldCost: 0
+  MoneyCost: 0
+  ConvertGold: 0
+  AddGold: 0
+  AddMoney: 800000
+--- !u!1 &1451326850568009
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4744869986925853}
+  - 114: {fileID: 114804913174526821}
+  m_Layer: 0
+  m_Name: FreeGoldInApp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4744869986925853
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1451326850568009}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4135767695741845}
+  m_RootOrder: 12
+--- !u!114 &114804913174526821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1451326850568009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77115f6043715502a36d78103dd3f80, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DISABLED: 0
+  GUID: 1179078848
+  ID: 13
+  Name: 3050130
+  Description: 3050135
+  Rank: 0
+  ShopWidgetPrefab: {fileID: 4494345479158193, guid: fcfbb41c009209e4ca510949ea54f773, type: 2}
+  ShopWidgetPrefabName:
+  HudWidgetPrefab: {fileID: 0}
+  SaleInPercent: 0
+  NewInShop: 0
+  GoldCost: 0
+  MoneyCost: 0
+  ConvertGold: 0
+  AddGold: 0
+  AddMoney: 0

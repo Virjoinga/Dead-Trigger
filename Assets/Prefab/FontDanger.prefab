@@ -1,0 +1,1157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1041755883911226}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1041755883911226
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4209341909374695}
+  - 114: {fileID: 114885905095055263}
+  m_Layer: 0
+  m_Name: FontDanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4209341909374695
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1041755883911226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.625877, y: 0.8103752, z: 5.31474}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114885905095055263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1041755883911226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280134ce1a71b1b158911e16573797f8, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_CharSet:
+    MaxCharHeight: 60
+    LineHeight: 54
+    Base: 45
+    RenderedSize: -46
+    Width: 512
+    Height: 512
+    _CharTable:
+    - Char: 32
+      X: 504
+      Y: 0
+      Width: 7
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 8
+      KerningList: []
+    - Char: 33
+      X: 116
+      Y: 244
+      Width: 14
+      Height: 60
+      XOffset: -1
+      YOffset: -3
+      XAdvance: 11
+      KerningList: []
+    - Char: 34
+      X: 422
+      Y: 183
+      Width: 19
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 15
+      KerningList: []
+    - Char: 35
+      X: 0
+      Y: 0
+      Width: 40
+      Height: 60
+      XOffset: -1
+      YOffset: -3
+      XAdvance: 37
+      KerningList: []
+    - Char: 36
+      X: 258
+      Y: 61
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 23
+      KerningList:
+      - Second: 116
+        Amount: -1
+    - Char: 37
+      X: 151
+      Y: 0
+      Width: 33
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 30
+      KerningList: []
+    - Char: 38
+      X: 81
+      Y: 0
+      Width: 34
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 28
+      KerningList: []
+    - Char: 39
+      X: 498
+      Y: 183
+      Width: 13
+      Height: 60
+      XOffset: -1
+      YOffset: -3
+      XAdvance: 10
+      KerningList: []
+    - Char: 40
+      X: 18
+      Y: 244
+      Width: 16
+      Height: 60
+      XOffset: 0
+      YOffset: -3
+      XAdvance: 14
+      KerningList: []
+    - Char: 41
+      X: 35
+      Y: 244
+      Width: 16
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 14
+      KerningList: []
+    - Char: 42
+      X: 345
+      Y: 122
+      Width: 24
+      Height: 60
+      XOffset: 0
+      YOffset: -3
+      XAdvance: 23
+      KerningList: []
+    - Char: 43
+      X: 185
+      Y: 0
+      Width: 32
+      Height: 60
+      XOffset: -1
+      YOffset: -3
+      XAdvance: 29
+      KerningList: []
+    - Char: 44
+      X: 173
+      Y: 244
+      Width: 13
+      Height: 60
+      XOffset: -1
+      YOffset: -3
+      XAdvance: 10
+      KerningList: []
+    - Char: 45
+      X: 69
+      Y: 244
+      Width: 15
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 9
+      KerningList: []
+    - Char: 46
+      X: 131
+      Y: 244
+      Width: 13
+      Height: 60
+      XOffset: -1
+      YOffset: -3
+      XAdvance: 10
+      KerningList: []
+    - Char: 47
+      X: 268
+      Y: 122
+      Width: 25
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 18
+      KerningList: []
+    - Char: 48
+      X: 27
+      Y: 122
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 22
+      KerningList: []
+    - Char: 49
+      X: 442
+      Y: 183
+      Width: 18
+      Height: 60
+      XOffset: 2
+      YOffset: -3
+      XAdvance: 22
+      KerningList: []
+    - Char: 50
+      X: 81
+      Y: 122
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 22
+      KerningList: []
+    - Char: 51
+      X: 108
+      Y: 122
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 22
+      KerningList: []
+    - Char: 52
+      X: 413
+      Y: 0
+      Width: 30
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 23
+      KerningList: []
+    - Char: 53
+      X: 135
+      Y: 122
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 22
+      KerningList: []
+    - Char: 54
+      X: 393
+      Y: 61
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 22
+      KerningList: []
+    - Char: 55
+      X: 294
+      Y: 122
+      Width: 25
+      Height: 60
+      XOffset: -1
+      YOffset: -3
+      XAdvance: 22
+      KerningList: []
+    - Char: 56
+      X: 189
+      Y: 122
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 22
+      KerningList: []
+    - Char: 57
+      X: 204
+      Y: 61
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 22
+      KerningList: []
+    - Char: 58
+      X: 187
+      Y: 244
+      Width: 13
+      Height: 60
+      XOffset: -1
+      YOffset: -3
+      XAdvance: 10
+      KerningList: []
+    - Char: 59
+      X: 201
+      Y: 244
+      Width: 13
+      Height: 60
+      XOffset: -1
+      YOffset: -3
+      XAdvance: 10
+      KerningList: []
+    - Char: 60
+      X: 251
+      Y: 0
+      Width: 32
+      Height: 60
+      XOffset: -1
+      YOffset: -3
+      XAdvance: 29
+      KerningList: []
+    - Char: 61
+      X: 350
+      Y: 0
+      Width: 31
+      Height: 60
+      XOffset: -1
+      YOffset: -3
+      XAdvance: 29
+      KerningList: []
+    - Char: 62
+      X: 284
+      Y: 0
+      Width: 32
+      Height: 60
+      XOffset: -1
+      YOffset: -3
+      XAdvance: 29
+      KerningList: []
+    - Char: 63
+      X: 242
+      Y: 122
+      Width: 25
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 21
+      KerningList: []
+    - Char: 64
+      X: 41
+      Y: 0
+      Width: 39
+      Height: 60
+      XOffset: -1
+      YOffset: -3
+      XAdvance: 37
+      KerningList: []
+    - Char: 65
+      X: 0
+      Y: 61
+      Width: 29
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 22
+      KerningList:
+      - Second: 84
+        Amount: -2
+      - Second: 86
+        Amount: -1
+      - Second: 87
+        Amount: -1
+      - Second: 89
+        Amount: -2
+    - Char: 66
+      X: 231
+      Y: 61
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 22
+      KerningList: []
+    - Char: 67
+      X: 366
+      Y: 61
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 23
+      KerningList: []
+    - Char: 68
+      X: 285
+      Y: 61
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 22
+      KerningList: []
+    - Char: 69
+      X: 419
+      Y: 122
+      Width: 23
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 18
+      KerningList: []
+    - Char: 70
+      X: 24
+      Y: 183
+      Width: 22
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 18
+      KerningList:
+      - Second: 65
+        Amount: -1
+      - Second: 74
+        Amount: -2
+      - Second: 97
+        Amount: -1
+      - Second: 99
+        Amount: -1
+      - Second: 101
+        Amount: -1
+      - Second: 103
+        Amount: -1
+      - Second: 105
+        Amount: -1
+      - Second: 106
+        Amount: -1
+      - Second: 109
+        Amount: -1
+      - Second: 110
+        Amount: -1
+      - Second: 111
+        Amount: -1
+      - Second: 112
+        Amount: -1
+      - Second: 113
+        Amount: -1
+      - Second: 114
+        Amount: -1
+      - Second: 115
+        Amount: -1
+      - Second: 117
+        Amount: -1
+      - Second: 120
+        Amount: -1
+      - Second: 121
+        Amount: -1
+      - Second: 122
+        Amount: -1
+    - Char: 71
+      X: 312
+      Y: 61
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 23
+      KerningList: []
+    - Char: 72
+      X: 339
+      Y: 61
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 23
+      KerningList: []
+    - Char: 73
+      X: 101
+      Y: 244
+      Width: 14
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 10
+      KerningList: []
+    - Char: 74
+      X: 370
+      Y: 122
+      Width: 24
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 20
+      KerningList: []
+    - Char: 75
+      X: 118
+      Y: 61
+      Width: 28
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 22
+      KerningList: []
+    - Char: 76
+      X: 395
+      Y: 122
+      Width: 23
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 17
+      KerningList:
+      - Second: 84
+        Amount: -3
+      - Second: 86
+        Amount: -2
+      - Second: 87
+        Amount: -2
+      - Second: 89
+        Amount: -3
+      - Second: 118
+        Amount: -2
+      - Second: 119
+        Amount: -2
+    - Char: 77
+      X: 218
+      Y: 0
+      Width: 32
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 28
+      KerningList: []
+    - Char: 78
+      X: 162
+      Y: 122
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 22
+      KerningList: []
+    - Char: 79
+      X: 420
+      Y: 61
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 23
+      KerningList: []
+    - Char: 80
+      X: 447
+      Y: 61
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 22
+      KerningList:
+      - Second: 65
+        Amount: -1
+      - Second: 74
+        Amount: -2
+      - Second: 97
+        Amount: -1
+      - Second: 99
+        Amount: -1
+      - Second: 101
+        Amount: -1
+      - Second: 103
+        Amount: -1
+      - Second: 105
+        Amount: -1
+      - Second: 106
+        Amount: -1
+      - Second: 109
+        Amount: -1
+      - Second: 110
+        Amount: -1
+      - Second: 111
+        Amount: -1
+      - Second: 112
+        Amount: -1
+      - Second: 113
+        Amount: -1
+      - Second: 114
+        Amount: -1
+      - Second: 115
+        Amount: -1
+      - Second: 117
+        Amount: -1
+      - Second: 120
+        Amount: -1
+      - Second: 121
+        Amount: -1
+      - Second: 122
+        Amount: -1
+    - Char: 81
+      X: 444
+      Y: 0
+      Width: 29
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 23
+      KerningList: []
+    - Char: 82
+      X: 474
+      Y: 61
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 22
+      KerningList: []
+    - Char: 83
+      X: 0
+      Y: 122
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 23
+      KerningList:
+      - Second: 116
+        Amount: -1
+    - Char: 84
+      X: 320
+      Y: 122
+      Width: 24
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 18
+      KerningList:
+      - Second: 122
+        Amount: -3
+      - Second: 121
+        Amount: -3
+      - Second: 120
+        Amount: -3
+      - Second: 119
+        Amount: -3
+      - Second: 118
+        Amount: -3
+      - Second: 117
+        Amount: -3
+      - Second: 115
+        Amount: -3
+      - Second: 114
+        Amount: -3
+      - Second: 113
+        Amount: -3
+      - Second: 112
+        Amount: -3
+      - Second: 111
+        Amount: -3
+      - Second: 110
+        Amount: -3
+      - Second: 109
+        Amount: -3
+      - Second: 106
+        Amount: -3
+      - Second: 105
+        Amount: -3
+      - Second: 103
+        Amount: -3
+      - Second: 101
+        Amount: -3
+      - Second: 99
+        Amount: -3
+      - Second: 97
+        Amount: -3
+      - Second: 74
+        Amount: -3
+      - Second: 65
+        Amount: -2
+    - Char: 85
+      X: 54
+      Y: 122
+      Width: 26
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 23
+      KerningList: []
+    - Char: 86
+      X: 30
+      Y: 61
+      Width: 29
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 22
+      KerningList:
+      - Second: 122
+        Amount: -1
+      - Second: 121
+        Amount: -1
+      - Second: 120
+        Amount: -1
+      - Second: 117
+        Amount: -1
+      - Second: 115
+        Amount: -1
+      - Second: 114
+        Amount: -1
+      - Second: 113
+        Amount: -1
+      - Second: 112
+        Amount: -1
+      - Second: 111
+        Amount: -1
+      - Second: 110
+        Amount: -1
+      - Second: 109
+        Amount: -1
+      - Second: 106
+        Amount: -1
+      - Second: 105
+        Amount: -1
+      - Second: 103
+        Amount: -1
+      - Second: 101
+        Amount: -1
+      - Second: 99
+        Amount: -1
+      - Second: 97
+        Amount: -1
+      - Second: 74
+        Amount: -2
+    - Char: 87
+      X: 116
+      Y: 0
+      Width: 34
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 27
+      KerningList:
+      - Second: 122
+        Amount: -1
+      - Second: 121
+        Amount: -1
+      - Second: 120
+        Amount: -1
+      - Second: 117
+        Amount: -1
+      - Second: 115
+        Amount: -1
+      - Second: 114
+        Amount: -1
+      - Second: 113
+        Amount: -1
+      - Second: 112
+        Amount: -1
+      - Second: 111
+        Amount: -1
+      - Second: 110
+        Amount: -1
+      - Second: 109
+        Amount: -1
+      - Second: 106
+        Amount: -1
+      - Second: 105
+        Amount: -1
+      - Second: 103
+        Amount: -1
+      - Second: 101
+        Amount: -1
+      - Second: 99
+        Amount: -1
+      - Second: 97
+        Amount: -1
+      - Second: 74
+        Amount: -2
+    - Char: 88
+      X: 147
+      Y: 61
+      Width: 28
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 21
+      KerningList: []
+    - Char: 89
+      X: 89
+      Y: 61
+      Width: 28
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 20
+      KerningList:
+      - Second: 122
+        Amount: -3
+      - Second: 121
+        Amount: -3
+      - Second: 120
+        Amount: -3
+      - Second: 119
+        Amount: -3
+      - Second: 118
+        Amount: -3
+      - Second: 117
+        Amount: -3
+      - Second: 115
+        Amount: -3
+      - Second: 114
+        Amount: -3
+      - Second: 113
+        Amount: -3
+      - Second: 112
+        Amount: -3
+      - Second: 111
+        Amount: -3
+      - Second: 110
+        Amount: -3
+      - Second: 109
+        Amount: -3
+      - Second: 106
+        Amount: -3
+      - Second: 105
+        Amount: -3
+      - Second: 103
+        Amount: -3
+      - Second: 101
+        Amount: -3
+      - Second: 99
+        Amount: -3
+      - Second: 97
+        Amount: -3
+      - Second: 74
+        Amount: -3
+      - Second: 65
+        Amount: -2
+    - Char: 90
+      X: 176
+      Y: 61
+      Width: 27
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 22
+      KerningList: []
+    - Char: 91
+      X: 461
+      Y: 183
+      Width: 18
+      Height: 60
+      XOffset: 0
+      YOffset: -3
+      XAdvance: 16
+      KerningList: []
+    - Char: 92
+      X: 216
+      Y: 122
+      Width: 25
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 18
+      KerningList: []
+    - Char: 95
+      X: 317
+      Y: 0
+      Width: 32
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 25
+      KerningList: []
+    - Char: 96
+      X: 52
+      Y: 244
+      Width: 16
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 17
+      KerningList: []
+    - Char: 97
+      X: 269
+      Y: 183
+      Width: 21
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 16
+      KerningList: []
+    - Char: 98
+      X: 291
+      Y: 183
+      Width: 21
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 17
+      KerningList: []
+    - Char: 99
+      X: 70
+      Y: 183
+      Width: 22
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 16
+      KerningList: []
+    - Char: 100
+      X: 313
+      Y: 183
+      Width: 21
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 17
+      KerningList: []
+    - Char: 101
+      X: 379
+      Y: 183
+      Width: 21
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 16
+      KerningList: []
+    - Char: 102
+      X: 480
+      Y: 183
+      Width: 17
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 12
+      KerningList: []
+    - Char: 103
+      X: 357
+      Y: 183
+      Width: 21
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 17
+      KerningList: []
+    - Char: 104
+      X: 159
+      Y: 183
+      Width: 21
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 17
+      KerningList: []
+    - Char: 105
+      X: 145
+      Y: 244
+      Width: 13
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 9
+      KerningList: []
+    - Char: 106
+      X: 85
+      Y: 244
+      Width: 15
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 9
+      KerningList: []
+    - Char: 107
+      X: 467
+      Y: 122
+      Width: 23
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 18
+      KerningList: []
+    - Char: 108
+      X: 159
+      Y: 244
+      Width: 13
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 9
+      KerningList: []
+    - Char: 109
+      X: 474
+      Y: 0
+      Width: 29
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 24
+      KerningList: []
+    - Char: 110
+      X: 93
+      Y: 183
+      Width: 21
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 16
+      KerningList: []
+    - Char: 111
+      X: 47
+      Y: 183
+      Width: 22
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 16
+      KerningList: []
+    - Char: 112
+      X: 115
+      Y: 183
+      Width: 21
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 17
+      KerningList: []
+    - Char: 113
+      X: 137
+      Y: 183
+      Width: 21
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 17
+      KerningList: []
+    - Char: 114
+      X: 335
+      Y: 183
+      Width: 21
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 15
+      KerningList: []
+    - Char: 115
+      X: 247
+      Y: 183
+      Width: 21
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 16
+      KerningList: []
+    - Char: 116
+      X: 0
+      Y: 244
+      Width: 17
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 12
+      KerningList: []
+    - Char: 117
+      X: 181
+      Y: 183
+      Width: 21
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 16
+      KerningList: []
+    - Char: 118
+      X: 0
+      Y: 183
+      Width: 23
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 16
+      KerningList: []
+    - Char: 119
+      X: 60
+      Y: 61
+      Width: 28
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 21
+      KerningList: []
+    - Char: 120
+      X: 443
+      Y: 122
+      Width: 23
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 16
+      KerningList: []
+    - Char: 121
+      X: 203
+      Y: 183
+      Width: 21
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 17
+      KerningList: []
+    - Char: 122
+      X: 225
+      Y: 183
+      Width: 21
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 16
+      KerningList: []
+    - Char: 123
+      X: 491
+      Y: 122
+      Width: 20
+      Height: 60
+      XOffset: -3
+      YOffset: -3
+      XAdvance: 15
+      KerningList: []
+    - Char: 124
+      X: 215
+      Y: 244
+      Width: 13
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 9
+      KerningList: []
+    - Char: 125
+      X: 401
+      Y: 183
+      Width: 20
+      Height: 60
+      XOffset: -1
+      YOffset: -3
+      XAdvance: 15
+      KerningList: []
+    - Char: 126
+      X: 382
+      Y: 0
+      Width: 30
+      Height: 60
+      XOffset: -2
+      YOffset: -3
+      XAdvance: 25
+      KerningList: []
+  m_Material: {fileID: 2100000, guid: ae1d5a4d1115bf240abf5f991a5f2b62, type: 2}
+  m_FontDescriptionFile: {fileID: 4900000, guid: f8baf3ea965388c4b880af9c94f91dd7, type: 3}
+  m_CorrectionFontSizeScale: 1.5

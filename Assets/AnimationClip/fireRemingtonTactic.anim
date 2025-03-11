@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: fireRemingtonTactic
+  m_AnimationType: 1
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 4.253256E-08, y: 0.7071068, z: -4.253256E-08, w: 0.7071068}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      - time: 1.0666667
+        value: {x: 4.253256E-08, y: 0.7071068, z: -4.253256E-08, w: 0.7071068}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: tactic/magazine
+  m_CompressedRotationCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0.00060256076, y: 0.04153773, z: 0.41085833}
+        inSlope: {x: -9.1312165E-07, y: 4.8024303E-06, z: -2.9427665E-06}
+        outSlope: {x: -9.1312165E-07, y: 4.8024303E-06, z: -2.9427665E-06}
+        tangentMode: 0
+      - time: 0.3
+        value: {x: 0.00060253387, y: 0.041537862, z: 0.4108583}
+        inSlope: {x: 6.759805E-07, y: -8.583074E-07, z: 3.8064792E-15}
+        outSlope: {x: 6.8396315E-07, y: 2.5885498E-07, z: -1.5894086E-06}
+        tangentMode: 0
+      - time: 0.33333334
+        value: {x: 0.00060257345, y: 0.041537754, z: 0.41085833}
+        inSlope: {x: 7.158942E-07, y: -1.1035369E-06, z: -0.3031229}
+        outSlope: {x: 7.1435096E-07, y: -1.8187932E-06, z: -0.30312416}
+        tangentMode: 0
+      - time: 0.4
+        value: {x: 0.00060252525, y: 0.04153785, z: 0.3518113}
+        inSlope: {x: -8.3669994E-07, y: 1.6144339E-06, z: -1.3051788}
+        outSlope: {x: -8.3542295E-07, y: 9.4005026E-07, z: -1.3051927}
+        tangentMode: 0
+      - time: 0.43333334
+        value: {x: 0.00060252566, y: 0.041537866, z: 0.30363733}
+        inSlope: {x: 6.866242E-07, y: -3.1471254E-06, z: -0.7226067}
+        outSlope: {x: 6.793331E-07, y: -2.7179708E-06, z: -0.722609}
+        tangentMode: 0
+      - time: 0.46666667
+        value: {x: 0.00060257094, y: 0.041537657, z: 0.30363742}
+        inSlope: {x: 3.866317E-07, y: -6.7438293E-07, z: -1.8198932E-06}
+        outSlope: {x: 3.932843E-07, y: -6.130772E-07, z: -2.970014E-06}
+        tangentMode: 0
+      - time: 0.56666666
+        value: {x: 0.00060255826, y: 0.041537624, z: 0.30363733}
+        inSlope: {x: -1.1223787E-07, y: -1.8664776E-06, z: -1.4713847E-06}
+        outSlope: {x: -1.12982505E-07, y: -8.44683E-07, z: -1.8170155E-07}
+        tangentMode: 0
+      - time: 0.6
+        value: {x: 0.00060253264, y: 0.04153777, z: 0.30363747}
+        inSlope: {x: -2.5667214E-07, y: 1.8800984E-06, z: 0.30312902}
+        outSlope: {x: -2.513509E-07, y: 1.1852823E-06, z: 0.30313143}
+        tangentMode: 0
+      - time: 0.6666667
+        value: {x: 0.0006025769, y: 0.041537784, z: 0.36268467}
+        inSlope: {x: -9.06843E-08, y: 9.536712E-08, z: 1.3051741}
+        outSlope: {x: -9.462225E-08, y: -1.4305128E-07, z: 1.3051888}
+        tangentMode: 0
+      - time: 0.7
+        value: {x: 0.00060253526, y: 0.04153778, z: 0.41085833}
+        inSlope: {x: -3.7135837E-07, y: -8.242478E-07, z: 0.7226021}
+        outSlope: {x: -3.6896319E-07, y: -9.741092E-07, z: 0.72259957}
+        tangentMode: 0
+      - time: 0.73333335
+        value: {x: 0.0006025521, y: 0.041537743, z: 0.41085836}
+        inSlope: {x: 1.9531045E-08, y: -1.6553046E-06, z: -7.008401E-06}
+        outSlope: {x: 1.7775047E-08, y: -1.6416832E-06, z: 4.4408963E-15}
+        tangentMode: 0
+      - time: 1.0666667
+        value: {x: 0.0006025645, y: 0.04153776, z: 0.41085833}
+        inSlope: {x: 3.717255E-18, y: 1.1895216E-16, z: 3.806469E-15}
+        outSlope: {x: 3.717255E-18, y: 1.1895216E-16, z: 3.806469E-15}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: tactic/magazine
+  m_ScaleCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0.9999997, y: 1.0000012, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 1.0666667
+        value: {x: 0.9999997, y: 1.0000012, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: tactic/magazine
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 30
+  m_WrapMode: 1
+  m_Bounds:
+    m_Center: {x: -0.011461429, y: -0.24121591, z: 0.021867722}
+    m_Extent: {x: 0.03391875, y: 0.3054892, z: 0.12595303}
+  m_ClipBindingConstant:
+    genericBindings: []
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_StartTime: 0
+    m_StopTime: 1
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_Events: []
