@@ -349,6 +349,7 @@ LightmapSettings:
     m_Padding: 2
     m_TextureCompression: 1
     m_LockAtlas: 0
+  m_LightingDataAsset: {fileID: 112000000, guid: 937d8e3c023f37d4399573ae883efef5, type: 2}
 --- !u!196 &1757
 NavMeshSettings:
   m_ObjectHideFlags: 0
@@ -7448,7 +7449,15 @@ LightProbeGroup:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 97}
   m_Enabled: 1
-  m_SourcePositions: []
+  m_SourcePositions:
+  - {x: 28.95287, y: 0.4052153, z: 46.72137}
+  - {x: 28.95287, y: 1.928346, z: 46.72137}
+  - {x: 28.95287, y: 1.928346, z: 31.54253}
+  - {x: 28.95287, y: 0.4052153, z: 31.54253}
+  - {x: 45.72745, y: 0.4052153, z: 46.72137}
+  - {x: 45.72745, y: 1.928346, z: 46.72137}
+  - {x: 45.72745, y: 1.928346, z: 31.54253}
+  - {x: 45.72745, y: 0.4052153, z: 31.54253}
 --- !u!199 &1763
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
