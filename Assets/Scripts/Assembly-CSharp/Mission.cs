@@ -156,7 +156,7 @@ public class Mission : MonoBehaviour
 		if (Game.Instance.GameplayType == GameplayType.Arena)
 		{
 			Kontagent.SendCustomEvent("ArenaTime", "Game", string.Empty, string.Empty, Game.Instance.PlayerPersistentInfo.rank, (int)(Game.Instance.MissionResultData.MissionTime / 60f));
-			UnityAnalyticsWrapper.ReportCustomEvent("missionEnd", new Dictionary<string, object>
+			/*UnityAnalyticsWrapper.ReportCustomEvent("missionEnd", new Dictionary<string, object>
 			{
 				{
 					"levelName",
@@ -171,12 +171,12 @@ public class Mission : MonoBehaviour
 					"playerRank",
 					Game.Instance.PlayerPersistentInfo.rank
 				}
-			});
+			});*/
 		}
 		else
 		{
 			Kontagent.SendCustomEvent("MissionTime", "Game", string.Empty, string.Empty, Game.Instance.PlayerPersistentInfo.rank, (int)(Game.Instance.MissionResultData.MissionTime / 60f));
-			UnityAnalyticsWrapper.ReportCustomEvent("missionEnd", new Dictionary<string, object>
+			/*UnityAnalyticsWrapper.ReportCustomEvent("missionEnd", new Dictionary<string, object>
 			{
 				{
 					"levelName",
@@ -191,7 +191,7 @@ public class Mission : MonoBehaviour
 					"playerRank",
 					Game.Instance.PlayerPersistentInfo.rank
 				}
-			});
+			});*/
 		}
 	}
 

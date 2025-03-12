@@ -78,7 +78,7 @@ public class ShopDataBridge
 
 		private void ReportGoogleTransactionToAnalytics(IAPShopGooglePlay.GooglePlayTransaction txn)
 		{
-			UnityAnalyticsWrapper.ReportInAppPurchase(txn.Native.ProductId, txn.Product.Price, txn.Product.CurrencyCode, txn.Native.Receipt, txn.Native.Signature);
+			//UnityAnalyticsWrapper.ReportInAppPurchase(txn.Native.ProductId, txn.Product.Price, txn.Product.CurrencyCode, txn.Native.Receipt, txn.Native.Signature);
 		}
 
 		private void VerifyTransaction(IAP.Transaction txn, Action<IAP.E_ProcessingState> callback)

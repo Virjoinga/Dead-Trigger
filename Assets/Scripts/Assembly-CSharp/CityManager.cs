@@ -1878,14 +1878,14 @@ public class CityManager : MonoBehaviour
 		Game.Instance.EnemyAutoSpawn = false;
 		Game.Instance.GameplayType = GameplayType.Arena;
 		Kontagent.SendCustomEvent(levelName, "Game", "Equip", string.Empty, Game.Instance.PlayerPersistentInfo.rank);
-		UnityAnalyticsWrapper.ReportCustomEvent("loadArena", new Dictionary<string, object>
+		/*UnityAnalyticsWrapper.ReportCustomEvent("loadArena", new Dictionary<string, object>
 		{
 			{ "levelName", levelName },
 			{
 				"playerRank",
 				Game.Instance.PlayerPersistentInfo.rank
 			}
-		});
+		});*/
 		Game.Instance.LoadLevel(levelName);
 	}
 

@@ -1106,7 +1106,7 @@ public class AgentHuman : Agent
 		else if (IsPlayer && agentHuman != null)
 		{
 			Kontagent.SendCustomEvent(agentHuman.AgentType.ToString(), "Game", "Death", string.Empty, Game.Instance.PlayerPersistentInfo.rank);
-			UnityAnalyticsWrapper.ReportCustomEvent("playerDeath", new Dictionary<string, object>
+			/*UnityAnalyticsWrapper.ReportCustomEvent("playerDeath", new Dictionary<string, object>
 			{
 				{
 					"humanAttacker",
@@ -1116,7 +1116,7 @@ public class AgentHuman : Agent
 					"playerRank",
 					Game.Instance.PlayerPersistentInfo.rank
 				}
-			});
+			});*/
 		}
 		StopLoopedSound();
 		if (bodyPartDestroyed)

@@ -30,7 +30,7 @@ public class Plugins : MonoBehaviour
 		}
 		if (settings.useUnityAnalyticsAndroid)
 		{
-			UnityAnalyticsWrapper.Initialize();
+			//UnityAnalyticsWrapper.Initialize();
 		}
 	}
 }
