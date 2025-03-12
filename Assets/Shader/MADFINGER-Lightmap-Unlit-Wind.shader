@@ -1,211 +1,109 @@
-ê/Shader "MADFINGER/Environment/Lightmap + Wind" {
-Properties {
- _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" {}
- _Wind ("Wind params", Vector) = (1,1,1,1)
- _WindEdgeFlutter ("Wind edge fultter factor", Float) = 0.5
- _WindEdgeFlutterFreqScale ("Wind edge fultter freq scale", Float) = 0.5
-}
-SubShader { 
- LOD 100
- Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "RenderType"="Transparent" }
- Pass {
-  Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "RenderType"="Transparent" }
-  ZWrite Off
-  Cull Off
-  Blend SrcAlpha OneMinusSrcAlpha
-Program "vp" {
-SubProgram "gles " {
-"!!GLES
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
+// Upgrade NOTE: replaced tex2D unity_Lightmap with UNITY_SAMPLE_TEX2D
 
+Shader "MADFINGER/Environment/Lightmap + Wind" {
+	Properties {
+		_MainTex ("Base (RGB) Gloss (A)", 2D) = "white" {}
+		_Wind ("Wind params", Vector) = (1,1,1,1)
+		_WindEdgeFlutter ("Wind edge fultter factor", Float) = 0.5
+		_WindEdgeFlutterFreqScale ("Wind edge fultter freq scale", Float) = 0.5
+	}
+	SubShader { 
+		LOD 100
+		Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "RenderType"="Transparent" }
+		Pass {
+			Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "RenderType"="Transparent" }
+			ZWrite Off
+			Cull Off
+			Blend SrcAlpha OneMinusSrcAlpha
 
-#ifdef VERTEX
+			CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
 
-attribute vec4 _glesVertex;
-attribute vec4 _glesColor;
-attribute vec3 _glesNormal;
-attribute vec4 _glesMultiTexCoord0;
-attribute vec4 _glesMultiTexCoord1;
-uniform highp vec4 _Time;
-uniform highp mat4 glstate_matrix_mvp;
-uniform highp mat4 _Object2World;
-uniform highp mat4 _World2Object;
-uniform highp vec4 _Wind;
-uniform highp vec4 _MainTex_ST;
-uniform highp vec4 unity_LightmapST;
-uniform highp float _WindEdgeFlutter;
-uniform highp float _WindEdgeFlutterFreqScale;
-varying highp vec2 xlv_TEXCOORD0;
-varying highp vec2 xlv_TEXCOORD1;
-varying lowp vec3 xlv_TEXCOORD2;
-void main ()
-{
-  highp float bendingFact_1;
-  highp vec4 wind_2;
-  lowp float tmpvar_3;
-  tmpvar_3 = _glesColor.w;
-  bendingFact_1 = tmpvar_3;
-  mat3 tmpvar_4;
-  tmpvar_4[0] = _World2Object[0].xyz;
-  tmpvar_4[1] = _World2Object[1].xyz;
-  tmpvar_4[2] = _World2Object[2].xyz;
-  wind_2.xyz = (tmpvar_4 * _Wind.xyz);
-  wind_2.w = (_Wind.w * bendingFact_1);
-  highp vec2 tmpvar_5;
-  tmpvar_5.y = 1.0;
-  tmpvar_5.x = _WindEdgeFlutterFreqScale;
-  highp vec4 pos_6;
-  pos_6.w = _glesVertex.w;
-  highp vec3 bend_7;
-  vec4 v_8;
-  v_8.x = _Object2World[0].w;
-  v_8.y = _Object2World[1].w;
-  v_8.z = _Object2World[2].w;
-  v_8.w = _Object2World[3].w;
-  highp float tmpvar_9;
-  tmpvar_9 = dot (v_8.xyz, vec3(1.0, 1.0, 1.0));
-  highp vec2 tmpvar_10;
-  tmpvar_10.x = dot (_glesVertex.xyz, vec3((_WindEdgeFlutter + tmpvar_9)));
-  tmpvar_10.y = tmpvar_9;
-  highp vec4 tmpvar_11;
-  tmpvar_11 = abs(((fract((((fract((((_Time.y * tmpvar_5).xx + tmpvar_10).xxyy * vec4(1.975, 0.793, 0.375, 0.193))) * 2.0) - 1.0) + 0.5)) * 2.0) - 1.0));
-  highp vec4 tmpvar_12;
-  tmpvar_12 = ((tmpvar_11 * tmpvar_11) * (3.0 - (2.0 * tmpvar_11)));
-  highp vec2 tmpvar_13;
-  tmpvar_13 = (tmpvar_12.xz + tmpvar_12.yw);
-  bend_7.xz = ((_WindEdgeFlutter * 0.1) * normalize(_glesNormal)).xz;
-  bend_7.y = (bendingFact_1 * 0.3);
-  pos_6.xyz = (_glesVertex.xyz + (((tmpvar_13.xyx * bend_7) + ((wind_2.xyz * tmpvar_13.y) * bendingFact_1)) * wind_2.w));
-  pos_6.xyz = (pos_6.xyz + (bendingFact_1 * wind_2.xyz));
-  gl_Position = (glstate_matrix_mvp * pos_6);
-  xlv_TEXCOORD0 = ((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
-  xlv_TEXCOORD1 = ((_glesMultiTexCoord1.xy * unity_LightmapST.xy) + unity_LightmapST.zw);
-  xlv_TEXCOORD2 = _glesColor.xyz;
-}
+            float4 _Wind;
+            float4 _MainTex_ST;
+            float _WindEdgeFlutter;
+            float _WindEdgeFlutterFreqScale;
 
+            sampler2D _MainTex;
 
+            struct appdata_t
+            {
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+                float2 uv1 : TEXCOORD1;
+                float4 color : COLOR;
+                float3 normal : NORMAL;
+            };
 
-#endif
-#ifdef FRAGMENT
+            struct v2f
+            {
+                float4 pos : SV_POSITION;
+                float2 uv : TEXCOORD0;
+                float2 uv1 : TEXCOORD1;
+                float2 uv2 : TEXCOORD2;
+            };
 
-uniform sampler2D _MainTex;
-uniform sampler2D unity_Lightmap;
-varying highp vec2 xlv_TEXCOORD0;
-varying highp vec2 xlv_TEXCOORD1;
-void main ()
-{
-  lowp vec4 c_1;
-  lowp vec4 tmpvar_2;
-  tmpvar_2 = texture2D (_MainTex, xlv_TEXCOORD0);
-  c_1.w = tmpvar_2.w;
-  c_1.xyz = (tmpvar_2.xyz * (2.0 * texture2D (unity_Lightmap, xlv_TEXCOORD1).xyz));
-  gl_FragData[0] = c_1;
-}
+            v2f vert(appdata_t v)
+            {
+                v2f o;
 
+                float bendingFact_1;
+                float4 wind_2;
+                float tmpvar_3;
+                tmpvar_3 = v.color.w;
+                bendingFact_1 = tmpvar_3;
+                float3x3 tmpvar_4;
+                tmpvar_4[0] = unity_WorldToObject[0].xyz;
+                tmpvar_4[1] = unity_WorldToObject[1].xyz;
+                tmpvar_4[2] = unity_WorldToObject[2].xyz;
+                wind_2.xyz = mul(tmpvar_4, _Wind.xyz);
+                wind_2.w = (_Wind.w * bendingFact_1);
+                float2 tmpvar_5;
+                tmpvar_5.y = 1.0;
+                tmpvar_5.x = _WindEdgeFlutterFreqScale;
+                float4 pos_6;
+                pos_6.w = v.vertex.w;
+                float3 bend_7;
+                float4 v_8;
+                v_8.x = unity_ObjectToWorld[0].w;
+                v_8.y = unity_ObjectToWorld[1].w;
+                v_8.z = unity_ObjectToWorld[2].w;
+                v_8.w = unity_ObjectToWorld[3].w;
+                float tmpvar_9;
+                tmpvar_9 = dot (v_8.xyz, float3(1.0, 1.0, 1.0));
+                float2 tmpvar_10;
+                tmpvar_10.x = dot (v.vertex.xyz, ((_WindEdgeFlutter + tmpvar_9)));
+                tmpvar_10.y = tmpvar_9;
+                float4 tmpvar_11;
+                tmpvar_11 = abs(((frac((((frac((((_Time.y * tmpvar_5).xx + tmpvar_10).xxyy * float4(1.975, 0.793, 0.375, 0.193))) * 2.0) - 1.0) + 0.5)) * 2.0) - 1.0));
+                float4 tmpvar_12;
+                tmpvar_12 = ((tmpvar_11 * tmpvar_11) * (3.0 - (2.0 * tmpvar_11)));
+                float2 tmpvar_13;
+                tmpvar_13 = (tmpvar_12.xz + tmpvar_12.yw);
+                bend_7.xz = ((_WindEdgeFlutter * 0.1) * normalize(v.normal)).xz;
+                bend_7.y = (bendingFact_1 * 0.3);
+                pos_6.xyz = (v.vertex.xyz + (((tmpvar_13.xyx * bend_7) + ((wind_2.xyz * tmpvar_13.y) * bendingFact_1)) * wind_2.w));
+                pos_6.xyz = (pos_6.xyz + (bendingFact_1 * wind_2.xyz));
+                o.pos = (UnityObjectToClipPos(pos_6));
+                o.uv = ((v.uv.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
+                o.uv1 = ((v.uv1.xy * unity_LightmapST.xy) + unity_LightmapST.zw);
+                o.uv2 = v.color.xyz;
 
-
-#endif"
-}
-SubProgram "gles3 " {
-"!!GLES3#version 300 es
-
-
-#ifdef VERTEX
-
-in vec4 _glesVertex;
-in vec4 _glesColor;
-in vec3 _glesNormal;
-in vec4 _glesMultiTexCoord0;
-in vec4 _glesMultiTexCoord1;
-uniform highp vec4 _Time;
-uniform highp mat4 glstate_matrix_mvp;
-uniform highp mat4 _Object2World;
-uniform highp mat4 _World2Object;
-uniform highp vec4 _Wind;
-uniform highp vec4 _MainTex_ST;
-uniform highp vec4 unity_LightmapST;
-uniform highp float _WindEdgeFlutter;
-uniform highp float _WindEdgeFlutterFreqScale;
-out highp vec2 xlv_TEXCOORD0;
-out highp vec2 xlv_TEXCOORD1;
-out lowp vec3 xlv_TEXCOORD2;
-void main ()
-{
-  highp float bendingFact_1;
-  highp vec4 wind_2;
-  lowp float tmpvar_3;
-  tmpvar_3 = _glesColor.w;
-  bendingFact_1 = tmpvar_3;
-  mat3 tmpvar_4;
-  tmpvar_4[0] = _World2Object[0].xyz;
-  tmpvar_4[1] = _World2Object[1].xyz;
-  tmpvar_4[2] = _World2Object[2].xyz;
-  wind_2.xyz = (tmpvar_4 * _Wind.xyz);
-  wind_2.w = (_Wind.w * bendingFact_1);
-  highp vec2 tmpvar_5;
-  tmpvar_5.y = 1.0;
-  tmpvar_5.x = _WindEdgeFlutterFreqScale;
-  highp vec4 pos_6;
-  pos_6.w = _glesVertex.w;
-  highp vec3 bend_7;
-  vec4 v_8;
-  v_8.x = _Object2World[0].w;
-  v_8.y = _Object2World[1].w;
-  v_8.z = _Object2World[2].w;
-  v_8.w = _Object2World[3].w;
-  highp float tmpvar_9;
-  tmpvar_9 = dot (v_8.xyz, vec3(1.0, 1.0, 1.0));
-  highp vec2 tmpvar_10;
-  tmpvar_10.x = dot (_glesVertex.xyz, vec3((_WindEdgeFlutter + tmpvar_9)));
-  tmpvar_10.y = tmpvar_9;
-  highp vec4 tmpvar_11;
-  tmpvar_11 = abs(((fract((((fract((((_Time.y * tmpvar_5).xx + tmpvar_10).xxyy * vec4(1.975, 0.793, 0.375, 0.193))) * 2.0) - 1.0) + 0.5)) * 2.0) - 1.0));
-  highp vec4 tmpvar_12;
-  tmpvar_12 = ((tmpvar_11 * tmpvar_11) * (3.0 - (2.0 * tmpvar_11)));
-  highp vec2 tmpvar_13;
-  tmpvar_13 = (tmpvar_12.xz + tmpvar_12.yw);
-  bend_7.xz = ((_WindEdgeFlutter * 0.1) * normalize(_glesNormal)).xz;
-  bend_7.y = (bendingFact_1 * 0.3);
-  pos_6.xyz = (_glesVertex.xyz + (((tmpvar_13.xyx * bend_7) + ((wind_2.xyz * tmpvar_13.y) * bendingFact_1)) * wind_2.w));
-  pos_6.xyz = (pos_6.xyz + (bendingFact_1 * wind_2.xyz));
-  gl_Position = (glstate_matrix_mvp * pos_6);
-  xlv_TEXCOORD0 = ((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
-  xlv_TEXCOORD1 = ((_glesMultiTexCoord1.xy * unity_LightmapST.xy) + unity_LightmapST.zw);
-  xlv_TEXCOORD2 = _glesColor.xyz;
-}
-
-
-
-#endif
-#ifdef FRAGMENT
-
-out mediump vec4 _glesFragData[4];
-uniform sampler2D _MainTex;
-uniform sampler2D unity_Lightmap;
-in highp vec2 xlv_TEXCOORD0;
-in highp vec2 xlv_TEXCOORD1;
-void main ()
-{
-  lowp vec4 c_1;
-  lowp vec4 tmpvar_2;
-  tmpvar_2 = texture (_MainTex, xlv_TEXCOORD0);
-  c_1.w = tmpvar_2.w;
-  c_1.xyz = (tmpvar_2.xyz * (2.0 * texture (unity_Lightmap, xlv_TEXCOORD1).xyz));
-  _glesFragData[0] = c_1;
-}
-
-
-
-#endif"
-}
-}
-Program "fp" {
-SubProgram "gles " {
-"!!GLES"
-}
-SubProgram "gles3 " {
-"!!GLES3"
-}
-}
- }
-}
+                return o;
+            }
+            half4 frag(v2f i) : SV_TARGET
+            {
+                float4 c_1;
+                float4 tmpvar_2;
+                tmpvar_2 = tex2D (_MainTex, i.uv);
+                c_1.w = tmpvar_2.w;
+                c_1.xyz = (tmpvar_2.xyz * (2.0 * UNITY_SAMPLE_TEX2D (unity_Lightmap, i.uv1).xyz));
+                return c_1;
+            }
+            ENDCG
+        }
+    }
 }
