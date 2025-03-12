@@ -61,14 +61,14 @@ public class TextDatabase : ScriptableObject
 	public bool Reload()
 	{
 		SystemLanguage inLanguage = SystemLanguage.English;
-		/*if (!Reload(inLanguage))
+		if (!Reload(inLanguage))
 		{
 			return Reload(SystemLanguage.Unknown);
-		}*/
+		}
 		return true;
 	}
 
-	/*public bool Reload(SystemLanguage inLanguage)
+	public bool Reload(SystemLanguage inLanguage)
 	{
 		string outlanguagePostfix;
 		if (!GetLanguageFilePostfix(SystemLanguage.English, out outlanguagePostfix))
@@ -107,7 +107,7 @@ public class TextDatabase : ScriptableObject
 		_DatabaseLangugae = inLanguage;
 		_ReloadCount++;
 		return true;
-	}*/
+	}
 
 	public bool Exists(int i)
 	{
