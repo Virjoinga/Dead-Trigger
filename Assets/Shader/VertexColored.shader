@@ -1,102 +1,53 @@
-½Shader "MADFINGER/Diffuse/Vertex Colored" {
-Properties {
- _Color ("Main Color", Color) = (1,1,1,1)
- _MainTex ("Base (RGB)", 2D) = "white" {}
-}
-SubShader { 
- LOD 100
- Tags { "RenderType"="Opaque" }
- Pass {
-  Tags { "RenderType"="Opaque" }
-Program "vp" {
-SubProgram "gles " {
-"!!GLES
+Shader "MADFINGER/Diffuse/Vertex Colored" {
+	Properties {
+		_Color ("Main Color", Color) = (1,1,1,1)
+		_MainTex ("Base (RGB)", 2D) = "white" {}
+	}
+	SubShader { 
+		LOD 100
+		Tags { "RenderType"="Opaque" }
+		Pass {
+			Tags { "RenderType"="Opaque" }
 
+			CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
 
-#ifdef VERTEX
+            float4 _Color;
 
-attribute vec4 _glesVertex;
-attribute vec4 _glesColor;
-attribute vec4 _glesMultiTexCoord0;
-uniform highp mat4 glstate_matrix_mvp;
-uniform lowp vec4 _Color;
-varying highp vec2 xlv_TEXCOORD0;
-varying lowp vec4 xlv_COLOR;
-void main ()
-{
-  gl_Position = (glstate_matrix_mvp * _glesVertex);
-  xlv_TEXCOORD0 = _glesMultiTexCoord0.xy;
-  xlv_COLOR = ((_glesColor * _Color) * 2.0);
-}
+            sampler2D _MainTex;
 
+            struct appdata_t
+            {
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+                float4 color : COLOR;
+            };
 
+            struct v2f
+            {
+                float4 pos : SV_POSITION;
+                float2 uv : TEXCOORD0;
+                float4 color : COLOR;
+            };
 
-#endif
-#ifdef FRAGMENT
+            v2f vert(appdata_t v)
+            {
+                v2f o;
 
-uniform sampler2D _MainTex;
-varying highp vec2 xlv_TEXCOORD0;
-varying lowp vec4 xlv_COLOR;
-void main ()
-{
-  lowp vec4 tmpvar_1;
-  tmpvar_1 = (texture2D (_MainTex, xlv_TEXCOORD0) * xlv_COLOR);
-  gl_FragData[0] = tmpvar_1;
-}
+                o.pos = (UnityObjectToClipPos(v.vertex));
+                o.uv = v.uv.xy;
+                o.color = ((v.color * _Color) * 2.0);
 
-
-
-#endif"
-}
-SubProgram "gles3 " {
-"!!GLES3#version 300 es
-
-
-#ifdef VERTEX
-
-in vec4 _glesVertex;
-in vec4 _glesColor;
-in vec4 _glesMultiTexCoord0;
-uniform highp mat4 glstate_matrix_mvp;
-uniform lowp vec4 _Color;
-out highp vec2 xlv_TEXCOORD0;
-out lowp vec4 xlv_COLOR;
-void main ()
-{
-  gl_Position = (glstate_matrix_mvp * _glesVertex);
-  xlv_TEXCOORD0 = _glesMultiTexCoord0.xy;
-  xlv_COLOR = ((_glesColor * _Color) * 2.0);
-}
-
-
-
-#endif
-#ifdef FRAGMENT
-
-out mediump vec4 _glesFragData[4];
-uniform sampler2D _MainTex;
-in highp vec2 xlv_TEXCOORD0;
-in lowp vec4 xlv_COLOR;
-void main ()
-{
-  lowp vec4 tmpvar_1;
-  tmpvar_1 = (texture (_MainTex, xlv_TEXCOORD0) * xlv_COLOR);
-  _glesFragData[0] = tmpvar_1;
-}
-
-
-
-#endif"
-}
-}
-Program "fp" {
-SubProgram "gles " {
-"!!GLES"
-}
-SubProgram "gles3 " {
-"!!GLES3"
-}
-}
- }
-}
+                return o;
+            }
+            half4 frag(v2f i) : SV_TARGET
+            {
+                float4 tmpvar_1;
+                tmpvar_1 = (tex2D (_MainTex, i.uv) * i.color);
+                return tmpvar_1;
+            }
+            ENDCG
+        }
+    }
 }
