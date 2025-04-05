@@ -140,7 +140,7 @@ public class GuiBankScreen : BaseMenuScreen
 
 	private void OnButtonAdBanner(GUIBase_Widget inWidget)
 	{
-		TapjoyPlugin.ShowOffers();
+		//TapjoyPlugin.ShowOffers();
 	}
 
 	private void OnButtonFBDT(GUIBase_Widget inWidget)

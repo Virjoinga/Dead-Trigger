@@ -293,7 +293,7 @@ public class GuiShopMenu : BaseMenuScreen
 				break;
 			case E_FundID.TapJoyInApp:
 				Debug.Log("Free gold: Tapjoy Offerwall");
-				TapjoyPlugin.ShowOffers();
+				//TapjoyPlugin.ShowOffers();
 				break;
 			}
 		}

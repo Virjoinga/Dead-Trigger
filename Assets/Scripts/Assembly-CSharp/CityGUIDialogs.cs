@@ -454,7 +454,7 @@ public class CityGUIDialogs
 				Etcetera.ShowWeb("https://www.tapjoy.com/earn?eid=ab8c8296e98e6ef62a40221a7a17a6dd394f7d0dbdc5948f4828ae02c65220f03a1be4186eb3e2531a52c2a0c033b9c0&referral=madfinger_deadtrigger");
 				break;
 			case E_FundID.TapJoyInApp:
-				TapjoyPlugin.ShowOffers();
+				//TapjoyPlugin.ShowOffers();
 				break;
 			}
 			CheckMoney();

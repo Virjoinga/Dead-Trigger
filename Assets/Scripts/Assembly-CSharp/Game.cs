@@ -338,9 +338,9 @@ public class Game : MonoBehaviour
 		TwitterWrapper.Init("JkUv59AgxIL79gGaezqYQ", "eme6M4IcnyDkN8btgjHTqR4aHf8ltSlwDnOe4Wewk");
 		Kontagent.StartSession();
 		//JavaVM.AttachCurrentThread();
-		TapjoyPlugin.EnableLogging(false);
-		TapjoyPlugin.SetCallbackHandler("_Game");
-		TapjoyPlugin.RequestTapjoyConnect("4c40cc63-5475-45e3-80a0-945624ba9ead", "3wJtitNzEc73PoZ6d2P6");
+		//TapjoyPlugin.EnableLogging(false);
+		//TapjoyPlugin.SetCallbackHandler("_Game");
+		//TapjoyPlugin.RequestTapjoyConnect("4c40cc63-5475-45e3-80a0-945624ba9ead", "3wJtitNzEc73PoZ6d2P6");
 		IDataFile dataFile = GameSaveLoadUtl.OpenReadGameData();
 		int @int = dataFile.GetInt("VERSION", -1);
 		int int2 = PlayerPrefs.GetInt("intro_video", -1);
@@ -820,7 +820,7 @@ public class Game : MonoBehaviour
 	public void FullScreenAdLoaded(string message)
 	{
 		Debug.Log(Time.timeSinceLevelLoad + " TAP JOY FullScreenAdLoaded" + message);
-		TapjoyWrapper.SetFullScreenAdLoaded();
+		//TapjoyWrapper.SetFullScreenAdLoaded();
 	}
 
 	public void FullScreenAdError(string message)
@@ -841,7 +841,7 @@ public class Game : MonoBehaviour
 	public void VideoAdComplete(string message)
 	{
 		Debug.Log(Time.timeSinceLevelLoad + " TAP JOY VideoAdComplete" + message);
-		TapjoyWrapper.GetFullScreenAd();
+		//TapjoyWrapper.GetFullScreenAd();
 		StartCoroutine(CheckCurrency());
 	}
 
@@ -850,7 +850,7 @@ public class Game : MonoBehaviour
 		for (int i = 0; i < 4; i++)
 		{
 			yield return new WaitForSeconds(5f);
-			TapjoyPlugin.GetTapPoints();
+			//TapjoyPlugin.GetTapPoints();
 		}
 	}
 
@@ -875,7 +875,7 @@ public class Game : MonoBehaviour
 		{
 			if (isTabjoy)
 			{
-				TapjoyPlugin.SpendTapPoints(TapjoyPlugin.QueryTapPoints());
+				//TapjoyPlugin.SpendTapPoints(TapjoyPlugin.QueryTapPoints());
 			}
 			/*if (Advertisement.PendingRewardType == Casino.PrizeType.Gold)
 			{
@@ -1036,7 +1036,7 @@ public class Game : MonoBehaviour
 	{
 		if (!pause)
 		{
-			TapjoyPlugin.GetTapPoints();
+			//TapjoyPlugin.GetTapPoints();
 			Kontagent.StartSession();
 		}
 		else

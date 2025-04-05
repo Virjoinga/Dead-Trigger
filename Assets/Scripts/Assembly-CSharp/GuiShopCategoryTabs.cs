@@ -98,7 +98,7 @@ internal class GuiShopCategoryTabs
 
 	private void OnFreeGoldTouch(GUIBase_Widget w)
 	{
-		TapjoyPlugin.ShowOffers();
+		//TapjoyPlugin.ShowOffers();
 	}
 
 	public void Highlight(E_ShopCategory c)

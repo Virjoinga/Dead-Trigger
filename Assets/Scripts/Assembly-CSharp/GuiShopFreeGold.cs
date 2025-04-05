@@ -30,7 +30,7 @@ public class GuiShopFreeGold : BaseMenuScreen
 	{
 		MFGuiManager.Instance.ShowLayout(m_Layout, true);
 		m_RewardedVideoButton.SetDisabled(true);
-		TapjoyWrapper.GetFullScreenAd();
+		//TapjoyWrapper.GetFullScreenAd();
 		//StartCoroutine(WaitForVideoLoaded());
 		base.OnGUI_Show();
 	}
@@ -91,10 +91,10 @@ public class GuiShopFreeGold : BaseMenuScreen
 		if (inside)
 		{
 			//Advertisement.RemoveOtherCallbacksAndAddGoldReward();
-			if (TapjoyWrapper.IsFullScreenAdLoaded())
+			/*if (TapjoyWrapper.IsFullScreenAdLoaded())
 			{
 				TapjoyWrapper.ShowFullScreenAd();
-			}
+			}*/
 			/*else if (Advertisement.IsUnityAdsRewordVideoAvailable())
 			{
 				Advertisement.ShowUnityRewordVideo();

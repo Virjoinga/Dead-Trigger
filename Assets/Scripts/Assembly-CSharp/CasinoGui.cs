@@ -79,7 +79,7 @@ public class CasinoGui
 			m_Dialog.StartCoroutine(CityGUIResources.Reset(m_Dialog, m_OrigPos));
 			m_Dialog.StartCoroutine(CityGUIResources.ShowDialog(m_Dialog, m_OrigPos));
 			m_RewardedVideoButton.SetDisabled(true);
-			TapjoyWrapper.GetFullScreenAd();
+			//TapjoyWrapper.GetFullScreenAd();
 			//m_Dialog.StartCoroutine(WaitForVideoLoaded());
 		}
 

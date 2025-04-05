@@ -365,7 +365,7 @@ public class CityManager : MonoBehaviour
 		{
 			NextStoryChapter();
 		}
-		TapjoyPlugin.GetTapPoints();
+		//TapjoyPlugin.GetTapPoints();
 	}
 
 	private void LateUpdate()
