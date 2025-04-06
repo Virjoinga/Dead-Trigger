@@ -130,6 +130,7 @@ public class PlayerControlsXperia
 
 	private void UpdateViewBySlidePad()
 	{
+#if UNITY_ANDROID
 		if (!AndroidInput.secondaryTouchEnabled)
 		{
 			return;
@@ -151,17 +152,20 @@ public class PlayerControlsXperia
 				ViewTouchEnd(secondaryTouch);
 			}
 		}
+#endif
 	}
 
 	private bool InsideRightPad(Touch touch)
 	{
+#if UNITY_ANDROID
 		Vector2 vector = new Vector2(786f, 180f);
 		Vector2 vector2 = new Vector2(touch.position.x - vector.x, touch.position.y - vector.y);
 		if (touch.position.x > (float)(AndroidInput.secondaryTouchWidth / 2) && vector2.sqrMagnitude < 40000f)
 		{
 			return true;
 		}
-		return false;
+#endif
+        return false;
 	}
 
 	private void ViewTouchBegin(Touch touch)
@@ -371,6 +375,7 @@ public class PlayerControlsXperia
 
 	public void GetTouchStickJoystick(ref Vector2 joydir, bool left)
 	{
+#if UNITY_ANDROID
 		if (!AndroidInput.secondaryTouchEnabled)
 		{
 			return;
@@ -398,6 +403,7 @@ public class PlayerControlsXperia
 				}
 			}
 		}
+#endif
 	}
 
 	private static void ComputeJoyVector(ref Vector2 joydir, float deadzone, float padRadius, float clamp)
