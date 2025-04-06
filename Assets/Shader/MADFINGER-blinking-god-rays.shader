@@ -1,141 +1,113 @@
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-// Upgrade NOTE: replaced 'glstate_matrix_modelview0' with 'UNITY_MATRIX_MV'
-// Upgrade NOTE: replaced 'glstate_matrix_mvp' with 'UNITY_MATRIX_MVP'
-
 Shader "MADFINGER/Transparent/Blinking GodRays" {
-    Properties {
-        _MainTex ("Base texture", 2D) = "white" {}
-        _FadeOutDistNear ("Near fadeout dist", Float) = 10
-        _FadeOutDistFar ("Far fadeout dist", Float) = 10000
-        _Multiplier ("Color multiplier", Float) = 1
-        _Bias ("Bias", Float) = 0
-        _TimeOnDuration ("ON duration", Float) = 0.5
-        _TimeOffDuration ("OFF duration", Float) = 0.5
-        _BlinkingTimeOffsScale ("Blinking time offset scale (seconds)", Float) = 5
-        _SizeGrowStartDist ("Size grow start dist", Float) = 5
-        _SizeGrowEndDist ("Size grow end dist", Float) = 50
-        _MaxGrowSize ("Max grow size", Float) = 2.5
-        _NoiseAmount ("Noise amount (when zero, pulse wave is used)", Range(0,0.5)) = 0
-        _Color ("Color", Color) = (1,1,1,1)
-    }
-    SubShader { 
-        LOD 100
-        Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
-        Pass {
-            Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
-            ZWrite Off
-            Cull Off
-            Fog {
-                Color (0,0,0,0)
-            }
-            Blend One One
 
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-            
-            float _FadeOutDistNear;
-            float _FadeOutDistFar;
-            float _Multiplier;
-            float _Bias;
-            float _TimeOnDuration;
-            float _TimeOffDuration;
-            float _BlinkingTimeOffsScale;
-            float _SizeGrowStartDist;
-            float _SizeGrowEndDist;
-            float _MaxGrowSize;
-            float _NoiseAmount;
-            float4 _Color;
-            float4 _MainTex_ST;
+Properties {
+	_MainTex ("Base texture", 2D) = "white" {}
+	_FadeOutDistNear ("Near fadeout dist", float) = 10	
+	_FadeOutDistFar ("Far fadeout dist", float) = 10000	
+	_Multiplier("Color multiplier", float) = 1
+	_Bias("Bias",float) = 0
+	_TimeOnDuration("ON duration",float) = 0.5
+	_TimeOffDuration("OFF duration",float) = 0.5
+	_BlinkingTimeOffsScale("Blinking time offset scale (seconds)",float) = 5
+	_SizeGrowStartDist("Size grow start dist",float) = 5
+	_SizeGrowEndDist("Size grow end dist",float) = 50
+	_MaxGrowSize("Max grow size",float) = 2.5
+	_NoiseAmount("Noise amount (when zero, pulse wave is used)", Range(0,0.5)) = 0
+	_Color("Color", Color) = (1,1,1,1)
+}
 
-            sampler2D _MainTex;
+	
+SubShader {
+	
+	
+	Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
+	
+	Blend One One
+//	Blend One OneMinusSrcColor
+	Cull Off Lighting Off ZWrite Off Fog { Color (0,0,0,0) }
+	
+	LOD 100
+	
+	CGINCLUDE	
+	#include "UnityCG.cginc"
+	sampler2D _MainTex;
+	
+	float _FadeOutDistNear;
+	float _FadeOutDistFar;
+	float _Multiplier;
+	float	_Bias;
+	float _TimeOnDuration;
+	float	_TimeOffDuration;
+	float _BlinkingTimeOffsScale;
+	float _SizeGrowStartDist;
+	float _SizeGrowEndDist;
+	float _MaxGrowSize;
+	float _NoiseAmount;
+	float4 _Color;
+	
+	
+	struct v2f {
+		float4	pos	: SV_POSITION;
+		float2	uv		: TEXCOORD0;
+		fixed4	color	: TEXCOORD1;
+	};
 
-            struct appdata_t
-            {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-                float3 normal : NORMAL;
-                float4 color : COLOR;
-            };
+	
+	v2f vert (appdata_full v)
+	{
+		v2f 		o;
+		
+		float		time 			= _Time.y + _BlinkingTimeOffsScale * v.color.b;		
+		float3	viewPos		= mul(UNITY_MATRIX_MV,v.vertex);
+		float		dist			= length(viewPos);
+		float		nfadeout	= saturate(dist / _FadeOutDistNear);
+		float		ffadeout	= 1 - saturate(max(dist - _FadeOutDistFar,0) * 0.2);
+		float		fracTime	= fmod(time,_TimeOnDuration + _TimeOffDuration);
+		float		wave			= smoothstep(0,_TimeOnDuration * 0.25,fracTime)  * (1 - smoothstep(_TimeOnDuration * 0.75,_TimeOnDuration,fracTime));
+		float		noiseTime	= time *  (6.2831853f / _TimeOnDuration);
+		float		noise			= sin(noiseTime) * (0.5f * cos(noiseTime * 0.6366f + 56.7272f) + 0.5f);
+		float		noiseWave	= _NoiseAmount * noise + (1 - _NoiseAmount);
+		float		distScale	= min(max(dist - _SizeGrowStartDist,0) / _SizeGrowEndDist,1);
+		
+			
+		wave = _NoiseAmount < 0.01f ? wave : noiseWave;
+		
+		distScale = distScale * distScale * _MaxGrowSize * v.color.a;
+		
+		wave += _Bias;
+		
+		ffadeout *= ffadeout;
+		
+		nfadeout *= nfadeout;
+		nfadeout *= nfadeout;
+		
+		nfadeout *= ffadeout;
+		
+		float4	mdlPos = v.vertex;
+		
+		mdlPos.xyz += distScale * v.normal;
+				
+		o.uv		= v.texcoord.xy;
+		o.pos	= UnityObjectToClipPos(mdlPos);
+		o.color	= nfadeout * _Color * _Multiplier * wave;
+						
+		return o;
+	}
+	ENDCG
 
-            struct v2f
-            {
-                float4 pos : SV_POSITION;
-                float2 uv : TEXCOORD0;
-                float4 uv1 : TEXCOORD1;
-            };
 
-            v2f vert(appdata_t v)
-            {
-                v2f o;
+	Pass {
+		CGPROGRAM
+		#pragma vertex vert
+		#pragma fragment frag
+		#pragma fragmentoption ARB_precision_hint_fastest		
+		fixed4 frag (v2f i) : COLOR
+		{		
+			return tex2D (_MainTex, i.uv.xy) * i.color;
+		}
+		ENDCG 
+	}	
+}
 
-                float3 tmpvar_1;
-                tmpvar_1 = normalize(v.normal);
-                float4 mdlPos_2;
-                float4 tmpvar_3;
-                float tmpvar_4;
-                tmpvar_4 = (_Time.y + (_BlinkingTimeOffsScale * v.color.z));
-                float3 tmpvar_5;
-                tmpvar_5 = mul(UNITY_MATRIX_MV, v.vertex).xyz;
-                float tmpvar_6;
-                tmpvar_6 = sqrt(dot (tmpvar_5, tmpvar_5));
-                float tmpvar_7;
-                tmpvar_7 = clamp ((tmpvar_6 / _FadeOutDistNear), 0.0, 1.0);
-                float tmpvar_8;
-                tmpvar_8 = (1.0 - clamp ((max ((tmpvar_6 - _FadeOutDistFar), 0.0) * 0.2), 0.0, 1.0));
-                float y_9;
-                y_9 = (_TimeOnDuration + _TimeOffDuration);
-                float tmpvar_10;
-                tmpvar_10 = (tmpvar_4 / y_9);
-                float tmpvar_11;
-                tmpvar_11 = (frac(abs(tmpvar_10)) * y_9);
-                float tmpvar_12;
-                if ((tmpvar_10 >= 0.0)) {
-                    tmpvar_12 = tmpvar_11;
-                } else {
-                    tmpvar_12 = -(tmpvar_11);
-                };
-                float t_13;
-                t_13 = max (min ((tmpvar_12 / (_TimeOnDuration * 0.25)), 1.0), 0.0);
-                float edge0_14;
-                edge0_14 = (_TimeOnDuration * 0.75);
-                float t_15;
-                t_15 = max (min (((tmpvar_12 - edge0_14) / (_TimeOnDuration - edge0_14)), 1.0), 0.0);
-                float tmpvar_16;
-                tmpvar_16 = ((t_13 * (t_13 * (3.0 - (2.0 * t_13)))) * (1.0 - (t_15 * (t_15 * (3.0 - (2.0 * t_15))))));
-                float tmpvar_17;
-                tmpvar_17 = (tmpvar_4 * (6.28319 / _TimeOnDuration));
-                float tmpvar_18;
-                tmpvar_18 = ((_NoiseAmount * (sin(tmpvar_17) * ((0.5 * cos(((tmpvar_17 * 0.6366) + 56.7272))) + 0.5))) + (1.0 - _NoiseAmount));
-                float tmpvar_19;
-                tmpvar_19 = min ((max ((tmpvar_6 - _SizeGrowStartDist), 0.0) / _SizeGrowEndDist), 1.0);
-                float tmpvar_20;
-                if ((_NoiseAmount < 0.01)) {
-                    tmpvar_20 = tmpvar_16;
-                } else {
-                    tmpvar_20 = tmpvar_18;
-                };
-                float tmpvar_21;
-                tmpvar_21 = (tmpvar_7 * tmpvar_7);
-                mdlPos_2.w = v.vertex.w;
-                mdlPos_2.xyz = (v.vertex.xyz + ((((tmpvar_19 * tmpvar_19) * _MaxGrowSize) * v.color.w) * tmpvar_1));
-                float4 tmpvar_22;
-                tmpvar_22 = (((((tmpvar_21 * tmpvar_21) * (tmpvar_8 * tmpvar_8)) * _Color) * _Multiplier) * (tmpvar_20 + _Bias));
-                tmpvar_3 = tmpvar_22;
-                o.pos = UnityObjectToClipPos(mdlPos_2);
-                o.uv = ((v.uv.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
-                o.uv1 = tmpvar_3;
 
-                return o;
-            }
-            half4 frag(v2f i) : SV_TARGET
-            {
-                float4 tmpvar_1;
-                tmpvar_1 = (tex2D (_MainTex, i.uv) * i.uv1);
-                return tmpvar_1;
-            }
-            ENDCG
-        }
-    }
 }

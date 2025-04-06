@@ -1,109 +1,140 @@
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
-// Upgrade NOTE: replaced tex2D unity_Lightmap with UNITY_SAMPLE_TEX2D
+// - Unlit
+// - Per-vertex (virtual) camera space specular light
+// - SUPPORTS lightmap
 
 Shader "MADFINGER/Environment/Lightmap + Wind" {
-	Properties {
-		_MainTex ("Base (RGB) Gloss (A)", 2D) = "white" {}
-		_Wind ("Wind params", Vector) = (1,1,1,1)
-		_WindEdgeFlutter ("Wind edge fultter factor", Float) = 0.5
-		_WindEdgeFlutterFreqScale ("Wind edge fultter freq scale", Float) = 0.5
-	}
-	SubShader { 
-		LOD 100
-		Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "RenderType"="Transparent" }
-		Pass {
-			Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "RenderType"="Transparent" }
-			ZWrite Off
-			Cull Off
-			Blend SrcAlpha OneMinusSrcAlpha
-
-			CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-
-            float4 _Wind;
-            float4 _MainTex_ST;
-            float _WindEdgeFlutter;
-            float _WindEdgeFlutterFreqScale;
-
-            sampler2D _MainTex;
-
-            struct appdata_t
-            {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-                float2 uv1 : TEXCOORD1;
-                float4 color : COLOR;
-                float3 normal : NORMAL;
-            };
-
-            struct v2f
-            {
-                float4 pos : SV_POSITION;
-                float2 uv : TEXCOORD0;
-                float2 uv1 : TEXCOORD1;
-                float2 uv2 : TEXCOORD2;
-            };
-
-            v2f vert(appdata_t v)
-            {
-                v2f o;
-
-                float bendingFact_1;
-                float4 wind_2;
-                float tmpvar_3;
-                tmpvar_3 = v.color.w;
-                bendingFact_1 = tmpvar_3;
-                float3x3 tmpvar_4;
-                tmpvar_4[0] = unity_WorldToObject[0].xyz;
-                tmpvar_4[1] = unity_WorldToObject[1].xyz;
-                tmpvar_4[2] = unity_WorldToObject[2].xyz;
-                wind_2.xyz = mul(tmpvar_4, _Wind.xyz);
-                wind_2.w = (_Wind.w * bendingFact_1);
-                float2 tmpvar_5;
-                tmpvar_5.y = 1.0;
-                tmpvar_5.x = _WindEdgeFlutterFreqScale;
-                float4 pos_6;
-                pos_6.w = v.vertex.w;
-                float3 bend_7;
-                float4 v_8;
-                v_8.x = unity_ObjectToWorld[0].w;
-                v_8.y = unity_ObjectToWorld[1].w;
-                v_8.z = unity_ObjectToWorld[2].w;
-                v_8.w = unity_ObjectToWorld[3].w;
-                float tmpvar_9;
-                tmpvar_9 = dot (v_8.xyz, float3(1.0, 1.0, 1.0));
-                float2 tmpvar_10;
-                tmpvar_10.x = dot (v.vertex.xyz, ((_WindEdgeFlutter + tmpvar_9)));
-                tmpvar_10.y = tmpvar_9;
-                float4 tmpvar_11;
-                tmpvar_11 = abs(((frac((((frac((((_Time.y * tmpvar_5).xx + tmpvar_10).xxyy * float4(1.975, 0.793, 0.375, 0.193))) * 2.0) - 1.0) + 0.5)) * 2.0) - 1.0));
-                float4 tmpvar_12;
-                tmpvar_12 = ((tmpvar_11 * tmpvar_11) * (3.0 - (2.0 * tmpvar_11)));
-                float2 tmpvar_13;
-                tmpvar_13 = (tmpvar_12.xz + tmpvar_12.yw);
-                bend_7.xz = ((_WindEdgeFlutter * 0.1) * normalize(v.normal)).xz;
-                bend_7.y = (bendingFact_1 * 0.3);
-                pos_6.xyz = (v.vertex.xyz + (((tmpvar_13.xyx * bend_7) + ((wind_2.xyz * tmpvar_13.y) * bendingFact_1)) * wind_2.w));
-                pos_6.xyz = (pos_6.xyz + (bendingFact_1 * wind_2.xyz));
-                o.pos = (UnityObjectToClipPos(pos_6));
-                o.uv = ((v.uv.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
-                o.uv1 = ((v.uv1.xy * unity_LightmapST.xy) + unity_LightmapST.zw);
-                o.uv2 = v.color.xyz;
-
-                return o;
-            }
-            half4 frag(v2f i) : SV_TARGET
-            {
-                float4 c_1;
-                float4 tmpvar_2;
-                tmpvar_2 = tex2D (_MainTex, i.uv);
-                c_1.w = tmpvar_2.w;
-                c_1.xyz = (tmpvar_2.xyz * (2.0 * UNITY_SAMPLE_TEX2D (unity_Lightmap, i.uv1).xyz));
-                return c_1;
-            }
-            ENDCG
-        }
-    }
+Properties {
+	_MainTex ("Base (RGB) Gloss (A)", 2D) = "white" {}
+	_Wind("Wind params",Vector) = (1,1,1,1)
+	_WindEdgeFlutter("Wind edge fultter factor", float) = 0.5
+	_WindEdgeFlutterFreqScale("Wind edge fultter freq scale",float) = 0.5
 }
+
+SubShader {
+	Tags {"Queue"="Transparent" "RenderType"="Transparent" "LightMode"="ForwardBase"}
+	LOD 100
+	
+	Blend SrcAlpha OneMinusSrcAlpha
+	Cull Off ZWrite Off
+	
+	
+	CGINCLUDE
+	#include "UnityCG.cginc"
+	#include "TerrainEngine.cginc"
+	sampler2D _MainTex;
+	float4 _MainTex_ST;
+	samplerCUBE _ReflTex;
+	
+	#ifndef LIGHTMAP_OFF
+	// float4 unity_LightmapST;
+	// sampler2D unity_Lightmap;
+	#endif
+	
+	float _WindEdgeFlutter;
+	float _WindEdgeFlutterFreqScale;
+
+	struct v2f {
+		float4 pos : SV_POSITION;
+		float2 uv : TEXCOORD0;
+		#ifndef LIGHTMAP_OFF
+		float2 lmap : TEXCOORD1;
+		#endif
+		fixed3 spec : TEXCOORD2;
+	};
+
+inline float4 AnimateVertex2(float4 pos, float3 normal, float4 animParams,float4 wind,float2 time)
+{	
+	// animParams stored in color
+	// animParams.x = branch phase
+	// animParams.y = edge flutter factor
+	// animParams.z = primary factor
+	// animParams.w = secondary factor
+
+	float fDetailAmp = 0.1f;
+	float fBranchAmp = 0.3f;
+	
+	// Phases (object, vertex, branch)
+	float fObjPhase = dot(unity_ObjectToWorld[3].xyz, 1);
+	float fBranchPhase = fObjPhase + animParams.x;
+	
+	float fVtxPhase = dot(pos.xyz, animParams.y + fBranchPhase);
+	
+	// x is used for edges; y is used for branches
+	float2 vWavesIn = time  + float2(fVtxPhase, fBranchPhase );
+	
+	// 1.975, 0.793, 0.375, 0.193 are good frequencies
+	float4 vWaves = (frac( vWavesIn.xxyy * float4(1.975, 0.793, 0.375, 0.193) ) * 2.0 - 1.0);
+	
+	vWaves = SmoothTriangleWave( vWaves );
+	float2 vWavesSum = vWaves.xz + vWaves.yw;
+
+	// Edge (xz) and branch bending (y)
+	float3 bend = animParams.y * fDetailAmp * normal.xyz;
+	bend.y = animParams.w * fBranchAmp;
+	pos.xyz += ((vWavesSum.xyx * bend) + (wind.xyz * vWavesSum.y * animParams.w)) * wind.w; 
+
+	// Primary bending
+	// Displace position
+	pos.xyz += animParams.z * wind.xyz;
+	
+	return pos;
+}
+
+
+	
+	v2f vert (appdata_full v)
+	{
+		v2f o;
+		
+		float4	wind;
+		
+		float			bendingFact	= v.color.a;
+		
+		wind.xyz	= mul((float3x3)unity_WorldToObject,_Wind.xyz);
+		wind.w		= _Wind.w  * bendingFact;
+		
+		
+		float4	windParams	= float4(0,_WindEdgeFlutter,bendingFact.xx);
+		float 		windTime 		= _Time.y * float2(_WindEdgeFlutterFreqScale,1);
+		float4	mdlPos			= AnimateVertex2(v.vertex,v.normal,windParams,wind,windTime);
+		
+		o.pos = UnityObjectToClipPos(mdlPos);
+		o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
+		
+		o.spec = v.color;
+		
+		#ifndef LIGHTMAP_OFF
+		o.lmap = v.texcoord1.xy * unity_LightmapST.xy + unity_LightmapST.zw;
+		#endif
+		
+		return o;
+	}
+	ENDCG
+
+
+	Pass {
+		CGPROGRAM
+		#pragma debug
+		#pragma vertex vert
+		#pragma fragment frag
+		#pragma fragmentoption ARB_precision_hint_fastest		
+		fixed4 frag (v2f i) : COLOR
+		{
+			fixed4 tex = tex2D (_MainTex, i.uv);
+			
+			fixed4 c;
+			c.rgb = tex.rgb;
+			c.a = tex.a;
+			
+			#ifndef LIGHTMAP_OFF
+			fixed3 lm = DecodeLightmap (UNITY_SAMPLE_TEX2D(unity_Lightmap, i.lmap));
+			c.rgb *= lm;
+			#endif
+			
+			return c;
+		}
+		ENDCG 
+	}	
+}
+}
+

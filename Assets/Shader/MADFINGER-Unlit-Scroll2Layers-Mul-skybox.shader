@@ -1,80 +1,78 @@
+// - Unlit
+// - Scroll 2 layers /w Multiplicative op
+
 Shader "MADFINGER/Environment/Scroll 2 Layers Multiplicative - Skybox" {
-	Properties {
-		_MainTex ("Base layer (RGB)", 2D) = "white" {}
-		_DetailTex ("2nd layer (RGB)", 2D) = "white" {}
-		_ScrollX ("Base layer Scroll speed X", Float) = 1
-		_ScrollY ("Base layer Scroll speed Y", Float) = 0
-		_Scroll2X ("2nd layer Scroll speed X", Float) = 1
-		_Scroll2Y ("2nd layer Scroll speed Y", Float) = 0
-		_AMultiplier ("Layer Multiplier", Float) = 0.5
-		_ColorTint ("Color", Color) = (1,1,1,1)
+Properties {
+	_MainTex ("Base layer (RGB)", 2D) = "white" {}
+	_DetailTex ("2nd layer (RGB)", 2D) = "white" {}
+	_ScrollX ("Base layer Scroll speed X", Float) = 1.0
+	_ScrollY ("Base layer Scroll speed Y", Float) = 0.0
+	_Scroll2X ("2nd layer Scroll speed X", Float) = 1.0
+	_Scroll2Y ("2nd layer Scroll speed Y", Float) = 0.0
+	_AMultiplier ("Layer Multiplier", Float) = 0.5
+}
+
+SubShader {
+	Tags { "Queue"="Geometry+10" "RenderType"="Opaque" }
+	
+	Lighting Off Fog { Mode Off }
+	ZWrite Off
+	
+	LOD 100
+	
+		
+	CGINCLUDE
+	#pragma multi_compile LIGHTMAP_OFF LIGHTMAP_ON
+	#include "UnityCG.cginc"
+	sampler2D _MainTex;
+	sampler2D _DetailTex;
+
+	float4 _MainTex_ST;
+	float4 _DetailTex_ST;
+	
+	float _ScrollX;
+	float _ScrollY;
+	float _Scroll2X;
+	float _Scroll2Y;
+	float _AMultiplier;
+	
+	struct v2f {
+		float4 pos : SV_POSITION;
+		float2 uv : TEXCOORD0;
+		float2 uv2 : TEXCOORD1;
+		fixed4 color : TEXCOORD2;		
+	};
+
+	
+	v2f vert (appdata_full v)
+	{
+		v2f o;
+		o.pos = UnityObjectToClipPos(v.vertex);
+		o.uv = TRANSFORM_TEX(v.texcoord.xy,_MainTex) + frac(float2(_ScrollX, _ScrollY) * _Time);
+		o.uv2 = TRANSFORM_TEX(v.texcoord.xy,_DetailTex) + frac(float2(_Scroll2X, _Scroll2Y) * _Time);
+		o.color = fixed4(_AMultiplier, _AMultiplier, _AMultiplier, _AMultiplier);
+
+		return o;
 	}
-	SubShader { 
-		LOD 100
-		Tags { "QUEUE"="Geometry+10" "RenderType"="Opaque" }
-		Pass {
-			Tags { "QUEUE"="Geometry+10" "RenderType"="Opaque" }
-			ZWrite Off
-			Fog { Mode Off }
+	ENDCG
 
-			CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
 
-            float4 _MainTex_ST;
-            float4 _DetailTex_ST;
-            float _ScrollX;
-            float _ScrollY;
-            float _Scroll2X;
-            float _Scroll2Y;
-            float _AMultiplier;
-            float4 _ColorTint;
-
-            sampler2D _MainTex;
-            sampler2D _DetailTex;
-
-            struct appdata_t
-            {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-            };
-
-            struct v2f
-            {
-                float4 pos : SV_POSITION;
-                float2 uv : TEXCOORD0;
-                float2 uv1 : TEXCOORD1;
-                float4 uv2 : TEXCOORD2;
-            };
-
-            v2f vert(appdata_t v)
-            {
-                v2f o;
-
-                float4 tmpvar_1;
-                float2 tmpvar_2;
-                tmpvar_2.x = _ScrollX;
-                tmpvar_2.y = _ScrollY;
-                float2 tmpvar_3;
-                tmpvar_3.x = _Scroll2X;
-                tmpvar_3.y = _Scroll2Y;
-                float4 tmpvar_4;
-                tmpvar_4 = (_ColorTint * _AMultiplier);
-                tmpvar_1 = tmpvar_4;
-                o.pos = (UnityObjectToClipPos(v.vertex));
-                o.uv = (((v.uv.xy * _MainTex_ST.xy) + _MainTex_ST.zw) + frac((tmpvar_2 * _Time.xy)));
-                o.uv1 = (((v.uv.xy * _DetailTex_ST.xy) + _DetailTex_ST.zw) + frac((tmpvar_3 * _Time.xy)));
-                o.uv2 = tmpvar_1;
-
-                return o;
-            }
-            half4 frag(v2f i) : SV_TARGET
-            {
-                float4 tmpvar_1;
-                tmpvar_1 = ((tex2D (_MainTex, i.uv) * tex2D (_DetailTex, i.uv1)) * i.uv2);
-                return tmpvar_1;
-            }
-            ENDCG
-        }
-    }
+	Pass {
+		CGPROGRAM
+		#pragma vertex vert
+		#pragma fragment frag
+		#pragma fragmentoption ARB_precision_hint_fastest		
+		fixed4 frag (v2f i) : COLOR
+		{
+			fixed4 o;
+			fixed4 tex = tex2D (_MainTex, i.uv);
+			fixed4 tex2 = tex2D (_DetailTex, i.uv2);
+			
+			o = (tex * tex2) * i.color;
+			
+			return o;
+		}
+		ENDCG 
+	}	
+}
 }
