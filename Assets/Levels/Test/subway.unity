@@ -62174,13 +62174,13 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -62204,7 +62204,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
 --- !u!82 &3474
 AudioSource:
   m_ObjectHideFlags: 0
@@ -101457,7 +101457,7 @@ MonoBehaviour:
     m_Clip: {fileID: 8300000, guid: 34aa77a974cfe1d428282c1fac54962f, type: 3}
     m_FadeOutTime: 0.1
     m_FadeInTime: 10
-    m_Volume: 50
+    m_Volume: 0.35
   musicEvents: []
 --- !u!114 &4292
 MonoBehaviour:
