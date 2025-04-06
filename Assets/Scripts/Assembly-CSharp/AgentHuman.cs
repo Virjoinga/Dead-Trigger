@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.AI;
 
 [Serializable]
 public class AgentHuman : Agent
@@ -379,7 +380,7 @@ public class AgentHuman : Agent
 		GadgetsComponent = GetComponent<ComponentGadgets>();
 		AnimComponent = GetComponent<AnimComponent>();
 		EnemyComponent = GetComponent<ComponentEnemy>();
-		//NavMeshAgent = GetComponent<NavMeshAgent>();
+		NavMeshAgent = GetComponent<NavMeshAgent>();
 		if (NavMeshAgent != null)
 		{
 			NavMeshAgent.updateRotation = false;

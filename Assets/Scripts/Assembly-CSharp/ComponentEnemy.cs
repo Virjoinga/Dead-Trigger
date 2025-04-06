@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(AnimComponent))]
 [RequireComponent(typeof(ComponentSensors))]
@@ -356,13 +357,13 @@ public class ComponentEnemy : MonoBehaviour, IHitZoneOwner
 		Owner.BlackBoard.SpawnPointEnemy = spawn as SpawnPointEnemy;
 		Owner.BlackBoard.SightRange = Owner.BlackBoard.BaseSetup.SightRangeInCombat;
 		Owner.BlackBoard.SightFov = Owner.BlackBoard.BaseSetup.SightFovInCombat;
-		Owner.NavMeshAgent.walkableMask &= ~(1 << LayerMask.NameToLayer("WalkOnlyWhenSpawn"));
+		Owner.NavMeshAgent.areaMask &= ~(1 << NavMesh.GetAreaFromName("WalkOnlyWhenSpawn"));
 		Owner.NavMeshAgent.autoTraverseOffMeshLink = false;
 	}
 
 	protected void Deactivate()
 	{
-		Owner.NavMeshAgent.walkableMask = 286331153;
+		Owner.NavMeshAgent.areaMask = 286331153;
 		DestroyHitParticle();
 	}
 
