@@ -123,6 +123,10 @@ public class PlayerControlStates
 		GameObject gameObject = new GameObject();
 		_Temp = gameObject.transform;
 		MainCameraTransfom = Camera.main.transform;
+
+#if UNITY_STANDALONE || UNITY_EDITOR
+		PCControls = new PlayerControlsPC(this);
+#else
 		TouchControls = new PlayerControlsTouch(this);
 		TouchControls.Start();
 		if (Game.Instance.IsXperiaPlay)
@@ -133,6 +137,7 @@ public class PlayerControlStates
 		{
 			GamepadControls = new PlayerControlsGamepad(this);
 		}
+#endif
 	}
 
 	public void SwitchToUseMode()
