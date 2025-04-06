@@ -348,7 +348,7 @@ public class Game : MonoBehaviour
 		{
 			PlayerPrefs.SetInt("intro_video", 1);
 			PlayerPrefs.Save();
-			Handheld.PlayFullScreenMovie("Intro.mp4", Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFit);
+			//Handheld.PlayFullScreenMovie("Intro.mp4", Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFit);
 		}
 		StartCoroutine(initGameCenter());
 	}
