@@ -8,7 +8,7 @@ public class MFNativeUtils
 
 	static MFNativeUtils()
 	{
-		ms_AndroidMFNativeUtils = new AndroidJavaClass("com.madfingergames.android.utils.MFNativeUtils");
+		//ms_AndroidMFNativeUtils = new AndroidJavaClass("com.madfingergames.android.utils.MFNativeUtils");
 	}
 
 	public static void OpenURLExternal(string url)

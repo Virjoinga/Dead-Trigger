@@ -22,15 +22,15 @@ internal class MFNotificationServiceAndroid : MFNotificationService
 
 	protected override void CancelAllInternal()
 	{
-		m_Plugin.CallStatic("cancelAllNotifications");
+		//m_Plugin.CallStatic("cancelAllNotifications");
 	}
 
 	protected override List<MFNotification> ReceivedNotificationsInternal()
 	{
 		AndroidJNI.AttachCurrentThread();
 		List<MFNotification> list = new List<MFNotification>();
-		AndroidJavaObject[] array = m_Plugin.CallStatic<AndroidJavaObject[]>("receivedNotifications", new object[0]);
-		for (int i = 0; i < array.Length; i++)
+		//AndroidJavaObject[] array = m_Plugin.CallStatic<AndroidJavaObject[]>("receivedNotifications", new object[0]);
+		/*for (int i = 0; i < array.Length; i++)
 		{
 			using (AndroidJavaObject androidJavaObject = array[i])
 			{
@@ -66,13 +66,13 @@ internal class MFNotificationServiceAndroid : MFNotificationService
 					Debug.LogException(exception);
 				}
 			}
-		}
+		}*/
 		return list;
 	}
 
 	protected override void ClearReceivedNotificationsInternal()
 	{
-		m_Plugin.CallStatic("clearReceivedNotifications");
+		//m_Plugin.CallStatic("clearReceivedNotifications");
 	}
 
 	protected override void RegisterPushNotificationsInternal()
