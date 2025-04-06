@@ -124,11 +124,11 @@ public class PlayerControlStates
 		_Temp = gameObject.transform;
 		MainCameraTransfom = Camera.main.transform;
 
+        TouchControls = new PlayerControlsTouch(this);
+        TouchControls.Start();
 #if UNITY_STANDALONE || UNITY_EDITOR
-		PCControls = new PlayerControlsPC(this);
+        PCControls = new PlayerControlsPC(this);
 #else
-		TouchControls = new PlayerControlsTouch(this);
-		TouchControls.Start();
 		if (Game.Instance.IsXperiaPlay)
 		{
 			XperiaControls = new PlayerControlsXperia(this);
