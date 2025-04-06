@@ -10,7 +10,7 @@ public class PluginTest
 		float num3 = 50f;
 		float num4 = 100f;
 		float num5 = num4;
-		if (GUI.Button(new Rect(num3, num4, num, num2), "TW Login"))
+		/*if (GUI.Button(new Rect(num3, num4, num, num2), "TW Login"))
 		{
 			TwitterUtils.LogIn(WaitForBool);
 		}
@@ -45,7 +45,7 @@ public class PluginTest
 		if (GUI.Button(new Rect(num3, num4, num, num2), "TW DoesFollow"))
 		{
 			TwitterUtils.DoesUserFollow("85328174,428333,428332", WaitForBool);
-		}
+		}*/
 		num3 += 2f * (num + 10f) + 30f;
 		num4 = num5;
 	}

@@ -192,12 +192,12 @@ public class GuiBankScreen : BaseMenuScreen
 		m_VisitingSite = Site;
 		if (!Site.m_FBSite)
 		{
-			if (!Site.m_Rewarded && !TwitterWrapper.IsLoggedIn())
+			/*if (!Site.m_Rewarded && !TwitterWrapper.IsLoggedIn())
 			{
 				m_LoggedIn = false;
 				m_WaitForLogin = float.MaxValue;
 				TwitterUtils.LogIn(OnLoginResult);
-			}
+			}*/
 			StartCoroutine(WaitForLogin());
 		}
 	}
@@ -240,7 +240,7 @@ public class GuiBankScreen : BaseMenuScreen
 			Etcetera.ShowActivityNotification(message);
 			if (!m_VisitingSite.m_FBSite)
 			{
-				TwitterUtils.DoesUserFollow(m_VisitingSite.m_ID, OnStatusCheckResult);
+				//TwitterUtils.DoesUserFollow(m_VisitingSite.m_ID, OnStatusCheckResult);
 			}
 		}
 	}

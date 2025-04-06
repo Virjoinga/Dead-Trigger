@@ -335,7 +335,7 @@ public class Game : MonoBehaviour
 			m_UseChristmasMask = false;
 		}
 		Etcetera.Init();
-		TwitterWrapper.Init("JkUv59AgxIL79gGaezqYQ", "eme6M4IcnyDkN8btgjHTqR4aHf8ltSlwDnOe4Wewk");
+		//TwitterWrapper.Init("JkUv59AgxIL79gGaezqYQ", "eme6M4IcnyDkN8btgjHTqR4aHf8ltSlwDnOe4Wewk");
 		Kontagent.StartSession();
 		//JavaVM.AttachCurrentThread();
 		//TapjoyPlugin.EnableLogging(false);
@@ -383,7 +383,7 @@ public class Game : MonoBehaviour
 	{
 		if (_Instance == this)
 		{
-			TwitterWrapper.Done();
+			//TwitterWrapper.Done();
 			Etcetera.Done();
 			if (m_MogaController != null)
 			{
