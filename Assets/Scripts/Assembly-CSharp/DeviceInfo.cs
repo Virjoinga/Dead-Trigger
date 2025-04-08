@@ -50,11 +50,7 @@ public static class DeviceInfo
 
 	public static Performance GetDetectedPerformanceLevel()
 	{
-		if (GraphicsDetailsUtl.IsTegra3())
-		{
-			return Performance.High;
-		}
-		return Performance.Low;
+		return Performance.High;
 	}
 
 	private static void SetPerformanceLevel(Performance perfLevel)

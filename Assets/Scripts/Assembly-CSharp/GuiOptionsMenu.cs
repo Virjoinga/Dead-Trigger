@@ -309,7 +309,7 @@ public class GuiOptionsMenu : MonoBehaviour
 
 	private void OnGraphicChanged(int val)
 	{
-		if (!GraphicsDetailsUtl.IsTegra3() && val == 3)
+		/*if (!GraphicsDetailsUtl.IsTegra3() && val == 3)
 		{
 			int num = 0;
 			num = ((GuiOptions.graphicDetail == 0) ? 2 : 0);
@@ -318,7 +318,7 @@ public class GuiOptionsMenu : MonoBehaviour
 			{
 				m_GraphicEnum.SetValue(val);
 			}
-		}
+		}*/
 		GuiOptions.graphicDetail = val;
 		ApplyGraphicsOptions();
 	}

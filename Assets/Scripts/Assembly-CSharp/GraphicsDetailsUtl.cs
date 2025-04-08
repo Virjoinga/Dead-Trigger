@@ -10,37 +10,10 @@ public class GraphicsDetailsUtl
 		VeryHigh = 3
 	}
 
-	public static bool IsTegra3()
-	{
-		string graphicsDeviceName = SystemInfo.graphicsDeviceName;
-		string graphicsDeviceVendor = SystemInfo.graphicsDeviceVendor;
-		if (SystemInfo.processorCount >= 4)
-		{
-			string text = graphicsDeviceVendor.ToUpper();
-			if (text.IndexOf("NVIDIA") != -1)
-			{
-				string text2 = graphicsDeviceName.ToUpper();
-				if (text2.IndexOf("TEGRA") != -1)
-				{
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-
 	public static void AutoSetupShaderQuality()
-	{
-		Debug.Log("IsTegra3 : " + IsTegra3());
-		if (IsTegra3())
-		{
-			SetShaderQuality(Quality.High);
-		}
-		else
-		{
-			SetShaderQuality(Quality.Low);
-		}
-	}
+    {
+        SetShaderQuality(Quality.High);
+    }
 
 	public static void SetShaderQuality(Quality quality)
 	{
