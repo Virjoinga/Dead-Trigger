@@ -9,11 +9,7 @@ public static class PlayerPrefs
     {
         get
         {
-#if UNITY_EDITOR
-            return Path.Combine(Application.dataPath, "../PlayerPrefs.json");
-#else
             return Path.Combine(Application.persistentDataPath, "../PlayerPrefs.json");
-#endif
         }
     }
 
@@ -79,11 +75,7 @@ public static class PlayerPrefs
         output["ints"] = jsonInts;
         output["floats"] = jsonFloats;
 
-#if UNITY_EDITOR
         File.WriteAllText(savePath, output.ToString(1));
-#else
-        File.WriteAllText(savePath, output.ToString(1));
-#endif
     }
 
     [RuntimeInitializeOnLoadMethod]
