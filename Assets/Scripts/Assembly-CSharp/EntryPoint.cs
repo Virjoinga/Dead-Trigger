@@ -37,6 +37,6 @@ public class EntryPoint : MonoBehaviour
 		DrawOrientedLine(Color.white, from, to);
 		Gizmos.color = Col;
 		Gizmos.DrawLine(transform.position, transform.parent.position);
-		Gizmos.DrawIcon(transform.position, "EntryPoint.tif", true);
+		Gizmos.DrawIcon(transform.position, "EntryPoint.png", true);
 	}
 }
