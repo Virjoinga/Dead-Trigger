@@ -78,7 +78,7 @@ public class PlayerStatusBar
 	public void EnableControls(bool enable)
 	{
 		m_Dialog.EnableControls(enable);
-		EnableButon("ButtonBuyGold", enable);
+		EnableButon("ButtonBuyGold", !enable);
 		EnableButon("ButtonOptions", enable);
 		EnableWidget("Gold", enable);
 		EnableWidget("$", enable);
