@@ -9,7 +9,7 @@ public static class PlayerPrefs
     {
         get
         {
-            return Path.Combine(Application.persistentDataPath, "../PlayerPrefs.json");
+            return Path.Combine(Application.persistentDataPath, "PlayerPrefs.json");
         }
     }
 
