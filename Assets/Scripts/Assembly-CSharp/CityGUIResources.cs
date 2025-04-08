@@ -232,9 +232,9 @@ public class CityGUIResources
 			case CitySiteInfo.InfoType.Equip:
 				gUIBase_Widget = m_Equip.Widget;
 				break;
-			case CitySiteInfo.InfoType.Bank:
+			/*case CitySiteInfo.InfoType.Bank:
 				gUIBase_Widget = m_Bank.Widget;
-				break;
+				break;*/
 			case CitySiteInfo.InfoType.Casino:
 				gUIBase_Widget = m_Casino.Widget;
 				break;
