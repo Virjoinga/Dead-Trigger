@@ -193,6 +193,18 @@ public class GuiHUD : MonoBehaviour
 		{
 			hudComponent.Init();
 		}
+
+#if UNITY_STANDALONE
+		// Creating new list, so, there is no interaction with disabled ones
+		m_HudComponents = new HudComponent[11]
+        {
+            hudCrosshair, hudRadar, hudWeaponSelector, hudMessages, hudIndicators, hudContest, hudGadgets,
+            hudCombatInfo, hudArena, hudIngameBuy, hudTutorial
+        };
+		hudPause.Show(false);
+		hudActions.Show(false);
+		hudMoveControl.Show(false);
+#endif
 		SetDefaultVisibility();
 		StoreControlsOrigPositions();
 		UpdateControlsPosition();
