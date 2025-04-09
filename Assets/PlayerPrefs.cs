@@ -90,8 +90,8 @@ public static class PlayerPrefs
         JSONNode jsonFloats = index["floats"];
 
         foreach (var v in jsonStrings) strings[v.Key] = v.Value;
-        foreach (var v in jsonInts) strings[v.Key] = v.Value;
-        foreach (var v in jsonFloats) strings[v.Key] = v.Value;
+        foreach (var v in jsonInts) ints[v.Key] = v.Value;
+        foreach (var v in jsonFloats) floats[v.Key] = v.Value;
     }
 
     public static void DeleteKey(string key)
