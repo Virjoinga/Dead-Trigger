@@ -1,7 +1,3 @@
-#warning Upgrade NOTE: unity_Scale shader variable was removed; replaced 'unity_Scale.w' with '1.0'
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
-
 Shader "MADFINGER/Characters/BRDFLit FX (Supports Backlight)" {
     Properties {
         _MainTex ("Base (RGB) Gloss (A)", 2D) = "grey" {}
@@ -157,7 +153,7 @@ Shader "MADFINGER/Characters/BRDFLit FX (Supports Backlight)" {
                 float3 tmpvar_36;
                 tmpvar_36 = normalize(mul(tmpvar_33, ((mul(unity_WorldToObject, tmpvar_35).xyz * 1.0) - v.vertex.xyz)));
                 tmpvar_7 = tmpvar_36;
-                o.pos = (UnityObjectToClipPos(v.vertex));
+                o.pos = UnityObjectToClipPos(v.vertex);
                 o.uv = tmpvar_3;
                 o.uv1 = tmpvar_4;
                 o.uv2 = tmpvar_5;

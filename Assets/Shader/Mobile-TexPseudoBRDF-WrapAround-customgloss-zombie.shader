@@ -1,9 +1,3 @@
-#warning Upgrade NOTE: unity_Scale shader variable was removed; replaced 'unity_Scale.w' with '1.0'
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
-// Upgrade NOTE: replaced 'glstate_matrix_modelview0' with 'UNITY_MATRIX_MV'
-// Upgrade NOTE: replaced 'glstate_matrix_projection' with 'UNITY_MATRIX_P'
-
 Shader "MADFINGER/Characters/BRDFLit (Supports Backlight) - custom glossingess mask - zombie" {
     Properties {
         _MainTex ("Base (RGB) Gloss (A)", 2D) = "grey" {}
@@ -22,6 +16,7 @@ Shader "MADFINGER/Characters/BRDFLit (Supports Backlight) - custom glossingess m
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            #include "UnityCG.cginc"
 
             float _LightProbesLightingAmount;
             float4 _Params;
@@ -73,7 +68,7 @@ Shader "MADFINGER/Characters/BRDFLit (Supports Backlight) - custom glossingess m
                 float3 tmpvar_10;
                 tmpvar_10 = mul(tmpvar_9, tmpvar_2);
                 float3 tmpvar_11;
-                tmpvar_11 = mul(UNITY_MATRIX_MV, v.vertex).xyz;
+                tmpvar_11 = UnityObjectToViewPos(v.vertex).xyz;
                 float4 tmpvar_12;
                 if ((_Params.y > 0.0)) {
                     tmpvar_12 = _ProjParams;

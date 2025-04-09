@@ -1,150 +1,80 @@
-üShader "MADFINGER/Particles/Multiply TwoSided FPV" {
-Properties {
- _MainTex ("Texture", 2D) = "black" {}
- _TintColor ("Color", Color) = (1,1,1,1)
-}
-SubShader { 
- Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
- Pass {
-  Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
-  ZWrite Off
-  Cull Off
-  Fog {
-   Color (0,0,0,0)
-  }
-  Blend DstColor Zero
-  ColorMask RGB
-Program "vp" {
-SubProgram "gles " {
-"!!GLES
+Shader "MADFINGER/Particles/Multiply TwoSided FPV" {
+	Properties {
+		_MainTex ("Texture", 2D) = "black" {}
+		_TintColor ("Color", Color) = (1,1,1,1)
+	}
+	SubShader { 
+		Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
+		Pass {
+			Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
+			ZWrite Off
+			Cull Off
+			Fog {
+				Color (0,0,0,0)
+			}
+			Blend DstColor Zero
+			ColorMask RGB
 
+			CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #include "UnityCG.cginc"
 
-#ifdef VERTEX
+            float4 _TintColor;
+            float4 _ProjParams;
+            float4 _MainTex_ST;
 
-attribute vec4 _glesVertex;
-attribute vec4 _glesColor;
-attribute vec4 _glesMultiTexCoord0;
-uniform highp mat4 glstate_matrix_modelview0;
-uniform highp mat4 glstate_matrix_projection;
-uniform highp vec4 _TintColor;
-uniform highp vec4 _ProjParams;
-uniform highp vec4 _MainTex_ST;
-varying lowp vec4 xlv_COLOR;
-varying highp vec2 xlv_TEXCOORD0;
-void main ()
-{
-  highp mat4 projTM_1;
-  highp vec4 tmpvar_2;
-  lowp vec4 tmpvar_3;
-  projTM_1 = glstate_matrix_projection;
-  projTM_1[0] = glstate_matrix_projection[0]; projTM_1[0].x = (glstate_matrix_projection[0].x * _ProjParams.x);
-  projTM_1[1] = projTM_1[1]; projTM_1[1].y = (projTM_1[1].y * _ProjParams.y);
-  highp vec4 tmpvar_4;
-  tmpvar_4.w = 1.0;
-  tmpvar_4.xyz = (glstate_matrix_modelview0 * _glesVertex).xyz;
-  highp vec4 tmpvar_5;
-  tmpvar_5 = (projTM_1 * tmpvar_4);
-  tmpvar_2.xyw = tmpvar_5.xyw;
-  tmpvar_2.z = (tmpvar_5.z * _ProjParams.z);
-  tmpvar_2.z = (tmpvar_2.z + (_ProjParams.w * tmpvar_5.w));
-  highp vec4 tmpvar_6;
-  tmpvar_6.w = 1.0;
-  tmpvar_6.xyz = (_glesColor.xyz * _TintColor.xyz);
-  tmpvar_3 = tmpvar_6;
-  gl_Position = tmpvar_2;
-  xlv_COLOR = tmpvar_3;
-  xlv_TEXCOORD0 = ((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
-}
+            sampler2D _MainTex;
 
+            struct appdata_t
+            {
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+                float4 color : COLOR;
+            };
 
+            struct v2f
+            {
+                float4 pos : SV_POSITION;
+                float2 uv : TEXCOORD0;
+                float4 color : COLOR;
+            };
 
-#endif
-#ifdef FRAGMENT
+            v2f vert(appdata_t v)
+            {
+                v2f o;
 
-uniform sampler2D _MainTex;
-varying lowp vec4 xlv_COLOR;
-varying highp vec2 xlv_TEXCOORD0;
-void main ()
-{
-  lowp vec4 tmpvar_1;
-  tmpvar_1 = (texture2D (_MainTex, xlv_TEXCOORD0) * xlv_COLOR);
-  gl_FragData[0] = tmpvar_1;
-}
+                float4x4 projTM_1;
+                float4 tmpvar_2;
+                float4 tmpvar_3;
+                projTM_1 = UNITY_MATRIX_P;
+                projTM_1[0] = UNITY_MATRIX_P[0]; projTM_1[0].x = (UNITY_MATRIX_P[0].x * _ProjParams.x);
+                projTM_1[1] = projTM_1[1]; projTM_1[1].y = (projTM_1[1].y * _ProjParams.y);
+                float4 tmpvar_4;
+                tmpvar_4.w = 1.0;
+                tmpvar_4.xyz = UnityObjectToViewPos(v.vertex).xyz;
+                float4 tmpvar_5;
+                tmpvar_5 = mul(projTM_1, tmpvar_4);
+                tmpvar_2.xyw = tmpvar_5.xyw;
+                tmpvar_2.z = (tmpvar_5.z * _ProjParams.z);
+                tmpvar_2.z = (tmpvar_2.z + (_ProjParams.w * tmpvar_5.w));
+                float4 tmpvar_6;
+                tmpvar_6.w = 1.0;
+                tmpvar_6.xyz = (v.color.xyz * _TintColor.xyz);
+                tmpvar_3 = tmpvar_6;
+                o.pos = tmpvar_2;
+                o.color = tmpvar_3;
+                o.uv = ((v.uv.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
 
-
-
-#endif"
-}
-SubProgram "gles3 " {
-"!!GLES3#version 300 es
-
-
-#ifdef VERTEX
-
-in vec4 _glesVertex;
-in vec4 _glesColor;
-in vec4 _glesMultiTexCoord0;
-uniform highp mat4 glstate_matrix_modelview0;
-uniform highp mat4 glstate_matrix_projection;
-uniform highp vec4 _TintColor;
-uniform highp vec4 _ProjParams;
-uniform highp vec4 _MainTex_ST;
-out lowp vec4 xlv_COLOR;
-out highp vec2 xlv_TEXCOORD0;
-void main ()
-{
-  highp mat4 projTM_1;
-  highp vec4 tmpvar_2;
-  lowp vec4 tmpvar_3;
-  projTM_1 = glstate_matrix_projection;
-  projTM_1[0] = glstate_matrix_projection[0]; projTM_1[0].x = (glstate_matrix_projection[0].x * _ProjParams.x);
-  projTM_1[1] = projTM_1[1]; projTM_1[1].y = (projTM_1[1].y * _ProjParams.y);
-  highp vec4 tmpvar_4;
-  tmpvar_4.w = 1.0;
-  tmpvar_4.xyz = (glstate_matrix_modelview0 * _glesVertex).xyz;
-  highp vec4 tmpvar_5;
-  tmpvar_5 = (projTM_1 * tmpvar_4);
-  tmpvar_2.xyw = tmpvar_5.xyw;
-  tmpvar_2.z = (tmpvar_5.z * _ProjParams.z);
-  tmpvar_2.z = (tmpvar_2.z + (_ProjParams.w * tmpvar_5.w));
-  highp vec4 tmpvar_6;
-  tmpvar_6.w = 1.0;
-  tmpvar_6.xyz = (_glesColor.xyz * _TintColor.xyz);
-  tmpvar_3 = tmpvar_6;
-  gl_Position = tmpvar_2;
-  xlv_COLOR = tmpvar_3;
-  xlv_TEXCOORD0 = ((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
-}
-
-
-
-#endif
-#ifdef FRAGMENT
-
-out mediump vec4 _glesFragData[4];
-uniform sampler2D _MainTex;
-in lowp vec4 xlv_COLOR;
-in highp vec2 xlv_TEXCOORD0;
-void main ()
-{
-  lowp vec4 tmpvar_1;
-  tmpvar_1 = (texture (_MainTex, xlv_TEXCOORD0) * xlv_COLOR);
-  _glesFragData[0] = tmpvar_1;
-}
-
-
-
-#endif"
-}
-}
-Program "fp" {
-SubProgram "gles " {
-"!!GLES"
-}
-SubProgram "gles3 " {
-"!!GLES3"
-}
-}
- }
-}
+                return o;
+            }
+            half4 frag(v2f i) : SV_TARGET
+            {
+                float4 tmpvar_1;
+                tmpvar_1 = (tex2D (_MainTex, i.uv) * i.color);
+                return tmpvar_1;
+            }
+            ENDCG
+        }
+    }
 }

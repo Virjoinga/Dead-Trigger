@@ -15,6 +15,7 @@ Shader "MADFINGER/Environment/Bumped cubemap specular + Lightprobe FPV" {
 			CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            #include "UnityCG.cginc"
 
             float _SHLightingScale;
             float4 _ProjParams;
@@ -56,7 +57,7 @@ Shader "MADFINGER/Environment/Bumped cubemap specular + Lightprobe FPV" {
                 projTM_2[1] = projTM_2[1]; projTM_2[1].y = (projTM_2[1].y * _ProjParams.y);
                 float4 tmpvar_5;
                 tmpvar_5.w = 1.0;
-                tmpvar_5.xyz = mul(UNITY_MATRIX_MV, v.vertex).xyz;
+                tmpvar_5.xyz = UnityObjectToViewPos(v.vertex).xyz;
                 float4 tmpvar_6;
                 tmpvar_6 = mul(projTM_2, tmpvar_5);
                 tmpvar_3.xyw = tmpvar_6.xyw;

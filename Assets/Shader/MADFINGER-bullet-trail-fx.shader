@@ -1,312 +1,87 @@
-Ð=Shader "MADFINGER/FX/Bullet trail" {
-Properties {
- _MainTex ("Base layer (RGB)", 2D) = "white" {}
- _DetailTex ("2nd layer (RGB)", 2D) = "white" {}
- _ScrollX ("Base layer Scroll speed X", Float) = 1
- _ScrollY ("Base layer Scroll speed Y", Float) = 0
- _Scroll2X ("2nd layer Scroll speed X", Float) = 1
- _Scroll2Y ("2nd layer Scroll speed Y", Float) = 0
- _AMultiplier ("Layer Multiplier", Float) = 0.5
- _TintColor ("Tint color", Color) = (1,1,1,1)
-}
-SubShader { 
- LOD 100
- Tags { "QUEUE"="Transparent" "RenderType"="Transparent" }
- Pass {
-  Tags { "QUEUE"="Transparent" "RenderType"="Transparent" }
-  ZWrite Off
-  Fog { Mode Off }
-  Blend One One
-Program "vp" {
-SubProgram "gles " {
-Keywords { "LIGHTMAP_OFF" }
-"!!GLES
+Shader "MADFINGER/FX/Bullet trail" {
+	Properties {
+		_MainTex ("Base layer (RGB)", 2D) = "white" {}
+		_DetailTex ("2nd layer (RGB)", 2D) = "white" {}
+		_ScrollX ("Base layer Scroll speed X", Float) = 1
+		_ScrollY ("Base layer Scroll speed Y", Float) = 0
+		_Scroll2X ("2nd layer Scroll speed X", Float) = 1
+		_Scroll2Y ("2nd layer Scroll speed Y", Float) = 0
+		_AMultiplier ("Layer Multiplier", Float) = 0.5
+		_TintColor ("Tint color", Color) = (1,1,1,1)
+	}
+	SubShader { 
+		LOD 100
+		Tags { "QUEUE"="Transparent" "RenderType"="Transparent" }
+		Pass {
+			Tags { "QUEUE"="Transparent" "RenderType"="Transparent" }
+			ZWrite Off
+			Fog { Mode Off }
+			Blend One One
 
+			CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
 
-#ifdef VERTEX
+            float4 _MainTex_ST;
+            float4 _DetailTex_ST;
+            float _ScrollX;
+            float _ScrollY;
+            float _Scroll2X;
+            float _Scroll2Y;
+            float _AMultiplier;
+            float4 _TintColor;
 
-attribute vec4 _glesVertex;
-attribute vec4 _glesColor;
-attribute vec4 _glesMultiTexCoord0;
-uniform highp vec4 _Time;
-uniform highp mat4 glstate_matrix_mvp;
-uniform highp vec4 _MainTex_ST;
-uniform highp vec4 _DetailTex_ST;
-uniform highp float _ScrollX;
-uniform highp float _ScrollY;
-uniform highp float _Scroll2X;
-uniform highp float _Scroll2Y;
-uniform highp float _AMultiplier;
-uniform highp vec4 _TintColor;
-varying highp vec2 xlv_TEXCOORD0;
-varying highp vec2 xlv_TEXCOORD1;
-varying lowp vec4 xlv_TEXCOORD2;
-void main ()
-{
-  lowp vec4 tmpvar_1;
-  highp vec2 tmpvar_2;
-  tmpvar_2.x = _ScrollX;
-  tmpvar_2.y = _ScrollY;
-  highp vec2 tmpvar_3;
-  tmpvar_3.x = _Scroll2X;
-  tmpvar_3.y = _Scroll2Y;
-  highp vec4 tmpvar_4;
-  tmpvar_4 = ((((_glesColor * _glesColor.w) * _TintColor) * _TintColor.w) * 2.0);
-  tmpvar_1 = tmpvar_4;
-  highp vec3 tmpvar_5;
-  tmpvar_5 = (tmpvar_1.xyz * _AMultiplier);
-  tmpvar_1.xyz = tmpvar_5;
-  gl_Position = (glstate_matrix_mvp * _glesVertex);
-  xlv_TEXCOORD0 = (((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw) + fract((tmpvar_2 * _Time.xy)));
-  xlv_TEXCOORD1 = (((_glesMultiTexCoord0.xy * _DetailTex_ST.xy) + _DetailTex_ST.zw) + fract((tmpvar_3 * _Time.xy)));
-  xlv_TEXCOORD2 = tmpvar_1;
-}
+            sampler2D _MainTex;
+            sampler2D _DetailTex;
 
+            struct appdata_t
+            {
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+                float4 color : COLOR;
+            };
 
+            struct v2f
+            {
+                float4 pos : SV_POSITION;
+                float2 uv : TEXCOORD0;
+                float2 uv1 : TEXCOORD1;
+                float4 uv2 : TEXCOORD2;
+            };
 
-#endif
-#ifdef FRAGMENT
+            v2f vert(appdata_t v)
+            {
+                v2f o;
 
-uniform sampler2D _MainTex;
-uniform sampler2D _DetailTex;
-varying highp vec2 xlv_TEXCOORD0;
-varying highp vec2 xlv_TEXCOORD1;
-varying lowp vec4 xlv_TEXCOORD2;
-void main ()
-{
-  lowp vec4 tmpvar_1;
-  tmpvar_1 = texture2D (_MainTex, xlv_TEXCOORD0);
-  lowp vec4 tmpvar_2;
-  tmpvar_2 = (((tmpvar_1 + texture2D (_DetailTex, xlv_TEXCOORD1)) * tmpvar_1.x) * xlv_TEXCOORD2);
-  gl_FragData[0] = tmpvar_2;
-}
+                float4 tmpvar_1;
+                float2 tmpvar_2;
+                tmpvar_2.x = _ScrollX;
+                tmpvar_2.y = _ScrollY;
+                float2 tmpvar_3;
+                tmpvar_3.x = _Scroll2X;
+                tmpvar_3.y = _Scroll2Y;
+                float4 tmpvar_4;
+                tmpvar_4 = ((((v.color * v.color.w) * _TintColor) * _TintColor.w) * 2.0);
+                tmpvar_1 = tmpvar_4;
+                float3 tmpvar_5;
+                tmpvar_5 = (tmpvar_1.xyz * _AMultiplier);
+                tmpvar_1.xyz = tmpvar_5;
+                o.pos = (UnityObjectToClipPos(v.vertex));
+                o.uv = (((v.uv.xy * _MainTex_ST.xy) + _MainTex_ST.zw) + frac((tmpvar_2 * _Time.xy)));
+                o.uv1 = (((v.uv.xy * _DetailTex_ST.xy) + _DetailTex_ST.zw) + frac((tmpvar_3 * _Time.xy)));
+                o.uv2 = tmpvar_1;
 
-
-
-#endif"
-}
-SubProgram "gles3 " {
-Keywords { "LIGHTMAP_OFF" }
-"!!GLES3#version 300 es
-
-
-#ifdef VERTEX
-
-in vec4 _glesVertex;
-in vec4 _glesColor;
-in vec4 _glesMultiTexCoord0;
-uniform highp vec4 _Time;
-uniform highp mat4 glstate_matrix_mvp;
-uniform highp vec4 _MainTex_ST;
-uniform highp vec4 _DetailTex_ST;
-uniform highp float _ScrollX;
-uniform highp float _ScrollY;
-uniform highp float _Scroll2X;
-uniform highp float _Scroll2Y;
-uniform highp float _AMultiplier;
-uniform highp vec4 _TintColor;
-out highp vec2 xlv_TEXCOORD0;
-out highp vec2 xlv_TEXCOORD1;
-out lowp vec4 xlv_TEXCOORD2;
-void main ()
-{
-  lowp vec4 tmpvar_1;
-  highp vec2 tmpvar_2;
-  tmpvar_2.x = _ScrollX;
-  tmpvar_2.y = _ScrollY;
-  highp vec2 tmpvar_3;
-  tmpvar_3.x = _Scroll2X;
-  tmpvar_3.y = _Scroll2Y;
-  highp vec4 tmpvar_4;
-  tmpvar_4 = ((((_glesColor * _glesColor.w) * _TintColor) * _TintColor.w) * 2.0);
-  tmpvar_1 = tmpvar_4;
-  highp vec3 tmpvar_5;
-  tmpvar_5 = (tmpvar_1.xyz * _AMultiplier);
-  tmpvar_1.xyz = tmpvar_5;
-  gl_Position = (glstate_matrix_mvp * _glesVertex);
-  xlv_TEXCOORD0 = (((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw) + fract((tmpvar_2 * _Time.xy)));
-  xlv_TEXCOORD1 = (((_glesMultiTexCoord0.xy * _DetailTex_ST.xy) + _DetailTex_ST.zw) + fract((tmpvar_3 * _Time.xy)));
-  xlv_TEXCOORD2 = tmpvar_1;
-}
-
-
-
-#endif
-#ifdef FRAGMENT
-
-out mediump vec4 _glesFragData[4];
-uniform sampler2D _MainTex;
-uniform sampler2D _DetailTex;
-in highp vec2 xlv_TEXCOORD0;
-in highp vec2 xlv_TEXCOORD1;
-in lowp vec4 xlv_TEXCOORD2;
-void main ()
-{
-  lowp vec4 tmpvar_1;
-  tmpvar_1 = texture (_MainTex, xlv_TEXCOORD0);
-  lowp vec4 tmpvar_2;
-  tmpvar_2 = (((tmpvar_1 + texture (_DetailTex, xlv_TEXCOORD1)) * tmpvar_1.x) * xlv_TEXCOORD2);
-  _glesFragData[0] = tmpvar_2;
-}
-
-
-
-#endif"
-}
-SubProgram "gles " {
-Keywords { "LIGHTMAP_ON" }
-"!!GLES
-
-
-#ifdef VERTEX
-
-attribute vec4 _glesVertex;
-attribute vec4 _glesColor;
-attribute vec4 _glesMultiTexCoord0;
-uniform highp vec4 _Time;
-uniform highp mat4 glstate_matrix_mvp;
-uniform highp vec4 _MainTex_ST;
-uniform highp vec4 _DetailTex_ST;
-uniform highp float _ScrollX;
-uniform highp float _ScrollY;
-uniform highp float _Scroll2X;
-uniform highp float _Scroll2Y;
-uniform highp float _AMultiplier;
-uniform highp vec4 _TintColor;
-varying highp vec2 xlv_TEXCOORD0;
-varying highp vec2 xlv_TEXCOORD1;
-varying lowp vec4 xlv_TEXCOORD2;
-void main ()
-{
-  lowp vec4 tmpvar_1;
-  highp vec2 tmpvar_2;
-  tmpvar_2.x = _ScrollX;
-  tmpvar_2.y = _ScrollY;
-  highp vec2 tmpvar_3;
-  tmpvar_3.x = _Scroll2X;
-  tmpvar_3.y = _Scroll2Y;
-  highp vec4 tmpvar_4;
-  tmpvar_4 = ((((_glesColor * _glesColor.w) * _TintColor) * _TintColor.w) * 2.0);
-  tmpvar_1 = tmpvar_4;
-  highp vec3 tmpvar_5;
-  tmpvar_5 = (tmpvar_1.xyz * _AMultiplier);
-  tmpvar_1.xyz = tmpvar_5;
-  gl_Position = (glstate_matrix_mvp * _glesVertex);
-  xlv_TEXCOORD0 = (((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw) + fract((tmpvar_2 * _Time.xy)));
-  xlv_TEXCOORD1 = (((_glesMultiTexCoord0.xy * _DetailTex_ST.xy) + _DetailTex_ST.zw) + fract((tmpvar_3 * _Time.xy)));
-  xlv_TEXCOORD2 = tmpvar_1;
-}
-
-
-
-#endif
-#ifdef FRAGMENT
-
-uniform sampler2D _MainTex;
-uniform sampler2D _DetailTex;
-varying highp vec2 xlv_TEXCOORD0;
-varying highp vec2 xlv_TEXCOORD1;
-varying lowp vec4 xlv_TEXCOORD2;
-void main ()
-{
-  lowp vec4 tmpvar_1;
-  tmpvar_1 = texture2D (_MainTex, xlv_TEXCOORD0);
-  lowp vec4 tmpvar_2;
-  tmpvar_2 = (((tmpvar_1 + texture2D (_DetailTex, xlv_TEXCOORD1)) * tmpvar_1.x) * xlv_TEXCOORD2);
-  gl_FragData[0] = tmpvar_2;
-}
-
-
-
-#endif"
-}
-SubProgram "gles3 " {
-Keywords { "LIGHTMAP_ON" }
-"!!GLES3#version 300 es
-
-
-#ifdef VERTEX
-
-in vec4 _glesVertex;
-in vec4 _glesColor;
-in vec4 _glesMultiTexCoord0;
-uniform highp vec4 _Time;
-uniform highp mat4 glstate_matrix_mvp;
-uniform highp vec4 _MainTex_ST;
-uniform highp vec4 _DetailTex_ST;
-uniform highp float _ScrollX;
-uniform highp float _ScrollY;
-uniform highp float _Scroll2X;
-uniform highp float _Scroll2Y;
-uniform highp float _AMultiplier;
-uniform highp vec4 _TintColor;
-out highp vec2 xlv_TEXCOORD0;
-out highp vec2 xlv_TEXCOORD1;
-out lowp vec4 xlv_TEXCOORD2;
-void main ()
-{
-  lowp vec4 tmpvar_1;
-  highp vec2 tmpvar_2;
-  tmpvar_2.x = _ScrollX;
-  tmpvar_2.y = _ScrollY;
-  highp vec2 tmpvar_3;
-  tmpvar_3.x = _Scroll2X;
-  tmpvar_3.y = _Scroll2Y;
-  highp vec4 tmpvar_4;
-  tmpvar_4 = ((((_glesColor * _glesColor.w) * _TintColor) * _TintColor.w) * 2.0);
-  tmpvar_1 = tmpvar_4;
-  highp vec3 tmpvar_5;
-  tmpvar_5 = (tmpvar_1.xyz * _AMultiplier);
-  tmpvar_1.xyz = tmpvar_5;
-  gl_Position = (glstate_matrix_mvp * _glesVertex);
-  xlv_TEXCOORD0 = (((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw) + fract((tmpvar_2 * _Time.xy)));
-  xlv_TEXCOORD1 = (((_glesMultiTexCoord0.xy * _DetailTex_ST.xy) + _DetailTex_ST.zw) + fract((tmpvar_3 * _Time.xy)));
-  xlv_TEXCOORD2 = tmpvar_1;
-}
-
-
-
-#endif
-#ifdef FRAGMENT
-
-out mediump vec4 _glesFragData[4];
-uniform sampler2D _MainTex;
-uniform sampler2D _DetailTex;
-in highp vec2 xlv_TEXCOORD0;
-in highp vec2 xlv_TEXCOORD1;
-in lowp vec4 xlv_TEXCOORD2;
-void main ()
-{
-  lowp vec4 tmpvar_1;
-  tmpvar_1 = texture (_MainTex, xlv_TEXCOORD0);
-  lowp vec4 tmpvar_2;
-  tmpvar_2 = (((tmpvar_1 + texture (_DetailTex, xlv_TEXCOORD1)) * tmpvar_1.x) * xlv_TEXCOORD2);
-  _glesFragData[0] = tmpvar_2;
-}
-
-
-
-#endif"
-}
-}
-Program "fp" {
-SubProgram "gles " {
-Keywords { "LIGHTMAP_OFF" }
-"!!GLES"
-}
-SubProgram "gles3 " {
-Keywords { "LIGHTMAP_OFF" }
-"!!GLES3"
-}
-SubProgram "gles " {
-Keywords { "LIGHTMAP_ON" }
-"!!GLES"
-}
-SubProgram "gles3 " {
-Keywords { "LIGHTMAP_ON" }
-"!!GLES3"
-}
-}
- }
-}
+                return o;
+            }
+            half4 frag(v2f i) : SV_TARGET
+            {
+                float4 tmpvar_1;
+                tmpvar_1 = tex2D (_MainTex, i.uv);
+                float4 tmpvar_2;
+                tmpvar_2 = (((tmpvar_1 + tex2D (_DetailTex, i.uv1)) * tmpvar_1.x) * i.uv2);
+                return tmpvar_2;
+            }
+            ENDCG
+        }
+    }
 }

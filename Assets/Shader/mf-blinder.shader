@@ -1,74 +1,37 @@
-ƒShader "MADFINGER/Utils/Blinder" {
-SubShader { 
- LOD 100
- Tags { "QUEUE"="Geometry+1000" "RenderType"="Opaque" }
- Pass {
-  Tags { "QUEUE"="Geometry+1000" "RenderType"="Opaque" }
-Program "vp" {
-SubProgram "gles " {
-"!!GLES
+Shader "MADFINGER/Utils/Blinder" {
+	SubShader { 
+		LOD 100
+		Tags { "QUEUE"="Geometry+1000" "RenderType"="Opaque" }
+		Pass {
+			Tags { "QUEUE"="Geometry+1000" "RenderType"="Opaque" }
 
+			CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
 
-#ifdef VERTEX
+            struct appdata_t
+            {
+                float4 vertex : POSITION;
+            };
 
-attribute vec4 _glesVertex;
-uniform highp mat4 glstate_matrix_mvp;
-void main ()
-{
-  gl_Position = (glstate_matrix_mvp * _glesVertex);
-}
+            struct v2f
+            {
+                float4 pos : SV_POSITION;
+            };
 
+            v2f vert(appdata_t v)
+            {
+                v2f o;
 
+                o.pos = UnityObjectToClipPos(v.vertex);
 
-#endif
-#ifdef FRAGMENT
-
-void main ()
-{
-  gl_FragData[0] = vec4(0.0, 0.0, 0.0, 0.0);
-}
-
-
-
-#endif"
-}
-SubProgram "gles3 " {
-"!!GLES3#version 300 es
-
-
-#ifdef VERTEX
-
-in vec4 _glesVertex;
-uniform highp mat4 glstate_matrix_mvp;
-void main ()
-{
-  gl_Position = (glstate_matrix_mvp * _glesVertex);
-}
-
-
-
-#endif
-#ifdef FRAGMENT
-
-out mediump vec4 _glesFragData[4];
-void main ()
-{
-  _glesFragData[0] = vec4(0.0, 0.0, 0.0, 0.0);
-}
-
-
-
-#endif"
-}
-}
-Program "fp" {
-SubProgram "gles " {
-"!!GLES"
-}
-SubProgram "gles3 " {
-"!!GLES3"
-}
-}
- }
-}
+                return o;
+            }
+            half4 frag(v2f i) : SV_TARGET
+            {
+                return float4(0.0, 0.0, 0.0, 0.0);
+            }
+            ENDCG
+        }
+    }
 }

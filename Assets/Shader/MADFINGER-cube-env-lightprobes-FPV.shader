@@ -1,7 +1,3 @@
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-// Upgrade NOTE: replaced 'glstate_matrix_modelview0' with 'UNITY_MATRIX_MV'
-// Upgrade NOTE: replaced 'glstate_matrix_projection' with 'UNITY_MATRIX_P'
-
 Shader "MADFINGER/Environment/Cube env map (Supports LightProbes) FPV" {
     Properties {
         _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" {}
@@ -20,6 +16,7 @@ Shader "MADFINGER/Environment/Cube env map (Supports LightProbes) FPV" {
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            #include "UnityCG.cginc"
 
             float4 _MainTex_ST;
             float _SHLightingScale;
@@ -54,7 +51,7 @@ Shader "MADFINGER/Environment/Cube env map (Supports LightProbes) FPV" {
                 float4 tmpvar_3;
                 float3 tmpvar_4;
                 float3 tmpvar_5;
-                tmpvar_5 = mul(UNITY_MATRIX_MV, v.vertex).xyz;
+                tmpvar_5 = UnityObjectToViewPos(v.vertex).xyz;
                 projTM_2 = UNITY_MATRIX_P;
                 float4 tmpvar_6;
                 if ((_Params.x > 0.0)) {
