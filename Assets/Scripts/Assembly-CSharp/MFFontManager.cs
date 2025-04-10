@@ -161,11 +161,11 @@ public class MFFontManager : MonoBehaviour
 			{
 				Debug.LogError(string.Format("Font setup [{0}] doesn't have assigned default font", setup.m_FontName), this);
 			}
-			/*list = m_Fonts.FindAll((FontSetup font) => font.m_FontName == setup.m_FontName);
+			list = m_Fonts.FindAll((FontSetup f) => f.m_FontName == setup.m_FontName);
 			if (list.Count != 1)
 			{
 				Debug.LogError(string.Format("Font name {0} isn't unique [{1}]", setup.m_FontName, list.Count), this);
-			}*/
+			}
 		}
 	}
 }
