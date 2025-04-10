@@ -303,19 +303,19 @@ public class MFGuiManager : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Keypad7))
 		{
 			Debug.Log("Input.GetKeyDown(KeyCode.Keypad7)");
-			//TextDatabase.instance.Reload(SystemLanguage.English);
+			TextDatabase.instance.Reload(SystemLanguage.English);
 			OnLanguageChanged("English.Old");
 		}
 		else if (Input.GetKeyDown(KeyCode.Keypad8))
 		{
 			Debug.Log("Input.GetKeyDown(KeyCode.Keypad8)");
-			//TextDatabase.instance.Reload(SystemLanguage.English);
+			TextDatabase.instance.Reload(SystemLanguage.English);
 			OnLanguageChanged("English");
 		}
 		else if (Input.GetKeyDown(KeyCode.Keypad9))
 		{
 			Debug.Log("Input.GetKeyDown(KeyCode.Keypad9)");
-			//TextDatabase.instance.Reload(SystemLanguage.Korean);
+			TextDatabase.instance.Reload(SystemLanguage.Korean);
 			OnLanguageChanged("Korean");
 		}
 		if (m_FadeInProgress)

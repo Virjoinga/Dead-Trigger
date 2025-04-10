@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SensorPosition : SensorBase
 {
-	//private UnityEngine.AI.NavMeshHit NavMeshHit = default(NavMeshHit);
+	private UnityEngine.AI.NavMeshHit NavMeshHit = default(UnityEngine.AI.NavMeshHit);
 
 	private int PosIndex;
 
@@ -20,8 +20,8 @@ public class SensorPosition : SensorBase
 		}
 		float f = (float)Math.PI * 2f / (float)base.Owner.BlackBoard.AiRecon.MaxPosition * (float)PosIndex;
 		Vector3 vector = new Vector3(Mathf.Cos(f), 0f, Mathf.Sin(f));
-		//UnityEngine.AI.NavMesh.Raycast(base.Owner.Position, base.Owner.Position + base.Owner.BlackBoard.AiRecon.Distance * vector, out NavMeshHit, base.Owner.NavMeshAgent.walkableMask);
-		/*if ((base.Owner.BlackBoard.AiRecon.Positions[PosIndex].Position - NavMeshHit.position).magnitude > 1f)
+		UnityEngine.AI.NavMesh.Raycast(base.Owner.Position, base.Owner.Position + base.Owner.BlackBoard.AiRecon.Distance * vector, out NavMeshHit, base.Owner.NavMeshAgent.areaMask);
+		if ((base.Owner.BlackBoard.AiRecon.Positions[PosIndex].Position - NavMeshHit.position).magnitude > 1f)
 		{
 			base.Owner.BlackBoard.AiRecon.Positions[PosIndex].Position = NavMeshHit.position;
 			base.Owner.BlackBoard.AiRecon.Positions[PosIndex].Distance = NavMeshHit.distance;
@@ -52,7 +52,7 @@ public class SensorPosition : SensorBase
 		if (PosIndex == base.Owner.BlackBoard.AiRecon.MaxPosition)
 		{
 			PosIndex = 0;
-		}*/
+		}
 	}
 
 	public override void Reset()
