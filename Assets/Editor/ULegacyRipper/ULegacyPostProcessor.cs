@@ -5,7 +5,6 @@ using UnityEditor;
 using System;
 using System.Linq;
 using System.IO;
-using UnityEngine.Experimental.UIElements.StyleEnums;
 
 namespace ULegacyRipper
 {
@@ -27,6 +26,22 @@ namespace ULegacyRipper
 
                 //uncomment once testing is over
                 //PlayerPrefs.SetInt("ULEGACY_RIPPER_POST_PROCESSED", 1);
+            }
+        }
+
+        [MenuItem("Assets/Shader/Translate")]
+        private static void TranslateShader()
+        {
+            foreach (object selection in Selection.objects)
+            {
+                if (selection is Shader)
+                {
+                    ULegacyShaderTranslator.TranslateShader(AssetDatabase.GetAssetPath(selection as Shader));
+                }
+                else
+                {
+                    UnityEngine.Debug.LogError(selection.GetType().Name);
+                }
             }
         }
 
