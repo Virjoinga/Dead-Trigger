@@ -23,22 +23,6 @@ namespace ULegacyRipper
             throw new Exception("No node matching " + name + " exists!");
         }
 
-        public bool TryFindNode(string name, out YAMLNode result)
-        {
-            result = null;
-
-            foreach (KeyValuePair<long, YAMLNode> node in nodes)
-            {
-                if (node.Value.name == name)
-                {
-                    result = node.Value;
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
         public long Find(string name)
         {
             foreach (KeyValuePair<long, YAMLNode> node in nodes)
@@ -258,7 +242,7 @@ namespace ULegacyRipper
                     YAMLNode node = ReadNode(reader);
                     node.type = currentType;
 
-                    if (!yaml.nodes.ContainsKey(currentTag)) yaml.nodes.Add(currentTag, node);
+                    yaml.nodes.Add(currentTag, node);
                 }
             }
 
@@ -300,10 +284,9 @@ namespace ULegacyRipper
                 else
                 {
                     YAMLNode childNode = ReadNode(reader);
-
                     childNode.parentNode = node;
                     
-                    if (!node.childNodes.ContainsKey(childNode.name)) node.childNodes.Add(childNode.name, childNode);
+                    node.childNodes.Add(childNode.name, childNode);
                 }
             }
 
@@ -346,7 +329,6 @@ namespace ULegacyRipper
             {
                 while (true)
                 {
-
                     if (HandleValue(node, line.Substring(valueIndex + 1), reader))
                     {
                         break;
@@ -359,23 +341,6 @@ namespace ULegacyRipper
 
         private static bool HandleValue(YAMLNode node, string value, IndentedReader reader)
         {
-            //int retries = 0;
-
-            if (value.Contains("{") && !value.Contains("}"))
-            {
-                value = reader.ReadLine() + value;
-                Debug.Log(value);
-            }
-
-
-            /*while (true)
-            {
-                if (!value.Contains("}") || retries >= 1) break;
-
-                retries++;
-                value += " " + reader.ReadLine();
-            }*/
-
             if (value.StartsWith("{"))
             {
                 if (value != "{}")
@@ -395,10 +360,7 @@ namespace ULegacyRipper
                         if (!value.Contains("}"))
                         {
                             Debug.LogError("well that's a problem"); //implement this if it ever gets logged
-                            Debug.LogError(node.name);
-                            Debug.LogError(reader.lineIndex);
-                            Debug.LogError(value);
-                            //break; //this wouldn't usually break here but y'know
+                            break; //this wouldn't usually break here but y'know
                         }
                         else
                         {

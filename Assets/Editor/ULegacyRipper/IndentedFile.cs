@@ -102,7 +102,7 @@ namespace ULegacyRipper
             {
                 switch (lines[lineIndex][i])
                 {
-                    case ' ': indentationLevel++; continue;
+                    case ' ': case '\t': indentationLevel++; continue;
                 }
 
                 break;
@@ -117,7 +117,7 @@ namespace ULegacyRipper
             {
                 switch (lines[index][i])
                 {
-                    case ' ': indentationLevel++; continue;
+                    case ' ': case '\t': indentationLevel++; continue;
                 }
 
                 break;
@@ -141,11 +141,52 @@ namespace ULegacyRipper
                     break;
                 }
 
-                line = lines[lineIndex++].Substring(indentationLevel);
                 RecalculateIndentation();
+                line = lines[lineIndex++].Substring(indentationLevel);
             }
 
             return line;
+        }
+
+        public List<string> ReadBlock()
+        {
+            List<string> readLines = new List<string>();
+            string line;
+
+            int blockLevel = 0;
+
+            Search("{");
+
+            RecalculateIndentation();
+            int blockIndentationLevel = indentationLevel;
+
+            while (true)
+            {
+                RecalculateIndentation();
+                line = lines[lineIndex++].Substring(Mathf.Max(0, indentationLevel - blockIndentationLevel));
+
+                if (line.Contains("{"))
+                {
+                    blockLevel++;
+                }
+
+                if (line.Contains("}"))
+                {
+                    blockLevel--;
+                }
+
+                if (blockLevel < 0)
+                {
+                    break;
+                }
+
+                if (line.Trim() != "")
+                {
+                    readLines.Add(line);
+                }
+            }
+
+            return readLines;
         }
 
         public List<string> ReadUntil(string pattern)
@@ -155,8 +196,8 @@ namespace ULegacyRipper
 
             while (true)
             {
-                line = lines[lineIndex++].Substring(indentationLevel);
                 RecalculateIndentation();
+                line = lines[lineIndex++].Substring(indentationLevel);
 
                 if (line.StartsWith(pattern))
                 {
@@ -179,8 +220,8 @@ namespace ULegacyRipper
 
             while (true)
             {
-                line = lines[lineIndex++].Substring(indentationLevel);
                 RecalculateIndentation();
+                line = lines[lineIndex++].Substring(indentationLevel);
 
                 if (line == "")
                 {
@@ -207,8 +248,8 @@ namespace ULegacyRipper
 
             while (!line.StartsWith(pattern))
             {
-                line = lines[lineIndex++].Substring(indentationLevel);
                 RecalculateIndentation();
+                line = lines[lineIndex++].Substring(indentationLevel);
             }
 
             if (!readPast)
@@ -224,8 +265,8 @@ namespace ULegacyRipper
 
             while (!line.StartsWith(pattern))
             {
-                line = lines[index++].Substring(indentationLevel);
                 RecalculateIndentation(index);
+                line = lines[index++].Substring(indentationLevel);
             }
 
             return line;

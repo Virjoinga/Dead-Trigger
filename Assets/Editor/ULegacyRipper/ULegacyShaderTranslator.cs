@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
@@ -458,6 +459,7 @@ namespace ULegacyRipper
                         try
                         {
                             reader.Search("Pass");
+
                             SubShaderPass pass = new SubShaderPass();
 
                             int currentIndentation = reader.indentationLevel;
@@ -482,14 +484,12 @@ namespace ULegacyRipper
                             reader.Search("#ifdef VERTEX");
                             pass.vertexVariables = reader.ReadUntil("void", "#");
 
-                            reader.Search("{");
-                            pass.vertex = reader.ReadUntil("}");
+                            pass.vertex = reader.ReadBlock();
 
                             reader.Search("#ifdef FRAGMENT");
                             pass.fragmentVariables = reader.ReadUntil("void", "#");
 
-                            reader.Search("{");
-                            pass.fragment = reader.ReadUntil("}");
+                            pass.fragment = reader.ReadBlock();
 
                             subShader.passes.Add(pass);
                         }
