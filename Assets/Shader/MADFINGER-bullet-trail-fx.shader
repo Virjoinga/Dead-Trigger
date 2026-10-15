@@ -1,27 +1,32 @@
-Shader "MADFINGER/FX/Bullet trail" {
-	Properties {
-		_MainTex ("Base layer (RGB)", 2D) = "white" {}
-		_DetailTex ("2nd layer (RGB)", 2D) = "white" {}
-		_ScrollX ("Base layer Scroll speed X", Float) = 1
-		_ScrollY ("Base layer Scroll speed Y", Float) = 0
-		_Scroll2X ("2nd layer Scroll speed X", Float) = 1
-		_Scroll2Y ("2nd layer Scroll speed Y", Float) = 0
-		_AMultiplier ("Layer Multiplier", Float) = 0.5
-		_TintColor ("Tint color", Color) = (1,1,1,1)
-	}
-	SubShader { 
-		LOD 100
-		Tags { "QUEUE"="Transparent" "RenderType"="Transparent" }
-		Pass {
-			Tags { "QUEUE"="Transparent" "RenderType"="Transparent" }
-			ZWrite Off
-			Fog { Mode Off }
-			Blend One One
+// Upgrade NOTE: replaced 'glstate_matrix_mvp' with 'UNITY_MATRIX_MVP'
 
-			CGPROGRAM
+Shader "MADFINGER/FX/Bullet trail" 
+{
+    Properties
+    {
+        _MainTex ("Base layer (RGB)", 2D) = "white" {}
+        _DetailTex ("2nd layer (RGB)", 2D) = "white" {}
+        _ScrollX ("Base layer Scroll speed X", Float) = 1
+        _ScrollY ("Base layer Scroll speed Y", Float) = 0
+        _Scroll2X ("2nd layer Scroll speed X", Float) = 1
+        _Scroll2Y ("2nd layer Scroll speed Y", Float) = 0
+        _AMultiplier ("Layer Multiplier", Float) = 0.5
+        _TintColor ("Tint color", Color) = (1,1,1,1)
+    }
+    SubShader
+    {
+        LOD 100
+        Tags { "QUEUE"="Transparent" "RenderType"="Transparent" }
+        Pass
+        {
+            Tags { "QUEUE"="Transparent" "RenderType"="Transparent" }
+            ZWrite Off
+            Fog { Mode Off }
+            Blend One One
+            CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
+            #include "UnityCG.cginc"
             float4 _MainTex_ST;
             float4 _DetailTex_ST;
             float _ScrollX;
@@ -30,58 +35,53 @@ Shader "MADFINGER/FX/Bullet trail" {
             float _Scroll2Y;
             float _AMultiplier;
             float4 _TintColor;
-
             sampler2D _MainTex;
             sampler2D _DetailTex;
-
             struct appdata_t
             {
                 float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
                 float4 color : COLOR;
+                float4 texcoord0 : TEXCOORD0;
             };
-
             struct v2f
             {
-                float4 pos : SV_POSITION;
-                float2 uv : TEXCOORD0;
-                float2 uv1 : TEXCOORD1;
-                float4 uv2 : TEXCOORD2;
+                float2 texcoord0 : TEXCOORD0;
+                float2 texcoord1 : TEXCOORD1;
+                float4 texcoord2 : TEXCOORD2;
+                float4 vertex : POSITION;
             };
-
             v2f vert(appdata_t v)
             {
                 v2f o;
-
-                float4 tmpvar_1;
-                float2 tmpvar_2;
-                tmpvar_2.x = _ScrollX;
-                tmpvar_2.y = _ScrollY;
-                float2 tmpvar_3;
-                tmpvar_3.x = _Scroll2X;
-                tmpvar_3.y = _Scroll2Y;
-                float4 tmpvar_4;
-                tmpvar_4 = ((((v.color * v.color.w) * _TintColor) * _TintColor.w) * 2.0);
-                tmpvar_1 = tmpvar_4;
-                float3 tmpvar_5;
-                tmpvar_5 = (tmpvar_1.xyz * _AMultiplier);
-                tmpvar_1.xyz = tmpvar_5;
-                o.pos = (UnityObjectToClipPos(v.vertex));
-                o.uv = (((v.uv.xy * _MainTex_ST.xy) + _MainTex_ST.zw) + frac((tmpvar_2 * _Time.xy)));
-                o.uv1 = (((v.uv.xy * _DetailTex_ST.xy) + _DetailTex_ST.zw) + frac((tmpvar_3 * _Time.xy)));
-                o.uv2 = tmpvar_1;
-
+                  float4 tmpvar_1;
+                  float2 tmpvar_2;
+                  tmpvar_2.x = _ScrollX;
+                  tmpvar_2.y = _ScrollY;
+                  float2 tmpvar_3;
+                  tmpvar_3.x = _Scroll2X;
+                  tmpvar_3.y = _Scroll2Y;
+                  float4 tmpvar_4;
+                  tmpvar_4 = ((((v.color * v.color.w) * _TintColor) * _TintColor.w) * 2.0);
+                  tmpvar_1 = tmpvar_4;
+                  float3 tmpvar_5;
+                  tmpvar_5 = (tmpvar_1.xyz * _AMultiplier);
+                  tmpvar_1.xyz = tmpvar_5;
+                  o.vertex = (UnityObjectToClipPos(v.vertex));
+                  o.texcoord0 = (((v.texcoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw) + frac((tmpvar_2 * _Time.xy)));
+                  o.texcoord1 = (((v.texcoord0.xy * _DetailTex_ST.xy) + _DetailTex_ST.zw) + frac((tmpvar_3 * _Time.xy)));
+                  o.texcoord2 = tmpvar_1;
                 return o;
             }
-            half4 frag(v2f i) : SV_TARGET
+            float4 frag(v2f i) : SV_TARGET
             {
-                float4 tmpvar_1;
-                tmpvar_1 = tex2D (_MainTex, i.uv);
-                float4 tmpvar_2;
-                tmpvar_2 = (((tmpvar_1 + tex2D (_DetailTex, i.uv1)) * tmpvar_1.x) * i.uv2);
-                return tmpvar_2;
+                  float4 tmpvar_1;
+                  tmpvar_1 = tex2D (_MainTex, i.texcoord0);
+                  float4 tmpvar_2;
+                  tmpvar_2 = (((tmpvar_1 + tex2D (_DetailTex, i.texcoord1)) * tmpvar_1.x) * i.texcoord2);
+                  return tmpvar_2;
             }
             ENDCG
         }
     }
+    
 }
