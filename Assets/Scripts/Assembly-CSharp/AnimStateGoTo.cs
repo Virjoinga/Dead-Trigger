@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AnimStateGoTo : AnimState
 {
@@ -24,22 +25,24 @@ public class AnimStateGoTo : AnimState
 
 		public State state;
 
-		public AnimationClip GetAnim()
+        public Vector3 correctedEndPos;
+
+        public AnimationClip GetAnim()
 		{
 			return currentData.m_Anim;
 		}
 
 		public Vector3 GetLookDir()
 		{
-			return (offMeshLinkData.endPos - offMeshLinkData.startPos).normalized;
+		    return (GetEndPos() - GetStartPos()).normalized;
 		}
 
-		public float GetLength()
-		{
-			return (offMeshLinkData.endPos - offMeshLinkData.startPos).magnitude;
-		}
+        public float GetLength()
+        {
+            return (GetEndPos() - GetStartPos()).magnitude;
+        }
 
-		public bool IsStillActive(AgentHuman owner)
+        public bool IsStillActive(AgentHuman owner)
 		{
 			return actionPoint != null && owner.NavMeshAgent != null && owner.NavMeshAgent.isOnOffMeshLink;
 		}
@@ -49,12 +52,12 @@ public class AnimStateGoTo : AnimState
 			return (!(actionPoint != null)) ? Vector3.zero : offMeshLinkData.startPos;
 		}
 
-		public Vector3 GetEndPos()
-		{
-			return (!(actionPoint != null)) ? Vector3.zero : offMeshLinkData.endPos;
-		}
+        public Vector3 GetEndPos()
+        {
+            return actionPoint != null ? correctedEndPos : Vector3.zero;
+        }
 
-		public float GetMoveSpeed()
+        public float GetMoveSpeed()
 		{
 			if (currentData.m_MoveSpeed > 0f)
 			{
@@ -72,8 +75,8 @@ public class AnimStateGoTo : AnimState
 				speed = 0f;
 				return Vector3.zero;
 			}
-			Vector3 result = offMeshLinkData.endPos - offMeshLinkData.startPos;
-			speed = ((!actionPoint.enabled) ? GetMoveSpeed() : (result.magnitude / GetAnim().length));
+            Vector3 result = GetEndPos() - GetStartPos();
+            speed = ((!actionPoint.enabled) ? GetMoveSpeed() : (result.magnitude / GetAnim().length));
 			return result;
 		}
 
@@ -200,7 +203,15 @@ public class AnimStateGoTo : AnimState
 			return false;
 		}
 		actionPointData.offMeshLinkData = navMeshAgent.currentOffMeshLinkData;
-		if (!actionPointData.actionPoint.enabled)
+
+        actionPointData.correctedEndPos = actionPointData.offMeshLinkData.endPos;
+
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(actionPointData.correctedEndPos, out hit, 1f, navMeshAgent.areaMask))
+        {
+            actionPointData.correctedEndPos.y = hit.position.y;
+        }
+        if (!actionPointData.actionPoint.enabled)
 		{
 			actionPointData.currentData = new ActionPoint.AnimData();
 			actionPointData.currentData.m_Anim = Owner.Animation.GetClip(Owner.AnimSet.GetMoveAnim());
