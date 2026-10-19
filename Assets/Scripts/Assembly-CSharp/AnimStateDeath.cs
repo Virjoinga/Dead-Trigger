@@ -6,8 +6,9 @@ public class AnimStateDeath : AnimState
 	private AgentActionDeath Action;
 
 	private bool DontDisableNavMesh;
+    private bool DiedOnOffMeshLink;
 
-	public AnimStateDeath(Animation anims, AgentHuman owner)
+    public AnimStateDeath(Animation anims, AgentHuman owner)
 		: base(anims, owner)
 	{
 	}
@@ -62,8 +63,14 @@ public class AnimStateDeath : AnimState
 		base.Initialize(action);
 		Action = action as AgentActionDeath;
 		bool flag = Action.WeaponType == E_WeaponType.Explosion || Action.WeaponType == E_WeaponType.Shotgun;
-		CompleteOffMeshLink();
-		Owner.BlackBoard.ContestBalance = -1f;
+        DiedOnOffMeshLink = Owner.NavMeshAgent != null && Owner.NavMeshAgent.enabled && Owner.NavMeshAgent.isOnOffMeshLink;
+
+        if (DiedOnOffMeshLink)
+        {
+            Owner.NavMeshAgent.updatePosition = false;
+        }
+
+        Owner.BlackBoard.ContestBalance = -1f;
 		if (Owner.AgentType == E_AgentType.Boss1)
 		{
 			TimeManager.Instance.SetTimeScale(0.14f, 0.2f, 0.5f, 10f);
@@ -98,8 +105,8 @@ public class AnimStateDeath : AnimState
 			Owner.Dissolve(Animation[deathAnim].length);
 		}
 		CrossFade(deathAnim, 0.2f, PlayMode.StopAll);
-		if (!Owner.BlackBoard.DontDeathAnimMove && (bool)Owner.NavMeshAgent && !Owner.IsActionPointOn)
-		{
+        if (!Owner.BlackBoard.DontDeathAnimMove && (bool)Owner.NavMeshAgent && !Owner.IsActionPointOn && !DiedOnOffMeshLink)
+        {
 			Vector3 destination = Action.Impuls + Owner.Position;
 			Owner.NavMeshAgent.speed = Action.Impuls.magnitude / 0.2f;
 			Owner.NavMeshAgent.acceleration = 100f;
