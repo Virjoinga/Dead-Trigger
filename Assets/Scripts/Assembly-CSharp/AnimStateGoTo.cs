@@ -137,6 +137,12 @@ public class AnimStateGoTo : AnimState
     {
         Owner.BlackBoard.Velocity = Vector3.zero;
         base.OnActivate(action);
+
+        if (!IsFinished() && Owner.NavMeshAgent.enabled && Owner.NavMeshAgent.isOnNavMesh)
+        {
+            Owner.NavMeshAgent.isStopped = false;
+        }
+
         AnimNameMove = Owner.AnimSet.GetMoveAnim();
         AnimNameAP = null;
     }
