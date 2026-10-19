@@ -5,7 +5,6 @@ using System.Reflection;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
@@ -108,7 +107,6 @@ public static class StaticMeshSeparation
                 MeshManager.UndoLightmapScaleOffset(output, realtimeLightmapScaleOffset);
 
             MeshManager.TransformWorldSpaceDataToLocal(output, renderer.transform);
-            MeshManager.BakeNegativeLocalScale(output, renderer.transform);
             output.name = MakeSafeName(renderer.name + "_Separated");
             output.RecalculateBounds();
 
@@ -293,91 +291,45 @@ public static class MeshManager
 
     public static Mesh[] SplitMesh(Mesh input)
     {
-        Mesh[] meshes = new Mesh[input.subMeshCount];
+        Mesh[] result = new Mesh[input.subMeshCount];
 
-        Vector3[] srcVertices = input.vertices;
-        Vector3[] srcNormals = input.normals;
-        Vector4[] srcTangents = input.tangents;
-        Color32[] srcColors = input.colors32;
-        Vector2[] srcUV = input.uv;
-        Vector2[] srcUV2 = input.uv2;
-        Vector2[] srcUV3 = input.uv3;
-        Vector2[] srcUV4 = input.uv4;
-
-        bool hasNormals = srcNormals != null && srcNormals.Length == srcVertices.Length;
-        bool hasTangents = srcTangents != null && srcTangents.Length == srcVertices.Length;
-        bool hasColors = srcColors != null && srcColors.Length == srcVertices.Length;
-        bool hasUV = srcUV != null && srcUV.Length == srcVertices.Length;
-        bool hasUV2 = srcUV2 != null && srcUV2.Length == srcVertices.Length;
-        bool hasUV3 = srcUV3 != null && srcUV3.Length == srcVertices.Length;
-        bool hasUV4 = srcUV4 != null && srcUV4.Length == srcVertices.Length;
-
-        for (int sub = 0; sub < input.subMeshCount; sub++)
+        for (int subMeshIndex = 0; subMeshIndex < input.subMeshCount; subMeshIndex++)
         {
-            int[] triangles = input.GetTriangles(sub, true);
+            int[] triangles = input.GetTriangles(subMeshIndex, true);
             Mesh mesh = new Mesh();
-            mesh.name = input.name + "_SubMesh_" + sub;
-            mesh.indexFormat = IndexFormat.UInt32;
+            mesh.name = input.name + "_SubMesh_" + subMeshIndex;
+            mesh.indexFormat = input.indexFormat;
 
             if (triangles.Length == 0)
             {
                 mesh.vertices = new Vector3[0];
                 mesh.subMeshCount = 1;
                 mesh.SetTriangles(new int[0], 0, false);
-                meshes[sub] = mesh;
+                result[subMeshIndex] = mesh;
                 continue;
             }
 
-            Dictionary<int, int> map = new Dictionary<int, int>();
-            List<Vector3> vertices = new List<Vector3>();
-            List<Vector3> normals = new List<Vector3>();
-            List<Vector4> tangents = new List<Vector4>();
-            List<Color32> colors = new List<Color32>();
-            List<Vector2> uv = new List<Vector2>();
-            List<Vector2> uv2 = new List<Vector2>();
-            List<Vector2> uv3 = new List<Vector2>();
-            List<Vector2> uv4 = new List<Vector2>();
-            List<int> remappedTriangles = new List<int>(triangles.Length);
-
-            for (int i = 0; i < triangles.Length; i++)
+            int baseVertex = triangles[0];
+            int maxVertex = triangles[0];
+            
+            for (int i = 1; i < triangles.Length; i++)
             {
-                int oldIndex = triangles[i];
-                int newIndex;
-
-                if (!map.TryGetValue(oldIndex, out newIndex))
-                {
-                    newIndex = vertices.Count;
-                    map.Add(oldIndex, newIndex);
-                    vertices.Add(srcVertices[oldIndex]);
-
-                    if (hasNormals) normals.Add(srcNormals[oldIndex]);
-                    if (hasTangents) tangents.Add(srcTangents[oldIndex]);
-                    if (hasColors) colors.Add(srcColors[oldIndex]);
-                    if (hasUV) uv.Add(srcUV[oldIndex]);
-                    if (hasUV2) uv2.Add(srcUV2[oldIndex]);
-                    if (hasUV3) uv3.Add(srcUV3[oldIndex]);
-                    if (hasUV4) uv4.Add(srcUV4[oldIndex]);
-                }
-
-                remappedTriangles.Add(newIndex);
+                if (triangles[i] < baseVertex) baseVertex = triangles[i];
+                if (triangles[i] > maxVertex) maxVertex = triangles[i];
             }
+            
+            int vertexCount = maxVertex - baseVertex + 1;
+            for (int i = 0; i < triangles.Length; i++)
+                triangles[i] -= baseVertex;
 
-            mesh.vertices = vertices.ToArray();
-            if (hasNormals) mesh.normals = normals.ToArray();
-            if (hasTangents) mesh.tangents = tangents.ToArray();
-            if (hasColors) mesh.colors32 = colors.ToArray();
-            if (hasUV) mesh.uv = uv.ToArray();
-            if (hasUV2) mesh.uv2 = uv2.ToArray();
-            if (hasUV3) mesh.uv3 = uv3.ToArray();
-            if (hasUV4) mesh.uv4 = uv4.ToArray();
-
+            CopyVertexStreams(input, mesh, baseVertex, vertexCount);
             mesh.subMeshCount = 1;
-            mesh.SetTriangles(remappedTriangles.ToArray(), 0, false);
+            mesh.SetTriangles(triangles, 0, false);
             mesh.RecalculateBounds();
-            meshes[sub] = mesh;
+            result[subMeshIndex] = mesh;
         }
 
-        return meshes;
+        return result;
     }
 
     public static Mesh CombineMesh(Mesh[] subMeshes)
@@ -455,52 +407,6 @@ public static class MeshManager
 
         mesh.RecalculateBounds();
         return mesh;
-    }
-
-    public static void BakeNegativeLocalScale(Mesh mesh, Transform target)
-    {
-        Vector3 scale = target.localScale;
-        Vector3 sign = new Vector3(scale.x < 0f ? -1f : 1f, scale.y < 0f ? -1f : 1f, scale.z < 0f ? -1f : 1f);
-
-        if (sign == Vector3.one)
-            return;
-
-        Vector3[] vertices = mesh.vertices;
-        for (int i = 0; i < vertices.Length; i++)
-            vertices[i] = Vector3.Scale(vertices[i], sign);
-        mesh.vertices = vertices;
-
-        Vector3[] normals = mesh.normals;
-        if (normals != null && normals.Length == mesh.vertexCount)
-        {
-            for (int i = 0; i < normals.Length; i++)
-            {
-                normals[i] = Vector3.Scale(normals[i], sign);
-                if (normals[i].sqrMagnitude > 0.0000001f)
-                    normals[i].Normalize();
-            }
-            mesh.normals = normals;
-        }
-
-        Vector4[] tangents = mesh.tangents;
-        if (tangents != null && tangents.Length == mesh.vertexCount)
-        {
-            bool mirrored = sign.x * sign.y * sign.z < 0f;
-            for (int i = 0; i < tangents.Length; i++)
-            {
-                Vector3 direction = Vector3.Scale(new Vector3(tangents[i].x, tangents[i].y, tangents[i].z), sign);
-                if (direction.sqrMagnitude > 0.0000001f)
-                    direction.Normalize();
-                tangents[i] = new Vector4(direction.x, direction.y, direction.z, mirrored ? -tangents[i].w : tangents[i].w);
-            }
-            mesh.tangents = tangents;
-        }
-
-        // Do NOT reverse triangle winding here. The vertex reflection plus the
-        // positive renderer scale already preserves the exact world-space
-        // triangle positions. Reversing the winding would make the mesh face
-        // the opposite direction and can make it disappear with backface culling.
-        target.localScale = new Vector3(Mathf.Abs(scale.x), Mathf.Abs(scale.y), Mathf.Abs(scale.z));
     }
 
     public static void UndoLightmapScaleOffset(Mesh mesh, Vector4 scaleOffset)
