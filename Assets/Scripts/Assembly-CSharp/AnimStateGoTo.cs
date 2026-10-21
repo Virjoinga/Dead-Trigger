@@ -42,11 +42,6 @@ public class AnimStateGoTo : AnimState
             return (GetEndPos() - GetStartPos()).magnitude;
         }
 
-        public bool IsStillActive(AgentHuman owner)
-        {
-            return actionPoint != null && owner.NavMeshAgent != null && owner.NavMeshAgent.isOnOffMeshLink;
-        }
-
         public Vector3 GetStartPos()
         {
             return (!(actionPoint != null)) ? Vector3.zero : offMeshLinkData.startPos;
@@ -149,7 +144,7 @@ public class AnimStateGoTo : AnimState
 
     public override void OnDeactivate()
     {
-        StopActionPoint(true);
+        StopActionPoint();
         Owner.NavMeshAgent.updateRotation = false;
         if (RotateAction != null)
         {
@@ -181,7 +176,7 @@ public class AnimStateGoTo : AnimState
 
     public override void Reset()
     {
-        StopActionPoint(true);
+        StopActionPoint();
         Action.SetSuccess();
         Action = null;
         if (RotateAction != null)
@@ -260,7 +255,9 @@ public class AnimStateGoTo : AnimState
     {
         if (!Owner.IsActionPointOn)
         {
-            if (!actionPointData.IsStillActive(Owner) && GetActionPoint())
+            // ActionPointOn describes the active traversal. A cached ActionPoint
+            // can belong to a completed link and must not block the next one.
+            if (GetActionPoint())
             {
                 StartActionPoint();
             }
@@ -268,7 +265,7 @@ public class AnimStateGoTo : AnimState
         }
         if (Time.timeSinceLevelLoad >= actionPointData.timeActionPointEnd || (actionPointData.GetEndPos() - Owner.Transform.position).sqrMagnitude < 0.0025000002f)
         {
-            StopActionPoint(false);
+            StopActionPoint();
         }
         if (Owner.debugAnims)
         {
@@ -277,16 +274,13 @@ public class AnimStateGoTo : AnimState
         }
     }
 
-    private void StopActionPoint(bool force)
+    private void StopActionPoint()
     {
         if (Owner.debugAnims)
         {
             Debug.Log("StopActionPoint() : Owner.name=" + Owner.name + ", time=" + Time.timeSinceLevelLoad);
         }
-        if (force)
-        {
-            actionPointData.actionPoint = null;
-        }
+        actionPointData.actionPoint = null;
         if ((bool)actionPointData.offMeshLinkData.offMeshLink)
         {
             actionPointData.offMeshLinkData.offMeshLink.costOverride = actionPointData.prevCostOverride;
