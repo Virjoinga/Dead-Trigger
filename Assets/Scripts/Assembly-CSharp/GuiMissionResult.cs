@@ -75,14 +75,14 @@ public class GuiMissionResult
 			}
 		}
 		MFGuiManager.Instance.ShowLayout(m_LayoutMissionResult, true);
-		Screen.lockCursor = false;
+		GameCursor.Refresh();
 		m_OnMissionResultDelegate = touchDelegate;
 	}
 
 	public void HideMissionResult()
 	{
 		MFGuiManager.Instance.ShowLayout(m_LayoutMissionResult, false);
-		Screen.lockCursor = true;
+		GameCursor.Refresh();
 		m_OnMissionResultDelegate = null;
 	}
 
@@ -97,7 +97,7 @@ public class GuiMissionResult
 		if (m_OnMissionResultDelegate != null)
 		{
 			m_OnMissionResultDelegate();
-			Screen.lockCursor = true;
+			GameCursor.Refresh();
 			m_OnMissionResultDelegate = null;
 		}
 		else

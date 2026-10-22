@@ -169,6 +169,7 @@ public class Game : MonoBehaviour
 		set
 		{
 			_GameState = value;
+			GameCursor.Refresh();
 		}
 	}
 

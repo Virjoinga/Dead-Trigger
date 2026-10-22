@@ -18,17 +18,13 @@ public class PlayerControlsPC
         {
             get
             {
-                return Screen.lockCursor;
-            }
-            set
-            {
-                Screen.lockCursor = value;
+                return GameCursor.IsCaptured;
             }
         }
 
         public void SwitchCursor()
         {
-            CursorLocked = !CursorLocked;
+            GameCursor.ToggleCapture();
         }
 
         private float GetSensitivityX()
@@ -45,6 +41,7 @@ public class PlayerControlsPC
         {
             OutYaw = 0f;
             OutPitch = 0f;
+            Changed = false;
             if (CursorLocked)
             {
                 float num = Input.GetAxis("MouseX") * GetSensitivityX();
@@ -103,8 +100,6 @@ public class PlayerControlsPC
 
     public GamepadCameraControl GpadCameraCtrl = new GamepadCameraControl();
 
-    private bool lockCursorAfterStart = true;
-
     private Vector2 prevMousePos = new Vector2(0f, 0f);
 
     public PlayerControlsPC(PlayerControlStates inStates)
@@ -131,7 +126,7 @@ public class PlayerControlsPC
 
     private void UpdateMouseInteractionTouch()
     {
-        if (Input.GetMouseButtonDown(0) && !Screen.lockCursor)
+        if (Input.GetMouseButtonDown(0) && !GameCursor.IsCaptured)
         {
             Vector2 position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             InteractionObject interactionObject = PlayerControlsTouch.TouchedInteractionIcon(position);
@@ -140,7 +135,7 @@ public class PlayerControlsPC
                 States.UseObjectDelegate(interactionObject);
             }
         }
-        if (Input.GetMouseButton(0) || (Input.GetMouseButton(1) && !Screen.lockCursor))
+        if (Input.GetMouseButton(0) || (Input.GetMouseButton(1) && !GameCursor.IsCaptured))
         {
             Vector2 vector = Input.mousePosition;
             States.TouchUpdateDelegate(vector, vector - prevMousePos);
@@ -153,11 +148,7 @@ public class PlayerControlsPC
         {
             return;
         }
-        if (Time.timeSinceLevelLoad > 0f && lockCursorAfterStart)
-        {
-            Screen.lockCursor = true;
-            lockCursorAfterStart = false;
-        }
+        GameCursor.Refresh();
         if (Input.GetKeyDown("return"))
         {
             MouseCameraCtrl.SwitchCursor();

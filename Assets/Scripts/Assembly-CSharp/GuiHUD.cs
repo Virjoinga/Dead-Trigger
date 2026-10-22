@@ -486,7 +486,6 @@ public class GuiHUD : MonoBehaviour
 
     public void SwitchBackFromIngameMenu()
     {
-        Screen.lockCursor = true;
         GuiSubtitles.ShowAllRunning(true);
         m_Mission.ChangeGuiState(Mission.E_GuiState.E_GS_HUD);
         GuiSubtitlesRenderer.Suspend(false);
@@ -510,7 +509,6 @@ public class GuiHUD : MonoBehaviour
 
     public void SwitchBackFromFirstHelp()
     {
-        Screen.lockCursor = true;
         GuiSubtitles.ShowAllRunning(true);
         m_Mission.ChangeGuiState(Mission.E_GuiState.E_GS_HUD);
         GuiSubtitlesRenderer.Suspend(false);
