@@ -1,33 +1,13 @@
 internal static class ObjectLayerMask
 {
-	public static int Default;
-
-	public static int Player;
-
-	public static int Enemy;
-
-	public static int EnemyBox;
-
-	public static int IgnoreEnemy;
-
-	public static int IgnorePlayer;
-
-	public static int IgnoreRaycast;
-
-	public static int IgnoreBullets;
-
-	public static int Pumpkin;
-
-	static ObjectLayerMask()
-	{
-		Default = 1 << ObjectLayer.Default;
-		Player = 1 << ObjectLayer.Player;
-		Enemy = 1 << ObjectLayer.Enemy;
-		EnemyBox = 1 << ObjectLayer.EnemyBox;
-		IgnoreEnemy = 1 << ObjectLayer.IgnoreEnemy;
-		IgnorePlayer = 1 << ObjectLayer.IgnorePlayer;
-		IgnoreRaycast = 1 << ObjectLayer.IgnoreRaycast;
-		IgnoreBullets = 1 << ObjectLayer.IgnoreBullets;
-		Pumpkin = 1 << ObjectLayer.Pumpkin;
-	}
+	// Calculate from initialized IDs instead of caching potentially stale bits.
+	public static int Default { get { return 1 << ObjectLayer.Default; } }
+	public static int Player { get { return 1 << ObjectLayer.Player; } }
+	public static int Enemy { get { return 1 << ObjectLayer.Enemy; } }
+	public static int EnemyBox { get { return 1 << ObjectLayer.EnemyBox; } }
+	public static int IgnoreEnemy { get { return 1 << ObjectLayer.IgnoreEnemy; } }
+	public static int IgnorePlayer { get { return 1 << ObjectLayer.IgnorePlayer; } }
+	public static int IgnoreRaycast { get { return 1 << ObjectLayer.IgnoreRaycast; } }
+	public static int IgnoreBullets { get { return 1 << ObjectLayer.IgnoreBullets; } }
+	public static int Pumpkin { get { return 1 << ObjectLayer.Pumpkin; } }
 }

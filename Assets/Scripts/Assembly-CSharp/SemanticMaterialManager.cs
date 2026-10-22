@@ -110,12 +110,13 @@ public class SemanticMaterialManager : MonoBehaviour
 		m_ImpactCaches.Add(Data.m_GfxCache);
 	}
 
-	private void Destroy()
+	private void OnDestroy()
 	{
 		if (m_Instance == this)
 		{
 			m_Instance = null;
 		}
+		if (m_AudioObj != null) Object.Destroy(m_AudioObj);
 	}
 
 	private void Update()
@@ -173,9 +174,14 @@ public class SemanticMaterialManager : MonoBehaviour
 	{
 		SemanticMaterial material = GetMaterial(HitInfo);
 		SemanticMaterial.ProjectileImpact projectileImpactData = material.GetProjectileImpactData(ProjType);
-		int index = Random.Range(0, projectileImpactData.m_Sfx.Count);
-		AudioClip sfxEffect = projectileImpactData.m_Sfx[index];
-		SpawnEffect(projectileImpactData.m_GfxCache, sfxEffect, HitInfo.point, HitInfo.normal);
+		// Some authored surfaces have audio but no impact prefab. Preserve those
+		// sounds; only fall back when the sound list itself is empty.
+		if (projectileImpactData.m_Sfx == null || projectileImpactData.m_Sfx.Count == 0)
+			projectileImpactData = m_Materials[0].GetProjectileImpactData(ProjType);
+		AudioClip sfxEffect = null;
+		if (projectileImpactData.m_Sfx != null && projectileImpactData.m_Sfx.Count > 0)
+			sfxEffect = projectileImpactData.m_Sfx[Random.Range(0, projectileImpactData.m_Sfx.Count)];
+		SpawnEffect(material.GetProjectileImpactData(ProjType).m_GfxCache, sfxEffect, HitInfo.point, HitInfo.normal);
 	}
 
 	private void SpawnEffect(AudioClip SfxEffect, Vector3 Pos)

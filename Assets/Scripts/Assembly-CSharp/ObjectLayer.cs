@@ -1,6 +1,6 @@
 using UnityEngine;
 
-internal class ObjectLayer
+internal static class ObjectLayer
 {
     public static int Default;
 
@@ -21,6 +21,11 @@ internal class ObjectLayer
     public static int Pumpkin;
 
 
+    // Unity does not invoke Awake on this utility class. Initialize before scene
+    // components cache masks or collect enemy colliders.
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void AutoInitialize() { Initialize(); }
+
     public static void Initialize()
     {
         Default = LayerMask.NameToLayer("Default");
@@ -32,9 +37,5 @@ internal class ObjectLayer
         IgnoreRaycast = LayerMask.NameToLayer("Ignore Raycast");
         IgnoreBullets = LayerMask.NameToLayer("Ignore Bullets");
         Pumpkin = LayerMask.NameToLayer("Pumpkin");
-    }
-public void Awake()
-    {
-        ObjectLayer.Initialize();
     }
 }
