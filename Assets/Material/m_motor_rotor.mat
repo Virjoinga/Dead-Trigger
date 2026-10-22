@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: m_motor_rotor
-  m_Shader: {fileID: 4800000, guid: 75da952f3a94bc041b7a3d955ed5dc6a, type: 3}
+  m_Shader: {fileID: 4800000, guid: 3f338b87f17d576dbdd7e3430d1ff474, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,6 +17,12 @@ Material:
         name: _MainTex
       second:
         m_Texture: {fileID: 2800000, guid: a8d008147a9d3384fa286fb7181be836, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _EnvTex
+      second:
+        m_Texture: {fileID: 8900000, guid: dbf236a49e38d3b4c8a6f5d66592c9b8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -30,8 +36,8 @@ Material:
         name: _SHLightingScale
       second: 1.5
     - first:
-        name: _EnvStrength
-      second: 3
+        name: _FPVDepthScale
+      second: 0.02
     m_Colors:
     - first:
         name: _Color
@@ -41,4 +47,7 @@ Material:
       second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _EnvStrength
-      second: {r: 0, g: 4, b: 0, a: 0}
+      second: {r: 0, g: 0, b: 0, a: 0.5}
+    - first:
+        name: _Params
+      second: {r: 1, g: 0, b: 0, a: 0}
