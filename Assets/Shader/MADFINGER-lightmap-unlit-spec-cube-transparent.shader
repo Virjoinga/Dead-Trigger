@@ -1,4 +1,4 @@
-Shader "MADFINGER/Environment/Cubemap specular + Lightmap - transparent" 
+Shader "MADFINGER/Environment/Cubemap specular + Lightmap - transparent"
 {
     Properties
     {
@@ -20,13 +20,18 @@ Shader "MADFINGER/Environment/Cubemap specular + Lightmap - transparent"
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            // Preserve the original detail paths; no keyword defaults to full detail.
+            #pragma multi_compile __ UNITY_SHADER_DETAIL_LOW UNITY_SHADER_DETAIL_MEDIUM UNITY_SHADER_DETAIL_HIGH UNITY_SHADER_DETAIL_VERY_HIGH
             #include "UnityCG.cginc"
             float4 _ScrollingSpeed;
             sampler2D _MainTex;
             sampler2D _TransparencyMaskTex;
+            samplerCUBE _SpecCubeTex;
+            float _SpecularStrength;
             struct appdata_t
             {
                 float4 vertex : POSITION;
+                float3 normal : NORMAL;
                 float4 texcoord0 : TEXCOORD0;
                 float4 texcoord1 : TEXCOORD1;
             };
@@ -34,6 +39,7 @@ Shader "MADFINGER/Environment/Cubemap specular + Lightmap - transparent"
             {
                 float2 texcoord0 : TEXCOORD0;
                 float2 texcoord1 : TEXCOORD1;
+                float3 reflection : TEXCOORD2;
                 float4 vertex : POSITION;
             };
             v2f vert(appdata_t v)
@@ -42,6 +48,9 @@ Shader "MADFINGER/Environment/Cubemap specular + Lightmap - transparent"
                   o.vertex = (UnityObjectToClipPos(v.vertex));
                   o.texcoord0 = (v.texcoord0 + frac((_ScrollingSpeed * _Time.y))).xy;
                   o.texcoord1 = ((v.texcoord1.xy * unity_LightmapST.xy) + unity_LightmapST.zw);
+                  float3 normalWorld = normalize(mul((float3x3)unity_ObjectToWorld, normalize(v.normal)));
+                  float3 incidentWorld = mul(unity_ObjectToWorld, v.vertex).xyz - _WorldSpaceCameraPos;
+                  o.reflection = reflect(incidentWorld, normalWorld);
                 return o;
             }
             float4 frag(v2f i) : SV_TARGET
@@ -53,6 +62,9 @@ Shader "MADFINGER/Environment/Cubemap specular + Lightmap - transparent"
                   float4 tmpvar_3;
                   tmpvar_3 = tex2D (_TransparencyMaskTex, i.texcoord0);
                   c_1.xyz = (tmpvar_2.xyz * tmpvar_3.xyz);
+                  #if !defined(UNITY_SHADER_DETAIL_LOW)
+                  c_1.xyz += texCUBE(_SpecCubeTex, i.reflection).rgb * _SpecularStrength * tmpvar_2.w;
+                  #endif
                   c_1.xyz = (c_1.xyz * (2.0 * UNITY_SAMPLE_TEX2D (unity_Lightmap, i.texcoord1).xyz));
                   c_1.w = tmpvar_3.w;
                   return c_1;
@@ -60,5 +72,5 @@ Shader "MADFINGER/Environment/Cubemap specular + Lightmap - transparent"
             ENDCG
         }
     }
-    
+
 }

@@ -1,7 +1,7 @@
 // Upgrade NOTE: commented out 'float4x4 _Object2World', a built-in variable
 // Upgrade NOTE: replaced 'glstate_matrix_mvp' with 'UNITY_MATRIX_MVP'
 
-Shader "MADFINGER/Environment/Cube env map (Supports LightProbes)" 
+Shader "MADFINGER/Environment/Cube env map (Supports LightProbes)"
 {
     Properties
     {
@@ -21,12 +21,16 @@ Shader "MADFINGER/Environment/Cube env map (Supports LightProbes)"
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            // Preserve the original detail paths; no keyword defaults to full detail.
+            #pragma multi_compile __ UNITY_SHADER_DETAIL_LOW UNITY_SHADER_DETAIL_MEDIUM UNITY_SHADER_DETAIL_HIGH UNITY_SHADER_DETAIL_VERY_HIGH
             #include "UnityCG.cginc"
             // float4x4 _Object2World;
             float4 _MainTex_ST;
             float _SHLightingScale;
             float4 _UVScrollSpeed;
             sampler2D _MainTex;
+            samplerCUBE _EnvTex;
+            float4 _EnvStrength;
             struct appdata_t
             {
                 float4 vertex : POSITION;
@@ -109,10 +113,13 @@ Shader "MADFINGER/Environment/Cube env map (Supports LightProbes)"
                   float3 tmpvar_3;
                   tmpvar_3 = (tmpvar_2.xyz * i.color);
                   c_1.xyz = tmpvar_3;
+                  #if !defined(UNITY_SHADER_DETAIL_LOW)
+                  c_1.xyz = (tmpvar_2.xyz + texCUBE(_EnvTex, i.texcoord1).rgb * dot(tmpvar_2, _EnvStrength)) * i.color;
+                  #endif
                   return c_1;
             }
             ENDCG
         }
     }
-    
+
 }

@@ -1,8 +1,8 @@
-#warning Upgrade NOTE: unity_Scale shader variable was removed; replaced 'unity_Scale.w' with '1.0'
+// Preserve the legacy world-space wave amplitude when the object is scaled.
 // Upgrade NOTE: replaced 'glstate_matrix_mvp' with 'UNITY_MATRIX_MVP'
 // Upgrade NOTE: replaced tex2D unity_Lightmap with UNITY_SAMPLE_TEX2D
 
-Shader "MADFINGER/FX/Geom wave" 
+Shader "MADFINGER/FX/Geom wave"
 {
     Properties
     {
@@ -89,7 +89,9 @@ Shader "MADFINGER/FX/Geom wave"
                   tmpvar_12.y = tmpvar_9;
                   tmpvar_12.z = tmpvar_10;
                   tmpvar_12.w = tmpvar_11;
-                  tmpvar_2.xyz = (v.vertex.xyz + (((tmpvar_1 * dot ((tmpvar_12 + _WaveBias), _WaveAmplitude)) * 1.0) * v.color.w));
+                  // unity_Scale.w used to compensate for uniform object scale.
+                  float inverseNormalScale = rcp(max(length(mul((float3x3)unity_ObjectToWorld, tmpvar_1)), 0.00001));
+                  tmpvar_2.xyz = v.vertex.xyz + tmpvar_1 * dot(tmpvar_12 + _WaveBias, _WaveAmplitude) * inverseNormalScale * v.color.w;
                   tmpvar_3.xy = v.texcoord0.xy;
                   o.vertex = (UnityObjectToClipPos(tmpvar_2));
                   o.texcoord0 = tmpvar_3;
@@ -108,5 +110,5 @@ Shader "MADFINGER/FX/Geom wave"
             ENDCG
         }
     }
-    
+
 }

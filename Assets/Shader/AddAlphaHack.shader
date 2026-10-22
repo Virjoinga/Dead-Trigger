@@ -1,4 +1,4 @@
-Shader "Hidden/AddAlphaHack" 
+Shader "Hidden/AddAlphaHack"
 {
     Properties
     {
@@ -51,6 +51,11 @@ Shader "Hidden/AddAlphaHack"
             }
             ENDCG
         }
+    }
+    // These are alternative SubShaders in the original, not two additive passes.
+    SubShader
+    {
+        Tags { "QUEUE"="Overlay+2000" "RenderType"="Transparent" }
         Pass
         {
             Tags { "QUEUE"="Overlay+2000" "RenderType"="Transparent" }

@@ -1,162 +1,86 @@
-#define DEBUG
 using UnityEngine;
 
+[RequireComponent(typeof(WaterDroplets))]
 [AddComponentMenu("Image Effects/MADFINGER Refraction Effects")]
 public class MFRefractionEffects : ImageEffectBase
 {
-	private int m_ScreenGridXRes = 2;
+    public Material m_WaterScreenRefractionMat;
+    public float m_WaterDropSizeMin = 1f;
+    public float m_WaterDropSizeMax = 2f;
+    public static MFRefractionEffects Instance;
 
-	private int m_ScreenGridYRes = 2;
+    private WaterDroplets m_WaterDroplets;
+    private Material m_RuntimeMaterial;
+    private Color m_DropletsColor = Color.clear;
+    public WaterDroplets Droplets { get { EnsureInitialized(); return m_WaterDroplets; } }
 
-	private MeshFilter m_MeshFilter;
+    private void Awake() { Instance = this; EnsureInitialized(); }
 
-	private MeshRenderer m_MeshRenderer;
+    // ImageEffectBase.Start disables effects without a shader. Resolve the
+    // existing material/resource first, including scenes where this starts off.
+    protected new void Start()
+    {
+        EnsureInitialized();
+        if (!SystemInfo.supportsImageEffects) enabled = false;
+    }
 
-	private MeshFilter m_ScreenDropsSimMeshFilter;
+    public bool EnsureInitialized()
+    {
+        if (m_WaterDroplets == null)
+        {
+            m_WaterDroplets = GetComponent<WaterDroplets>();
+            if (m_WaterDroplets == null) m_WaterDroplets = gameObject.AddComponent<WaterDroplets>();
+        }
+        if (m_RuntimeMaterial != null) return true;
+        Shader effectShader = shader;
+        if (effectShader == null && m_WaterScreenRefractionMat != null) effectShader = m_WaterScreenRefractionMat.shader;
+        if (effectShader == null) effectShader = Resources.Load<Shader>("shaders/MADFINGER-water-distort");
+        if (effectShader == null || !effectShader.isSupported) return false;
+        shader = effectShader;
+        m_RuntimeMaterial = m_WaterScreenRefractionMat != null ? new Material(m_WaterScreenRefractionMat) : new Material(effectShader);
+        m_RuntimeMaterial.shader = effectShader;
+        m_RuntimeMaterial.hideFlags = HideFlags.HideAndDontSave;
+        m_RuntimeMaterial.SetColor("_Color", m_DropletsColor);
+        return true;
+    }
 
-	//private WaterDroplets m_WaterDroplets;
+    public void SetDropletsColor(Color color)
+    {
+        m_DropletsColor = color;
+        if (m_RuntimeMaterial != null) m_RuntimeMaterial.SetColor("_Color", color);
+    }
 
-	private Mesh m_Mesh;
+    private void OnRenderImage(RenderTexture source, RenderTexture destination)
+    {
+        if (!EnsureInitialized() || m_WaterDroplets.NumActiveDroplets() == 0)
+        {
+            Graphics.Blit(source, destination);
+            return;
+        }
+        m_RuntimeMaterial.SetTexture("_DropletMap", m_WaterDroplets.GetDropletTexture());
+        Graphics.Blit(source, destination, m_RuntimeMaterial, 0);
+    }
 
-	private bool m_InitOK;
+    public void AddWaterDropsToScreen(int number)
+    {
+        if (!EnsureInitialized()) return;
+        float minimum = Mathf.Max(0.25f, m_WaterDropSizeMin);
+        float maximum = Mathf.Max(minimum, m_WaterDropSizeMax);
+        for (int i = 0; i < Mathf.Clamp(number, 0, 96); i++)
+            m_WaterDroplets.AddDroplet(new Vector2(Random.value, Random.value), Random.Range(minimum, maximum));
+        if (m_WaterDroplets.NumActiveDroplets() > 0)
+        {
+            enabled = true;
+            PostFXTracking.RefractionFXActive = true;
+        }
+    }
 
-	private GameObject m_GameObj;
-
-	public Material m_WaterScreenRefractionMat;
-
-	public float m_WaterDropSizeMin = 1f;
-
-	public float m_WaterDropSizeMax = 2f;
-
-	public static MFRefractionEffects Instance;
-
-	private void Awake()
-	{
-		DebugUtils.Assert(!Instance);
-		Instance = this;
-		m_InitOK = DoInit();
-	}
-
-	private void OnDestroy()
-	{
-		Instance = null;
-	}
-
-	public void Reset()
-	{
-	}
-
-	public void SetDropletsColor(Color col)
-	{
-		if ((bool)m_WaterScreenRefractionMat)
-		{
-			m_WaterScreenRefractionMat.SetColor("_Color", col);
-		}
-	}
-
-	private void OnRenderImage(RenderTexture source, RenderTexture destination)
-	{
-		if (m_InitOK && (bool)m_WaterScreenRefractionMat)
-		{
-			RenderTexture active = RenderTexture.active;
-			RenderTexture.active = destination;
-			m_WaterScreenRefractionMat.mainTexture = source;
-			if (m_WaterScreenRefractionMat.SetPass(0) && (bool)m_ScreenDropsSimMeshFilter)
-			{
-				Graphics.DrawMeshNow(m_ScreenDropsSimMeshFilter.mesh, Matrix4x4.identity);
-			}
-			else
-			{
-				Debug.LogError("Unable to set material pass");
-			}
-			RenderTexture.active = active;
-		}
-		else
-		{
-			Graphics.Blit(source, destination);
-		}
-	}
-
-	private bool DoInit()
-	{
-		m_GameObj = new GameObject();
-		if (!InitMeshes())
-		{
-			return false;
-		}
-		m_GameObj.SetActive(false);
-		m_ScreenDropsSimMeshFilter = base.gameObject.GetComponent(typeof(MeshFilter)) as MeshFilter;
-		//m_WaterDroplets = base.gameObject.GetComponent(typeof(WaterDroplets)) as WaterDroplets;
-		return true;
-	}
-
-	private bool InitMeshes()
-	{
-		DebugUtils.Assert(m_ScreenGridXRes > 1);
-		DebugUtils.Assert(m_ScreenGridYRes > 1);
-		m_GameObj.AddComponent<MeshFilter>();
-		m_GameObj.AddComponent<MeshRenderer>();
-		m_MeshFilter = (MeshFilter)m_GameObj.GetComponent(typeof(MeshFilter));
-		m_MeshRenderer = (MeshRenderer)m_GameObj.GetComponent(typeof(MeshRenderer));
-		DebugUtils.Assert(m_MeshFilter);
-		DebugUtils.Assert(m_MeshRenderer);
-		m_MeshRenderer.GetComponent<Renderer>().material = base.material;
-		m_MeshRenderer.GetComponent<Renderer>().enabled = true;
-		m_MeshRenderer.GetComponent<Renderer>().castShadows = false;
-		m_MeshRenderer.GetComponent<Renderer>().receiveShadows = false;
-		m_Mesh = m_MeshFilter.mesh;
-		int num = m_ScreenGridXRes * m_ScreenGridYRes;
-		int num2 = (m_ScreenGridXRes - 1) * (m_ScreenGridYRes - 1) * 2;
-		Vector3[] array = new Vector3[num];
-		Vector2[] array2 = new Vector2[num];
-		int[] array3 = new int[num2 * 3];
-		for (int i = 0; i < m_ScreenGridYRes; i++)
-		{
-			for (int j = 0; j < m_ScreenGridXRes; j++)
-			{
-				int num3 = i * m_ScreenGridXRes + j;
-				array[num3].x = (float)j / (float)(m_ScreenGridXRes - 1);
-				array[num3].y = (float)i / (float)(m_ScreenGridYRes - 1);
-				array[num3].z = 0f;
-				array2[num3].x = array[num3].x;
-				array2[num3].y = array[num3].y;
-			}
-		}
-		int num4 = 0;
-		for (int k = 0; k < m_ScreenGridYRes - 1; k++)
-		{
-			for (int l = 0; l < m_ScreenGridXRes - 1; l++)
-			{
-				int num5 = l + k * m_ScreenGridXRes;
-				int num6 = l + 1 + k * m_ScreenGridXRes;
-				int num7 = l + 1 + (k + 1) * m_ScreenGridXRes;
-				int num8 = l + (k + 1) * m_ScreenGridXRes;
-				array3[num4++] = num8;
-				array3[num4++] = num6;
-				array3[num4++] = num5;
-				array3[num4++] = num8;
-				array3[num4++] = num7;
-				array3[num4++] = num6;
-			}
-		}
-		m_Mesh.vertices = array;
-		m_Mesh.uv = array2;
-		m_Mesh.triangles = array3;
-		m_Mesh.name = "screenspace grid";
-		return true;
-	}
-
-	public void AddWaterDropsToScreen(int num)
-	{
-		/*if ((bool)m_WaterDroplets)
-		{
-			Vector2 pos = default(Vector2);
-			for (int i = 0; i < num; i++)
-			{
-				pos.x = Random.Range(0f, 1f);
-				pos.y = Random.Range(0f, 1f);
-				m_WaterDroplets.AddDroplet(pos, Random.Range(m_WaterDropSizeMin, m_WaterDropSizeMax));
-			}
-		}*/
-	}
+    private void OnDestroy()
+    {
+        if (Instance == this) { Instance = null; PostFXTracking.RefractionFXActive = false; }
+        if (m_RuntimeMaterial != null)
+        {
+            if (Application.isPlaying) Destroy(m_RuntimeMaterial); else DestroyImmediate(m_RuntimeMaterial);
+        }
+    }
 }

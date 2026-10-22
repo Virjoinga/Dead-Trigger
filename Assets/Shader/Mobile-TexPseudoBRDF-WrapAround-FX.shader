@@ -3,7 +3,7 @@
 // Upgrade NOTE: commented out 'float4x4 _World2Object', a built-in variable
 // Upgrade NOTE: replaced 'glstate_matrix_mvp' with 'UNITY_MATRIX_MVP'
 
-Shader "MADFINGER/Characters/BRDFLit FX (Supports Backlight)" 
+Shader "MADFINGER/Characters/BRDFLit FX (Supports Backlight)"
 {
     Properties
     {
@@ -29,6 +29,7 @@ Shader "MADFINGER/Characters/BRDFLit FX (Supports Backlight)"
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            #pragma multi_compile __ VERTEXLIGHT_ON
             #include "UnityCG.cginc"
             // float4x4 _Object2World;
             // float4x4 _World2Object;
@@ -140,15 +141,10 @@ Shader "MADFINGER/Characters/BRDFLit FX (Supports Backlight)"
                   tmpvar_31 = tmpvar_1.xyz;
                   tmpvar_32 = (((tmpvar_2.yzx * tmpvar_1.zxy) - (tmpvar_2.zxy * tmpvar_1.yzx)) * v.tangent.w);
                   float3x3 tmpvar_33;
-                  tmpvar_33[0].x = tmpvar_31.x;
-                  tmpvar_33[0].y = tmpvar_32.x;
-                  tmpvar_33[0].z = tmpvar_2.x;
-                  tmpvar_33[1].x = tmpvar_31.y;
-                  tmpvar_33[1].y = tmpvar_32.y;
-                  tmpvar_33[1].z = tmpvar_2.y;
-                  tmpvar_33[2].x = tmpvar_31.z;
-                  tmpvar_33[2].y = tmpvar_32.z;
-                  tmpvar_33[2].z = tmpvar_2.z;
+                  // Original GLSL indexes columns; Cg needs T, B, N rows.
+                  tmpvar_33[0] = tmpvar_31;
+                  tmpvar_33[1] = tmpvar_32;
+                  tmpvar_33[2] = tmpvar_2;
                   float3 tmpvar_34;
                   tmpvar_34 = mul(tmpvar_33, mul(unity_WorldToObject, _WorldSpaceLightPos0).xyz);
                   tmpvar_6 = tmpvar_34;
@@ -164,6 +160,11 @@ Shader "MADFINGER/Characters/BRDFLit FX (Supports Backlight)"
                   o.texcoord2 = tmpvar_5;
                   o.texcoord3 = tmpvar_6;
                   o.texcoord4 = float3(0.0, 0.0, 0.0);
+                  #if defined(VERTEXLIGHT_ON)
+                  o.texcoord4 = Shade4PointLights(unity_4LightPosX0, unity_4LightPosY0, unity_4LightPosZ0,
+                      unity_LightColor[0].rgb, unity_LightColor[1].rgb, unity_LightColor[2].rgb, unity_LightColor[3].rgb,
+                      unity_4LightAtten0, mul(unity_ObjectToWorld, v.vertex).xyz, UnityObjectToWorldNormal(tmpvar_2));
+                  #endif
                   o.texcoord5 = tmpvar_7;
                 return o;
             }
@@ -187,7 +188,7 @@ Shader "MADFINGER/Characters/BRDFLit FX (Supports Backlight)"
                   float3 tmpvar_9;
                   tmpvar_9 = (tmpvar_6.xyz * tmpvar_2);
                   float3 tmpvar_10;
-                  tmpvar_10 = ((tex2D (_BumpMap, i.texcoord0.zw).xyz * 2.0) - 1.0);
+                  tmpvar_10 = UnpackNormal(tex2D(_BumpMap, i.texcoord0.zw));
                   float4 c_11;
                   float2 tmpvar_12;
                   tmpvar_12.x = ((dot (tmpvar_10, i.texcoord3) * 0.5) + 0.5);

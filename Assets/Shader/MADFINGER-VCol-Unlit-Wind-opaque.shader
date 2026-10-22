@@ -2,7 +2,7 @@
 // Upgrade NOTE: commented out 'float4x4 _World2Object', a built-in variable
 // Upgrade NOTE: replaced 'glstate_matrix_mvp' with 'UNITY_MATRIX_MVP'
 
-Shader "MADFINGER/Environment/Vertex color + Wind - opaque" 
+Shader "MADFINGER/Environment/Vertex color + Wind - opaque"
 {
     Properties
     {
@@ -63,14 +63,14 @@ Shader "MADFINGER/Environment/Vertex color + Wind - opaque"
                   pos_6.w = v.vertex.w;
                   float3 bend_7;
                   float4 v_8;
-                  v_8.x = unity_ObjectToWorld[0].w;
-                  v_8.y = unity_ObjectToWorld[1].w;
-                  v_8.z = unity_ObjectToWorld[2].w;
+                  v_8.x = unity_ObjectToWorld[3].x; // GLSL [0].w addresses row 3, column 0.
+                  v_8.y = unity_ObjectToWorld[3].y;
+                  v_8.z = unity_ObjectToWorld[3].z;
                   v_8.w = unity_ObjectToWorld[3].w;
                   float tmpvar_9;
                   tmpvar_9 = dot (v_8.xyz, float3(1.0, 1.0, 1.0));
                   float2 tmpvar_10;
-                  tmpvar_10.x = dot (v.vertex.xyz, ((_WindEdgeFlutter + tmpvar_9)));
+                  tmpvar_10.x = dot (v.vertex.xyz, (_WindEdgeFlutter + tmpvar_9).xxx);
                   tmpvar_10.y = tmpvar_9;
                   float4 tmpvar_11;
                   tmpvar_11 = abs(((frac((((frac((((_Time.y * tmpvar_5).xx + tmpvar_10).xxyy * float4(1.975, 0.793, 0.375, 0.193))) * 2.0) - 1.0) + 0.5)) * 2.0) - 1.0));
@@ -99,5 +99,5 @@ Shader "MADFINGER/Environment/Vertex color + Wind - opaque"
             ENDCG
         }
     }
-    
+
 }

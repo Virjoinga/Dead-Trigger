@@ -2,7 +2,7 @@
 // Upgrade NOTE: replaced 'glstate_matrix_modelview0' with 'UNITY_MATRIX_MV'
 // Upgrade NOTE: replaced 'glstate_matrix_projection' with 'UNITY_MATRIX_P'
 
-Shader "MADFINGER/Environment/Cube env map transparent (Supports LightProbes) FPV" 
+Shader "MADFINGER/Environment/Cube env map transparent (Supports LightProbes) FPV"
 {
     Properties
     {
@@ -23,6 +23,8 @@ Shader "MADFINGER/Environment/Cube env map transparent (Supports LightProbes) FP
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            // Preserve the original detail paths; no keyword defaults to full detail.
+            #pragma multi_compile __ UNITY_SHADER_DETAIL_LOW UNITY_SHADER_DETAIL_MEDIUM UNITY_SHADER_DETAIL_HIGH UNITY_SHADER_DETAIL_VERY_HIGH
             #include "UnityCG.cginc"
             // float4x4 _Object2World;
             float _SHLightingScale;
@@ -30,6 +32,7 @@ Shader "MADFINGER/Environment/Cube env map transparent (Supports LightProbes) FP
             float4 _ProjParams;
             float4 _MainTex_ST;
             sampler2D _MainTex;
+            samplerCUBE _EnvTex;
             struct appdata_t
             {
                 float4 vertex : POSITION;
@@ -42,7 +45,7 @@ Shader "MADFINGER/Environment/Cube env map transparent (Supports LightProbes) FP
                 float2 texcoord0 : TEXCOORD0;
                 float4 texcoord1 : TEXCOORD1;
                 float4 color : COLOR;
-                float4 color2 : COLOR2;
+
                 float4 vertex : POSITION;
             };
             v2f vert(appdata_t v)
@@ -52,7 +55,6 @@ Shader "MADFINGER/Environment/Cube env map transparent (Supports LightProbes) FP
                   float4 tmpvar_2;
                   float4 tmpvar_3;
                   float4 tmpvar_4;
-                  float4 tmpvar_5;
                   projTM_1 = UNITY_MATRIX_P;
                   projTM_1[0] = UNITY_MATRIX_P[0]; projTM_1[0].x = (UNITY_MATRIX_P[0].x * _ProjParams.x);
                   projTM_1[1] = projTM_1[1]; projTM_1[1].y = (projTM_1[1].y * _ProjParams.y);
@@ -139,7 +141,7 @@ Shader "MADFINGER/Environment/Cube env map transparent (Supports LightProbes) FP
                   o.texcoord0 = tmpvar_8;
                   o.texcoord1 = tmpvar_3;
                   o.color = tmpvar_4;
-                  o.color2 = tmpvar_5;
+
                 return o;
             }
             float4 frag(v2f i) : SV_TARGET
@@ -148,6 +150,9 @@ Shader "MADFINGER/Environment/Cube env map transparent (Supports LightProbes) FP
                   float4 tmpvar_2;
                   tmpvar_2 = tex2D (_MainTex, i.texcoord0);
                   c_1.xyz = (tmpvar_2.xyz * i.color.xyz);
+                  #if !defined(UNITY_SHADER_DETAIL_LOW)
+                  c_1.xyz = (tmpvar_2.xyz + texCUBE(_EnvTex, i.texcoord1.xyz).rgb * i.color.w) * i.color.xyz;
+                  #endif
                   float tmpvar_3;
                   tmpvar_3 = (tmpvar_2.w * i.texcoord1.w);
                   c_1.w = tmpvar_3;
@@ -156,5 +161,5 @@ Shader "MADFINGER/Environment/Cube env map transparent (Supports LightProbes) FP
             ENDCG
         }
     }
-    
+
 }

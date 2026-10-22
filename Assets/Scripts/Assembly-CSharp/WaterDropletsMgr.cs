@@ -1,33 +1,30 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Camera))]
 [AddComponentMenu("Effects/Water droplets mgr")]
 public class WaterDropletsMgr : MonoBehaviour
 {
-	//private WaterDroplets m_WaterDroplets;
+    private WaterDroplets m_WaterDroplets;
+    private MFRefractionEffects m_Effect;
 
-	private void Start()
-	{
-		//m_WaterDroplets = base.gameObject.GetComponent<WaterDroplets>();
-	}
+    private void Awake() { EnsureInitialized(); }
 
-	private void LateUpdate()
-	{
-		/*if (!m_WaterDroplets || !MFRefractionEffects.Instance)
-		{
-			return;
-		}
-		if (m_WaterDroplets.NumActiveDroplets() > 0)
-		{
-			if (!MFRefractionEffects.Instance.enabled)
-			{
-				MFRefractionEffects.Instance.enabled = true;
-				PostFXTracking.RefractionFXActive = true;
-			}
-		}
-		else if (MFRefractionEffects.Instance.enabled)
-		{
-			MFRefractionEffects.Instance.enabled = false;
-			PostFXTracking.RefractionFXActive = false;
-		}*/
-	}
+    public void EnsureInitialized()
+    {
+        if (m_Effect == null)
+        {
+            m_Effect = GetComponent<MFRefractionEffects>();
+            if (m_Effect == null) m_Effect = gameObject.AddComponent<MFRefractionEffects>();
+        }
+        m_Effect.EnsureInitialized();
+        m_WaterDroplets = m_Effect.Droplets;
+    }
+
+    private void LateUpdate()
+    {
+        EnsureInitialized();
+        bool active = SystemInfo.supportsImageEffects && m_WaterDroplets.NumActiveDroplets() > 0;
+        m_Effect.enabled = active;
+        if (MFRefractionEffects.Instance == m_Effect) PostFXTracking.RefractionFXActive = active;
+    }
 }
