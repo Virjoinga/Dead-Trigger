@@ -1,5 +1,7 @@
 # Zombie shader translation fix
 
+For the subsequent audit of all remaining original shaders, see [ShaderAudit.md](ShaderAudit.md).
+
 Production shader: `Assets/Shader/Mobile-TexPseudoBRDF-WrapAround-customgloss-zombie.shader`.
 
 The supplied original Unity 4.x GLES program was read from the untouched Dead Trigger 1.9.5 export used for LightProbe recovery. Two translation/platform issues explain directional lighting and highlights pointing the wrong way:
