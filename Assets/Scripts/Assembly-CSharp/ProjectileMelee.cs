@@ -91,15 +91,12 @@ public class ProjectileMelee : Projectile
 				base.ignoreThisHit = false;
 				continue;
 			}
-			/*FluidSurface component = data.collider.GetComponent<FluidSurface>();
-			if (component != null)
-			{
-				component.AddDropletAtWorldPos(data.point, 0.3f, 0.15f);
-			}
-			if (!data.collider.isTrigger || component != null)
+			FluidSurface component = data.collider.GetComponent<FluidSurface>();
+			if (component != null) component.AddDropletAtWorldPos(data.point, 0.3f, 0.15f);
+			if ((!data.collider.isTrigger || component != null) && SemanticMaterialManager.Instance != null)
 			{
 				SemanticMaterialManager.Instance.SpawnProjectileImpactEffect(base.ProjectileType, data);
-			}*/
+			}
 			if (!data.collider.isTrigger)
 			{
 				position = data.point;

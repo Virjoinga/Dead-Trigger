@@ -1904,7 +1904,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &114
 GameObject:
   m_ObjectHideFlags: 0
@@ -9218,13 +9218,14 @@ GameObject:
   - component: {fileID: 5954}
   - component: {fileID: 4507}
   - component: {fileID: 7075}
+  - component: {fileID: 1120000001}
   m_Layer: 4
   m_Name: '!watter'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967287
-  m_IsActive: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &535
 GameObject:
   m_ObjectHideFlags: 0
@@ -535037,7 +535038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804aa9a0e75ea1d810ef160909208c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseForDevicePerformance: 3
+  UseForDevicePerformance: 2
 --- !u!114 &8849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545972,3 +545973,16 @@ MonoBehaviour:
   m_Center: {x: 0, y: 0, z: 0}
   m_Area: 1
   m_AffectedAgents: ffffffff
+--- !u!114 &1120000001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a46522aa5150f3b62f68991c9dbec1, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  waveSpeed: 2
+  damping: 2.5

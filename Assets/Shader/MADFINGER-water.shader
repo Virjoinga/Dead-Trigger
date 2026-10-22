@@ -49,7 +49,7 @@ Shader "MADFINGER/FX/Water"
             {
                 v2f o;
                 float3 worldPosition = mul(unity_ObjectToWorld, v.vertex).xyz;
-                  float3 normalWorld = normalize(mul((float3x3)unity_ObjectToWorld, normalize(v.normal)));
+                  float3 normalWorld = UnityObjectToWorldNormal(v.normal);
                 float3 viewWorld = _WorldSpaceCameraPos - worldPosition;
                 float3 viewDirection = normalize(viewWorld);
                 float facing = 1.0 - saturate(dot(viewDirection, normalWorld));
@@ -57,7 +57,7 @@ Shader "MADFINGER/FX/Water"
                 o.reflection = reflect(-viewDirection, normalWorld);
                 o.reflection.x = -o.reflection.x;
                 o.color = float4(lerp(_DeepColor.rgb, _ShallowColor.rgb, facing), fresnel);
-                o.opacity = fresnel + _Params.z;
+                o.opacity = saturate(fresnel + _Params.z);
                 o.normalUV.xy = worldPosition.xz * _Params2.x + frac(_Time.yy * _Params2.y * float2(-0.393919,0.919145));
                 o.normalUV.zw = worldPosition.xz * _Params2.x + frac(float2(0.464238,0.185695) * _Time.yy * _Params2.y);
                 o.normalWorld = normalWorld;
@@ -74,13 +74,14 @@ Shader "MADFINGER/FX/Water"
                 float3 n1 = UnpackNormal(tex2D(_Normals,i.normalUV.xy));
                 float3 n2 = UnpackNormal(tex2D(_Normals,i.normalUV.zw));
                 float3 combined = normalize(float3(n1.xy+n2.xy,n1.z*n2.z));
-                float3 normalWorld = normalize(float3(combined.xz+i.normalWorld.xy,combined.y*i.normalWorld.z));
+                // Combine tangent-space bumps with the dynamic water mesh normal.
+                float3 normalWorld = normalize(float3(i.normalWorld.x + combined.x, i.normalWorld.y * combined.z, i.normalWorld.z + combined.y));
                 float3 viewDirection = normalize(i.viewWorld);
                 float3 reflection = reflect(-viewDirection,normalWorld);
                 float facing = 1.0-saturate(dot(viewDirection,normalWorld));
                 float fresnel = saturate(_Params.x+(1.0-_Params.x)*pow(facing,_Params.y));
                 float3 color = lerp(_DeepColor.rgb,_ShallowColor.rgb,facing);
-                return float4(lerp(color,texCUBE(_EnvTex,reflection).rgb,fresnel),fresnel+_Params.z);
+                return float4(lerp(color,texCUBE(_EnvTex,reflection).rgb,fresnel),saturate(fresnel+_Params.z));
                 #endif
             }
             ENDCG

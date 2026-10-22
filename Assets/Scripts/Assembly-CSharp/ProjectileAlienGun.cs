@@ -64,8 +64,8 @@ public class ProjectileAlienGun : ProjectileBullet
 				base.ignoreThisHit = false;
 				continue;
 			}
-			//FluidSurface component = data.collider.GetComponent<FluidSurface>();
-			/*if (component != null)
+			FluidSurface component = data.collider.GetComponent<FluidSurface>();
+			if (component != null)
 			{
 				component.AddDropletAtWorldPos(data.point, 0.3f, 0.15f);
 			}
@@ -79,7 +79,7 @@ public class ProjectileAlienGun : ProjectileBullet
 				m_hitPtc.transform.position = data.point + data.normal * 0.4f;
 				m_hitPtc.Play();
 				GenerateWaveFX();
-			}*/
+			}
 			if (data.collider.isTrigger)
 			{
 				continue;
