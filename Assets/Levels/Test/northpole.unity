@@ -7551,7 +7551,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967287
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &431
 GameObject:
@@ -17272,7 +17272,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967287
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &982
 GameObject:
@@ -22777,7 +22777,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967287
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1293
 GameObject:
@@ -31166,7 +31166,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 279}
   m_LocalRotation: {x: 0.003126574, y: -0.70709985, z: -0.7070999, w: -0.0031262601}
-  m_LocalPosition: {x: -42.53645, y: -6.5906553, z: 41.660957}
+  m_LocalPosition: {x: -42.53645, y: -7.090655, z: 41.660957}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2945}
@@ -36115,7 +36115,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 655}
   m_LocalRotation: {x: 0.0031269996, y: -0.7070999, z: -0.7070999, w: -0.0031259996}
-  m_LocalPosition: {x: -24.387772, y: -6.590678, z: 35.91549}
+  m_LocalPosition: {x: -24.387772, y: -7.090655, z: 35.91549}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2451}
@@ -105852,7 +105852,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -105864,7 +105864,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -105876,7 +105876,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!82 &5882
 AudioSource:
   m_ObjectHideFlags: 0
