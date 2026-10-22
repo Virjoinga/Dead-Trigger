@@ -102,15 +102,11 @@ Shader "MADFINGER/Characters/BRDFLit (Supports Backlight) - custom glossingess m
                   tmpvar_16 = tmpvar_1.xyz;
                   tmpvar_17 = (((tmpvar_2.yzx * tmpvar_1.zxy) - (tmpvar_2.zxy * tmpvar_1.yzx)) * v.tangent.w);
                   float3x3 tmpvar_18;
-                  tmpvar_18[0].x = tmpvar_16.x;
-                  tmpvar_18[0].y = tmpvar_17.x;
-                  tmpvar_18[0].z = tmpvar_2.x;
-                  tmpvar_18[1].x = tmpvar_16.y;
-                  tmpvar_18[1].y = tmpvar_17.y;
-                  tmpvar_18[1].z = tmpvar_2.y;
-                  tmpvar_18[2].x = tmpvar_16.z;
-                  tmpvar_18[2].y = tmpvar_17.z;
-                  tmpvar_18[2].z = tmpvar_2.z;
+                  // GLSL indexed columns here; Cg indexes rows. Object-to-tangent
+                  // space needs rows T, B, N so multiplication takes their dot products.
+                  tmpvar_18[0] = tmpvar_16;
+                  tmpvar_18[1] = tmpvar_17;
+                  tmpvar_18[2] = tmpvar_2;
                   float3x3 tmpvar_19;
                   tmpvar_19[0] = unity_WorldToObject[0].xyz;
                   tmpvar_19[1] = unity_WorldToObject[1].xyz;
@@ -186,7 +182,8 @@ Shader "MADFINGER/Characters/BRDFLit (Supports Backlight) - custom glossingess m
                   tmpvar_3 = tex2D (_MainTex, i.texcoord0);
                   c_2.w = tmpvar_3.w;
                   float3 tmpvar_4;
-                  tmpvar_4 = ((tex2D (_BumpMap, i.texcoord0).xyz * 2.0) - 1.0);
+                  // Unity's normal importer can pack X in alpha on desktop.
+                  tmpvar_4 = UnpackNormal(tex2D (_BumpMap, i.texcoord0));
                   float tmpvar_5;
                   tmpvar_5 = dot (_SpecularStrength, tmpvar_3);
                   gloss_1 = tmpvar_5;
