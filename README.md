@@ -1,10 +1,9 @@
 # Dead Trigger
-
-Keep in mind that this project is still very early.
-
 ## Known Issues
-1. NavMesh's are inaccurate and/or non-existent.
-2. A few broken shaders.
+1. Player can walk over Zombies.
+2. LightingData is not setup correctly in City.scene.
+3. Zombies can spawn out of bounds in northpole.scene.
+4. Muzzle flash fx renders behind scene objects.
 
 ## Contents
 1. [Setup](#setup)
@@ -21,7 +20,7 @@ Keep in mind that this project is still very early.
    - Optional: Use [UniHacker](https://github.com/tylearymf/UniHacker) to unlock dark theme and get rid of license related stuff.
 2. Clone this repo on your computer.
 3. Open it and you're done.
-   - The *proper* way of playing it, is opening the scene called AndroidBootCheck (Assets/Scenes/FrontEnd) and then running it.
+   - The *proper* way of playing it, is opening the scene called Loader (Assets/) and then running it.
   
 ## Building
 #### Preparing for building
