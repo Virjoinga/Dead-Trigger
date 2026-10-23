@@ -60,6 +60,9 @@ public class HudIngameBuy : HudComponent
 		m_Image = m_Dialog.GetWidget("Item_Picture").GetComponent<GUIBase_Widget>();
 		m_BuyButton = m_Dialog.GetWidget("Button_Ok").GetComponent<GUIBase_Button>();
 		m_ButtonText = m_Dialog.GetWidget("Button_Caption").GetComponent<GUIBase_Label>();
+#if UNITY_STANDALONE || UNITY_EDITOR
+		m_ButtonText.SetNewText(m_ButtonText.GetText() + " [" + PlayerControlsPC.IngameActionKey + "]");
+#endif
 	}
 
 	public override void Reset()

@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerControlsPC
 {
+    public const KeyCode IngameActionKey = KeyCode.E;
+
     public class MouseCameraControl
     {
         private float sensitivityX = 2f;
@@ -204,7 +206,7 @@ public class PlayerControlsPC
         {
             States.ReloadDelegate();
         }
-        if (Input.GetKeyDown("b") || Input.GetKeyDown("x"))
+        if (Input.GetKeyDown("b") || Input.GetKeyDown(IngameActionKey))
         {
             GuiHUD.Instance.SimulateIngameAction();
         }
