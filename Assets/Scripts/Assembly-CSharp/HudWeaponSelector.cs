@@ -156,6 +156,19 @@ public class HudWeaponSelector : HudComponent
 		return m_WeaponInventory[index];
 	}
 
+	public E_WeaponID AdjacentWeaponID(int direction)
+	{
+		int index = m_GuiSelectedWeaponIndex;
+		int step = direction < 0 ? -1 : 1;
+		for (int i = 0; i < m_WeaponInventory.Length; i++)
+		{
+			index = (index + step + m_WeaponInventory.Length) % m_WeaponInventory.Length;
+			if (m_WeaponInventory[index] != E_WeaponID.None)
+				return m_WeaponInventory[index];
+		}
+		return E_WeaponID.None;
+	}
+
 	public void OnCurrentWeaponChanged(E_WeaponID Weapon)
 	{
 		HideWeaponsSprites();

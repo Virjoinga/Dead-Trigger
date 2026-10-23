@@ -230,6 +230,10 @@ public class PlayerControlsPC
         {
             ChangeWeapon(GuiHUD.Instance.WeaponID(3));
         }
+        else if (GameCursor.IsCaptured && States.ActionsEnabled && !GuiHUD.Instance.IsHidden && Input.mouseScrollDelta.y != 0f)
+        {
+            ChangeWeapon(GuiHUD.Instance.AdjacentWeaponID(Input.mouseScrollDelta.y > 0f ? -1 : 1));
+        }
         else if (Input.GetKeyDown("0"))
         {
             UseGadget(GuiHUD.Instance.ItemID(0));
@@ -319,7 +323,7 @@ public class PlayerControlsPC
 
     private void ChangeWeapon(E_WeaponID type)
     {
-        if (Player.Instance.CanChangeWeapon() && (!Player.Instance.Owner.WeaponComponent || Player.Instance.Owner.WeaponComponent.GetCurrentWeapon().WeaponID != type))
+        if (type != E_WeaponID.None && Player.Instance.CanChangeWeapon() && (!Player.Instance.Owner.WeaponComponent || Player.Instance.Owner.WeaponComponent.GetCurrentWeapon().WeaponID != type))
         {
             States.ChangeWeaponDelegate(type);
             WeaponBase weapon = Player.Instance.Owner.WeaponComponent.GetWeapon(type);

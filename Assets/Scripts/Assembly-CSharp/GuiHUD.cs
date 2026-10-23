@@ -110,6 +110,11 @@ public class GuiHUD : MonoBehaviour
         return hudWeaponSelector.WeaponID(index);
     }
 
+    public E_WeaponID AdjacentWeaponID(int direction)
+    {
+        return hudWeaponSelector.AdjacentWeaponID(direction);
+    }
+
     public E_ItemID ItemID(int index)
     {
         return hudGadgets.GetGadgetID(index);
