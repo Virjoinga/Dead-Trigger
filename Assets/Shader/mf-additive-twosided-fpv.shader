@@ -7,13 +7,15 @@ Shader "MADFINGER/Particles/Additive TwoSided FPV"
     {
         _MainTex ("Texture", 2D) = "black" {}
         _TintColor ("Color", Color) = (1,1,1,1)
+        _FPVDepthScale ("FPV depth range", Range(0.001,1)) = 0.02
     }
     SubShader
     {
-        Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
+        Tags { "QUEUE"="Overlay+20" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
         Pass
         {
-            Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
+            Tags { "QUEUE"="Overlay+20" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
+            ZTest LEqual
             ZWrite Off
             Cull Off
             Fog {
@@ -27,6 +29,7 @@ Shader "MADFINGER/Particles/Additive TwoSided FPV"
             #include "UnityCG.cginc"
             float4 _TintColor;
             float4 _ProjParams;
+            float _FPVDepthScale;
             float4 _MainTex_ST;
             sampler2D _MainTex;
             struct appdata_t
@@ -39,7 +42,7 @@ Shader "MADFINGER/Particles/Additive TwoSided FPV"
             {
                 float4 color : COLOR;
                 float2 texcoord0 : TEXCOORD0;
-                float4 vertex : POSITION;
+                float4 vertex : SV_POSITION;
             };
             v2f vert(appdata_t v)
             {
@@ -47,17 +50,22 @@ Shader "MADFINGER/Particles/Additive TwoSided FPV"
                   float4x4 projTM_1;
                   float4 tmpvar_2;
                   float4 tmpvar_3;
+                  // Use the same projection/depth range as the opaque FPV parts.
+                  float4 projectionParams = _ProjParams;
+                  if (dot(abs(projectionParams), float4(1,1,1,1)) < 0.0001)
+                      projectionParams = float4(1,1,1,0);
                   projTM_1 = UNITY_MATRIX_P;
-                  projTM_1[0] = UNITY_MATRIX_P[0]; projTM_1[0].x = (UNITY_MATRIX_P[0].x * _ProjParams.x);
-                  projTM_1[1] = projTM_1[1]; projTM_1[1].y = (projTM_1[1].y * _ProjParams.y);
+                  projTM_1[0] = UNITY_MATRIX_P[0]; projTM_1[0].x = (UNITY_MATRIX_P[0].x * projectionParams.x);
+                  projTM_1[1] = projTM_1[1]; projTM_1[1].y = (projTM_1[1].y * projectionParams.y);
                   float4 tmpvar_4;
                   tmpvar_4.w = 1.0;
                   tmpvar_4.xyz = (UnityObjectToViewPos(v.vertex)).xyz;
                   float4 tmpvar_5;
                   tmpvar_5 = mul(projTM_1, tmpvar_4);
                   tmpvar_2.xyw = tmpvar_5.xyw;
-                  tmpvar_2.z = (tmpvar_5.z * _ProjParams.z);
-                  tmpvar_2.z = (tmpvar_2.z + (_ProjParams.w * tmpvar_5.w));
+                  tmpvar_2.z = (tmpvar_5.z * projectionParams.z);
+                  tmpvar_2.z = (tmpvar_2.z + (projectionParams.w * tmpvar_5.w));
+                  tmpvar_2.z = lerp(UNITY_NEAR_CLIP_VALUE * tmpvar_5.w, tmpvar_2.z, _FPVDepthScale);
                   float4 tmpvar_6;
                   tmpvar_6.w = 1.0;
                   tmpvar_6.xyz = (v.color.xyz * _TintColor.xyz);
