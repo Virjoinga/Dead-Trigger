@@ -258,6 +258,7 @@ public class CityManager : MonoBehaviour
 
 	private void Awake()
 	{
+		AudioListener.pause = false;
 		_Instance = this;
 		GuiMainMenu.m_OnCityMapSuspend = OnCityMapSuspend;
 		GuiMainMenu.m_OnCityMapResume = OnCityMapResume;
