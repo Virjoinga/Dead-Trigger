@@ -11,6 +11,9 @@ using UnityEngine;
 [RequireComponent(typeof(AgentHuman))]
 public class ComponentPlayer : MonoBehaviour
 {
+	// Disabled until controller/touch iron-sight assistance has an explicit user option.
+	private static readonly bool IronSightAimAssistEnabled = false;
+
 	private enum E_TouchCommandType
 	{
 		E_TC_UNKNOWN = 0,
@@ -656,7 +659,8 @@ public class ComponentPlayer : MonoBehaviour
 			Owner.BlackBoard.Desires.WeaponIronSight = on;
 			if (on)
 			{
-				AimToBestEnemy();
+				if (IronSightAimAssistEnabled)
+					AimToBestEnemy();
 				GameCamera.Instance.SetFov(Owner.WeaponComponent.GetCurrentWeapon().GetIronSightFov(), 150f, 0.02f);
 			}
 			else
