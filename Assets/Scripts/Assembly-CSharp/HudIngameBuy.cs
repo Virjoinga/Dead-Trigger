@@ -147,7 +147,7 @@ public class HudIngameBuy : HudComponent
 		}
 		else
 		{
-			m_Cost.SetNewText(m_IngameBuyComponent.GetCost() + " $");
+			m_Cost.SetNewText("$" + m_IngameBuyComponent.GetCost());
 			if (m_Cost.transform.localScale.x < 1.2f)
 			{
 				m_Cost.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);

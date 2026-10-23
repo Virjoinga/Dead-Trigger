@@ -974,7 +974,7 @@ public class CityGUIDialogs
 			yield return new WaitForSeconds(delay);
 			label4 = m_Dialog.GetWidget("InjuredValue").GetComponent<GUIBase_Label>();
 			label4.GetComponent<GUIBase_Widget>().Show(true, true);
-			label4.SetNewText(Mathf.RoundToInt(missionInfo.missionResult.HealthLost * 100f) + " %");
+			label4.SetNewText(Mathf.RoundToInt(missionInfo.missionResult.HealthLost * 100f) + "%");
 			yield return new WaitForSeconds(delay);
 			label4 = m_Dialog.GetWidget("WastedMoneyValue").GetComponent<GUIBase_Label>();
 			label4.GetComponent<GUIBase_Widget>().Show(true, true);

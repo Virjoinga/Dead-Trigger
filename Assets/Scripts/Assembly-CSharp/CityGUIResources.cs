@@ -585,8 +585,8 @@ public class CityGUIResources
 				{
 					val = finalValue;
 				}
-				number.Label.SetNewText(val + suffix);
-				scaleX += scaleXStep;
+                number.Label.SetNewText(suffix == "$" ? "$" + val : val + suffix);
+                scaleX += scaleXStep;
 				scaleY += scaleYStep;
 				number.Label.transform.localScale = new Vector3(scaleX, scaleY, scaleX);
 				yield return new WaitForSeconds(0.033f * speedModif);
@@ -601,8 +601,8 @@ public class CityGUIResources
 				{
 					val = finalValue;
 				}
-				number.Label.SetNewText(val + suffix);
-				scaleX += scaleXStep;
+                number.Label.SetNewText(suffix == "$" ? "$" + val : val + suffix);
+                scaleX += scaleXStep;
 				scaleY += scaleYStep;
 				number.Label.transform.localScale = new Vector3(scaleX, scaleY, scaleX);
 				yield return new WaitForSeconds(0.033f * speedModif);
@@ -610,8 +610,8 @@ public class CityGUIResources
 		}
 		else
 		{
-			number.Label.SetNewText(initValue + suffix);
-		}
+            number.Label.SetNewText(suffix == "$" ? "$" + initValue : initValue + suffix);
+        }
 		number.RestoreOrigScale();
 		if ((bool)CityManager.Instance)
 		{
