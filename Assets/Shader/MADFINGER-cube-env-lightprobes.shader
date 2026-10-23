@@ -98,6 +98,11 @@ Shader "MADFINGER/Environment/Cube env map (Supports LightProbes)"
                   tmpvar_21 = (unity_SHC.xyz * vC_9);
                   x3_10 = tmpvar_21;
                   tmpvar_7 = ((x1_12 + x2_11) + x3_10);
+                  // Unity 2017 supplies linear SH lighting even in Gamma projects.
+                  // Match ShadeSH9's output space before the original material/AO tint.
+                  #if defined(UNITY_COLORSPACE_GAMMA)
+                  tmpvar_7 = LinearToGammaSpace(tmpvar_7);
+                  #endif
                   o.vertex = (UnityObjectToClipPos(v.vertex));
                   o.texcoord0 = (((v.texcoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw) + frac((_UVScrollSpeed.xy * _Time.xy)));
                   o.texcoord1 = tmpvar_1;
