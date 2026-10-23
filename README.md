@@ -1,6 +1,6 @@
 # Dead Trigger
 ## Known Issues
-1. Mouse has auto-aim.
+None.
 
 ## Contents
 1. [Setup](#setup)
