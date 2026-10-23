@@ -103,7 +103,7 @@ public class AnimComponent : MonoBehaviour
 			ContactPlatfrom = null;
 			if ((bool)Owner.CharacterController)
 			{
-				Owner.CharacterController.Move(vector);
+				Owner.MoveCharacterController(vector);
 			}
 			else
 			{
@@ -112,8 +112,8 @@ public class AnimComponent : MonoBehaviour
 		}
 		else if ((bool)Owner.CharacterController && Owner.CharacterController.enabled)
 		{
-			Owner.CharacterController.Move(Vector3.up * 0.1f);
-			Owner.CharacterController.Move(Vector3.down * 0.1f);
+			Owner.MoveCharacterController(Vector3.up * 0.1f);
+			Owner.MoveCharacterController(Vector3.down * 0.1f);
 		}
 		if ((bool)Owner.CharacterController)
 		{
@@ -127,6 +127,8 @@ public class AnimComponent : MonoBehaviour
 
 	private void OnControllerColliderHit(ControllerColliderHit hit)
 	{
+		// A kinematic zombie is not a moving platform, including side contacts.
+		if (hit.collider.GetComponentInParent<AgentHuman>() != null) return;
 		if ((bool)hit.rigidbody && hit.rigidbody.isKinematic && hit.gameObject.GetComponent<Projectile>() == null)
 		{
 			ContactPlatfrom = hit.transform;

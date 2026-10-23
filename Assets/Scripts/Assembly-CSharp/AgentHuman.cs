@@ -92,6 +92,11 @@ public class AgentHuman : Agent
 
 	private Collider[] Colliders;
 
+	private CapsuleCollider PlayerBlocker;
+	private static readonly List<AgentHuman> PlayerBlockerOwners = new List<AgentHuman>();
+	private Collider[] PlayerBlockingBodyColliders;
+	private CharacterController BlockedPlayer;
+
 	private float TeleportTimer;
 
 	[NonSerialized]
@@ -429,6 +434,8 @@ public class AgentHuman : Agent
 
 	private void OnDestroy()
 	{
+		PlayerBlockerOwners.Remove(this);
+		RestorePlayerCollisionPairs();
 		SoundSetup = null;
 		BlackBoard.Reset();
 		BlackBoard = null;
@@ -584,6 +591,9 @@ public class AgentHuman : Agent
 		EnableRagdoll(false);
 		if (!IsPlayer)
 		{
+			EnsurePlayerBlocker();
+			PlayerBlocker.enabled = true;
+			RefreshPlayerCollisionPairs();
 			SetFPVLayer(false);
 			ResetAnimations();
 		}
@@ -632,6 +642,7 @@ public class AgentHuman : Agent
 
 	private void LateUpdate()
 	{
+		RefreshPlayerCollisionPairs();
 		float health = BlackBoard.Health;
 		float num = health - PrevHealth;
 		if (num != 0f && this.OnHealthChanged != null)
@@ -1529,6 +1540,8 @@ public class AgentHuman : Agent
 	{
 		if ((bool)CollBox)
 		{
+			// Preserve corpse hit detection while allowing player pass-through.
+			CollBox.layer = BlockPlayer ? ObjectLayer.EnemyBox : ObjectLayer.IgnorePlayer;
 			CollBox.SetActive(BlockRaycasts);
 		}
 		if ((bool)CollCapsule)
@@ -1559,6 +1572,133 @@ public class AgentHuman : Agent
 		{
 			CharacterController.enabled = BlockPlayer;
 		}
+		if (!IsPlayer)
+		{
+			EnsurePlayerBlocker();
+			PlayerBlocker.enabled = BlockPlayer;
+			RefreshPlayerCollisionPairs();
+		}
+	}
+
+	private void EnsurePlayerBlocker()
+	{
+		if (PlayerBlocker != null) return;
+		GameObject blocker = new GameObject("Player movement blocker");
+		blocker.layer = ObjectLayer.IgnoreRaycast;
+		blocker.transform.SetParent(transform, false);
+		// A round blocker cannot sweep corners into the player when the enemy turns.
+		// Put its lower cap below the feet so it cannot act as a step or ramp.
+		PlayerBlocker = blocker.AddComponent<CapsuleCollider>();
+		float radius = Mathf.Max(0.35f, NavMeshAgent != null ? NavMeshAgent.radius : 0.4f);
+		float height = Mathf.Max(2f, NavMeshAgent != null ? NavMeshAgent.height : 2f);
+		PlayerBlocker.radius = radius;
+		PlayerBlocker.height = height + radius * 2f;
+		PlayerBlocker.direction = 1;
+		PlayerBlocker.center = Vector3.up * (height * 0.5f);
+		PlayerBlockingBodyColliders = GetComponentsInChildren<Collider>(true);
+		PlayerBlockerOwners.Add(this);
+	}
+
+	public CollisionFlags MoveCharacterController(Vector3 motion)
+	{
+		Vector3 start = CharacterController.transform.position;
+		bool enemyContact = false;
+		if (IsPlayer)
+		{
+			// NavMesh movement can advance a kinematic enemy into the controller.
+			// Resolve that overlap sideways before Unity can lift us out of it.
+			foreach (AgentHuman enemy in PlayerBlockerOwners)
+			{
+				if (enemy == null || enemy.PlayerBlocker == null || !enemy.PlayerBlocker.enabled || !enemy.PlayerBlocker.gameObject.activeInHierarchy) continue;
+				enemy.RefreshPlayerCollisionPairs();
+				CapsuleCollider blocker = enemy.PlayerBlocker;
+				Bounds bounds = blocker.bounds;
+				Bounds playerBounds = CharacterController.bounds;
+				if (playerBounds.min.y >= bounds.max.y || playerBounds.max.y <= bounds.min.y) continue;
+				Vector3 separation = CharacterController.transform.position - bounds.center;
+				separation.y = 0f;
+				float clearance = Mathf.Max(bounds.extents.x, bounds.extents.z) + CharacterController.radius + 0.005f;
+				float distance = separation.magnitude;
+				if (distance < clearance + CharacterController.skinWidth + motion.magnitude) enemyContact = true;
+				if (distance >= clearance) continue;
+				if (distance < 0.0001f)
+				{
+					separation = new Vector3(-motion.x, 0f, -motion.z);
+					if (separation.sqrMagnitude < 0.0001f) separation = Vector3.back;
+				}
+				Vector3 before = CharacterController.transform.position;
+				CharacterController.Move(separation.normalized * (clearance - distance));
+				Vector3 after = CharacterController.transform.position;
+				Vector3 correctedSeparation = after - bounds.center;
+				correctedSeparation.y = 0f;
+				bool crossedEnemy = Vector3.Dot(correctedSeparation, separation) < 0f;
+				if (after.y > before.y || crossedEnemy)
+				{
+					if (after.y > before.y) after.y = before.y;
+					if (crossedEnemy) { after.x = before.x; after.z = before.z; }
+					CharacterController.transform.position = after;
+					Physics.SyncTransforms();
+				}
+				// When a wall prevents separation, allow motion along/away from the
+				// enemy, but do not let input drive farther into the overlap.
+				Vector3 outward = separation.normalized;
+				float inward = Vector3.Dot(motion, outward);
+				if (inward < 0f) motion -= outward * inward;
+			}
+		}
+		CollisionFlags result = CharacterController.Move(motion);
+		Vector3 end = CharacterController.transform.position;
+		if (enemyContact && end.y > start.y + 0.001f)
+		{
+			// If terrain prevents sideways separation, never escape over the enemy.
+			// A real step or slope may still raise us when it supports the new feet.
+			RaycastHit support;
+			int groundMask = ~((1 << ObjectLayer.Player) | (1 << ObjectLayer.IgnoreRaycast) | (1 << ObjectLayer.IgnorePlayer));
+			bool terrainStep = Physics.Raycast(end + Vector3.up * 0.1f, Vector3.down, out support,
+				0.2f, groundMask, QueryTriggerInteraction.Ignore)
+				&& support.collider.GetComponentInParent<AgentHuman>() == null
+				&& support.point.y > start.y + 0.001f
+				&& support.normal.y >= Mathf.Cos(CharacterController.slopeLimit * Mathf.Deg2Rad);
+			if (!terrainStep)
+			{
+				end.y = start.y;
+				CharacterController.transform.position = end;
+				Physics.SyncTransforms();
+			}
+		}
+		return result;
+	}
+
+	private void OnEnable() { RefreshPlayerCollisionPairs(); }
+	private void OnDisable() { RestorePlayerCollisionPairs(); }
+
+	private void RefreshPlayerCollisionPairs()
+	{
+		if (PlayerBlocker == null) return;
+		if (Player.Instance != null && Player.Instance.Owner != null)
+		{
+			CharacterController player = Player.Instance.Owner.CharacterController;
+			if (player != BlockedPlayer)
+			{
+				RestorePlayerCollisionPairs();
+				BlockedPlayer = player;
+			}
+		}
+		if (BlockedPlayer == null || !BlockedPlayer.enabled || !BlockedPlayer.gameObject.activeInHierarchy || PlayerBlockingBodyColliders == null) return;
+		foreach (Collider body in PlayerBlockingBodyColliders)
+		{
+			if (body == null || body == PlayerBlocker || body == BlockedPlayer || body.isTrigger || !body.enabled || !body.gameObject.activeInHierarchy) continue;
+			// Unity forgets ignore pairs when pooled colliders are disabled.
+			Physics.IgnoreCollision(BlockedPlayer, body, true);
+		}
+	}
+
+	private void RestorePlayerCollisionPairs()
+	{
+		if (BlockedPlayer == null || PlayerBlockingBodyColliders == null) return;
+		foreach (Collider body in PlayerBlockingBodyColliders)
+			if (body != null && body != PlayerBlocker && body != BlockedPlayer && !body.isTrigger && body.enabled && body.gameObject.activeInHierarchy)
+				Physics.IgnoreCollision(BlockedPlayer, body, false);
 	}
 
 	public void SetFPVLayer(bool fpvOn)

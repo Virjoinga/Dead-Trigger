@@ -95,7 +95,7 @@ public class AnimState
 		{
 			velocity.y -= 30f * Time.deltaTime;
 		}
-		Owner.CharacterController.Move(velocity);
+		Owner.MoveCharacterController(velocity);
 		return true;
 	}
 
@@ -109,7 +109,7 @@ public class AnimState
 		Transform.position += Vector3.up * Time.deltaTime;
 		velocity.y -= 9f * Time.deltaTime;
 		RaycastHit hitInfo;
-		if (Owner.CharacterController.Move(velocity) == CollisionFlags.None && !Physics.Raycast(Transform.position, -Vector3.up, out hitInfo, 3f, 8192))
+		if (Owner.MoveCharacterController(velocity) == CollisionFlags.None && !Physics.Raycast(Transform.position, -Vector3.up, out hitInfo, 3f, 8192))
 		{
 			Transform.position = position;
 			return false;
