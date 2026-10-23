@@ -48,8 +48,6 @@ public class PlayerStatusBar
 	{
 		MFGuiManager.Instance.ShowLayout(m_Dialog, true);
 		GuiBaseUtils.RegisterButtonDelegate(m_Dialog, "ButtonOptions", options, null);
-		GuiBaseUtils.RegisterButtonDelegate(m_Dialog, "ButtonBuyGold", gold, null);
-		GuiBaseUtils.RegisterButtonDelegate(m_Dialog, "ButtonBuyGold", gold, null);
 		InitData();
 	}
 
@@ -78,7 +76,6 @@ public class PlayerStatusBar
 	public void EnableControls(bool enable)
 	{
 		m_Dialog.EnableControls(enable);
-		EnableButon("ButtonBuyGold", !enable);
 		EnableButon("ButtonOptions", enable);
 		EnableWidget("Gold", enable);
 		EnableWidget("$", enable);
