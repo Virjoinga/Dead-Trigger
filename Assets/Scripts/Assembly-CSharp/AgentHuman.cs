@@ -598,15 +598,7 @@ public class AgentHuman : Agent
 			ResetAnimations();
 		}
 		BlackBoard.DontUpdate = false;
-		RaycastHit hitInfo;
-		if (!Physics.Raycast(spawn.Transform.position + Vector3.up, -Vector3.up, out hitInfo, 5f, 16384))
-		{
-			base.Transform.position = spawn.Transform.position;
-		}
-		else
-		{
-			base.Transform.position = hitInfo.point;
-		}
+		SetSpawnPosition(spawn);
 		base.Transform.rotation = spawn.Transform.rotation;
 		BlackBoard.Desires.Rotation = spawn.Transform.rotation;
 		BlackBoard.Desires.FireDirection = base.Transform.forward;
@@ -632,6 +624,28 @@ public class AgentHuman : Agent
 		PrevHealth = BlackBoard.Health;
 		KillExperience = GameplayData.Instance.XpPerZombie();
 		spawn.OnSpawn();
+	}
+
+	private void SetSpawnPosition(SpawnPoint spawn)
+	{
+		Vector3 position = spawn.Transform.position;
+		RaycastHit ground;
+		if (Physics.Raycast(position + Vector3.up, -Vector3.up, out ground, 5f, 16384))
+			position = ground.point;
+		if (!IsPlayer && NavMeshAgent != null)
+		{
+			// Auto-binding searches a broad volume and can select an upper floor.
+			UnityEngine.AI.NavMeshQueryFilter filter = new UnityEngine.AI.NavMeshQueryFilter
+			{
+				agentTypeID = NavMeshAgent.agentTypeID,
+				areaMask = NavMeshAgent.areaMask
+			};
+			UnityEngine.AI.NavMeshHit hit;
+			float radius = Mathf.Max(NavMeshAgent.height, NavMeshAgent.radius * 2f);
+			if (UnityEngine.AI.NavMesh.SamplePosition(position, out hit, radius, filter))
+				position = hit.position;
+		}
+		base.Transform.position = position;
 	}
 
 	private void Deactivate()

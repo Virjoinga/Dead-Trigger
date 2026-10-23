@@ -1,8 +1,6 @@
 # Dead Trigger
 ## Known Issues
-1. LightingData is not setup correctly in City.scene.
-2. Zombies can spawn out of bounds in northpole.scene.
-3. Muzzle flash fx renders behind scene objects.
+1. Mouse has auto-aim.
 
 ## Contents
 1. [Setup](#setup)
