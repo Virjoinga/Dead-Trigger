@@ -337,9 +337,9 @@ public class Turret : MonoBehaviour
 		if (m_Audio != null)
 		{
 			float num = 0f;
-			if (m_Audio.isPlaying && m_AimPhase != E_AimPhase.InProgress)
+			if (m_Audio.isPlaying && m_AimPhase != E_AimPhase.InProgress && m_Audio.clip != null && m_Audio.clip.length > 0f)
 			{
-				num = 1f - m_Audio.time / m_Audio.clip.length;
+				num = Mathf.Clamp01(1f - m_Audio.time / m_Audio.clip.length);
 			}
 			m_Audio.Stop();
 			m_Audio.clip = null;
@@ -350,7 +350,6 @@ public class Turret : MonoBehaviour
 				if (m_SndSettings.m_AimingStart != null)
 				{
 					m_Audio.clip = m_SndSettings.m_AimingStart;
-					m_Audio.time = num * m_Audio.clip.length;
 				}
 				break;
 			case E_AimPhase.InProgress:
@@ -361,11 +360,15 @@ public class Turret : MonoBehaviour
 				if (m_SndSettings.m_AimingStop != null)
 				{
 					m_Audio.clip = m_SndSettings.m_AimingStop;
-					m_Audio.time = num * m_Audio.clip.length;
 				}
 				break;
 			}
-			m_Audio.Play();
+			if (m_Audio.clip != null)
+			{
+				if (NewPhase != E_AimPhase.InProgress && m_Audio.clip.samples > 0)
+					m_Audio.timeSamples = Mathf.Clamp(Mathf.FloorToInt(num * m_Audio.clip.samples), 0, m_Audio.clip.samples - 1);
+				m_Audio.Play();
+			}
 		}
 		m_AimPhase = NewPhase;
 	}

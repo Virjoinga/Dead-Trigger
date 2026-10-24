@@ -177,6 +177,10 @@ public class Item
 		for (int i = 0; i < array2.Length; i++)
 		{
 			RaycastHit hit = array2[i];
+			if (Owner != null && hit.transform.IsChildOf(Owner.Transform))
+			{
+				continue;
+			}
 			if (!hit.collider.isTrigger)
 			{
 				if (IsValidForPlacement(hit))
@@ -198,6 +202,10 @@ public class Item
 
 	private bool IsValidForPlacement(RaycastHit hit)
 	{
+		if (hit.distance <= 0f)
+		{
+			return false;
+		}
 		if (hit.rigidbody != null)
 		{
 			return false;
@@ -212,7 +220,7 @@ public class Item
 		{
 			return false;
 		}
-		if (parent.GetComponent<DestructibleObject>() != null)
+		if (parent != null && parent.GetComponent<DestructibleObject>() != null)
 		{
 			return false;
 		}
